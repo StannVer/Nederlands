@@ -549,7 +549,13 @@ async function init() {
   sync.start();
   store.onChange(() => { if (!document.body.classList.contains('focus')) renderChrome(); });
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
-    navigator.serviceWorker.register('sw.js');
+    // When a new version takes over, reload once so the new design and content show straight away.
+    const hadController = !!navigator.serviceWorker.controller;
+    let reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController && !reloaded && !document.body.classList.contains('focus')) { reloaded = true; location.reload(); }
+    });
+    navigator.serviceWorker.register('sw.js').then((r) => r.update()).catch(() => {});
   }
   renderChrome();
   boot();

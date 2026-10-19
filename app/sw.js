@@ -1,6 +1,6 @@
 // Offline support: the app shell is cached on install; content and audio are cached as they are used
 // and refreshed in the background, so new lessons appear on the next launch.
-const VERSION = 'nl-v1.2.0';
+const VERSION = 'nl-v1.2.1';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/app.js', 'js/fsrs.js', 'js/store.js', 'js/util.js', 'js/audio.js', 'js/exercises.js',
@@ -20,14 +20,22 @@ self.addEventListener('activate', (e) => {
     .then(() => self.clients.claim()));
 });
 
+// Network first: online, the learner always gets the latest version; the cache is only the
+// fallback when there is no connection. (Cache-first kept showing an old design after updates.)
+// Audio and fonts never change, so those are served from the cache when present.
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET' || new URL(e.request.url).origin !== location.origin) return;
+  const path = new URL(e.request.url).pathname;
+  const stable = /\/(audio|fonts|icons|vendor)\//.test(path);
   e.respondWith(caches.open(VERSION).then(async (cache) => {
     const cached = await cache.match(e.request, { ignoreSearch: true });
-    const network = fetch(e.request).then((res) => {
+    if (stable && cached) return cached;
+    try {
+      const res = await fetch(e.request, { cache: 'no-cache' });
       if (res.ok) cache.put(e.request, res.clone());
       return res;
-    }).catch(() => cached || Response.error());
-    return cached || network;
+    } catch (err) {
+      return cached || Response.error();
+    }
   }));
 });
