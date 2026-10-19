@@ -1,7 +1,8 @@
 // Every exercise renders into the view and resolves with its outcome once the learner continues.
 // Outcomes: 'exact' | 'near' (typo, counted as right) | 'wrong'; sayReveal resolves with a grade 1–4.
-import { esc, shuffle, judge, tiles, sameOrder } from './util.js';
-import { speak, speakButton, canRecord, record } from './audio.js';
+import { esc, shuffle, judge, tiles, sameOrder, norm } from './util.js';
+import { speak, speakButton, canRecord, record, canRecognize, listen } from './audio.js';
+import * as store from './store.js';
 import { intervalLabel } from './fsrs.js';
 
 const view = () => document.getElementById('view');
@@ -254,7 +255,113 @@ export function dictation(head, theme, { id, nl, fr }) {
   });
 }
 
-// ---------- 9. a multiple-choice question about a text (dialogue comprehension) ----------
+// ---------- 9. say it, the phone checks (speech recognition) ----------
+// mode 'repeat': the Dutch is shown and heard, the learner repeats it.
+// mode 'produce': only the French is shown, the learner says it in Dutch.
+// Recognition is imperfect: two tries, and the learner can always move on.
+
+export const speakingOn = () => canRecognize() && store.db().settings?.speaking !== false
+  && !(store.db().settings?.speakingPausedUntil > Date.now());
+
+export function speakCheck(head, theme, { id, nl, fr, accept = [] }, mode = 'produce') {
+  render(head, `
+    <article class="flash ${mode === 'repeat' ? '' : ''}">
+      <p class="eyebrow">${mode === 'repeat' ? 'Écoutez, puis répétez' : 'Dites-le en néerlandais'}</p>
+      ${mode === 'repeat'
+        ? `<div class="hear">${speakButton(theme, id, nl)}<h1 lang="nl">${esc(nl)}</h1></div><p class="fr">${esc(fr)}</p>`
+        : `<h1 class="fr-prompt">${esc(fr)}</h1>`}
+      <p class="heard" id="heard" lang="nl"></p>
+    </article>
+    <button class="mic-btn" id="mic" aria-label="Parler"><svg viewBox="0 0 24 24"><path d="M12 4a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V7a3 3 0 0 1 3-3zM6 11.5a6 6 0 0 0 12 0M12 17.5V20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Toucher et parler</span></button>
+    <div class="row"><button class="btn ghost" id="later">Je ne peux pas parler maintenant</button><button class="btn ghost" id="skip">Passer</button></div>`);
+  if (mode === 'repeat') speak(theme, id, nl);
+  let tries = 0;
+  return new Promise((resolve) => {
+    const finish = (outcome, said) => {
+      document.getElementById('mic')?.remove();
+      document.querySelector('.session .row')?.remove();
+      feedback(outcome, `<p class="answer" lang="nl">${esc(nl)}</p>${said ? `<small>Entendu : « ${esc(said)} »</small>` : ''}`, theme, { id, text: nl }).then(resolve);
+    };
+    document.getElementById('skip').onclick = () => finish('wrong', '');
+    document.getElementById('later').onclick = () => {
+      store.db().settings.speakingPausedUntil = Date.now() + 3600e3;
+      store.save();
+      finish('exact', '');
+    };
+    const mic = document.getElementById('mic');
+    mic.onclick = async () => {
+      mic.classList.add('on');
+      mic.querySelector('span').textContent = 'J\'écoute…';
+      const heard = document.getElementById('heard');
+      try {
+        const { best, alts } = await listen('nl-BE', (t) => { heard.textContent = t; });
+        mic.classList.remove('on');
+        tries++;
+        const outcomes = alts.map((a) => judge(a, [nl, ...accept]));
+        const outcome = outcomes.includes('exact') ? 'exact' : outcomes.includes('near') ? 'near' : 'wrong';
+        if (outcome !== 'wrong' || tries >= 2) return finish(outcome === 'near' ? 'exact' : outcome, best);
+        heard.textContent = best ? `Entendu : « ${best} » — essayez encore` : 'Rien entendu — essayez encore';
+        mic.querySelector('span').textContent = 'Réessayer';
+      } catch (e) {
+        mic.classList.remove('on');
+        heard.textContent = 'Le micro ou la reconnaissance vocale ne répond pas.';
+        mic.querySelector('span').textContent = 'Réessayer';
+      }
+    };
+  });
+}
+
+// ---------- 10. match the pairs ----------
+
+// Translations that share a word ("Au revoir !" and "Salut ! / Au revoir !") would make two answers
+// right, so a round never holds both.
+function distinctSet(items, n) {
+  const words = (t) => new Set(norm(t).split(' ').filter((w) => w.length >= 4));
+  const set = [];
+  for (const it of shuffle(items)) {
+    const w = words(it.fr);
+    if (set.every((x) => ![...words(x.fr)].some((y) => w.has(y)) && norm(x.nl) !== norm(it.nl))) set.push(it);
+    if (set.length === n) break;
+  }
+  return set;
+}
+
+export function matchPairs(head, theme, items) {
+  const set = distinctSet(items, 5);
+  const left = shuffle(set.map((it) => ({ id: it.id, text: it.nl, lang: 'nl' })));
+  const right = shuffle(set.map((it) => ({ id: it.id, text: it.fr, lang: 'fr' })));
+  render(head, `
+    <article class="flash"><p class="eyebrow">Associez les paires</p><h1 class="fr-prompt">Touchez un mot, puis sa traduction.</h1></article>
+    <div class="match">
+      <div>${left.map((x) => `<button class="choice m" data-id="${x.id}" data-side="l" lang="nl">${esc(x.text)}</button>`).join('')}</div>
+      <div>${right.map((x) => `<button class="choice m" data-id="${x.id}" data-side="r">${esc(x.text)}</button>`).join('')}</div>
+    </div>`);
+  let picked = null, mistakes = 0, found = 0;
+  return new Promise((resolve) => {
+    document.querySelectorAll('.match .m').forEach((b) => b.onclick = () => {
+      if (b.disabled) return;
+      if (b.dataset.side === 'l') speak(theme, b.dataset.id, b.textContent);
+      if (!picked || picked.dataset.side === b.dataset.side) {
+        picked?.classList.remove('sel');
+        picked = b; b.classList.add('sel');
+        return;
+      }
+      if (picked.dataset.id === b.dataset.id) {
+        [picked, b].forEach((x) => { x.classList.remove('sel'); x.classList.add('right'); x.disabled = true; });
+        found++;
+        if (found === set.length) setTimeout(() => feedback(mistakes ? 'near' : 'exact', mistakes ? `<small>${mistakes} erreur${mistakes > 1 ? 's' : ''}</small>` : '').then(() => resolve(mistakes === 0 ? 'exact' : 'near')), 350);
+      } else {
+        mistakes++;
+        const p = picked;
+        [p, b].forEach((x) => x.classList.add('wrong'));
+        setTimeout(() => [p, b].forEach((x) => x.classList.remove('wrong', 'sel')), 600);
+      }
+      picked = null;
+    });
+  });
+}
+
+// ---------- 11. a multiple-choice question about a text (dialogue comprehension) ----------
 
 export function question(head, q, idx) {
   render(head, `

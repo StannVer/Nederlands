@@ -52,6 +52,52 @@ document.addEventListener('click', (e) => {
   speak(t, id, text, Number(variant) || 0);
 });
 
+// French, for the hands-free listening mode (the device's own French voice).
+export function speakFr(text) {
+  stop();
+  return new Promise((resolve) => {
+    if (!('speechSynthesis' in window)) return resolve();
+    const u = new SpeechSynthesisUtterance(String(text).replace(/…/g, ''));
+    const v = speechSynthesis.getVoices().find((x) => x.lang?.replace('_', '-').startsWith('fr'));
+    if (v) u.voice = v;
+    u.lang = v?.lang || 'fr-BE';
+    u.rate = 0.95;
+    u.onend = u.onerror = () => resolve();
+    speechSynthesis.speak(u);
+    setTimeout(resolve, 2500 + 120 * String(text).length);
+  });
+}
+
+// ----- speech recognition: the phone listens and writes down what it heard (Dutch) -----
+
+const Recognition = () => window.SpeechRecognition || window.webkitSpeechRecognition;
+export const canRecognize = () => !!Recognition();
+
+// Resolves with the transcript (best guess), or '' if nothing was understood.
+export function listen(lang = 'nl-BE', onPartial = () => {}) {
+  return new Promise((resolve, reject) => {
+    const R = Recognition();
+    if (!R) return reject(new Error('no recognition'));
+    stop();
+    const r = new R();
+    r.lang = lang;
+    r.interimResults = true;
+    r.maxAlternatives = 3;
+    let best = '';
+    let alts = [];
+    r.onresult = (e) => {
+      const res = [...e.results];
+      best = res.map((x) => x[0].transcript).join(' ');
+      alts = res.length === 1 ? [...res[0]].map((a) => a.transcript) : [best];
+      onPartial(best);
+    };
+    r.onerror = (e) => (e.error === 'no-speech' ? resolve({ best: '', alts: [] }) : reject(e));
+    r.onend = () => resolve({ best, alts: alts.length ? alts : [best] });
+    r.start();
+    setTimeout(() => { try { r.stop(); } catch (x) { /* already stopped */ } }, 8000);
+  });
+}
+
 // ----- recording, for "listen, repeat, compare" -----
 
 export const canRecord = () => !!(navigator.mediaDevices?.getUserMedia && window.MediaRecorder);

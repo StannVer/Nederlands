@@ -66,29 +66,36 @@ export async function learnItems(theme, items, backHref, backLabel) {
 async function drill(theme, items) {
   const state = Object.fromEntries(items.map((it) => {
     const need = ['listen', 'type'];
+    if (ex.speakingOn()) need.push('speak');
     if (it.ex_nl && tiles(it.ex_nl).words.length >= 3) need.push('order');
     return [it.id, { need, errors: 0 }];
   }));
-  const total = items.length + Object.values(state).reduce((a, s) => a + s.need.length, 0);
+  const pairs = items.length >= 3;
+  const total = items.length + (pairs ? 1 : 0) + Object.values(state).reduce((a, s) => a + s.need.length, 0);
   let done = 0, exercises = 0;
 
   for (let i = 0; i < items.length; i++) {
     await ex.present(ex.header(done, total, 'Découverte'), theme.id, items[i], `Nouveau · ${i + 1}/${items.length}`);
     done++;
   }
+  // A quick warm-up that recalls all the new words at once, before they are drilled one by one.
+  if (pairs) { await ex.matchPairs(ex.header(done, total, 'Associer'), theme.id, items); done++; exercises++; }
 
   const queue = shuffle(items.map((it) => it.id));
   while (queue.length) {
     const id = queue.shift();
     const it = items.find((x) => x.id === id);
     const s = state[id];
-    const label = { listen: 'Écouter', type: 'Retrouver', order: 'Construire' }[s.need[0]];
+    // Speaking was paused mid-lesson ("je ne peux pas parler maintenant"): drop the remaining speaking tasks.
+    if (s.need[0] === 'speak' && !ex.speakingOn()) { s.need.shift(); done++; if (s.need.length) queue.unshift(id); continue; }
+    const label = { listen: 'Écouter', type: 'Retrouver', speak: 'Parler', order: 'Construire' }[s.need[0]];
     const head = ex.header(done, total, label);
     const outcome = s.need[0] === 'listen' ? await ex.listenChoose(head, theme.id, it, theme.items)
       : s.need[0] === 'type' ? await ex.typeRecall(head, theme.id, it)
+      : s.need[0] === 'speak' ? await ex.speakCheck(head, theme.id, it, 'produce')
       : await ex.orderSentence(head, theme.id, { nl: it.ex_nl, fr: it.ex_fr, audioId: `${it.id}-ex` });
     exercises++;
-    if (outcome === 'wrong') { s.errors++; requeue(queue, id); }
+    if (outcome === 'wrong' && s.need[0] !== 'speak') { s.errors++; requeue(queue, id); }
     else { s.need.shift(); done++; if (s.need.length) requeue(queue, id); }
   }
 
@@ -218,6 +225,10 @@ async function dialogue(theme, step) {
   // 4. role play: the other speaker talks, the learner answers aloud
   for (const l of d.lines) {
     const mine = l.who === d.roles.learner;
+    if (mine && ex.speakingOn()) {
+      await ex.speakCheck(ex.header(3, total, `À vous — vous êtes ${l.who}`), theme.id, { id: l.id, nl: l.nl, fr: l.fr }, 'produce');
+      continue;
+    }
     await new Promise((resolve) => {
       view().innerHTML = `
         <div class="session">

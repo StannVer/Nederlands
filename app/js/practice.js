@@ -5,7 +5,7 @@ import * as store from './store.js';
 import * as sync from './sync.js';
 import { learnItems } from './lesson.js';
 import { virtualTheme, pending } from './extra.js';
-import { speak, speakButton, stop, canRecord, record } from './audio.js';
+import { speak, speakButton, stop, canRecord, record, speakFr } from './audio.js';
 import { esc, norm, shuffle } from './util.js';
 import { CONFIG } from './config.js';
 
@@ -24,11 +24,14 @@ const ICON = {
   ask: '<path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 9a2 2 0 1 1 3 1.7c-.6.3-1 .8-1 1.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>',
   grammar: '<path d="M4 7h16M4 12h10M4 17h13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
   vlaams: '<path d="M6 21V4M6 4.5h11l-2.5 4 2.5 4H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+  paires: '<rect x="3.5" y="5" width="7" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><rect x="13.5" y="5" width="7" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>',
+  ecoute: '<path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H4zM17 14h3v5h-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+  parler: '<path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 10.5h7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
 };
 
 export async function practice(sub, arg, ctx) {
   stop();
-  const pages = { pron, stories, story, dictee, mywords, stan, lessons, ask, grammar, vlaams };
+  const pages = { pron, stories, story, dictee, mywords, stan, lessons, ask, grammar, vlaams, paires, ecoute, parler };
   if (pages[sub]) return pages[sub](arg, ctx);
   return hub(ctx);
 }
@@ -41,6 +44,9 @@ function hub() {
   const custom = (store.db().customLessons || []).length;
   const tiles = [
     ['pron', 'Prononciation', 'Entendre puis dire les sons difficiles'],
+    ...(ex.speakingOn() ? [['parler', 'Parler', 'Le téléphone vérifie votre prononciation']] : []),
+    ['ecoute', 'Écoute libre', 'Sans écran : en marchant, en voiture'],
+    ['paires', 'Jeu des paires', 'Vos mots, en vitesse'],
     ['stories', 'Histoires', 'Lire et écouter des textes à votre niveau'],
     ['dictee', 'Dictée', 'Écouter et écrire'],
     ['mywords', 'Mes mots', p('perso') ? `${p('perso')} à apprendre` : 'Ajoutez vos propres mots'],
@@ -381,6 +387,102 @@ async function ask() {
     document.getElementById('mine').innerHTML = rows.map((r) => `<li><p>${esc(r.text)}</p><small>${new Date(r.created_at).toLocaleDateString('fr-BE')} · ${label[r.status]}</small>
       ${r.status === 'answered' ? ' · <a href="#/practice/lessons">voir</a>' : ''}</li>`).join('') || '<li class="small">Aucune question pour l\'instant.</li>';
   }).catch(() => {});
+}
+
+// ---------- pairs game: the learned words, five at a time ----------
+
+async function learnedItems(ctx) {
+  const ready = ctx.themeIndex.filter((t) => t.status === 'ready').map((t) => t.id);
+  const themes = await Promise.all([...ready, 'perso', 'stan'].map((id) => ctx.loadTheme(id).catch(() => null)));
+  return themes.filter(Boolean).flatMap((t) => t.items.filter((it) => store.getCard(`${t.id}/${it.id}`)).map((it) => ({ ...it, theme: t.id })));
+}
+
+async function paires(_, ctx) {
+  const pool = await learnedItems(ctx);
+  if (pool.length < 5) {
+    view().innerHTML = `${back()}<div class="session end"><p class="eyebrow">Jeu des paires</p><h1>Encore quelques mots</h1>
+      <p class="lead">Le jeu utilise les mots que vous avez appris : il en faut au moins 5. Faites d'abord une leçon.</p><a class="btn primary wide" href="#/">Au parcours</a></div>`;
+    return;
+  }
+  const rounds = 3;
+  let perfect = 0;
+  const started = Date.now();
+  for (let r = 0; r < rounds; r++) {
+    const set = shuffle(pool).slice(0, 5);
+    if ((await ex.matchPairs(ex.header(r, rounds, `Manche ${r + 1}/${rounds}`), set[0].theme, set)) === 'exact') perfect++;
+  }
+  store.logActivity(rounds);
+  const secs = Math.round((Date.now() - started) / 1000);
+  view().innerHTML = `<div class="session end"><p class="eyebrow">Jeu des paires</p><h1>${perfect === rounds ? 'Sans faute !' : 'Bien joué !'}</h1>
+    <p class="lead">${rounds} manches en ${Math.floor(secs / 60)} min ${secs % 60} s · ${perfect}/${rounds} sans erreur.</p>
+    <a class="btn primary wide" href="#/practice/paires">Rejouer</a><a class="btn wide" href="#/practice">Pratique</a></div>`;
+}
+
+// ---------- hands-free listening: Dutch, pause, Dutch again, French, example ----------
+
+async function ecoute(themeId, ctx) {
+  const ready = ctx.themeIndex.filter((t) => t.status === 'ready');
+  if (!themeId) {
+    view().innerHTML = `${back()}
+      <header class="theme-head"><p class="eyebrow">Sans écran</p><h1>Écoute libre</h1>
+        <p class="lead">Mettez vos écouteurs et rangez le téléphone : chaque mot est dit en néerlandais, répété après une pause — répétez-le à voix haute — puis traduit, puis utilisé dans une phrase.</p></header>
+      <ul class="themes">${ready.map((t) => `<li><a class="theme" href="#/practice/ecoute/${t.id}"><span class="lvl">${esc(t.level)}</span><span><strong>${esc(t.nl)}</strong><small>${esc(t.fr)}</small></span></a></li>`).join('')}
+        ${(store.db().mywords || []).length ? '<li><a class="theme" href="#/practice/ecoute/perso"><span class="lvl">★</span><span><strong>Mes mots</strong><small>vos mots à vous</small></span></a></li>' : ''}</ul>`;
+    return;
+  }
+  const t = await ctx.loadTheme(themeId);
+  let playing = true;
+  const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+  view().innerHTML = `${back('#/practice/ecoute', 'Écoute libre')}
+    <div class="session end listen-mode">
+      <p class="eyebrow">${esc(t.nl)}</p><h1 id="now" lang="nl">…</h1><p class="lead" id="nowfr"></p>
+      <p class="small" id="count"></p>
+      <button class="btn primary wide" id="stopit">Arrêter</button></div>`;
+  document.getElementById('stopit').onclick = () => { playing = false; stop(); location.hash = '#/practice/ecoute'; };
+  const items = t.items;
+  for (let k = 0; k < items.length && playing; k++) {
+    const it = items[k];
+    if (!document.getElementById('now')) return;
+    document.getElementById('count').textContent = `${k + 1} / ${items.length}`;
+    document.getElementById('now').textContent = it.nl;
+    document.getElementById('nowfr').textContent = '';
+    await speak(t.id, it.id, it.nl); if (!playing) break;
+    await wait(2200);                                           // time to repeat aloud
+    await speak(t.id, it.id, it.nl); if (!playing) break;
+    document.getElementById('nowfr').textContent = it.fr;
+    await speakFr(it.fr.replace(/[!?]/g, '')); if (!playing) break;
+    if (it.ex_nl) { await wait(500); await speak(t.id, `${it.id}-ex`, it.ex_nl); }
+    await wait(1200);
+  }
+  if (playing && document.getElementById('now')) {
+    store.logActivity(1);
+    document.getElementById('now').textContent = 'Klaar!';
+    document.getElementById('nowfr').textContent = 'Terminé.';
+    document.getElementById('stopit').textContent = 'Retour';
+  }
+}
+
+// ---------- speaking trainer: say it, the phone checks ----------
+
+async function parler(_, ctx) {
+  if (!ex.speakingOn()) { location.hash = '#/practice'; return; }
+  const pool = await learnedItems(ctx);
+  const ready = await Promise.all(ctx.themeIndex.filter((t) => t.status === 'ready').map((t) => ctx.loadTheme(t.id)));
+  const lines = ready.flatMap((t) => (t.steps.some((s) => s.type === 'dialogue' && store.stepDone(t.id, s.id)) ? t.dialogue.lines.map((l) => ({ ...l, theme: t.id })) : []));
+  const tasks = shuffle([...shuffle(pool).slice(0, 6).map((it) => ({ theme: it.theme, it })), ...shuffle(lines).slice(0, 4).map((l) => ({ theme: l.theme, it: { id: l.id, nl: l.nl, fr: l.fr } }))]);
+  if (tasks.length < 3) {
+    view().innerHTML = `${back()}<div class="session end"><p class="eyebrow">Parler</p><h1>Un peu de patience</h1>
+      <p class="lead">L'entraînement oral utilise ce que vous avez appris. Faites d'abord une leçon.</p><a class="btn primary wide" href="#/">Au parcours</a></div>`;
+    return;
+  }
+  let right = 0;
+  for (let k = 0; k < tasks.length; k++) {
+    if ((await ex.speakCheck(ex.header(k, tasks.length, `Parler ${k + 1}/${tasks.length}`), tasks[k].theme, tasks[k].it, 'produce')) !== 'wrong') right++;
+  }
+  store.logActivity(tasks.length);
+  view().innerHTML = `<div class="session end"><p class="eyebrow">Parler</p><h1>${right}/${tasks.length}</h1>
+    <p class="lead">La reconnaissance vocale n'est pas parfaite : si elle ne vous comprend pas, réécoutez le modèle et réessayez plus lentement.</p>
+    <a class="btn primary wide" href="#/practice/parler">Encore</a><a class="btn wide" href="#/practice">Pratique</a></div>`;
 }
 
 // ---------- grammar reference ----------

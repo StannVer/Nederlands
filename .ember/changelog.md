@@ -53,3 +53,15 @@
 - docs/syllabus.md: 28 themes A1 → B1, 56 grammar points in order, 17 pronunciation contrasts with minimal pairs, vocabulary estimates. index.json follows it; op-café → op-cafe (NFC/NFD risk on Apple devices).
 - Tested in WebKit against the real database: all practice pages, teacher dashboard, add word → learner learns it, publish draft → learner does the lesson; no errors.
 - Example data on Stan's own account (marked EXEMPLE): question 1 + published lesson "de of het?", question 2 + draft lesson, teacher word "de trein", own word "het station". Remove before the learner starts? They are on Stan's account only.
+
+### v0.5 — Babbel-equivalent workflow (2026-10-19)
+Checked against Babbel's own description (how-babbel-works, babbel-review) and reviews. Added:
+- Onboarding: name, motivation, experience → optional 8-item placement test, weekly goal (days/week), daily reminder as a repeating calendar event (.ics, no app or push permission needed)
+- Home: greeting by name, weekly goal with day dots; step durations (≈ min) on the path and the "continue" card
+- Speaking with speech recognition (on-device, nl-BE, Web Speech API): in every word lesson ("dites-le", two tries, never blocks), in the dialogue role play (guided speaking), as a review mode, and a "Parler" trainer; "je ne peux pas parler maintenant" pauses speaking for an hour; can be switched off in settings
+- "Match the pairs" warm-up after the presentation in each word lesson + a pairs game in Practice; rounds never hold two overlapping translations
+- Review manager: choose the mode (mixte, cartes, écoute, oral, écrit) and the size (10/20/all); remembers the last mode
+- Hands-free listening ("écoute libre"): Dutch, pause to repeat, Dutch, French, example — per theme or own words
+- Level certificates (A1/A2/B1): unlocked when every theme of the level has a checkpoint ≥ 8/10; printable
+- Not copied, on purpose: Babbel Live (Stan's opdrachten instead), push notifications (calendar instead). AI conversation partner: for Stan to decide (API key, cost, privacy).
+- Tested in WebKit with a simulated speech recogniser: onboarding + placement, lesson with pairs and 6 speaking exercises, oral review, pairs game, hands-free mode, settings, certificate page; no errors. Real recognition to be tested on the iPhone.

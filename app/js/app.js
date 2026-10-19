@@ -9,8 +9,10 @@ import { CONFIG } from './config.js';
 import { VIRTUAL, virtualTheme, pending } from './extra.js';
 import { practice } from './practice.js';
 import { teacherPage } from './teacher.js';
+import { onboarding, weekWidget, reminderFile, levelStatus, certificatePage, stepMinutes } from './goals.js';
+import { speakingOn } from './exercises.js';
 
-const VERSION = '0.4';
+const VERSION = '0.5';
 const view = document.getElementById('view');
 const nav = document.getElementById('nav');
 const themes = {};
@@ -86,8 +88,9 @@ async function home() {
   view.innerHTML = `
     <header class="hello">
       <p class="eyebrow">${st > 0 ? `${st} jour${st > 1 ? 's' : ''} d'affilée` : 'Bienvenue'}${today ? ` · ${today} exercice${today > 1 ? 's' : ''} aujourd'hui` : ''}</p>
-      <h1>Goeiedag!</h1>
+      <h1>Goeiedag${store.db().settings.name ? `, ${esc(store.db().settings.name)}` : ''}!</h1>
     </header>
+    ${weekWidget()}
 
     <section class="today">
       <div id="feedback-slot"></div>
@@ -105,7 +108,7 @@ async function home() {
       ${step ? `
         <a class="card next" href="#/step/${current.id}/${step.id}">
           <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON[step.type]}</svg></span>
-          <span><span class="label">Continuer · ${esc(current.nl)} · étape ${current.steps.indexOf(step) + 1}/${current.steps.length}</span>
+          <span><span class="label">Continuer · ${esc(current.nl)} · étape ${current.steps.indexOf(step) + 1}/${current.steps.length} · ≈ ${stepMinutes(step, current)} min</span>
           <strong>${esc(step.title)}</strong></span>
         </a>` : ''}
       ${!due && !step ? `<div class="card calm"><strong>Tout est fait pour aujourd'hui.</strong><small>Revenez demain : les mots reviendront au bon moment.</small></div>` : ''}
@@ -168,7 +171,7 @@ async function themePage(id) {
         const count = s.type === 'words' ? ` · ${s.items.length}` : '';
         return `<li class="${state}"><a href="#/step/${id}/${s.id}">
           <span class="stepicon"><svg viewBox="0 0 24 24">${done ? STEP_ICON.done : STEP_ICON[s.type]}</svg></span>
-          <span><small>${k + 1} · ${STEP_KIND[s.type]}${count}</small><strong>${esc(s.title)}</strong></span>
+          <span><small>${k + 1} · ${STEP_KIND[s.type]}${count} · ≈ ${stepMinutes(s, t)} min</small><strong>${esc(s.title)}</strong></span>
           <em>${done ? (s.type === 'checkpoint' && check ? `${Math.round(check.score * 10)}/10` : 'refaire') : s === next ? 'commencer' : ''}</em></a></li>`;
       }).join('')}
     </ol>
@@ -242,6 +245,12 @@ async function progress() {
           <span><strong>${esc(t.nl)}</strong><small>${p.steps}/${p.totalSteps} étapes · ${p.known} acquis · ${p.learning} en cours${c ? ` · bilan ${Math.round(c.score * 10)}/10` : ''}</small>
           <span class="bar"><i style="width:${p.pct}%"></i></span></span></a></li>`; }).join('')}
     </ul>
+    <h2 class="section">Attestations</h2>
+    <ul class="themes">${Object.entries(levelStatus(themeIndex)).map(([lvl, L]) => `
+      <li><a class="theme" href="#/certificate/${lvl}"><span class="lvl">${lvl}</span>
+        <span><strong>Attestation ${lvl}</strong><small>${L.passed}/${L.total} thèmes validés${L.passed === L.total ? ' · disponible' : ''}</small>
+        <span class="bar"><i style="width:${Math.round((L.passed / L.total) * 100)}%"></i></span></span></a></li>`).join('')}
+    </ul>
     <p class="fineprint">« Mémoire estimée » : la probabilité moyenne de retrouver aujourd'hui ce que vous avez appris, selon l'algorithme de répétition espacée. Un mot est « acquis » quand il tient au moins trois semaines.</p>`;
 }
 
@@ -280,6 +289,17 @@ function settings() {
         <p class="small">${u ? `Connecté : <strong>${esc(u.email)}</strong><br>Progression sauvegardée en ligne ${{ ok: '✓', pending: '(en cours…)', error: '— hors ligne, réessai automatique', off: '' }[sync.syncStatus()]}` : 'Non connecté.'}</p>
         ${u ? '<a class="btn" id="teacher" href="#/teacher" hidden>Espace enseignant</a><button class="btn" id="logout">Se déconnecter</button>' : ''}
       </div>` : ''}
+    <h2 class="section">Mon apprentissage</h2>
+    <div class="group">
+      <label class="row-setting">Prénom <input id="sname" class="field small-field" value="${esc(store.db().settings.name || '')}" placeholder="Votre prénom"></label>
+      <label class="row-setting">Objectif
+        <select id="sgoal">${[3, 4, 5, 7].map((n) => `<option value="${n}" ${n === (store.db().settings.weeklyGoal || 5) ? 'selected' : ''}>${n} jours / semaine</option>`).join('')}</select></label>
+      <label class="row-setting">Rappel quotidien <input id="stime" class="field small-field" type="time" value="${esc(store.db().settings.reminder || '19:00')}"></label>
+      <button class="btn" id="scal">Ajouter le rappel à mon agenda</button>
+      <label class="row-setting">Exercices oraux (reconnaissance vocale)
+        <select id="sspeak"><option value="on" ${store.db().settings.speaking !== false ? 'selected' : ''}>activés</option><option value="off" ${store.db().settings.speaking === false ? 'selected' : ''}>désactivés</option></select></label>
+      <p class="small">${speakingOn() ? 'La reconnaissance vocale fonctionne sur cet appareil.' : store.db().settings.speaking === false ? 'Les exercices oraux sont désactivés.' : 'La reconnaissance vocale n\'est pas disponible sur cet appareil (ou en pause pour une heure).'}</p>
+    </div>
     <h2 class="section">Micro</h2>
     <div class="group">
       <p class="small">Vérifie que l'enregistrement fonctionne sur cet appareil (pour vous écouter et comparer).</p>
@@ -297,6 +317,12 @@ function settings() {
   if (u) sync.isTeacher().then((yes) => { const a = document.getElementById('teacher'); if (a && yes) a.hidden = false; }).catch(() => {});
   document.getElementById('logout')?.addEventListener('click', async () => { await sync.signOut(); location.hash = '#/'; boot(); });
   document.getElementById('mic').onclick = micTest;
+  const st = store.db().settings;
+  document.getElementById('sname').onchange = (e) => { st.name = e.target.value.trim(); store.save(); };
+  document.getElementById('sgoal').onchange = (e) => { st.weeklyGoal = Number(e.target.value); store.save(); };
+  document.getElementById('stime').onchange = (e) => { st.reminder = e.target.value; store.save(); };
+  document.getElementById('scal').onclick = () => reminderFile(document.getElementById('stime').value);
+  document.getElementById('sspeak').onchange = (e) => { st.speaking = e.target.value === 'on'; delete st.speakingPausedUntil; store.save(); settings(); };
   document.getElementById('export').onclick = () => {
     const a = document.createElement('a');
     a.href = URL.createObjectURL(new Blob([store.exportJSON()], { type: 'application/json' }));
@@ -338,10 +364,11 @@ async function route() {
   try {
     if (page === 'theme') await themePage(a);
     else if (page === 'step') { setNav('home'); await runStep(await loadTheme(a), b); }
-    else if (page === 'review') { setNav('review'); await review(themes, loadTheme); setNav('review'); }
+    else if (page === 'review') { setNav('review'); await review(themes, loadTheme, a, b); setNav('review'); }
     else if (page === 'progress') await progress();
     else if (page === 'settings') settings();
     else if (page === 'method') method();
+    else if (page === 'certificate') { setNav('progress'); certificatePage(a, themeIndex); }
     else if (page === 'teacher') { setNav('settings'); await teacherPage(a, { themeIndex, loadTheme }); }
     else if (page === 'practice') { setNav('practice'); await practice(a, b, { themeIndex, loadTheme }); }
     else await home();
@@ -363,8 +390,14 @@ async function boot() {
     }
     if (user) {
       Promise.all([sync.pull(), sync.refreshLearnerData().catch(() => false)])
-        .then(([a, b]) => (a || b) && !location.hash.startsWith('#/step') && !location.hash.startsWith('#/review') && route());
+        .then(([a, b]) => (a || b) && store.db().settings.onboarded && !/^#\/(step|review|practice\/(paires|parler|ecoute|dictee))/.test(location.hash) && route());
     }
+  }
+  if (!store.db().settings.onboarded) {
+    nav.hidden = true;
+    await onboarding(themeIndex, loadTheme);
+    nav.hidden = false;
+    location.hash = '#/';
   }
   if (!routing) { window.addEventListener('hashchange', route); routing = true; }
   route();
