@@ -4,19 +4,22 @@ import * as sync from './sync.js';
 import { runStep, nextStep } from './lesson.js';
 import { review } from './review.js';
 import { speakButton, stop, canRecord, record } from './audio.js';
-import { esc } from './util.js';
+import { esc, norm } from './util.js';
 import { CONFIG } from './config.js';
 import { VIRTUAL, virtualTheme, pending } from './extra.js';
 import { practice } from './practice.js';
 import { teacherPage } from './teacher.js';
-import { onboarding, weekWidget, reminderFile, levelStatus, certificatePage, stepMinutes } from './goals.js';
+import { onboarding, weekWidget, weekProgress, reminderFile, levelStatus, certificatePage, stepMinutes } from './goals.js';
 import { speakingOn } from './exercises.js';
+import { kees, keesSays, icon, stars, starsFor, hueOf } from './ui.js';
 
-const VERSION = '0.5';
+const VERSION = '1.0';
 const view = document.getElementById('view');
-const nav = document.getElementById('nav');
+const sidebar = document.getElementById('sidebar');
+const tabbar = document.getElementById('nav');
 const themes = {};
 let themeIndex = [];
+let isTeacher = false;
 
 // Course themes come from content files; "perso" and "stan" are built from the learner's data, and
 // "q-…" lessons were made for this learner in answer to a question. Those are rebuilt every time.
@@ -35,23 +38,46 @@ async function loadTheme(id) {
 }
 
 const readyThemes = () => themeIndex.filter((t) => t.status === 'ready');
+const learnerName = () => store.db().settings.name || CONFIG.learnerName || '';
+const hue = (id) => hueOf(Math.max(0, themeIndex.findIndex((t) => t.id === id)));
 const STEP_KIND = { words: 'Mots', grammar: 'Grammaire', dialogue: 'Dialogue', checkpoint: 'Bilan', task: 'Opdracht' };
-const STEP_ICON = {
-  words: '<path d="M5 5h14v10H9l-4 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
-  grammar: '<path d="M4 7h16M4 12h10M4 17h13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
-  dialogue: '<path d="M3 6h11v7H7l-4 3zM10 16h6l4 3v-9h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
-  checkpoint: '<path d="M6 21V4M6 4.5h11l-2.5 4 2.5 4H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
-  done: '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
-  task: '<circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 6.5h5M15 10h3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
-};
+
+// ---------- chrome: sidebar (desktop) and tab bar (phone) ----------
+
+const NAV = [
+  ['home', '#/', 'today', 'Aujourd\'hui'],
+  ['path', '#/path', 'path', 'Parcours'],
+  ['review', '#/review', 'review', 'Réviser'],
+  ['practice', '#/practice', 'practice', 'Pratique'],
+  ['vocab', '#/vocab', 'vocab', 'Vocabulaire', 'desktop'],
+  ['progress', '#/progress', 'progress', 'Progrès'],
+  ['settings', '#/settings', 'settings', 'Réglages', 'desktop'],
+];
+
+function renderChrome() {
+  const due = store.dueKeys().length;
+  const w = weekProgress();
+  const badge = (id) => (id === 'review' && due ? `<span class="badge">${due}</span>` : '');
+  sidebar.innerHTML = `
+    <a class="brand" href="#/">${kees('happy', 46)}<span><strong>Nederlands</strong><small>le flamand de ${esc(learnerName() || 'Monia')}</small></span></a>
+    <nav class="side-nav">${NAV.map(([id, href, ic, label]) => `<a href="${href}" data-tab="${id}">${icon(ic)}${label}${badge(id)}</a>`).join('')}
+      ${isTeacher ? `<a href="#/teacher" data-tab="teacher">${icon('teacher')}Espace enseignant</a>` : ''}</nav>
+    <div class="side-card">
+      <div class="streak"><span class="flame">🔥</span>${store.streak()} jour${store.streak() > 1 ? 's' : ''} d'affilée</div>
+      <div class="dots">${w.days.map((x) => `<i class="${x.active ? 'on' : ''} ${x.today ? 'today' : ''}">${x.label}</i>`).join('')}</div>
+      <small>${w.done}/${w.goal} jours cette semaine</small>
+    </div>`;
+  tabbar.innerHTML = NAV.filter((n) => n[4] !== 'desktop').map(([id, href, ic, label]) =>
+    `<a href="${href}" data-tab="${id}">${icon(ic)}${label}${badge(id)}</a>`).join('');
+}
 
 function setNav(active) {
-  const due = store.dueKeys().length;
-  nav.querySelectorAll('a').forEach((a) => a.classList.toggle('active', a.dataset.tab === active));
-  const badge = nav.querySelector('[data-badge]');
-  badge.textContent = due;
-  badge.hidden = due === 0;
+  renderChrome();
+  document.querySelectorAll('[data-tab]').forEach((a) => a.classList.toggle('active', a.dataset.tab === active));
 }
+
+// Lessons, reviews and drills take the whole screen: no navigation to tap by mistake.
+function setFocus(on) { document.body.classList.toggle('focus', on); }
 
 function wordStatus(themeId, itemId) {
   const c = store.getCard(`${themeId}/${itemId}`);
@@ -71,114 +97,168 @@ function themeProgress(t) {
   };
 }
 
-// Custom lessons not yet opened (no step done).
 const newLessons = () => (store.db().customLessons || []).filter((l) => !(l.steps || []).some((s) => store.stepDone(l.id, s.id)));
 
-// ---------- home ----------
+// The same word all day long, from the current theme.
+function wordOfTheDay(theme) {
+  if (!theme?.items?.length) return null;
+  const n = Number(store.dayKey().replace(/-/g, ''));
+  return theme.items[n % theme.items.length];
+}
+
+// ---------- home: today's plan ----------
 
 async function home() {
   setNav('home');
+  view.className = 'view home';
   await Promise.all(readyThemes().map((t) => loadTheme(t.id)));
   const due = store.dueKeys().length;
-  const st = store.streak();
   const current = readyThemes().map((t) => themes[t.id]).find((t) => nextStep(t));
   const step = current && nextStep(current);
-  const today = store.todayCount();
+  const name = learnerName();
+  const hour = new Date().getHours();
+  const greet = hour < 12 ? ['Goeiemorgen', 'Bonjour (le matin)'] : hour < 18 ? ['Goeiemiddag', 'Bon après-midi'] : ['Goeienavond', 'Bonsoir'];
+  const wod = wordOfTheDay(current || themes[readyThemes()[0]?.id]);
+  const plan = [];
+  if (due) plan.push(`<a class="card primary" href="#/review"><span class="big">${due}</span>
+    <span><strong>Révisions du jour</strong><small>≈ ${Math.max(1, Math.round(due * 0.3))} min · à faire en premier : c'est ce qui ancre la mémoire</small></span></a>`);
+  if (step) plan.push(`<a class="card next" href="#/step/${current.id}/${step.id}">
+    <span class="stepicon">${icon(step.type)}</span>
+    <span><span class="label">${esc(current.nl)} · étape ${current.steps.indexOf(step) + 1}/${current.steps.length} · ≈ ${stepMinutes(step, current)} min</span><strong>${esc(step.title)}</strong></span></a>`);
+  plan.push(`<a class="card" href="#/practice/${['stories', 'paires', 'pron', 'ecoute'][new Date().getDay() % 4]}">
+    <span class="stepicon">${icon(['vocab', 'practice', 'practice', 'music'][new Date().getDay() % 4])}</span>
+    <span><span class="label">Bonus</span><strong>${['Une histoire à lire', 'Le jeu des paires', 'Un son à travailler', 'Écoute libre au jardin'][new Date().getDay() % 4]}</strong></span></a>`);
 
   view.innerHTML = `
-    <header class="hello">
-      <p class="eyebrow">${st > 0 ? `${st} jour${st > 1 ? 's' : ''} d'affilée` : 'Bienvenue'}${today ? ` · ${today} exercice${today > 1 ? 's' : ''} aujourd'hui` : ''}</p>
-      <h1>Goeiedag${(store.db().settings.name || CONFIG.learnerName) ? `, ${esc(store.db().settings.name || CONFIG.learnerName)}` : ''}!</h1>
-    </header>
-    ${weekWidget()}
-
-    <section class="today">
-      <div id="feedback-slot"></div>
-      ${pending('stan').length ? `<a class="card feedback-card" href="#/practice/stan/learn">
-        <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON.task}</svg></span>
-        <span><span class="label">De ${esc(CONFIG.teacherName)}</span><strong>${pending('stan').length} nouveau${pending('stan').length > 1 ? 'x' : ''} mot${pending('stan').length > 1 ? 's' : ''} à apprendre</strong></span></a>` : ''}
-      ${newLessons().length ? `<a class="card feedback-card" href="#/theme/${newLessons()[0].id}">
-        <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON.grammar}</svg></span>
-        <span><span class="label">Votre question</span><strong>Une leçon vous attend : ${esc(newLessons()[0].nl)}</strong></span></a>` : ''}
-      ${due > 0 ? `
-        <a class="card primary" href="#/review">
-          <span class="big">${due}</span>
-          <span><strong>Révisions du jour</strong><br><small>Environ ${Math.max(1, Math.round(due * 0.3))} min · à faire en premier</small></span>
-        </a>` : ''}
-      ${step ? `
-        <a class="card next" href="#/step/${current.id}/${step.id}">
-          <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON[step.type]}</svg></span>
-          <span><span class="label">Continuer · ${esc(current.nl)} · étape ${current.steps.indexOf(step) + 1}/${current.steps.length} · ≈ ${stepMinutes(step, current)} min</span>
-          <strong>${esc(step.title)}</strong></span>
-        </a>` : ''}
-      ${!due && !step ? `<div class="card calm"><strong>Tout est fait pour aujourd'hui.</strong><small>Revenez demain : les mots reviendront au bon moment.</small></div>` : ''}
+    <section class="hero">
+      <p class="eyebrow">${store.streak() > 0 ? `🔥 ${store.streak()} jour${store.streak() > 1 ? 's' : ''} d'affilée` : 'Bienvenue'}</p>
+      <h1>${greet[0]}${name ? `, ${esc(name)}` : ''}!</h1>
+      ${keesSays(due || step ? 'Zullen we beginnen?' : 'Alles is klaar voor vandaag!', due || step ? 'On commence ? Voici votre programme du jour.' : 'Tout est fait pour aujourd\'hui. À demain !')}
     </section>
+    <div class="home-grid">
+      <div>
+        <div id="notices" class="today"></div>
+        <h2 class="section">Votre programme</h2>
+        <div class="plan">${plan.map((p, k) => p.replace('<a class="card', `<a data-n="${k + 1}" class="card`)).join('')}</div>
+        <a class="method-link" href="#/method">Comment fonctionne cette méthode ? ›</a>
+      </div>
+      <aside class="side-col">
+        ${weekWidget()}
+        ${wod ? `<div class="group word-day"><p class="eyebrow">Le mot du jour</p>
+          <div class="hear">${speakButton(current?.id || readyThemes()[0].id, wod.id, wod.nl)}<span><strong lang="nl">${esc(wod.nl)}</strong><br><small>${esc(wod.fr)}</small></span></div>
+          ${wod.ex_nl ? `<small lang="nl">« ${esc(wod.ex_nl)} »</small>` : ''}</div>` : ''}
+        ${current?.culture ? `<div class="group culture"><p class="eyebrow">Vlaanderen</p><strong>${esc(current.culture.title)}</strong><small>${esc(current.culture.text)}</small></div>` : ''}
+      </aside>
+    </div>`;
 
-    <h2 class="section">Parcours</h2>
-    <ul class="themes">
-      ${themeIndex.filter((t, k) => t.status === 'ready' || themeIndex.slice(0, k).filter((x) => x.status !== 'ready').length < 3).map((t) => {
-        if (t.status !== 'ready') return `
-          <li class="theme soon"><span class="lvl">${esc(t.level)}</span>
-            <span><strong>${esc(t.nl)}</strong><small>${esc(t.fr)}</small></span><em>bientôt</em></li>`;
-        const p = themeProgress(themes[t.id]);
-        return `
-          <li><a class="theme" href="#/theme/${t.id}"><span class="lvl">${esc(t.level)}</span>
-            <span><strong>${esc(t.nl)}</strong><small>${esc(t.fr)}</small>
-            <span class="bar"><i style="width:${p.pct}%"></i></span></span>
-            <em>${p.steps}/${p.totalSteps}</em></a></li>`;
-      }).join('')}
-      ${(() => { const more = themeIndex.filter((t) => t.status !== 'ready').length - 3; return more > 0 ? `<li class="theme soon"><span class="lvl">+${more}</span><span><strong>Et ${more} autres thèmes</strong><small>jusqu'au niveau B1</small></span></li>` : ''; })()}
-    </ul>
-    <a class="method-link" href="#/method">Comment fonctionne cette méthode ? ›</a>`;
+  const notices = [];
+  if (pending('stan').length) notices.push(`<a class="card feedback-card" href="#/practice/stan/learn"><span class="stepicon">${icon('teacher')}</span>
+    <span><span class="label">De ${esc(CONFIG.teacherName)}</span><strong>${pending('stan').length} nouveau${pending('stan').length > 1 ? 'x' : ''} mot${pending('stan').length > 1 ? 's' : ''} à apprendre</strong></span></a>`);
+  if (newLessons().length) notices.push(`<a class="card feedback-card" href="#/theme/${newLessons()[0].id}"><span class="stepicon">${icon('grammar')}</span>
+    <span><span class="label">Votre question</span><strong>Une leçon vous attend : ${esc(newLessons()[0].nl)}</strong></span></a>`);
+  document.getElementById('notices').innerHTML = notices.join('');
   if (sync.currentUser()) {
     sync.unseenFeedback().then((rows) => {
-      const slot = document.getElementById('feedback-slot');
+      const slot = document.getElementById('notices');
       if (!slot || !rows.length) return;
-      slot.innerHTML = `<a class="card feedback-card" href="#/theme/${rows[0].theme}">
-        <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON.task}</svg></span>
-        <span><span class="label">Nouveau</span><strong>${esc(CONFIG.teacherName)} vous a répondu</strong></span></a>`;
+      slot.insertAdjacentHTML('afterbegin', `<a class="card feedback-card" href="#/theme/${rows[0].theme}"><span class="stepicon">${icon('task')}</span>
+        <span><span class="label">Nouveau</span><strong>${esc(CONFIG.teacherName)} vous a répondu</strong></span></a>`);
     }).catch(() => {});
   }
 }
 
-// ---------- theme: the path ----------
+// ---------- the course map (Duolingo-style path) ----------
+
+const ZIGZAG = [0, 56, 84, 56, 0, -56, -84, -56];
+
+async function pathPage() {
+  setNav('path');
+  await Promise.all(readyThemes().map((t) => loadTheme(t.id)));
+  const levels = [['A1', 'Les bases', 'Se présenter, compter, faire ses courses, se débrouiller au quotidien'],
+    ['A2', 'Le quotidien', 'Raconter, prendre rendez-vous, parler de ses loisirs et du passé'],
+    ['B1', 'L\'autonomie', 'Donner son avis, raconter une histoire, régler un problème']];
+  const status = levelStatus(themeIndex);
+  let currentMarked = false;
+  const unitHtml = (t, idx) => {
+    const hueCls = `u-${hueOf(idx)}`;
+    if (t.status !== 'ready') {
+      return `<section class="unit locked"><div class="unit-head">${icon(t.icon || 'lock')}<span><small>Unité ${idx + 1} · ${esc(t.level)}</small><strong>${esc(t.nl)}</strong><small>${esc(t.fr)}</small></span>${icon('lock')}</div></section>`;
+    }
+    const th = themes[t.id];
+    const p = themeProgress(th);
+    const nodes = th.steps.map((s, k) => {
+      const done = store.stepDone(t.id, s.id);
+      const isCurrent = !done && !currentMarked;
+      if (isCurrent) currentMarked = true;
+      return `<div class="node-wrap ${isCurrent ? 'has-tip' : ''}" style="--x:${ZIGZAG[k % ZIGZAG.length]}px">
+        ${isCurrent ? '<span class="start-tip">Commencer</span>' : ''}
+        <a class="node ${done ? 'done' : isCurrent ? 'current' : ''} ${s.type === 'task' ? 'task' : ''}" href="#/step/${t.id}/${s.id}" aria-label="${esc(s.title)}">${icon(done ? 'done' : s.type)}</a>
+        <span class="node-label">${esc(s.title)}</span>
+        ${done ? stars(starsFor(done.score)) : `<small>${STEP_KIND[s.type]} · ${stepMinutes(s, th)} min</small>`}
+      </div>`;
+    }).join('');
+    return `<section class="unit ${hueCls}">
+      <a class="unit-head" href="#/theme/${t.id}">${icon(th.icon || t.icon || 'wave')}<span><small>Unité ${idx + 1} · ${esc(t.level)} · ${p.steps}/${p.totalSteps} étapes</small><strong>${esc(th.nl)}</strong><small>${esc(th.fr)}</small></span><span class="btn small">Voir</span></a>
+      <div class="nodes">${nodes}${idx === 0 ? `<div class="map-kees">${kees('happy', 70)}</div>` : ''}</div>
+    </section>`;
+  };
+  view.className = 'view';
+  view.innerHTML = `
+    <header class="hello"><p class="eyebrow">Votre chemin</p><h1>Parcours</h1>
+      <p class="lead">${themeIndex.length} unités, du premier « goeiedag » au niveau B1. Chaque étape dure 5 à 15 minutes.</p></header>
+    ${levels.map(([lvl, title, sub]) => {
+      const units = themeIndex.map((t, i) => [t, i]).filter(([t]) => t.level === lvl);
+      const L = status[lvl] || { passed: 0, total: units.length };
+      return `<div class="level-banner"><span class="lvl-pill">${lvl}</span><span><strong>${title}</strong><small>${sub}</small></span></div>
+        ${units.map(([t, i]) => unitHtml(t, i)).join('')}
+        <div class="nodes"><div class="node-wrap"><a class="node trophy" href="#/certificate/${lvl}" aria-label="Attestation ${lvl}">${icon('trophy')}</a>
+          <span class="node-label">Attestation ${lvl}</span><small>${L.passed}/${L.total} unités validées</small></div></div>`;
+    }).join('')}`;
+}
+
+// ---------- theme page ----------
 
 async function themePage(id) {
-  setNav('home');
+  setNav('path');
+  view.className = 'view';
   const t = await loadTheme(id);
   const next = nextStep(t);
   const check = store.getCheck(id);
   const custom = id.startsWith('q-');
   view.innerHTML = `
-    <a class="back" href="${custom ? '#/practice/lessons' : '#/'}">‹ ${custom ? 'Mes leçons' : 'Accueil'}</a>
-    <header class="theme-head">
+    <a class="back" href="${custom ? '#/practice/lessons' : '#/path'}">‹ ${custom ? 'Mes leçons' : 'Parcours'}</a>
+    <header class="theme-banner u-${custom ? 'plum' : hue(id)}">
+      ${icon(t.icon || (custom ? 'grammar' : 'wave'))}
       <p class="eyebrow">${esc(t.level || '')}${t.level ? ' · ' : ''}${esc(t.fr)}</p>
-      <h1>${esc(t.nl)}</h1>
-      <p class="lead">${esc(t.intro)}</p>
+      <h1 lang="nl">${esc(t.nl)}</h1>
+      <p>${esc(t.intro)}</p>
+      ${next ? `<a class="btn" href="#/step/${id}/${next.id}" style="justify-self:start">${store.stepDone(id, t.steps[0].id) ? 'Continuer' : 'Commencer'} : ${esc(next.title)}</a>` : ''}
     </header>
 
     ${t.question ? `<div class="tip asked"><small>Votre question</small><p>${esc(t.question)}</p></div>` : ''}
     ${t.answer?.length ? `<h2 class="section">La réponse</h2><div class="answer-text">${t.answer.map((p) => `<p>${esc(p)}</p>`).join('')}</div>` : ''}
 
-    ${t.cando?.length ? `<h2 class="section">Objectifs</h2>
-    <ul class="goals">${t.cando.map((c, k) => `<li class="${check?.cando?.[k] ? 'met' : ''}">${esc(c)}</li>`).join('')}</ul>` : ''}
+    ${t.cando?.length ? `<h2 class="section">À la fin de l'unité, je peux…</h2>
+    <ul class="goals">${t.cando.map((c, k) => `<li class="${check?.cando?.[k] ? 'met' : ''}">${esc(c.replace(/^Je peux /, ''))}</li>`).join('')}</ul>` : ''}
 
     <h2 class="section">Étapes</h2>
     <ol class="path">
       ${t.steps.map((s, k) => {
         const done = store.stepDone(id, s.id);
         const state = done ? 'done' : s === next ? 'next' : '';
-        const count = s.type === 'words' ? ` · ${s.items.length}` : '';
+        const count = s.type === 'words' ? ` · ${s.items.length} mots` : '';
         return `<li class="${state}"><a href="#/step/${id}/${s.id}">
-          <span class="stepicon"><svg viewBox="0 0 24 24">${done ? STEP_ICON.done : STEP_ICON[s.type]}</svg></span>
+          <span class="stepicon">${icon(done ? 'done' : s.type)}</span>
           <span><small>${k + 1} · ${STEP_KIND[s.type]}${count} · ≈ ${stepMinutes(s, t)} min</small><strong>${esc(s.title)}</strong></span>
-          <em>${done ? (s.type === 'checkpoint' && check ? `${Math.round(check.score * 10)}/10` : 'refaire') : s === next ? 'commencer' : ''}</em></a></li>`;
+          <em>${done ? `${stars(starsFor(done.score))}<span>refaire</span>` : s === next ? 'commencer' : ''}</em></a></li>`;
       }).join('')}
     </ol>
 
     <div id="theme-feedback"></div>
 
-    <h2 class="section">Vocabulaire du thème</h2>
+    ${t.culture ? `<h2 class="section">Vlaanderen</h2><div class="group culture"><strong>${esc(t.culture.title)}</strong><p class="small">${esc(t.culture.text)}</p></div>` : ''}
+
+    <h2 class="section">Vocabulaire de l'unité</h2>
     <ul class="words">
       ${t.items.map((it) => { const s = wordStatus(id, it.id); return `
         <li>${speakButton(id, it.id, it.nl)}
@@ -212,10 +292,42 @@ async function showFeedback(themeId) {
   sync.markSeen(rows.filter((r) => !r.seen_at).map((r) => r.id)).catch(() => {});
 }
 
+// ---------- vocabulary: everything met so far, searchable ----------
+
+async function vocab() {
+  setNav('vocab');
+  view.className = 'view';
+  const sources = [...readyThemes().map((t) => t.id), 'perso', 'stan', ...(store.db().customLessons || []).map((l) => l.id)];
+  const all = (await Promise.all(sources.map((id) => loadTheme(id).catch(() => null)))).filter(Boolean)
+    .flatMap((t) => t.items.map((it) => ({ ...it, theme: t.id, themeName: t.nl, status: wordStatus(t.id, it.id) })));
+  const counts = { known: 0, learning: 0, new: 0 };
+  all.forEach((w) => counts[w.status]++);
+  view.innerHTML = `
+    <header class="hello"><p class="eyebrow">${all.length} mots et expressions</p><h1>Vocabulaire</h1></header>
+    <div class="vocab-tools">
+      <input id="q" class="field" type="search" placeholder="Chercher en néerlandais ou en français…" autocomplete="off">
+      <select id="f" class="field small-field"><option value="">Tous</option><option value="learning">en cours (${counts.learning})</option><option value="known">acquis (${counts.known})</option><option value="new">pas encore vus (${counts.new})</option></select>
+    </div>
+    <ul class="words" id="list"></ul>`;
+  const draw = () => {
+    const q = norm(document.getElementById('q').value);
+    const f = document.getElementById('f').value;
+    const list = all.filter((w) => (!f || w.status === f) && (!q || norm(w.nl).includes(q) || norm(w.fr).includes(q)));
+    document.getElementById('list').innerHTML = list.map((w) => `
+      <li>${speakButton(w.theme, w.id, w.nl)}<span><strong lang="nl">${esc(w.nl)}</strong><small>${esc(w.fr)} · ${esc(w.themeName)}</small></span>
+        <span class="dot ${w.status}">${{ new: 'nouveau', learning: 'en cours', known: 'acquis' }[w.status]}</span></li>`).join('')
+      || '<li><span class="small">Aucun mot ne correspond.</span></li>';
+  };
+  document.getElementById('q').oninput = draw;
+  document.getElementById('f').onchange = draw;
+  draw();
+}
+
 // ---------- progress ----------
 
 async function progress() {
   setNav('progress');
+  view.className = 'view';
   await Promise.all(readyThemes().map((t) => loadTheme(t.id)));
   const cards = Object.entries(store.db().cards);
   const wordCards = cards.filter(([k]) => !k.includes('#'));
@@ -225,6 +337,7 @@ async function progress() {
   for (let i = 27; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); days.push(store.db().days[store.dayKey(d)] || 0); }
   const max = Math.max(1, ...days);
   const canDo = readyThemes().flatMap((t) => (store.getCheck(t.id)?.cando || []).filter(Boolean)).length;
+  const totalStars = readyThemes().reduce((a, t) => a + themes[t.id].steps.reduce((b, s) => b + starsFor(store.stepDone(t.id, s.id)?.score ?? null), 0), 0);
 
   view.innerHTML = `
     <header class="hello"><p class="eyebrow">Votre parcours</p><h1>Progrès</h1></header>
@@ -232,32 +345,35 @@ async function progress() {
       <div class="stat"><span>${wordCards.length}</span><small>mots et expressions</small></div>
       <div class="stat"><span>${store.streak()}</span><small>jours d'affilée</small></div>
       <div class="stat"><span>${cards.length ? Math.round(avgR * 100) + ' %' : '—'}</span><small>mémoire estimée</small></div>
+      <div class="stat"><span>${totalStars} ★</span><small>étoiles gagnées</small></div>
       <div class="stat"><span>${canDo}</span><small>« je peux… » acquis</small></div>
     </div>
     <h2 class="section">Les 4 dernières semaines</h2>
     <div class="heat" role="img" aria-label="Activité des 28 derniers jours">
       ${days.map((n) => `<i style="--a:${n ? 0.25 + 0.75 * (n / max) : 0}" title="${n}"></i>`).join('')}
     </div>
-    <h2 class="section">Par thème</h2>
+    <h2 class="section">Par unité</h2>
     <ul class="themes">
       ${readyThemes().map((t) => { const p = themeProgress(themes[t.id]); const c = store.getCheck(t.id); return `
-        <li><a class="theme" href="#/theme/${t.id}"><span class="lvl">${esc(t.level)}</span>
+        <li><a class="theme" href="#/theme/${t.id}"><span class="lvl">${icon(themes[t.id].icon || 'wave')}</span>
           <span><strong>${esc(t.nl)}</strong><small>${p.steps}/${p.totalSteps} étapes · ${p.known} acquis · ${p.learning} en cours${c ? ` · bilan ${Math.round(c.score * 10)}/10` : ''}</small>
           <span class="bar"><i style="width:${p.pct}%"></i></span></span></a></li>`; }).join('')}
     </ul>
     <h2 class="section">Attestations</h2>
     <ul class="themes">${Object.entries(levelStatus(themeIndex)).map(([lvl, L]) => `
       <li><a class="theme" href="#/certificate/${lvl}"><span class="lvl">${lvl}</span>
-        <span><strong>Attestation ${lvl}</strong><small>${L.passed}/${L.total} thèmes validés${L.passed === L.total ? ' · disponible' : ''}</small>
+        <span><strong>Attestation ${lvl}</strong><small>${L.passed}/${L.total} unités validées${L.passed === L.total ? ' · disponible' : ''}</small>
         <span class="bar"><i style="width:${Math.round((L.passed / L.total) * 100)}%"></i></span></span></a></li>`).join('')}
     </ul>
-    <p class="fineprint">« Mémoire estimée » : la probabilité moyenne de retrouver aujourd'hui ce que vous avez appris, selon l'algorithme de répétition espacée. Un mot est « acquis » quand il tient au moins trois semaines.</p>`;
+    <p class="fineprint">« Mémoire estimée » : la probabilité moyenne de retrouver aujourd'hui ce que vous avez appris, selon l'algorithme de répétition espacée. Un mot est « acquis » quand il tient au moins trois semaines.</p>
+    <a class="btn wide" href="#/settings" style="margin-top:16px">${icon('settings')} Réglages</a>`;
 }
 
 // ---------- method: why the app works the way it does ----------
 
 function method() {
   setNav('settings');
+  view.className = 'view';
   const P = [
     ['Se tester plutôt que relire', 'Chercher une réponse dans sa mémoire la fait mieux tenir dans le temps que la relire. Presque chaque écran vous demande donc de retrouver quelque chose.', 'Roediger & Karpicke, 2006, Psychological Science'],
     ['Espacer les révisions', 'Répartir les révisions dans le temps plutôt que tout revoir d\'un coup est l\'un des effets les plus solides de la psychologie de l\'apprentissage. L\'application estime pour chaque mot le moment où vous risquez de l\'oublier et le fait revenir à ce moment-là (algorithme FSRS) ; à mesure que le mot s\'ancre, les intervalles s\'allongent.', 'Cepeda et al., 2006, Psychological Bulletin · Latimier, Peyre & Ramus, 2021, Educational Psychology Review · Ye, Su & Cao, 2022, KDD'],
@@ -280,25 +396,27 @@ function method() {
 
 function settings() {
   setNav('settings');
+  view.className = 'view';
   const u = sync.currentUser();
+  const st = store.db().settings;
   view.innerHTML = `
     <header class="hello"><p class="eyebrow">Application</p><h1>Réglages</h1></header>
     ${sync.enabled() ? `
       <h2 class="section">Compte</h2>
       <div class="group">
-        <p class="small">${u ? `Connecté : <strong>${esc(u.email)}</strong><br>Progression sauvegardée en ligne ${{ ok: '✓', pending: '(en cours…)', error: '— hors ligne, réessai automatique', off: '' }[sync.syncStatus()]}` : 'Non connecté.'}</p>
-        ${u ? '<a class="btn" id="teacher" href="#/teacher" hidden>Espace enseignant</a><button class="btn" id="logout">Se déconnecter</button>' : ''}
+        <p class="small">${u ? `Connectée : <strong>${esc(u.email)}</strong><br>Progression sauvegardée en ligne ${{ ok: '✓', pending: '(en cours…)', error: '— hors ligne, réessai automatique', off: '' }[sync.syncStatus()]}` : 'Non connecté.'}</p>
+        ${u ? `${isTeacher ? '<a class="btn" href="#/teacher">Espace enseignant</a>' : ''}<button class="btn" id="logout">Se déconnecter</button>` : ''}
       </div>` : ''}
     <h2 class="section">Mon apprentissage</h2>
     <div class="group">
-      <label class="row-setting">Prénom <input id="sname" class="field small-field" value="${esc(store.db().settings.name || '')}" placeholder="Votre prénom"></label>
+      <label class="row-setting">Prénom <input id="sname" class="field small-field" value="${esc(st.name || '')}" placeholder="Votre prénom"></label>
       <label class="row-setting">Objectif
-        <select id="sgoal">${[3, 4, 5, 7].map((n) => `<option value="${n}" ${n === (store.db().settings.weeklyGoal || 5) ? 'selected' : ''}>${n} jours / semaine</option>`).join('')}</select></label>
-      <label class="row-setting">Rappel quotidien <input id="stime" class="field small-field" type="time" value="${esc(store.db().settings.reminder || '19:00')}"></label>
+        <select id="sgoal">${[3, 4, 5, 7].map((n) => `<option value="${n}" ${n === (st.weeklyGoal || 5) ? 'selected' : ''}>${n} jours / semaine</option>`).join('')}</select></label>
+      <label class="row-setting">Rappel quotidien <input id="stime" class="field small-field" type="time" value="${esc(st.reminder || '19:00')}"></label>
       <button class="btn" id="scal">Ajouter le rappel à mon agenda</button>
       <label class="row-setting">Exercices oraux (reconnaissance vocale)
-        <select id="sspeak"><option value="on" ${store.db().settings.speaking !== false ? 'selected' : ''}>activés</option><option value="off" ${store.db().settings.speaking === false ? 'selected' : ''}>désactivés</option></select></label>
-      <p class="small">${speakingOn() ? 'La reconnaissance vocale fonctionne sur cet appareil.' : store.db().settings.speaking === false ? 'Les exercices oraux sont désactivés.' : 'La reconnaissance vocale n\'est pas disponible sur cet appareil (ou en pause pour une heure).'}</p>
+        <select id="sspeak"><option value="on" ${st.speaking !== false ? 'selected' : ''}>activés</option><option value="off" ${st.speaking === false ? 'selected' : ''}>désactivés</option></select></label>
+      <p class="small">${speakingOn() ? 'La reconnaissance vocale fonctionne sur cet appareil.' : st.speaking === false ? 'Les exercices oraux sont désactivés.' : 'La reconnaissance vocale n\'est pas disponible sur cet appareil (ou en pause pour une heure).'}</p>
     </div>
     <h2 class="section">Micro</h2>
     <div class="group">
@@ -314,12 +432,10 @@ function settings() {
     </div>
     <p class="fineprint">Version ${VERSION}</p>`;
 
-  if (u) sync.isTeacher().then((yes) => { const a = document.getElementById('teacher'); if (a && yes) a.hidden = false; }).catch(() => {});
   document.getElementById('logout')?.addEventListener('click', async () => { await sync.signOut(); location.hash = '#/'; boot(); });
   document.getElementById('mic').onclick = micTest;
-  const st = store.db().settings;
-  document.getElementById('sname').onchange = (e) => { st.name = e.target.value.trim(); store.save(); };
-  document.getElementById('sgoal').onchange = (e) => { st.weeklyGoal = Number(e.target.value); store.save(); };
+  document.getElementById('sname').onchange = (e) => { st.name = e.target.value.trim(); store.save(); renderChrome(); };
+  document.getElementById('sgoal').onchange = (e) => { st.weeklyGoal = Number(e.target.value); store.save(); renderChrome(); };
   document.getElementById('stime').onchange = (e) => { st.reminder = e.target.value; store.save(); };
   document.getElementById('scal').onclick = () => reminderFile(document.getElementById('stime').value);
   document.getElementById('sspeak').onchange = (e) => { st.speaking = e.target.value === 'on'; delete st.speakingPausedUntil; store.save(); settings(); };
@@ -330,7 +446,7 @@ function settings() {
     a.click();
   };
   document.getElementById('reset').onclick = () => {
-    if (confirm('Effacer la progression de cet appareil ? Si vous êtes connecté, elle reviendra depuis votre compte.')) { store.reset(); location.hash = '#/'; }
+    if (confirm('Effacer la progression de cet appareil ? Si vous êtes connectée, elle reviendra depuis votre compte.')) { store.reset(); location.hash = '#/'; }
   };
 }
 
@@ -357,23 +473,28 @@ async function micTest() {
 
 // ---------- router ----------
 
+const FOCUS_PRACTICE = /^(pron\/.+|paires|parler|dictee|ecoute\/.+|mywords\/learn|stan\/learn)$/;
+
 async function route() {
   stop();
   const [, page, a, b] = location.hash.split('/');
   window.scrollTo(0, 0);
+  setFocus(page === 'step' || (page === 'review' && !!a) || (page === 'practice' && FOCUS_PRACTICE.test([a, b].filter(Boolean).join('/'))));
   try {
     if (page === 'theme') await themePage(a);
-    else if (page === 'step') { setNav('home'); await runStep(await loadTheme(a), b); }
-    else if (page === 'review') { setNav('review'); await review(themes, loadTheme, a, b); setNav('review'); }
+    else if (page === 'path') await pathPage();
+    else if (page === 'step') { setNav('path'); view.className = 'view'; await runStep(await loadTheme(a), b); }
+    else if (page === 'review') { setNav('review'); view.className = 'view'; await review(themes, loadTheme, a, b); setNav('review'); }
+    else if (page === 'vocab') await vocab();
     else if (page === 'progress') await progress();
     else if (page === 'settings') settings();
     else if (page === 'method') method();
-    else if (page === 'certificate') { setNav('progress'); certificatePage(a, themeIndex); }
-    else if (page === 'teacher') { setNav('settings'); await teacherPage(a, { themeIndex, loadTheme }); }
-    else if (page === 'practice') { setNav('practice'); await practice(a, b, { themeIndex, loadTheme }); }
+    else if (page === 'certificate') { setNav('progress'); view.className = 'view'; certificatePage(a, themeIndex); }
+    else if (page === 'teacher') { setNav('teacher'); view.className = 'view'; await teacherPage(a, { themeIndex, loadTheme }); }
+    else if (page === 'practice') { setNav('practice'); view.className = 'view'; await practice(a, b, { themeIndex, loadTheme }); }
     else await home();
   } catch (e) {
-    view.innerHTML = `<div class="session end"><h1>Oups.</h1><p class="lead">Le contenu n'a pas pu être chargé. Vérifiez la connexion et réessayez.</p><a class="btn primary" href="#/">Accueil</a></div>`;
+    view.innerHTML = `<div class="session end">${keesSays('Oei!', 'Le contenu n\'a pas pu être chargé. Vérifiez la connexion et réessayez.', 'wow')}<a class="btn primary" href="#/">Accueil</a></div>`;
     console.error(e);
   }
 }
@@ -389,14 +510,15 @@ async function boot() {
       return;
     }
     if (user) {
+      sync.isTeacher().then((yes) => { isTeacher = yes; renderChrome(); }).catch(() => {});
       Promise.all([sync.pull(), sync.refreshLearnerData().catch(() => false)])
-        .then(([a, b]) => (a || b) && store.db().settings.onboarded && !/^#\/(step|review|practice\/(paires|parler|ecoute|dictee))/.test(location.hash) && route());
+        .then(([a, b]) => (a || b) && store.db().settings.onboarded && !document.body.classList.contains('focus') && route());
     }
   }
   if (!store.db().settings.onboarded) {
-    nav.hidden = true;
+    document.body.classList.add('locked');
     await onboarding(themeIndex, loadTheme);
-    nav.hidden = false;
+    document.body.classList.remove('locked');
     location.hash = '#/';
   }
   if (!routing) { window.addEventListener('hashchange', route); routing = true; }
@@ -407,9 +529,11 @@ async function init() {
   themeIndex = (await fetch('content/themes/index.json').then((r) => r.json())).themes;
   store.requestPersistence();
   sync.start();
+  store.onChange(() => { if (!document.body.classList.contains('focus')) renderChrome(); });
   if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
     navigator.serviceWorker.register('sw.js');
   }
+  renderChrome();
   boot();
 }
 

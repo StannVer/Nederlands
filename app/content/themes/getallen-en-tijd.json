@@ -1,0 +1,673 @@
+{
+  "id": "getallen-en-tijd",
+  "nl": "Getallen en tijd",
+  "fr": "Les nombres et l'heure",
+  "level": "A1",
+  "icon": "clock",
+  "intro": "Compter, dire un prix et un numéro de GSM, demander l'heure, dire quel jour on est. À la fin de ce thème, vous pouvez accepter l'invitation de Jef — le bon jour, à la bonne heure — et noter son numéro.",
+  "cando": [
+    "Je peux comprendre et dire les nombres de 0 à 100, un prix et un numéro de téléphone.",
+    "Je peux demander et dire l'heure.",
+    "Je peux dire quel jour on est et quand je fais quelque chose (le jardin, la télé).",
+    "Je peux fixer un moment simple : un jour et une heure."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Les nombres",
+      "items": [
+        "een-tot-vijf",
+        "zes-tot-tien",
+        "elf-twaalf-dertien",
+        "twintig-tot-vijftig",
+        "zestig-tot-honderd",
+        "eenentwintig",
+        "hoeveel-kost-het",
+        "mijn-nummer-is"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "Quelle heure est-il ?",
+      "items": [
+        "hoe-laat-is-het",
+        "het-is-uur",
+        "half",
+        "kwart-over",
+        "kwart-voor",
+        "om-uur",
+        "wanneer"
+      ]
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Les jours, les mois, les années",
+      "items": [
+        "maandag-tot-donderdag",
+        "vrijdag-tot-zondag",
+        "het-weekend",
+        "vandaag-morgen",
+        "de-voormiddag",
+        "s-avonds",
+        "maart-april-mei",
+        "de-jaren-tachtig"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "zijn, hebben — wij, jullie, zij"
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "Maandag werk ik : le verbe en 2e place"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "Une invitation de Jef"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : des nombres et un rendez-vous avec {teacher}"
+    }
+  ],
+  "items": [
+    {
+      "id": "een-tot-vijf",
+      "nl": "een, twee, drie, vier, vijf",
+      "fr": "1, 2, 3, 4, 5",
+      "ex_nl": "Ik tel: een, twee, drie.",
+      "ex_fr": "Je compte : un, deux, trois.",
+      "note": "0 = nul. « een » (1) se dit « één », avec un « é » long — on l'écrit parfois « één » pour ne pas le confondre avec « een » (un, l'article). « twee » : « tvé ». « vijf » : « ij » ≈ « èï »."
+    },
+    {
+      "id": "zes-tot-tien",
+      "nl": "zes, zeven, acht, negen, tien",
+      "fr": "6, 7, 8, 9, 10",
+      "ex_nl": "Een week heeft zeven dagen.",
+      "ex_fr": "Une semaine a sept jours.",
+      "note": "« zeven » : « zé-veun », « é » long. « acht » : « a » court + « ch » soufflé au fond de la gorge. « negen » : les deux « g » sont des souffles."
+    },
+    {
+      "id": "elf-twaalf-dertien",
+      "nl": "elf, twaalf, dertien",
+      "fr": "11, 12, 13",
+      "accept": [
+        "elf twaalf dertien"
+      ],
+      "ex_nl": "Het is twaalf uur.",
+      "ex_fr": "Il est midi.",
+      "note": "Ensuite c'est régulier, avec « -tien » : veertien (14), vijftien, zestien, zeventien, achttien, negentien (19). Écoutez la différence : « elf » a un « e » court, « twaalf » un « aa » long."
+    },
+    {
+      "id": "twintig-tot-vijftig",
+      "nl": "twintig, dertig, veertig, vijftig",
+      "fr": "20, 30, 40, 50",
+      "ex_nl": "Het kost twintig euro.",
+      "ex_fr": "Ça coûte vingt euros.",
+      "note": "« -tig » se dit à peu près « teuch ». Attention : dertig (30), pas « drietig » ; veertig (40), pas « viertig »."
+    },
+    {
+      "id": "zestig-tot-honderd",
+      "nl": "zestig, zeventig, tachtig, negentig, honderd",
+      "fr": "60, 70, 80, 90, 100",
+      "ex_nl": "Ik heb honderd tulpen.",
+      "ex_fr": "J'ai cent tulipes.",
+      "note": "Comme en Belgique francophone : un seul mot pour 70 et 90 (septante, nonante) — zeventig, negentig. Attention : 80 = tachtig, avec un « t » devant. 1000 = duizend."
+    },
+    {
+      "id": "eenentwintig",
+      "nl": "eenentwintig",
+      "fr": "21",
+      "accept": [
+        "een en twintig"
+      ],
+      "ex_nl": "Ik woon op nummer eenentwintig.",
+      "ex_fr": "J'habite au numéro 21.",
+      "note": "Le piège : l'unité vient d'abord ! 21 = « un-et-vingt ». 35 = vijfendertig, 68 = achtenzestig. Tout en un seul mot. 22 = tweeëntwintig (le tréma sépare « ee » et « en »)."
+    },
+    {
+      "id": "hoeveel-kost-het",
+      "nl": "Hoeveel kost het?",
+      "fr": "Combien ça coûte ?",
+      "accept": [
+        "hoeveel kost dat"
+      ],
+      "ex_nl": "Hoeveel kost de koffie?",
+      "ex_fr": "Combien coûte le café ?",
+      "note": "Les prix : 3,50 € = « drie euro vijftig ». « euro » reste au singulier : vijf euro. « oe » = « ou », « ee » = « é » long : « hou-vél »."
+    },
+    {
+      "id": "mijn-nummer-is",
+      "nl": "Mijn nummer is …",
+      "fr": "Mon numéro est …",
+      "accept": [
+        "mijn nummer is",
+        "mijn gsm-nummer is"
+      ],
+      "ex_nl": "Mijn GSM-nummer begint met nul vier.",
+      "ex_fr": "Mon numéro de GSM commence par 04.",
+      "note": "En Belgique, le portable s'appelle « de GSM » (dites « gé-ès-èm »), et son numéro commence par 04. On le dicte souvent par paires : 0472 35 18 60 = « nul vier tweeënzeventig, vijfendertig, achttien, zestig »."
+    },
+    {
+      "id": "hoe-laat-is-het",
+      "nl": "Hoe laat is het?",
+      "fr": "Quelle heure est-il ?",
+      "ex_nl": "Pardon, hoe laat is het?",
+      "ex_fr": "Pardon, quelle heure est-il ?",
+      "note": "Mot à mot : « comment tard est-il ? ». « laat » = tard, avec un « aa » long."
+    },
+    {
+      "id": "het-is-uur",
+      "nl": "Het is … uur.",
+      "fr": "Il est … heure(s).",
+      "accept": [
+        "het is uur"
+      ],
+      "ex_nl": "Het is tien uur.",
+      "ex_fr": "Il est dix heures.",
+      "note": "« uur » ne prend jamais de pluriel ici : drie uur, tien uur. « uu » = le « u » long français, suivi d'un « r »."
+    },
+    {
+      "id": "half",
+      "nl": "half drie",
+      "fr": "deux heures et demie (2 h 30)",
+      "accept": [
+        "het is half drie"
+      ],
+      "ex_nl": "Het is half drie.",
+      "ex_fr": "Il est deux heures et demie.",
+      "note": "LE piège ! « half drie » = « la moitié vers trois » = 2 h 30, pas 3 h 30. On regarde toujours l'heure qui vient. « a » court : « half »."
+    },
+    {
+      "id": "kwart-over",
+      "nl": "kwart over acht",
+      "fr": "huit heures et quart",
+      "accept": [
+        "kwart na acht",
+        "het is kwart over acht"
+      ],
+      "ex_nl": "Het is kwart over acht.",
+      "ex_fr": "Il est huit heures et quart.",
+      "note": "« over » = après. En Flandre on entend aussi « kwart na acht »."
+    },
+    {
+      "id": "kwart-voor",
+      "nl": "kwart voor negen",
+      "fr": "neuf heures moins le quart",
+      "accept": [
+        "het is kwart voor negen"
+      ],
+      "ex_nl": "De bus komt om kwart voor negen.",
+      "ex_fr": "Le bus arrive à neuf heures moins le quart.",
+      "note": "« voor » = avant. Même logique que « moins le quart », mais avec l'ordre inversé : d'abord le quart, puis l'heure."
+    },
+    {
+      "id": "om-uur",
+      "nl": "om … uur",
+      "fr": "à … heure(s)",
+      "accept": [
+        "om uur"
+      ],
+      "ex_nl": "Ik kijk om acht uur tv.",
+      "ex_fr": "Je regarde la télé à huit heures.",
+      "note": "« Het is acht uur » = il est huit heures ; « om acht uur » = à huit heures. Pour un rendez-vous, c'est toujours « om »."
+    },
+    {
+      "id": "wanneer",
+      "nl": "Wanneer?",
+      "fr": "Quand ?",
+      "ex_nl": "Wanneer werkt u in de tuin?",
+      "ex_fr": "Quand travaillez-vous au jardin ?",
+      "note": "Comme « waar » (où) et « hoe » (comment) : le mot interrogatif, puis le verbe, puis le sujet. Accent sur la fin : wan-NEER."
+    },
+    {
+      "id": "maandag-tot-donderdag",
+      "nl": "maandag, dinsdag, woensdag, donderdag",
+      "fr": "lundi, mardi, mercredi, jeudi",
+      "ex_nl": "Maandag werk ik in de tuin.",
+      "ex_fr": "Lundi, je travaille au jardin.",
+      "note": "Pas de majuscule, comme en français. « maandag » : « aa » long. « woensdag » : « oe » = « ou », « wouns-dach »."
+    },
+    {
+      "id": "vrijdag-tot-zondag",
+      "nl": "vrijdag, zaterdag, zondag",
+      "fr": "vendredi, samedi, dimanche",
+      "ex_nl": "Zondag kijk ik tv.",
+      "ex_fr": "Dimanche, je regarde la télé.",
+      "note": "« vrij » veut aussi dire « libre » : « Ik ben vrij » = je suis libre. « op zondag » = le dimanche (chaque dimanche)."
+    },
+    {
+      "id": "het-weekend",
+      "nl": "het weekend",
+      "fr": "le week-end",
+      "accept": [
+        "weekend",
+        "in het weekend"
+      ],
+      "ex_nl": "In het weekend luister ik naar muziek.",
+      "ex_fr": "Le week-end, j'écoute de la musique.",
+      "note": "Un mot anglais, prononcé presque à l'anglaise. On dit « in het weekend » : pendant le week-end."
+    },
+    {
+      "id": "vandaag-morgen",
+      "nl": "vandaag / morgen",
+      "fr": "aujourd'hui / demain",
+      "accept": [
+        "vandaag",
+        "morgen",
+        "vandaag morgen"
+      ],
+      "ex_nl": "Vandaag is het maandag.",
+      "ex_fr": "Aujourd'hui, on est lundi.",
+      "note": "« Tot morgen! » = à demain ! Le « g » de « morgen » est un souffle, et le « -en » final se dit « eu » : « mor-cheu »."
+    },
+    {
+      "id": "de-voormiddag",
+      "nl": "de voormiddag / de namiddag",
+      "fr": "le matin (la matinée) / l'après-midi",
+      "accept": [
+        "de voormiddag",
+        "de namiddag",
+        "voormiddag",
+        "namiddag"
+      ],
+      "ex_nl": "In de voormiddag werk ik in de tuin.",
+      "ex_fr": "Le matin, je travaille au jardin.",
+      "note": "Bien belge : aux Pays-Bas on dit « de ochtend » et « de middag ». Mot à mot : « l'avant-midi » et « l'après-midi » — facile pour un francophone !"
+    },
+    {
+      "id": "s-avonds",
+      "nl": "'s avonds",
+      "fr": "le soir",
+      "accept": [
+        "s avonds",
+        "savonds"
+      ],
+      "ex_nl": "'s Avonds kijk ik tv.",
+      "ex_fr": "Le soir, je regarde la télé.",
+      "note": "Le « 's » est un reste de « des » : « des soirs ». Dites « sa-vonts ». Même modèle : 's morgens (le matin), 's middags (le midi)."
+    },
+    {
+      "id": "maart-april-mei",
+      "nl": "maart, april, mei",
+      "fr": "mars, avril, mai",
+      "ex_nl": "In maart zaai ik tomaten.",
+      "ex_fr": "En mars, je sème des tomates.",
+      "note": "Les douze mois : januari, februari, maart, april, mei, juni, juli, augustus, september, oktober, november, december. Sans majuscule, et avec « in » : in mei = en mai. « mei » se dit « mèï »."
+    },
+    {
+      "id": "de-jaren-tachtig",
+      "nl": "de jaren tachtig",
+      "fr": "les années 80",
+      "accept": [
+        "de jaren negentig",
+        "jaren tachtig"
+      ],
+      "ex_nl": "Ik hou van muziek uit de jaren tachtig.",
+      "ex_fr": "J'aime la musique des années 80.",
+      "note": "Les années 90 = de jaren negentig. Une année se dit par centaines : 1985 = negentienhonderdvijfentachtig (« dix-neuf cent cinq-et-quatre-vingts »). Depuis 2000, comme en français : 2004 = tweeduizend vier."
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "zijn, hebben — wij, jullie, zij",
+      "explain": [
+        "Deux verbes irréguliers à apprendre par cœur : « zijn » (être) et « hebben » (avoir). Ils sont partout — même pour l'heure : « Het is drie uur. »",
+        "Au pluriel, c'est très simple : wij (nous), jullie (vous, plusieurs) et zij (ils / elles) prennent la forme de l'infinitif : wij wonen, jullie werken, zij hebben.",
+        "Avec « u », on dit « u bent » et « u hebt » (« u heeft » est correct aussi). À l'oral, « wij » devient souvent « we », et « zij » devient « ze »."
+      ],
+      "table": [
+        [
+          "ik ben — ik heb",
+          "je suis — j'ai"
+        ],
+        [
+          "je bent — je hebt",
+          "tu es — tu as"
+        ],
+        [
+          "u bent — u hebt",
+          "vous êtes — vous avez"
+        ],
+        [
+          "hij / zij is — hij / zij heeft",
+          "il / elle est — il / elle a"
+        ],
+        [
+          "wij zijn — wij hebben",
+          "nous sommes — nous avons"
+        ],
+        [
+          "jullie zijn — jullie hebben",
+          "vous êtes — vous avez (plusieurs)"
+        ],
+        [
+          "zij zijn — zij hebben",
+          "ils / elles sont — ils / elles ont"
+        ]
+      ],
+      "contrast": "En français, « vous » sert pour une personne polie ET pour plusieurs. Le néerlandais a deux mots : « u » (poli) et « jullie » (plusieurs personnes, entre amis). Et « zij » veut dire « elle » ou « ils / elles » : c'est le verbe qui tranche — zij is (elle est), zij zijn (ils sont).",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Wij ___ in Gent.",
+          "options": [
+            "woon",
+            "woont",
+            "wonen"
+          ],
+          "answer": "wonen",
+          "fr": "Nous habitons à Gand."
+        },
+        {
+          "type": "choice",
+          "nl": "Jef ___ een moestuin.",
+          "options": [
+            "heb",
+            "heeft",
+            "hebben"
+          ],
+          "answer": "heeft",
+          "fr": "Jef a un potager."
+        },
+        {
+          "type": "choice",
+          "nl": "Monia en Jef ___ buren.",
+          "options": [
+            "is",
+            "bent",
+            "zijn"
+          ],
+          "answer": "zijn",
+          "fr": "Monia et Jef sont voisins."
+        },
+        {
+          "type": "choice",
+          "nl": "Hoe laat ___ het?",
+          "options": [
+            "is",
+            "ben",
+            "zijn"
+          ],
+          "answer": "is",
+          "fr": "Quelle heure est-il ?"
+        },
+        {
+          "type": "choice",
+          "nl": "Jullie ___ graag in de tuin.",
+          "options": [
+            "werkt",
+            "werken"
+          ],
+          "answer": "werken",
+          "fr": "Vous aimez travailler au jardin.",
+          "why": "Avec « jullie », le verbe prend la forme de l'infinitif : werken."
+        },
+        {
+          "type": "order",
+          "nl": "Wij hebben een tuin.",
+          "fr": "Nous avons un jardin."
+        }
+      ]
+    },
+    "g2": {
+      "title": "Maandag werk ik : le verbe en 2e place",
+      "explain": [
+        "Dans une phrase qui n'est pas une question, le verbe est TOUJOURS le deuxième élément.",
+        "Si la phrase commence par un mot de temps (vandaag, maandag, om acht uur, 's avonds…), ce mot prend la première place. Le verbe reste deuxième — et le sujet passe donc après le verbe.",
+        "Pas de virgule après le mot de temps : « Maandag werk ik. »"
+      ],
+      "table": [
+        [
+          "Ik werk maandag.",
+          "Je travaille lundi."
+        ],
+        [
+          "Maandag werk ik.",
+          "Lundi, je travaille."
+        ],
+        [
+          "Om acht uur kijk ik tv.",
+          "À huit heures, je regarde la télé."
+        ],
+        [
+          "Vandaag is het zondag.",
+          "Aujourd'hui, on est dimanche."
+        ]
+      ],
+      "contrast": "En français, on dit « Lundi, je travaille » : le sujet reste devant le verbe. En néerlandais, « Maandag ik werk » est faux : le verbe garde la 2e place, donc « Maandag werk ik ».",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Maandag ___ in de tuin.",
+          "options": [
+            "werk ik",
+            "ik werk"
+          ],
+          "answer": "werk ik",
+          "fr": "Lundi, je travaille au jardin."
+        },
+        {
+          "type": "choice",
+          "nl": "'s Avonds ___ naar Plus belle la vie.",
+          "options": [
+            "ik kijk",
+            "kijk ik"
+          ],
+          "answer": "kijk ik",
+          "fr": "Le soir, je regarde Plus belle la vie."
+        },
+        {
+          "type": "order",
+          "nl": "Vandaag is het zondag.",
+          "fr": "Aujourd'hui, on est dimanche."
+        },
+        {
+          "type": "choice",
+          "nl": "Om negen uur ___ in de tuin.",
+          "options": [
+            "is Jef",
+            "Jef is"
+          ],
+          "answer": "is Jef",
+          "fr": "À neuf heures, Jef est au jardin."
+        },
+        {
+          "type": "order",
+          "nl": "In maart zaai ik tomaten.",
+          "fr": "En mars, je sème des tomates."
+        },
+        {
+          "type": "order",
+          "nl": "Zaterdag hebben wij een barbecue.",
+          "fr": "Samedi, nous faisons un barbecue."
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "Een uitnodiging — Une invitation",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Jef",
+        "nl": "Dag Monia! Hoe gaat het?",
+        "fr": "Bonjour Monia ! Comment ça va ?"
+      },
+      {
+        "id": "d02",
+        "who": "Monia",
+        "nl": "Goed, dank u. En met u?",
+        "fr": "Bien, merci. Et vous ?"
+      },
+      {
+        "id": "d03",
+        "who": "Jef",
+        "nl": "Goed! Zaterdag hebben wij een barbecue. Komt u ook?",
+        "fr": "Bien ! Samedi, nous faisons un barbecue. Vous venez aussi ?"
+      },
+      {
+        "id": "d04",
+        "who": "Monia",
+        "nl": "Ja, graag! Hoe laat?",
+        "fr": "Oui, avec plaisir ! À quelle heure ?"
+      },
+      {
+        "id": "d05",
+        "who": "Jef",
+        "nl": "Om zes uur, in mijn tuin. Lotte komt ook, met muziek uit de jaren tachtig!",
+        "fr": "À six heures, dans mon jardin. Lotte vient aussi, avec de la musique des années 80 !"
+      },
+      {
+        "id": "d06",
+        "who": "Monia",
+        "nl": "Amai, super! Zaterdag om zes uur.",
+        "fr": "Oh, super ! Samedi à six heures."
+      },
+      {
+        "id": "d07",
+        "who": "Jef",
+        "nl": "Mijn nummer is nul vier tweeënzeventig, vijfendertig, achttien, zestig.",
+        "fr": "Mon numéro, c'est le 0472 35 18 60."
+      },
+      {
+        "id": "d08",
+        "who": "Monia",
+        "nl": "Nul vier tweeënzeventig… vijfendertig, achttien, zestig?",
+        "fr": "Zéro quatre septante-deux… trente-cinq, dix-huit, soixante ?"
+      },
+      {
+        "id": "d09",
+        "who": "Jef",
+        "nl": "Juist! Tot zaterdag, Monia!",
+        "fr": "C'est ça ! À samedi, Monia !"
+      },
+      {
+        "id": "d10",
+        "who": "Monia",
+        "nl": "Tot zaterdag, Jef!",
+        "fr": "À samedi, Jef !"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel jour a lieu le barbecue ?",
+        "options": [
+          "Vendredi",
+          "Samedi",
+          "Dimanche"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "À quelle heure ?",
+        "options": [
+          "À 18 h",
+          "À 16 h",
+          "À 20 h"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qui apporte de la musique ?",
+        "options": [
+          "Jef",
+          "Monia",
+          "Lotte"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Le numéro de Jef :",
+        "options": [
+          "0472 53 81 60",
+          "0472 35 18 60",
+          "0427 35 18 16"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "Le truc de Kees pour « half »",
+      "text": "Kees, le nain de jardin, regarde toujours vers l'heure suivante : « half drie », c'est à mi-chemin vers trois heures — donc 2 h 30. Et « half negen » = 8 h 30, l'heure du café du matin."
+    },
+    {
+      "title": "Dire les années",
+      "text": "Par centaines, comme en anglais : l'album « D'eux » de Céline Dion date de 1995 = negentienhonderdvijfennegentig. Depuis 2000, c'est plus court : Plus belle la vie a commencé en 2004 = tweeduizend vier."
+    },
+    {
+      "title": "Septante ? Zeventig !",
+      "text": "Bonne nouvelle : le néerlandais est aussi logique que le « septante » et le « nonante » des Belges — zeventig (70), tachtig (80), negentig (90). Seule difficulté : l'unité en premier, eenentwintig = « un-et-vingt »."
+    }
+  ],
+  "culture": {
+    "title": "L'heure en Flandre",
+    "text": "À l'écrit, les heures suivent le système de 24 heures : sur une affiche, « 18.00 u » ou « 18u » (« u » = uur). À l'oral, entre voisins, on dit plutôt « om zes uur » et on ajoute « 's avonds » si ce n'est pas clair. Et quand un Flamand vous invite « om zes uur », arrivez à l'heure : la ponctualité compte !"
+  },
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — s'entraîner avec de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Cherchez des exercices sur l'heure et les nombres, au niveau le plus bas."
+    },
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Vidéos et exercices gratuits, avec explications en français."
+    },
+    {
+      "kind": "lecture",
+      "title": "Wablieft — le journal en néerlandais facile",
+      "url": "https://www.wablieft.be",
+      "level": "A2+",
+      "note": "À garder pour plus tard. Petit défi dès maintenant : repérez les dates et les prix dans un article."
+    }
+  ],
+  "task": {
+    "scenario": "Avec {teacher}, en deux temps. D'abord il vous dicte cinq numéros de GSM et des prix : notez-les en chiffres, puis relisez-les-lui en néerlandais. Ensuite, fixez ensemble le jour et l'heure de votre prochaine leçon — uniquement en néerlandais. Bonus : dites-lui quand vous travaillez au jardin et quand vous regardez la télé.",
+    "goals": [
+      "Comprendre et noter cinq numéros de téléphone et quelques prix",
+      "Relire les numéros à voix haute, par paires",
+      "Demander « Wanneer? » et « Hoe laat? » et proposer un jour et une heure",
+      "Confirmer le rendez-vous (« Zaterdag om tien uur. »)",
+      "Dire une ou deux habitudes avec un mot de temps en tête (« 's Avonds kijk ik tv. »)"
+    ],
+    "phrases": [
+      "mijn-nummer-is",
+      "hoeveel-kost-het",
+      "hoe-laat-is-het",
+      "het-is-uur",
+      "half",
+      "om-uur",
+      "wanneer",
+      "maandag-tot-donderdag",
+      "vrijdag-tot-zondag",
+      "de-voormiddag",
+      "s-avonds"
+    ],
+    "prepare": "Écrivez votre propre numéro en mots, par paires, et lisez-le à voix haute. Préparez deux phrases sur votre semaine qui commencent par un mot de temps (« In de voormiddag… », « 's Avonds… »). Révisez 21–99 : l'unité d'abord !",
+    "perform": "Maintenant, faites-le en vrai avec {teacher}, sans lire vos notes. S'il va trop vite, dites « Sorry, nog een keer? » (pardon, encore une fois ?) — c'est permis, et très flamand.",
+    "record": "Vous pouvez aussi vous enregistrer en lisant votre numéro et vos deux phrases, et lui envoyer l'enregistrement : il vous répondra ici."
+  }
+}

@@ -1,0 +1,703 @@
+{
+  "id": "op-cafe",
+  "nl": "Op café",
+  "fr": "Au café",
+  "level": "A1",
+  "icon": "coffee",
+  "intro": "Commander un café, un pintje ou un croque en terrasse, dire ce que vous ne voulez pas et demander l'addition. À la fin de ce thème, vous pouvez vous asseoir sur une terrasse flamande avec Lotte et Jef — et commander vous-même.",
+  "cando": [
+    "Je peux commander à boire et à manger dans un café.",
+    "Je peux demander l'addition et payer, ensemble ou séparément.",
+    "Je peux dire ce que je ne veux pas (« sans sucre », « pas de lait »).",
+    "Je peux comprendre les questions du serveur."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Qu'est-ce que vous buvez ?",
+      "items": [
+        "de-koffie",
+        "de-thee",
+        "plat-water",
+        "spuitwater",
+        "het-bier",
+        "een-pintje",
+        "de-wijn",
+        "de-frisdrank"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "Commander",
+      "items": [
+        "een-tafel-voor-twee",
+        "de-kaart",
+        "wat-neemt-u",
+        "ik-neem",
+        "voor-mij",
+        "een-croque",
+        "het-broodje",
+        "de-soep"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "Ik wil … betalen"
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Sans sucre, s'il vous plaît",
+      "items": [
+        "met-melk",
+        "zonder-suiker",
+        "lekker",
+        "mag-ik",
+        "nog-een",
+        "schol",
+        "de-rekening",
+        "samen-of-apart"
+      ]
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "niet ou geen ?"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "En terrasse"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : commandez chez {teacher}"
+    }
+  ],
+  "items": [
+    {
+      "id": "de-koffie",
+      "nl": "de koffie",
+      "fr": "le café",
+      "accept": [
+        "koffie",
+        "een koffie",
+        "een tas koffie"
+      ],
+      "ex_nl": "Een koffie, alstublieft.",
+      "ex_fr": "Un café, s'il vous plaît.",
+      "note": "« oe » se dit « ou » : « kou-fi ». En Flandre on boit « een tas koffie » (une tasse) ; aux Pays-Bas, « een kopje koffie »."
+    },
+    {
+      "id": "de-thee",
+      "nl": "de thee",
+      "fr": "le thé",
+      "accept": [
+        "thee",
+        "een thee"
+      ],
+      "ex_nl": "Voor Lotte een thee, alstublieft.",
+      "ex_fr": "Pour Lotte, un thé, s'il vous plaît.",
+      "note": "Facile : « th » se dit « t » et « ee » est un « é » long. « Thee » sonne presque comme « thé »."
+    },
+    {
+      "id": "plat-water",
+      "nl": "plat water",
+      "fr": "de l'eau plate",
+      "accept": [
+        "het water",
+        "water"
+      ],
+      "ex_nl": "Een glas plat water, alstublieft.",
+      "ex_fr": "Un verre d'eau plate, s'il vous plaît.",
+      "note": "« het water » est un mot en « het ». « plat » se dit comme en français, mais avec le « t » final bien prononcé."
+    },
+    {
+      "id": "spuitwater",
+      "nl": "het spuitwater",
+      "fr": "l'eau pétillante",
+      "accept": [
+        "spuitwater",
+        "een spuitwater"
+      ],
+      "ex_nl": "Een spuitwater voor mij, alstublieft.",
+      "ex_fr": "Une eau pétillante pour moi, s'il vous plaît.",
+      "note": "Mot belge : « spuiten » = gicler. Aux Pays-Bas on dit « bruisend water ». « ui » : partez de « eu » et glissez vers « i »."
+    },
+    {
+      "id": "het-bier",
+      "nl": "het bier",
+      "fr": "la bière",
+      "accept": [
+        "bier",
+        "een bier"
+      ],
+      "ex_nl": "Jef drinkt een bier.",
+      "ex_fr": "Jef boit une bière.",
+      "note": "Attention : « la bière » mais « het bier ». « ie » = « i » français : « bir »."
+    },
+    {
+      "id": "een-pintje",
+      "nl": "een pintje",
+      "fr": "un demi (bière pression)",
+      "accept": [
+        "pintje",
+        "het pintje"
+      ],
+      "ex_nl": "Een pintje voor Jef, alstublieft.",
+      "ex_fr": "Un demi pour Jef, s'il vous plaît.",
+      "note": "Très flamand : une pils au fût, souvent 25 cl. « -tje » veut dire « petit » — un mot en « -tje » est toujours « het » : het pintje."
+    },
+    {
+      "id": "de-wijn",
+      "nl": "de wijn",
+      "fr": "le vin",
+      "accept": [
+        "wijn",
+        "een glas wijn"
+      ],
+      "ex_nl": "Lotte neemt een glas wijn.",
+      "ex_fr": "Lotte prend un verre de vin.",
+      "note": "« ij » se dit à peu près « èï ». Rouge = rood, blanc = wit : « rode wijn », « witte wijn » (le « -e » ajouté : thème 6)."
+    },
+    {
+      "id": "de-frisdrank",
+      "nl": "de frisdrank",
+      "fr": "la boisson fraîche, le soda",
+      "accept": [
+        "frisdrank",
+        "een frisdrank"
+      ],
+      "ex_nl": "Hebt u ook frisdrank?",
+      "ex_fr": "Avez-vous aussi des sodas ?",
+      "note": "Le mot général. Au café on commande souvent la marque : « een cola », « een Fanta »."
+    },
+    {
+      "id": "een-tafel-voor-twee",
+      "nl": "Een tafel voor twee, alstublieft.",
+      "fr": "Une table pour deux, s'il vous plaît.",
+      "accept": [
+        "een tafel voor twee",
+        "een tafeltje voor twee"
+      ],
+      "ex_nl": "Hebt u een tafel voor twee?",
+      "ex_fr": "Avez-vous une table pour deux ?",
+      "note": "On entend souvent « een tafeltje » (une petite table) : en Flandre, le « -tje » rend tout plus gentil. En terrasse = « op het terras »."
+    },
+    {
+      "id": "de-kaart",
+      "nl": "de kaart",
+      "fr": "la carte (le menu)",
+      "accept": [
+        "kaart"
+      ],
+      "ex_nl": "Mag ik de kaart, alstublieft?",
+      "ex_fr": "Puis-je avoir la carte, s'il vous plaît ?",
+      "note": "« aa » = « a » long. Le même mot sert pour une carte postale ou une carte routière."
+    },
+    {
+      "id": "wat-neemt-u",
+      "nl": "Wat neemt u?",
+      "fr": "Que prenez-vous ?",
+      "accept": [
+        "wat neem je",
+        "wat mag het zijn"
+      ],
+      "ex_nl": "Goeiedag, wat neemt u?",
+      "ex_fr": "Bonjour, que prenez-vous ?",
+      "note": "La question du serveur. Il dit aussi « Wat mag het zijn? » (Qu'est-ce que ce sera ?). Entre amis : « Wat neem je? » — le « -t » tombe après « je » (thème 1)."
+    },
+    {
+      "id": "ik-neem",
+      "nl": "Ik neem …",
+      "fr": "Je prends …",
+      "accept": [
+        "ik neem"
+      ],
+      "ex_nl": "Ik neem een koffie.",
+      "ex_fr": "Je prends un café.",
+      "note": "ik neem — u neemt — hij neemt. Dans un magasin, on dit plutôt « Ik had graag … » (thème 4) ; au café, les deux marchent."
+    },
+    {
+      "id": "voor-mij",
+      "nl": "Voor mij …",
+      "fr": "Pour moi …",
+      "accept": [
+        "voor mij"
+      ],
+      "ex_nl": "Voor mij een spuitwater.",
+      "ex_fr": "Pour moi, une eau pétillante.",
+      "note": "Pas besoin de verbe : c'est la façon la plus simple de commander. « oo » = « o » long, « ij » = « èï »."
+    },
+    {
+      "id": "een-croque",
+      "nl": "een croque monsieur",
+      "fr": "un croque-monsieur",
+      "accept": [
+        "een croque",
+        "croque monsieur",
+        "een croque-monsieur"
+      ],
+      "ex_nl": "Ik neem een croque monsieur.",
+      "ex_fr": "Je prends un croque-monsieur.",
+      "note": "Un classique des cafés flamands, prononcé à la française ! On dit souvent juste « een croque »."
+    },
+    {
+      "id": "het-broodje",
+      "nl": "het broodje",
+      "fr": "le petit pain, le sandwich",
+      "accept": [
+        "broodje",
+        "een broodje"
+      ],
+      "ex_nl": "Jef neemt een broodje kaas.",
+      "ex_fr": "Jef prend un sandwich au fromage.",
+      "note": "« brood » (le pain) + « -je » = petit pain. « Een broodje kaas » : pas de « au » en néerlandais, le mot suit simplement."
+    },
+    {
+      "id": "de-soep",
+      "nl": "de soep",
+      "fr": "la soupe",
+      "accept": [
+        "soep",
+        "een soep"
+      ],
+      "ex_nl": "Ik neem de soep van de dag.",
+      "ex_fr": "Je prends la soupe du jour.",
+      "note": "« oe » = « ou » : « soup ». Dans beaucoup de cafés flamands, il y a une « soep van de dag » à midi."
+    },
+    {
+      "id": "met-melk",
+      "nl": "met melk",
+      "fr": "avec du lait",
+      "accept": [
+        "met wat melk"
+      ],
+      "ex_nl": "Een koffie met melk, alstublieft.",
+      "ex_fr": "Un café au lait, s'il vous plaît.",
+      "note": "Pas de « du » : « met melk » = avec (du) lait. Le « l » de « melk » est plus sombre qu'en français."
+    },
+    {
+      "id": "zonder-suiker",
+      "nl": "zonder suiker",
+      "fr": "sans sucre",
+      "accept": [
+        "zonder suiker alstublieft"
+      ],
+      "ex_nl": "Een thee zonder suiker, alstublieft.",
+      "ex_fr": "Un thé sans sucre, s'il vous plaît.",
+      "note": "« ui » encore (partez de « eu », glissez vers « i ») — jamais « su-i » comme dans « suis ». « zonder » = sans, « met » = avec."
+    },
+    {
+      "id": "lekker",
+      "nl": "lekker",
+      "fr": "bon, délicieux",
+      "ex_nl": "De soep is heel lekker.",
+      "ex_fr": "La soupe est très bonne.",
+      "note": "Pour tout ce qui se mange et se boit — et même pour le temps : « lekker weer » (il fait bon). Le contraire : « niet lekker »."
+    },
+    {
+      "id": "mag-ik",
+      "nl": "Mag ik …?",
+      "fr": "Puis-je avoir … ?",
+      "accept": [
+        "mag ik"
+      ],
+      "ex_nl": "Mag ik een glas water?",
+      "ex_fr": "Puis-je avoir un verre d'eau ?",
+      "note": "La formule polie pour demander quelque chose. « mogen » = avoir la permission. En Flandre, pas besoin d'ajouter « hebben » (avoir) à la fin."
+    },
+    {
+      "id": "nog-een",
+      "nl": "Nog een …, alstublieft.",
+      "fr": "Encore un …, s'il vous plaît.",
+      "accept": [
+        "nog een",
+        "nog eentje"
+      ],
+      "ex_nl": "Nog een pintje, alstublieft!",
+      "ex_fr": "Encore un demi, s'il vous plaît !",
+      "note": "Le serveur demande parfois : « Nog eentje? » (Encore un ?). Jef répond toujours oui."
+    },
+    {
+      "id": "schol",
+      "nl": "Schol!",
+      "fr": "Santé !",
+      "accept": [
+        "gezondheid",
+        "santé"
+      ],
+      "ex_nl": "Schol, Lotte! Schol, Jef!",
+      "ex_fr": "Santé, Lotte ! Santé, Jef !",
+      "note": "« sch » = « s » + le « g » de la gorge. En Flandre on entend aussi « Santé! », en français. « Gezondheid! » se dit surtout quand quelqu'un éternue."
+    },
+    {
+      "id": "de-rekening",
+      "nl": "de rekening",
+      "fr": "l'addition",
+      "accept": [
+        "rekening",
+        "de rekening alstublieft"
+      ],
+      "ex_nl": "De rekening, alstublieft!",
+      "ex_fr": "L'addition, s'il vous plaît !",
+      "note": "Vient de « rekenen » (calculer) : c'est le compte. Plus poli : « Mag ik de rekening? ». Le même mot veut aussi dire « compte en banque »."
+    },
+    {
+      "id": "samen-of-apart",
+      "nl": "Samen of apart?",
+      "fr": "Ensemble ou séparément ?",
+      "ex_nl": "Betaalt u samen of apart?",
+      "ex_fr": "Vous payez ensemble ou séparément ?",
+      "note": "La question du serveur au moment de payer. « apart » ressemble à « à part » : séparément. Réponse : « Samen, alstublieft » ou « Apart, alstublieft »."
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "Ik wil … betalen",
+      "explain": [
+        "Trois verbes très utiles au café : « willen » (vouloir), « mogen » (avoir la permission) et « kunnen » (pouvoir, être capable).",
+        "Ils sont irréguliers : ik wil, u wilt, hij wil · ik mag, u mag, hij mag · ik kan, u kunt, hij kan. Avec « hij » et « zij », pas de « -t » : hij wil, zij kan.",
+        "S'il y a un deuxième verbe, il reste à l'infinitif et part tout à la fin de la phrase : Ik wil nu betalen.",
+        "Avec juste une chose, pas besoin de deuxième verbe : Ik wil een koffie. Mag ik de kaart?"
+      ],
+      "table": [
+        [
+          "Ik wil een koffie.",
+          "Je veux un café."
+        ],
+        [
+          "Ik wil nu betalen.",
+          "Je veux payer maintenant."
+        ],
+        [
+          "Mag ik de kaart zien?",
+          "Puis-je voir la carte ?"
+        ],
+        [
+          "Kunt u dat herhalen?",
+          "Pouvez-vous répéter cela ?"
+        ],
+        [
+          "Jef wil nog een pintje drinken.",
+          "Jef veut boire encore un demi."
+        ]
+      ],
+      "contrast": "En français, les deux verbes restent ensemble : « je veux payer maintenant ». En néerlandais, ils s'écartent comme une pince : « Ik wil nu betalen » — l'infinitif ferme la phrase.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Ik ___ een pintje.",
+          "options": [
+            "wil",
+            "wilt"
+          ],
+          "answer": "wil",
+          "fr": "Je veux un demi."
+        },
+        {
+          "type": "choice",
+          "nl": "Monia ___ een beetje Nederlands spreken.",
+          "options": [
+            "kan",
+            "kunt"
+          ],
+          "answer": "kan",
+          "fr": "Monia sait parler un peu néerlandais.",
+          "why": "Avec « hij » ou « zij » (ou un nom), c'est « kan », sans « -t »."
+        },
+        {
+          "type": "order",
+          "nl": "Ik wil nu betalen.",
+          "fr": "Je veux payer maintenant."
+        },
+        {
+          "type": "choice",
+          "nl": "Lotte wil een spuitwater ___.",
+          "options": [
+            "drinken",
+            "drinkt"
+          ],
+          "answer": "drinken",
+          "fr": "Lotte veut boire une eau pétillante.",
+          "why": "Après « willen », le deuxième verbe est à l'infinitif et va à la fin."
+        },
+        {
+          "type": "order",
+          "nl": "Mag ik de kaart zien?",
+          "fr": "Puis-je voir la carte ?"
+        },
+        {
+          "type": "order",
+          "nl": "Kunt u dat herhalen?",
+          "fr": "Pouvez-vous répéter cela ?"
+        }
+      ]
+    },
+    "g2": {
+      "title": "niet ou geen ?",
+      "explain": [
+        "Le français a un seul « ne … pas ». Le néerlandais en a deux : « geen » et « niet ».",
+        "« geen » remplace « een » (ou l'absence d'article) devant un nom : een koffie → geen koffie ; suiker → geen suiker. C'est le « pas de » français.",
+        "« niet » sert pour tout le reste : devant un adjectif (niet lekker), après le verbe (ik betaal niet), ou devant l'infinitif à la fin (ik wil niet betalen)."
+      ],
+      "table": [
+        [
+          "Ik neem geen suiker.",
+          "Je ne prends pas de sucre."
+        ],
+        [
+          "Jef drinkt geen wijn.",
+          "Jef ne boit pas de vin."
+        ],
+        [
+          "De koffie is niet lekker.",
+          "Le café n'est pas bon."
+        ],
+        [
+          "Lotte betaalt niet.",
+          "Lotte ne paie pas."
+        ],
+        [
+          "Ik wil niet betalen.",
+          "Je ne veux pas payer."
+        ]
+      ],
+      "contrast": "« Je ne veux pas de lait » : en néerlandais, « pas de » devient un seul mot, « geen » — « Ik wil geen melk », jamais « Ik wil niet melk ».",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Ik wil ___ melk.",
+          "options": [
+            "geen",
+            "niet"
+          ],
+          "answer": "geen",
+          "fr": "Je ne veux pas de lait.",
+          "why": "Devant un nom sans article : « geen »."
+        },
+        {
+          "type": "choice",
+          "nl": "De soep is ___ lekker.",
+          "options": [
+            "geen",
+            "niet"
+          ],
+          "answer": "niet",
+          "fr": "La soupe n'est pas bonne.",
+          "why": "Devant un adjectif : « niet »."
+        },
+        {
+          "type": "choice",
+          "nl": "Jef drinkt ___ thee.",
+          "options": [
+            "geen",
+            "niet"
+          ],
+          "answer": "geen",
+          "fr": "Jef ne boit pas de thé."
+        },
+        {
+          "type": "choice",
+          "nl": "Het bier is ___ duur.",
+          "options": [
+            "geen",
+            "niet"
+          ],
+          "answer": "niet",
+          "fr": "La bière n'est pas chère."
+        },
+        {
+          "type": "order",
+          "nl": "Ik neem geen suiker.",
+          "fr": "Je ne prends pas de sucre."
+        },
+        {
+          "type": "order",
+          "nl": "Jef wil vandaag niet betalen.",
+          "fr": "Jef ne veut pas payer aujourd'hui."
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "Op het terras — En terrasse",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Lotte",
+        "nl": "Monia, dit terras is onze Mistral!",
+        "fr": "Monia, cette terrasse, c'est notre Mistral à nous !"
+      },
+      {
+        "id": "d02",
+        "who": "Monia",
+        "nl": "Haha, ja! Maar zonder Marseille.",
+        "fr": "Haha, oui ! Mais sans Marseille."
+      },
+      {
+        "id": "d03",
+        "who": "Ober",
+        "nl": "Goeiedag! Wat mag het zijn?",
+        "fr": "Bonjour ! Qu'est-ce que ce sera ?"
+      },
+      {
+        "id": "d04",
+        "who": "Jef",
+        "nl": "Voor mij een pintje, alstublieft.",
+        "fr": "Pour moi un demi, s'il vous plaît."
+      },
+      {
+        "id": "d05",
+        "who": "Lotte",
+        "nl": "Ik neem een spuitwater. Ik drink vandaag geen bier.",
+        "fr": "Je prends une eau pétillante. Aujourd'hui, je ne bois pas de bière."
+      },
+      {
+        "id": "d06",
+        "who": "Monia",
+        "nl": "Een koffie met melk, zonder suiker. En mag ik een croque monsieur?",
+        "fr": "Un café au lait, sans sucre. Et puis-je avoir un croque-monsieur ?"
+      },
+      {
+        "id": "d07",
+        "who": "Ober",
+        "nl": "Sorry, mevrouw, vandaag geen croque. Wilt u een broodje kaas?",
+        "fr": "Désolé, madame, pas de croque aujourd'hui. Voulez-vous un sandwich au fromage ?"
+      },
+      {
+        "id": "d08",
+        "who": "Monia",
+        "nl": "Ja, dat is goed. Dank u.",
+        "fr": "Oui, c'est bien. Merci."
+      },
+      {
+        "id": "d09",
+        "who": "Jef",
+        "nl": "Amai, Monia, je spreekt al goed Nederlands!",
+        "fr": "Ouah, Monia, tu parles déjà bien néerlandais !"
+      },
+      {
+        "id": "d10",
+        "who": "Monia",
+        "nl": "Een beetje! Schol, Jef!",
+        "fr": "Un peu ! Santé, Jef !"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu'est-ce que Jef commande ?",
+        "options": [
+          "Un café",
+          "Un demi",
+          "Une eau pétillante"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Aujourd'hui, Lotte ne boit pas…",
+        "options": [
+          "de bière",
+          "d'eau",
+          "de café"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Comment Monia prend-elle son café ?",
+        "options": [
+          "Noir, avec du sucre",
+          "Avec du lait et du sucre",
+          "Avec du lait, sans sucre"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Qu'est-ce que Monia va manger ?",
+        "options": [
+          "Un croque-monsieur",
+          "Une soupe",
+          "Un sandwich au fromage"
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "Wablieft ?",
+      "text": "Vous n'avez pas compris le serveur ? Dites « Wablieft? » — le « Pardon ? » flamand, très poli. Ou, avec le thème : « Kunt u dat herhalen, alstublieft? »."
+    },
+    {
+      "title": "« Op café », pas « in het café »",
+      "text": "En Flandre on va « op café » — sans article, comme on va « au café ». Aux Pays-Bas, on dit « naar het café ». Kees, le nain de jardin, préfère « op het terras »."
+    },
+    {
+      "title": "u kunt ou u kan ?",
+      "text": "Les deux sont corrects. « u kunt » est la forme écrite soignée ; en Flandre on entend très souvent « u kan ». De même : « u wilt » ou « u wil »."
+    }
+  ],
+  "culture": {
+    "title": "Le café flamand",
+    "text": "En Flandre, le café du village est un deuxième salon : on s'assied à un « tafeltje », souvent en terrasse dès qu'il y a un rayon de soleil, et on commande à table. La boisson reine est « een pintje », une pils pression de 25 cl, servie avec un col de mousse. Avec « een tas koffie », il y a presque toujours un petit biscuit (souvent un spéculoos) sur la soucoupe. On paie en général à la fin ; le service est compris, le pourboire n'est pas obligatoire — on arrondit souvent un peu."
+  },
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — s'entraîner avec de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Cherchez des textes sur le café, la nourriture ou les boissons."
+    },
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Vidéos et exercices gratuits, avec explications en français."
+    },
+    {
+      "kind": "culture",
+      "title": "VISITFLANDERS — la culture brassicole belge",
+      "url": "https://www.visitflanders.com/fr/decouvrez-la-flandre/delices-culinaires-et-biere-belge/notre-culture-brassicole-belge",
+      "level": "en français",
+      "note": "Pour comprendre pourquoi le « pintje » est presque une institution."
+    }
+  ],
+  "task": {
+    "scenario": "Vous êtes en terrasse avec une amie (disons Lotte). {teacher} est le serveur. Commandez à boire et à manger pour vous deux, changez une commande, puis demandez l'addition et payez séparément — en néerlandais.",
+    "goals": [
+      "Demander une table pour deux",
+      "Commander une boisson et quelque chose à manger, pour vous et pour votre amie",
+      "Dire ce que vous ne voulez pas (« zonder suiker », « geen melk »)",
+      "Changer une commande avec « Ik wil … » ou « Mag ik … ? »",
+      "Demander l'addition et répondre à « Samen of apart? »"
+    ],
+    "phrases": [
+      "een-tafel-voor-twee",
+      "de-kaart",
+      "ik-neem",
+      "voor-mij",
+      "met-melk",
+      "zonder-suiker",
+      "mag-ik",
+      "de-rekening",
+      "samen-of-apart"
+    ],
+    "prepare": "Écrivez votre commande en 5 à 7 phrases : une avec « Ik wil … », une avec « Mag ik … ? » et une avec « geen » ou « niet ». Lisez-les à voix haute deux ou trois fois.",
+    "perform": "Maintenant, faites-le en vrai avec {teacher}, sans lire vos notes. Attention : le serveur n'a peut-être plus de croque… Écoutez bien ses questions et répondez-y.",
+    "record": "Vous pouvez aussi enregistrer votre commande et l'envoyer à {teacher} : il vous répondra ici, comme un serveur."
+  }
+}

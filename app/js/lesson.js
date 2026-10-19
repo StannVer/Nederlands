@@ -6,6 +6,7 @@ import { speak, speakButton, stop, canRecord, record } from './audio.js';
 import * as sync from './sync.js';
 import { CONFIG } from './config.js';
 import { esc, shuffle, tiles } from './util.js';
+import { avatar, keesSays, stars, starsFor } from './ui.js';
 
 const view = () => document.getElementById('view');
 const firstGrade = (errors) => (errors === 0 ? Rating.Good : errors === 1 ? Rating.Hard : Rating.Again);
@@ -24,10 +25,13 @@ export async function runStep(theme, stepId) {
 function endScreen(theme, step, title, lead) {
   stop();
   const next = nextStep(theme);
+  const n = starsFor(store.stepDone(theme.id, step.id)?.score ?? 1);
   view().innerHTML = `
     <div class="session end">
+      ${keesSays(n === 3 ? 'Schitterend!' : n === 2 ? 'Goed gedaan!' : 'Proficiat!', n === 3 ? 'Magnifique !' : n === 2 ? 'Bien joué !' : 'Félicitations !')}
       <p class="eyebrow">${esc(step.title)} · terminé</p>
       <h1>${esc(title)}</h1>
+      <div>${stars(n)}</div>
       <p class="lead">${lead}</p>
       ${next ? `<a class="btn primary wide" href="#/step/${theme.id}/${next.id}">Étape suivante : ${esc(next.title)}</a>` : ''}
       <a class="btn wide" href="#/theme/${theme.id}">Retour au thème</a>
@@ -173,11 +177,13 @@ async function dialogue(theme, step) {
     btn.disabled = false;
   };
 
-  const bubbles = (blur) => `<ol class="bubbles">${d.lines.map((l) => `
-    <li class="bubble ${variant(l.who) ? 'right' : ''}" data-line="${l.id}">
-      <b>${esc(l.who)}</b>${speakButton(theme.id, l.id, l.nl, 'Écouter', false, variant(l.who))}
-      <p lang="nl" class="${blur ? 'blur' : ''}">${esc(l.nl)}</p>
-      ${blur ? '' : `<details><summary>traduction</summary>${esc(l.fr)}</details>`}
+  // A comic strip: the learner's character on the right, everyone else on the left.
+  const bubbles = (blur) => `<ol class="strip">${d.lines.map((l) => `
+    <li class="panel ${l.who === d.roles.learner ? 'right' : ''}" data-line="${l.id}">
+      ${avatar(l.who)}
+      <div class="bubble"><b>${esc(l.who)}</b>${speakButton(theme.id, l.id, l.nl, 'Écouter', false, variant(l.who))}
+        <p lang="nl" class="${blur ? 'blur' : ''}">${esc(l.nl)}</p>
+        ${blur ? '' : `<details><summary>traduction</summary>${esc(l.fr)}</details>`}</div>
     </li>`).join('')}</ol>`;
 
   // 1. listen without reading

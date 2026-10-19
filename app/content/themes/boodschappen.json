@@ -1,0 +1,684 @@
+{
+  "id": "boodschappen",
+  "nl": "Boodschappen",
+  "fr": "Faire les courses",
+  "level": "A1",
+  "icon": "basket",
+  "intro": "Au marché avec Jef, puis à la jardinerie pour les graines du potager. À la fin de ce thème, vous pouvez demander un produit, comprendre un prix et payer — en flamand.",
+  "cando": [
+    "Je peux demander un produit et une quantité au marché ou au magasin.",
+    "Je peux demander et comprendre un prix, et payer.",
+    "Je peux montrer ce que je veux : « celui-ci », « celle-là ».",
+    "Je peux répondre à « Anders nog iets? »."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Au marché",
+      "items": [
+        "de-markt",
+        "de-groenten",
+        "het-fruit",
+        "de-tomaat",
+        "de-aardappel",
+        "de-appel",
+        "de-kaas",
+        "een-kilo"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "Jardinerie et magasins",
+      "items": [
+        "het-tuincentrum",
+        "de-plant",
+        "de-bloem",
+        "het-zaad",
+        "de-winkel",
+        "de-bakker",
+        "het-brood",
+        "het-ei"
+      ]
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Demander et payer",
+      "items": [
+        "ik-had-graag",
+        "hoeveel-kost",
+        "de-euro",
+        "duur-goedkoop",
+        "anders-nog-iets",
+        "dat-is-alles",
+        "alstublieft",
+        "betalen"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "Le pluriel : -en, -s"
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "deze, die, dit, dat"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "Au marché avec Jef"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : faites vos courses chez {teacher}"
+    }
+  ],
+  "items": [
+    {
+      "id": "de-markt",
+      "nl": "de markt",
+      "fr": "le marché",
+      "ex_nl": "Zaterdag ga ik met Jef naar de markt.",
+      "ex_fr": "Samedi, je vais au marché avec Jef.",
+      "note": "Le « k » se prononce bien : « markt ». La grand-place d'une ville flamande s'appelle souvent « de Grote Markt »."
+    },
+    {
+      "id": "de-groenten",
+      "nl": "de groenten",
+      "fr": "les légumes",
+      "accept": [
+        "de groente"
+      ],
+      "ex_nl": "Monia koopt groenten op de markt.",
+      "ex_fr": "Monia achète des légumes au marché.",
+      "note": "De « groen » (vert) : les légumes, ce sont « les verts » ! Au singulier : de groente."
+    },
+    {
+      "id": "het-fruit",
+      "nl": "het fruit",
+      "fr": "les fruits",
+      "ex_nl": "Vandaag is het fruit goedkoop.",
+      "ex_fr": "Aujourd'hui, les fruits sont bon marché.",
+      "note": "Un mot « het », toujours au singulier : « het fruit » = les fruits en général. « ui » : partez de « eu » et glissez vers « i » — pas « fru-i » !"
+    },
+    {
+      "id": "de-tomaat",
+      "nl": "de tomaat",
+      "fr": "la tomate",
+      "ex_nl": "Jef heeft tomaten in zijn moestuin.",
+      "ex_fr": "Jef a des tomates dans son potager.",
+      "note": "L'accent tombe sur « maat ». Pluriel : de tomaten — avec un seul « a » (to-ma-ten)."
+    },
+    {
+      "id": "de-aardappel",
+      "nl": "de aardappel",
+      "fr": "la pomme de terre",
+      "accept": [
+        "de patat"
+      ],
+      "ex_nl": "Een kilo aardappels kost twee euro.",
+      "ex_fr": "Un kilo de pommes de terre coûte deux euros.",
+      "note": "aarde (terre) + appel (pomme) : comme en français ! En Flandre, on dit très souvent « patatten ». Pluriel : aardappels ou aardappelen."
+    },
+    {
+      "id": "de-appel",
+      "nl": "de appel",
+      "fr": "la pomme",
+      "ex_nl": "Deze appels komen uit Haspengouw.",
+      "ex_fr": "Ces pommes viennent de Hesbaye.",
+      "note": "Pluriel : de appels. La Hesbaye (Haspengouw) est la grande région des vergers en Flandre."
+    },
+    {
+      "id": "de-kaas",
+      "nl": "de kaas",
+      "fr": "le fromage",
+      "ex_nl": "Deze kaas is heel lekker.",
+      "ex_fr": "Ce fromage est très bon.",
+      "note": "« aa » = « a » long. « lekker » = bon (à manger) : un mot que vous entendrez partout."
+    },
+    {
+      "id": "een-kilo",
+      "nl": "een kilo",
+      "fr": "un kilo",
+      "ex_nl": "Een kilo appels, alstublieft.",
+      "ex_fr": "Un kilo de pommes, s'il vous plaît.",
+      "note": "Pas de « de » : een kilo appels = un kilo de pommes. Après un nombre, « kilo » reste au singulier : twee kilo. Au marché, on entend aussi « een pond » (500 g)."
+    },
+    {
+      "id": "het-tuincentrum",
+      "nl": "het tuincentrum",
+      "fr": "la jardinerie",
+      "ex_nl": "Monia en Jef zijn in het tuincentrum.",
+      "ex_fr": "Monia et Jef sont à la jardinerie.",
+      "note": "tuin (jardin) + centrum (centre). Un mot composé prend l'article du dernier mot : het centrum → het tuincentrum."
+    },
+    {
+      "id": "de-plant",
+      "nl": "de plant",
+      "fr": "la plante",
+      "ex_nl": "Hoeveel kost deze plant?",
+      "ex_fr": "Combien coûte cette plante ?",
+      "note": "Le même mot qu'en français, mais le « t » final se prononce. Pluriel : de planten."
+    },
+    {
+      "id": "de-bloem",
+      "nl": "de bloem",
+      "fr": "la fleur",
+      "ex_nl": "Monia heeft veel bloemen in haar tuin.",
+      "ex_fr": "Monia a beaucoup de fleurs dans son jardin.",
+      "note": "« oe » = « ou » : « bloum ». Amusant : « bloem » veut aussi dire « farine »."
+    },
+    {
+      "id": "het-zaad",
+      "nl": "het zaad — de zaden",
+      "fr": "la graine — les graines",
+      "accept": [
+        "het zaad",
+        "de zaden",
+        "het zaad de zaden"
+      ],
+      "ex_nl": "Ik koop zaden voor mijn moestuin.",
+      "ex_fr": "J'achète des graines pour mon potager.",
+      "note": "Au pluriel, « aa » perd un « a » : zaad → zaden. Le potager = de moestuin, le mot préféré de Jef !"
+    },
+    {
+      "id": "de-winkel",
+      "nl": "de winkel",
+      "fr": "le magasin",
+      "ex_nl": "Is de winkel op zondag open?",
+      "ex_fr": "Le magasin est-il ouvert le dimanche ?",
+      "note": "Pluriel : de winkels. Faire du shopping = winkelen."
+    },
+    {
+      "id": "de-bakker",
+      "nl": "de bakker",
+      "fr": "le boulanger, la boulangerie",
+      "ex_nl": "Ik ga naar de bakker.",
+      "ex_fr": "Je vais à la boulangerie.",
+      "note": "« naar de bakker » = chez le boulanger, à la boulangerie. Pluriel : de bakkers."
+    },
+    {
+      "id": "het-brood",
+      "nl": "het brood",
+      "fr": "le pain",
+      "ex_nl": "Hoeveel kost het brood?",
+      "ex_fr": "Combien coûte le pain ?",
+      "note": "Un mot « het ». « oo » = « o » long, comme dans « rose ». Le « d » final se prononce « t »."
+    },
+    {
+      "id": "het-ei",
+      "nl": "het ei — de eieren",
+      "fr": "l'œuf — les œufs",
+      "accept": [
+        "het ei",
+        "de eieren",
+        "het ei de eieren"
+      ],
+      "ex_nl": "Ik had graag zes eieren.",
+      "ex_fr": "Je voudrais six œufs.",
+      "note": "Pluriel irrégulier : eieren (comme kind → kinderen). « ei » se prononce comme « ij »."
+    },
+    {
+      "id": "ik-had-graag",
+      "nl": "Ik had graag …",
+      "fr": "Je voudrais …",
+      "accept": [
+        "ik had graag"
+      ],
+      "ex_nl": "Ik had graag een kilo tomaten.",
+      "ex_fr": "Je voudrais un kilo de tomates.",
+      "note": "LA phrase des magasins flamands. Mot à mot : « j'avais volontiers » ! Aux Pays-Bas, on dit plutôt « ik wil graag ». Apprenez-la comme un bloc."
+    },
+    {
+      "id": "hoeveel-kost",
+      "nl": "Hoeveel kost …?",
+      "fr": "Combien coûte … ?",
+      "accept": [
+        "hoeveel kost",
+        "hoeveel kosten",
+        "wat kost"
+      ],
+      "ex_nl": "Hoeveel kost een kilo tomaten?",
+      "ex_fr": "Combien coûte un kilo de tomates ?",
+      "note": "Au pluriel : « Hoeveel kosten de appels? ». On entend aussi « Wat kost dat? »."
+    },
+    {
+      "id": "de-euro",
+      "nl": "de euro",
+      "fr": "l'euro",
+      "ex_nl": "Dat is drie euro vijftig.",
+      "ex_fr": "Ça fait trois euros cinquante.",
+      "note": "Après un nombre, pas de pluriel : drie euro. « eu » se prononce comme en français, mais plus long."
+    },
+    {
+      "id": "duur-goedkoop",
+      "nl": "duur — goedkoop",
+      "fr": "cher — bon marché",
+      "accept": [
+        "duur en goedkoop",
+        "duur goedkoop"
+      ],
+      "ex_nl": "Amai, deze rozen zijn duur!",
+      "ex_fr": "Ouh là, ces roses sont chères !",
+      "note": "« goedkoop » = mot à mot « bon achat ». « Amai! » = l'exclamation flamande de la surprise."
+    },
+    {
+      "id": "anders-nog-iets",
+      "nl": "Anders nog iets?",
+      "fr": "Et avec ceci ?",
+      "accept": [
+        "nog iets"
+      ],
+      "ex_nl": "Anders nog iets, mevrouw?",
+      "ex_fr": "Et avec ceci, madame ?",
+      "note": "La question du vendeur. Mot à mot : « autre chose encore ? ». On répond : « Ja, … » ou « Dat is alles. »"
+    },
+    {
+      "id": "dat-is-alles",
+      "nl": "Dat is alles.",
+      "fr": "C'est tout.",
+      "ex_nl": "Nee, merci, dat is alles.",
+      "ex_fr": "Non, merci, c'est tout.",
+      "note": "Avec « merci » : très flamand et très poli."
+    },
+    {
+      "id": "alstublieft",
+      "nl": "Alstublieft.",
+      "fr": "S'il vous plaît. / Voici.",
+      "accept": [
+        "alsjeblieft"
+      ],
+      "ex_nl": "Twee euro, alstublieft.",
+      "ex_fr": "Deux euros, s'il vous plaît.",
+      "note": "Deux sens : « s'il vous plaît » ET « voici » quand on tend quelque chose (l'argent, le sac). Avec « je » : alsjeblieft."
+    },
+    {
+      "id": "betalen",
+      "nl": "betalen",
+      "fr": "payer",
+      "ex_nl": "Ik betaal met Bancontact.",
+      "ex_fr": "Je paie par carte (Bancontact).",
+      "note": "Bancontact = la carte bancaire belge ; le mot s'utilise partout pour « par carte ». Le « e » de « be- » est très court."
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "Le pluriel : -en, -s",
+      "explain": [
+        "La plupart des noms prennent « -en » : de plant → de planten, de bloem → de bloemen.",
+        "Les mots qui finissent par -el, -er, -en ou -je (sans accent) prennent « -s » : de appel → de appels, de bakker → de bakkers. Après une voyelle comme « -o », on écrit « -'s » : de foto → de foto's.",
+        "Une voyelle longue s'écrit double quand la syllabe se termine par une consonne (boon, tomaat), mais simple quand la syllabe reste ouverte : bo-nen, to-ma-ten. Le son ne change pas, seulement l'écriture.",
+        "Une voyelle courte reste courte en doublant la consonne : de pot → de potten, de zak → de zakken.",
+        "Au pluriel, l'article est toujours « de »."
+      ],
+      "table": [
+        [
+          "de plant — de planten",
+          "la plante — les plantes"
+        ],
+        [
+          "de tomaat — de tomaten",
+          "la tomate — les tomates"
+        ],
+        [
+          "de boon — de bonen",
+          "le haricot — les haricots"
+        ],
+        [
+          "de pot — de potten",
+          "le pot — les pots"
+        ],
+        [
+          "de appel — de appels",
+          "la pomme — les pommes"
+        ],
+        [
+          "het ei — de eieren",
+          "l'œuf — les œufs"
+        ]
+      ],
+      "contrast": "En français, le « -s » du pluriel ne s'entend pas. En néerlandais, « -en » ou « -s » s'entend toujours. Et c'est l'orthographe de la voyelle qui change (boon → bonen), pas le son.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Ik had graag twee ___.",
+          "options": [
+            "tomaats",
+            "tomaten"
+          ],
+          "answer": "tomaten",
+          "fr": "Je voudrais deux tomates.",
+          "why": "Pluriel en « -en » ; la syllabe « ma » est ouverte, donc un seul « a »."
+        },
+        {
+          "type": "choice",
+          "nl": "In mijn tuin heb ik veel ___.",
+          "options": [
+            "tulps",
+            "tulpen"
+          ],
+          "answer": "tulpen",
+          "fr": "Dans mon jardin, j'ai beaucoup de tulipes."
+        },
+        {
+          "type": "choice",
+          "nl": "Hoeveel kosten de ___?",
+          "options": [
+            "bonen",
+            "boonen"
+          ],
+          "answer": "bonen",
+          "fr": "Combien coûtent les haricots ?",
+          "why": "Syllabe ouverte « bo- » : un seul « o » suffit pour le son long."
+        },
+        {
+          "type": "choice",
+          "nl": "Ik had graag twee ___ potgrond.",
+          "options": [
+            "zakken",
+            "zaken"
+          ],
+          "answer": "zakken",
+          "fr": "Je voudrais deux sacs de terreau.",
+          "why": "Le « a » de « zak » est court : on double le « k ». « zaken », avec un « a » long, veut dire « les affaires » !"
+        },
+        {
+          "type": "choice",
+          "nl": "De tomaten kosten drie ___.",
+          "options": [
+            "euro",
+            "euro's"
+          ],
+          "answer": "euro",
+          "fr": "Les tomates coûtent trois euros.",
+          "why": "Après un nombre, « euro » reste au singulier, comme « jaar » et « kilo »."
+        },
+        {
+          "type": "order",
+          "nl": "De appels kosten twee euro per kilo.",
+          "fr": "Les pommes coûtent deux euros le kilo."
+        }
+      ]
+    },
+    "g2": {
+      "title": "deze, die, dit, dat",
+      "explain": [
+        "Pour montrer quelque chose : « ce…-ci » (près de vous) ou « ce…-là » (plus loin).",
+        "Devant un mot « de » et devant tous les pluriels : deze (ci) / die (là).",
+        "Devant un mot « het » au singulier : dit (ci) / dat (là).",
+        "Seuls, pour présenter, « dit is » et « dat is » vont avec tout : Dat is mijn tuin. Au pluriel : Dat zijn mijn tomaten."
+      ],
+      "table": [
+        [
+          "deze tomaat",
+          "cette tomate-ci"
+        ],
+        [
+          "die tomaat",
+          "cette tomate-là"
+        ],
+        [
+          "dit brood",
+          "ce pain-ci"
+        ],
+        [
+          "dat brood",
+          "ce pain-là"
+        ],
+        [
+          "deze bonen",
+          "ces haricots-ci"
+        ],
+        [
+          "die bloemen",
+          "ces fleurs-là"
+        ]
+      ],
+      "contrast": "En français, on choisit selon masculin ou féminin (ce / cette). En néerlandais, on choisit selon de ou het : deze tomaat, dit brood. Au pluriel, c'est toujours deze ou die.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Hoeveel kost ___ cd van Céline Dion?",
+          "options": [
+            "deze",
+            "dit"
+          ],
+          "answer": "deze",
+          "fr": "Combien coûte ce CD de Céline Dion ?",
+          "why": "« de cd » est un mot « de » → deze."
+        },
+        {
+          "type": "choice",
+          "nl": "Ik had graag ___ brood.",
+          "options": [
+            "deze",
+            "dit"
+          ],
+          "answer": "dit",
+          "fr": "Je voudrais ce pain-ci.",
+          "why": "« het brood » est un mot « het » → dit."
+        },
+        {
+          "type": "choice",
+          "nl": "___ bloemen zijn mooi!",
+          "options": [
+            "Die",
+            "Dat"
+          ],
+          "answer": "Die",
+          "fr": "Ces fleurs-là sont jolies !",
+          "why": "Au pluriel, toujours deze ou die."
+        },
+        {
+          "type": "choice",
+          "nl": "Is ___ fruit duur?",
+          "options": [
+            "die",
+            "dat"
+          ],
+          "answer": "dat",
+          "fr": "Ces fruits-là sont chers ?",
+          "why": "« het fruit » est un mot « het » au singulier → dat."
+        },
+        {
+          "type": "choice",
+          "nl": "___ zaden zijn voor mijn moestuin.",
+          "options": [
+            "Deze",
+            "Dit"
+          ],
+          "answer": "Deze",
+          "fr": "Ces graines-ci sont pour mon potager.",
+          "why": "Pluriel → deze, même si le singulier est « het zaad »."
+        },
+        {
+          "type": "order",
+          "nl": "Hoeveel kosten deze aardappels?",
+          "fr": "Combien coûtent ces pommes de terre ?"
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "Op de markt — Au marché",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Verkoper",
+        "nl": "Goeiedag, mevrouw! Wat had u graag?",
+        "fr": "Bonjour, madame ! Qu'est-ce que vous désirez ?"
+      },
+      {
+        "id": "d02",
+        "who": "Monia",
+        "nl": "Goeiedag. Ik had graag een kilo tomaten.",
+        "fr": "Bonjour. Je voudrais un kilo de tomates."
+      },
+      {
+        "id": "d03",
+        "who": "Verkoper",
+        "nl": "Deze hier, of die daar?",
+        "fr": "Celles-ci, ou celles-là ?"
+      },
+      {
+        "id": "d04",
+        "who": "Jef",
+        "nl": "Die daar, Monia! Die zijn heel lekker. Maar mijn tomaten… amai!",
+        "fr": "Celles-là, Monia ! Elles sont très bonnes. Mais mes tomates… alors là !"
+      },
+      {
+        "id": "d05",
+        "who": "Monia",
+        "nl": "Haha! Die daar, alstublieft. Hoeveel kosten ze?",
+        "fr": "Haha ! Celles-là, s'il vous plaît. Combien coûtent-elles ?"
+      },
+      {
+        "id": "d06",
+        "who": "Verkoper",
+        "nl": "Drie euro per kilo. Anders nog iets?",
+        "fr": "Trois euros le kilo. Et avec ceci ?"
+      },
+      {
+        "id": "d07",
+        "who": "Monia",
+        "nl": "Ja. Hoeveel kosten deze appels?",
+        "fr": "Oui. Combien coûtent ces pommes-ci ?"
+      },
+      {
+        "id": "d08",
+        "who": "Verkoper",
+        "nl": "Twee euro per kilo. Ze komen uit Haspengouw.",
+        "fr": "Deux euros le kilo. Elles viennent de Hesbaye."
+      },
+      {
+        "id": "d09",
+        "who": "Monia",
+        "nl": "Een kilo, alstublieft. Dat is alles. Ik betaal met Bancontact.",
+        "fr": "Un kilo, s'il vous plaît. C'est tout. Je paie par carte."
+      },
+      {
+        "id": "d10",
+        "who": "Verkoper",
+        "nl": "Dat is dan vijf euro. Merci, en tot zaterdag!",
+        "fr": "Ça fait donc cinq euros. Merci, et à samedi !"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Combien de tomates Monia achète-t-elle ?",
+        "options": [
+          "Un kilo",
+          "Deux kilos",
+          "Six"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Combien coûtent les tomates ?",
+        "options": [
+          "2 € le kilo",
+          "3 € le kilo",
+          "5 € le kilo"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "D'où viennent les pommes ?",
+        "options": [
+          "De Hesbaye",
+          "De Gand",
+          "De France"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Comment Monia paie-t-elle ?",
+        "options": [
+          "En liquide",
+          "Par carte (Bancontact)",
+          "Jef paie pour elle"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "Ik had graag…",
+      "text": "Le passé (« had ») n'est ici qu'une formule de politesse, comme « je voudrais ». Dites-la partout : au marché, à la boulangerie, à la jardinerie."
+    },
+    {
+      "title": "Dire un prix",
+      "text": "3,50 € = drie euro vijftig. Les vendeurs disent souvent juste « drie vijftig ». Et rappelez-vous le thème 2 : 75 = vijfenzeventig, « cinq-et-soixante-dix »."
+    },
+    {
+      "title": "Le truc de Kees",
+      "text": "Vous ne connaissez pas le mot ? Montrez du doigt : « Deze, alstublieft! » ou « Die daar! ». Kees, le kabouter, fait toutes ses courses comme ça."
+    }
+  ],
+  "culture": {
+    "title": "Le marché… et la frituur",
+    "text": "Presque chaque ville flamande a son marché une fois par semaine : légumes, fruits, fromages, fleurs et plants pour le jardin. On y dit « Ik had graag… », on bavarde avec le marchand, et on paie de plus en plus souvent par carte. Et après le marché ? Un cornet de frites à la « frituur » — qu'on appelle aussi « het frietkot ». En Flandre, on dit « frieten » ; aux Pays-Bas, on entend souvent « patat »."
+  },
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Cherchez un thème sur les courses ou le magasin, au niveau le plus bas."
+    },
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Vidéos et exercices gratuits, avec explications en français : idéal pour revoir les nombres et les prix."
+    },
+    {
+      "kind": "lecture",
+      "title": "Wablieft — le journal en néerlandais facile",
+      "url": "https://www.wablieft.be",
+      "level": "A2+",
+      "note": "Pour plus tard : l'actualité flamande en phrases courtes."
+    }
+  ],
+  "task": {
+    "scenario": "{teacher} tient un étal de marché et un petit coin jardinerie, avec des objets ou des images et des prix. Votre liste : des graines pour votre potager, une plante, un kilo de tomates, des pommes, six œufs et un pain. Achetez tout, demandez au moins deux prix, et payez.",
+    "goals": [
+      "Saluer et demander : « Ik had graag… »",
+      "Demander un prix : « Hoeveel kost… ? » / « Hoeveel kosten… ? »",
+      "Choisir avec deze, die, dit ou dat",
+      "Comprendre le prix et répondre à « Anders nog iets? »",
+      "Payer et prendre congé"
+    ],
+    "phrases": [
+      "ik-had-graag",
+      "hoeveel-kost",
+      "de-euro",
+      "een-kilo",
+      "het-zaad",
+      "de-plant",
+      "anders-nog-iets",
+      "dat-is-alles",
+      "alstublieft",
+      "betalen"
+    ],
+    "prepare": "Écrivez votre liste en néerlandais, avec l'article et le pluriel (de tomaten, de eieren…). Pour les graines, choisissez ce que vous allez vraiment semer au printemps. Préparez 5 ou 6 phrases et lisez-les à voix haute.",
+    "perform": "Maintenant, faites vos courses chez {teacher}, sans lire vos notes. Il vous dira les prix et vous demandera « Anders nog iets? » — écoutez bien les nombres !",
+    "record": "Vous pouvez aussi vous enregistrer en lisant votre liste et vos questions, et lui envoyer l'enregistrement : il vous répondra ici."
+  }
+}

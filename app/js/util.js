@@ -33,6 +33,8 @@ export function judge(given, accepted) {
     const d = levenshtein(g, t);
     if (d < best) { best = d; target = t; }
   }
+  // "vader" for "de vader": right word, article forgotten — counted as a near miss.
+  if (accepted.some((a) => norm(a).replace(/^(de|het|een) /, '') === g && /^(de|het|een) /.test(norm(a)))) return 'near';
   const allowed = target.length >= 30 ? Math.floor(target.length / 12) : target.length >= 10 ? 2 : target.length >= 4 ? 1 : 0;
   return best <= allowed ? 'near' : 'wrong';
 }

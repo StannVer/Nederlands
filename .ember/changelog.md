@@ -65,3 +65,14 @@ Checked against Babbel's own description (how-babbel-works, babbel-review) and r
 - Level certificates (A1/A2/B1): unlocked when every theme of the level has a checkpoint ≥ 8/10; printable
 - Not copied, on purpose: Babbel Live (Stan's opdrachten instead), push notifications (calendar instead). AI conversation partner: for Stan to decide (API key, cost, privacy).
 - Tested in WebKit with a simulated speech recogniser: onboarding + placement, lesson with pairs and 6 speaking exercises, oral review, pairs game, hands-free mode, settings, certificate page; no errors. Real recognition to be tested on the iPhone.
+
+### v1.0 — professional redesign, personalised content, 5 A1 units (2026-10-19)
+- Design system "jardin rétro": Fraunces + Manrope (self-hosted, OFL, from the statistics course), warm paper palette with garden green, 80s coral, Flemish yellow, teal; light and dark
+- App shell: left sidebar on desktop (brand, navigation, streak + week dots), tab bar on phone; lessons and reviews take the whole screen (focus mode)
+- Course map (Duolingo-style): A1/A2/B1 banners, one coloured unit per theme, zigzag step nodes (done with stars, current pulsing with "Commencer", upcoming), locked future units, a certificate trophy per level
+- Home as a daily plan (reviews → next step → bonus), word of the day, Flanders culture note, weekly goal; vocabulary page with search and filters; stars (1–3) per step from the score
+- Comic aspect: Kees the garden gnome (mascot) reacts to every answer in a speech bubble (Dutch + French gloss) and on end screens; dialogues as comic strips with the cast's faces (Monia, Jef, Lotte, Stan…)
+- Content (written by three helpers from docs/content-brief.md, all validated): kennismaken reworked for Monia (18 items, neighbour Jef over the hedge), getallen-en-tijd, familie, boodschappen, op-cafe (each ~24 items, 2 grammar blocks, comic dialogue, culture note, task with Stan); 6 personal stories (garden, 90s evening with Céline Dion facts, Plus belle la vie, Silence ça pousse). No lyrics, no invented quotes.
+- A noun typed without its article counts as a near miss.
+- Tested in WebKit: all 8 steps + review for each of the 5 units (35–36 cards each, no errors); desktop and phone screenshots reviewed; fixes: tip overlapping a label, unit button overlapping the title on phone, plan numbering.
+- docs/to-check-by-stan.md: every sentence and fact the writers flagged.

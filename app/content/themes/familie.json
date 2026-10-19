@@ -1,0 +1,686 @@
+{
+  "id": "familie",
+  "nl": "Familie en vrienden",
+  "fr": "La famille et les amis",
+  "level": "A1",
+  "icon": "family",
+  "intro": "Parler des gens qu'on aime. Jef sort ses photos de famille… et vous découvrez qui est vraiment Lotte. À la fin de ce thème, vous pouvez présenter votre famille et vos amis.",
+  "cando": [
+    "Je peux présenter ma famille et mes amis : leur nom, leur âge, où ils habitent.",
+    "Je peux demander à quelqu'un s'il a des enfants, des frères et sœurs.",
+    "Je peux décrire une personne en quelques mots (grand, jeune, gentil).",
+    "Je peux comprendre quelqu'un qui me montre des photos de famille."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Parents et enfants",
+      "items": [
+        "de-familie",
+        "de-ouders",
+        "de-vader",
+        "de-moeder",
+        "de-broer",
+        "de-zus",
+        "het-kind",
+        "de-zoon"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "Toute la famille",
+      "items": [
+        "de-dochter",
+        "de-man",
+        "de-vrouw",
+        "getrouwd",
+        "de-grootouders",
+        "oma-opa",
+        "de-tante",
+        "de-oom"
+      ]
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Amis et portraits",
+      "items": [
+        "de-vriend",
+        "de-vriendin",
+        "hoe-oud-ben-je",
+        "ik-ben-jaar",
+        "heb-je-kinderen",
+        "jong-oud",
+        "groot-klein",
+        "vriendelijk"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "de, het, een"
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "mijn, zijn, haar…"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "Les photos de Jef"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : présentez votre famille à {teacher}"
+    }
+  ],
+  "items": [
+    {
+      "id": "de-familie",
+      "nl": "de familie",
+      "fr": "la famille",
+      "ex_nl": "Mijn familie woont in Gent.",
+      "ex_fr": "Ma famille habite à Gand.",
+      "note": "« familie » = toute la famille (oncles, cousins…). Les parents et les enfants sous le même toit, c'est « het gezin ». L'accent tombe sur « mi » : fa-MI-lie."
+    },
+    {
+      "id": "de-ouders",
+      "nl": "de ouders",
+      "fr": "les parents (père et mère)",
+      "ex_nl": "Mijn ouders wonen in Luik.",
+      "ex_fr": "Mes parents habitent à Liège.",
+      "note": "Seulement le père et la mère. « Des parents » au sens de « la famille » = familie. « ou » se dit à peu près « aou »."
+    },
+    {
+      "id": "de-vader",
+      "nl": "de vader",
+      "fr": "le père",
+      "ex_nl": "Mijn vader heet Paul.",
+      "ex_fr": "Mon père s'appelle Paul.",
+      "note": "En Flandre, les adultes disent aussi très souvent « mijn papa » et « mijn mama »."
+    },
+    {
+      "id": "de-moeder",
+      "nl": "de moeder",
+      "fr": "la mère",
+      "ex_nl": "Mijn moeder is zeventig jaar.",
+      "ex_fr": "Ma mère a soixante-dix ans.",
+      "note": "« oe » = « ou » : « mouder ». Même article que « de vader » : le genre français ne compte pas."
+    },
+    {
+      "id": "de-broer",
+      "nl": "de broer",
+      "fr": "le frère",
+      "ex_nl": "Ik heb een broer en een zus.",
+      "ex_fr": "J'ai un frère et une sœur.",
+      "note": "« oe » = « ou » : « brour »."
+    },
+    {
+      "id": "de-zus",
+      "nl": "de zus",
+      "fr": "la sœur",
+      "accept": [
+        "de zuster"
+      ],
+      "ex_nl": "Mijn zus woont in Brussel.",
+      "ex_fr": "Ma sœur habite à Bruxelles.",
+      "note": "En Flandre, on dit aussi « de zuster ». Le « u » est court, proche du « eu » de « peur »."
+    },
+    {
+      "id": "het-kind",
+      "nl": "het kind",
+      "fr": "l'enfant",
+      "accept": [
+        "het kind de kinderen",
+        "de kinderen"
+      ],
+      "ex_nl": "Mijn zus heeft twee kinderen.",
+      "ex_fr": "Ma sœur a deux enfants.",
+      "note": "Un mot « het ». Pluriel irrégulier : de kinderen. Le « d » final se prononce « t » : « kint »."
+    },
+    {
+      "id": "de-zoon",
+      "nl": "de zoon",
+      "fr": "le fils",
+      "ex_nl": "Haar zoon is tien jaar.",
+      "ex_fr": "Son fils (à elle) a dix ans.",
+      "note": "« oo » est un « o » long. Le « z » se prononce bien « z »."
+    },
+    {
+      "id": "de-dochter",
+      "nl": "de dochter",
+      "fr": "la fille (de quelqu'un)",
+      "ex_nl": "Jef heeft een zoon en een dochter.",
+      "ex_fr": "Jef a un fils et une fille.",
+      "note": "Le français a un seul mot, le néerlandais deux : ma fille (mon enfant) = mijn dochter ; une (petite) fille = een meisje. « ch » = souffle dans la gorge, comme le « g »."
+    },
+    {
+      "id": "de-man",
+      "nl": "de man",
+      "fr": "l'homme / le mari",
+      "ex_nl": "Mijn man heet Marc.",
+      "ex_fr": "Mon mari s'appelle Marc.",
+      "note": "Comme « femme » en français, « man » a deux sens : un homme, et le mari (« mijn man »)."
+    },
+    {
+      "id": "de-vrouw",
+      "nl": "de vrouw",
+      "fr": "la femme / l'épouse",
+      "ex_nl": "De vrouw van Jef heet Rita.",
+      "ex_fr": "La femme de Jef s'appelle Rita.",
+      "note": "Comme en français : une femme, et l'épouse (« zijn vrouw »). « ou » se dit « aou »."
+    },
+    {
+      "id": "getrouwd",
+      "nl": "getrouwd",
+      "fr": "marié(e)",
+      "ex_nl": "Bent u getrouwd?",
+      "ex_fr": "Êtes-vous marié(e) ?",
+      "note": "Le même mot pour un homme et pour une femme : pas de « -e » au féminin. « ou » = « aou »."
+    },
+    {
+      "id": "de-grootouders",
+      "nl": "de grootouders",
+      "fr": "les grands-parents",
+      "ex_nl": "Mijn grootouders wonen in Brugge.",
+      "ex_fr": "Mes grands-parents habitent à Bruges.",
+      "note": "groot (grand) + ouders (parents) : construit exactement comme en français !"
+    },
+    {
+      "id": "oma-opa",
+      "nl": "de oma — de opa",
+      "fr": "la grand-mère — le grand-père",
+      "accept": [
+        "oma opa",
+        "de oma de opa",
+        "oma en opa"
+      ],
+      "ex_nl": "Mijn oma heeft een moestuin.",
+      "ex_fr": "Ma grand-mère a un potager.",
+      "note": "Les mots de tous les jours (comme mamie / papy). En Flandre, beaucoup disent « bomma » et « bompa » : à reconnaître. Un potager = een moestuin — le mot préféré de Jef !"
+    },
+    {
+      "id": "de-tante",
+      "nl": "de tante",
+      "fr": "la tante",
+      "ex_nl": "Mijn tante woont in Namen.",
+      "ex_fr": "Ma tante habite à Namur.",
+      "note": "Le même mot qu'en français, mais le « e » final se prononce, très court : « tan-te »."
+    },
+    {
+      "id": "de-oom",
+      "nl": "de oom",
+      "fr": "l'oncle",
+      "accept": [
+        "de nonkel"
+      ],
+      "ex_nl": "Jef is de oom van Lotte.",
+      "ex_fr": "Jef est l'oncle de Lotte.",
+      "note": "En Flandre, on dit très souvent « nonkel » — venu du français « mon oncle » : « nonkel Jef »."
+    },
+    {
+      "id": "de-vriend",
+      "nl": "de vriend",
+      "fr": "l'ami",
+      "ex_nl": "Marc is een vriend uit Luik.",
+      "ex_fr": "Marc est un ami de Liège.",
+      "note": "Attention : « mijn vriend » veut souvent dire « mon copain » (mon amoureux). Le « d » final se prononce « t »."
+    },
+    {
+      "id": "de-vriendin",
+      "nl": "de vriendin",
+      "fr": "l'amie",
+      "ex_nl": "Mijn vriendin kijkt ook naar Plus belle la vie.",
+      "ex_fr": "Mon amie regarde aussi Plus belle la vie.",
+      "note": "Dans la bouche d'un homme, « mijn vriendin » = souvent « ma copine » (amoureuse). Dans votre bouche, c'est simplement votre amie."
+    },
+    {
+      "id": "hoe-oud-ben-je",
+      "nl": "Hoe oud ben je?",
+      "fr": "Quel âge as-tu ?",
+      "accept": [
+        "hoe oud bent u",
+        "hoe oud ben jij"
+      ],
+      "ex_nl": "Hoe oud is uw zoon?",
+      "ex_fr": "Quel âge a votre fils ?",
+      "note": "Mot à mot : « combien vieux es-tu ? ». L'âge se dit avec « zijn » (être), jamais avec « hebben » (avoir) !"
+    },
+    {
+      "id": "ik-ben-jaar",
+      "nl": "Ik ben … jaar.",
+      "fr": "J'ai … ans.",
+      "accept": [
+        "ik ben jaar"
+      ],
+      "ex_nl": "Lotte is dertig jaar.",
+      "ex_fr": "Lotte a trente ans.",
+      "note": "Jamais « ik heb … jaar ». Et après un nombre, « jaar » reste au singulier : tien jaar, dertig jaar."
+    },
+    {
+      "id": "heb-je-kinderen",
+      "nl": "Heb je kinderen?",
+      "fr": "As-tu des enfants ?",
+      "accept": [
+        "hebt u kinderen",
+        "heeft u kinderen",
+        "heb jij kinderen"
+      ],
+      "ex_nl": "Heb je kinderen, Jef?",
+      "ex_fr": "Tu as des enfants, Jef ?",
+      "note": "Pas de mot pour « des » : on dit simplement « as-tu enfants ? ». Rappel : quand « je » suit le verbe, le « -t » tombe : heb je. Poli : « Hebt u kinderen? »"
+    },
+    {
+      "id": "jong-oud",
+      "nl": "jong — oud",
+      "fr": "jeune — vieux (âgé)",
+      "accept": [
+        "jong en oud",
+        "jong oud"
+      ],
+      "ex_nl": "Jef is vijfenzestig, maar hij is jong!",
+      "ex_fr": "Jef a soixante-cinq ans, mais il est jeune !",
+      "note": "« j » se dit comme le « y » de « yaourt ». « oud » : « aout », le « d » final se prononce « t »."
+    },
+    {
+      "id": "groot-klein",
+      "nl": "groot — klein",
+      "fr": "grand — petit",
+      "accept": [
+        "groot en klein",
+        "groot klein"
+      ],
+      "ex_nl": "Mijn broer is groot en mijn zus is klein.",
+      "ex_fr": "Mon frère est grand et ma sœur est petite.",
+      "note": "Faux ami : « groot » = grand, pas gros ! « ei » dans « klein » se prononce comme « ij » dans « mijn »."
+    },
+    {
+      "id": "vriendelijk",
+      "nl": "vriendelijk",
+      "fr": "gentil, aimable",
+      "ex_nl": "Jef is heel vriendelijk.",
+      "ex_fr": "Jef est très gentil.",
+      "note": "De « vriend » (ami) : aimable comme un ami. « -lijk » se dit très court, à peu près « -leuk »."
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "de, het, een",
+      "explain": [
+        "Le néerlandais a deux articles pour « le / la » : « de » et « het ». Environ deux noms sur trois sont des mots « de ».",
+        "Les mots « het » s'apprennent avec leur article : het kind, het gezin. Les petits mots en « -je » (les diminutifs) sont toujours « het » : het meisje (la petite fille).",
+        "Au pluriel, c'est toujours « de » : het kind → de kinderen.",
+        "« un / une », c'est « een » pour tous les mots. On le prononce court, un peu comme « eun »."
+      ],
+      "table": [
+        [
+          "de vader",
+          "le père"
+        ],
+        [
+          "de moeder",
+          "la mère"
+        ],
+        [
+          "het kind",
+          "l'enfant"
+        ],
+        [
+          "het gezin",
+          "la famille (parents et enfants)"
+        ],
+        [
+          "de kinderen",
+          "les enfants"
+        ],
+        [
+          "een broer, een zus",
+          "un frère, une sœur"
+        ]
+      ],
+      "contrast": "« de » et « het » ne correspondent pas à « le » et « la » : le père = de vader, la mère = de moeder, l'enfant = het kind. Le genre français ne vous aide pas : apprenez chaque mot avec son article.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "___ moeder van Lotte woont in Gent.",
+          "options": [
+            "De",
+            "Het"
+          ],
+          "answer": "De",
+          "fr": "La mère de Lotte habite à Gand."
+        },
+        {
+          "type": "choice",
+          "nl": "___ kind is drie jaar.",
+          "options": [
+            "De",
+            "Het"
+          ],
+          "answer": "Het",
+          "fr": "L'enfant a trois ans."
+        },
+        {
+          "type": "choice",
+          "nl": "___ kinderen zijn tien en twaalf jaar.",
+          "options": [
+            "De",
+            "Het"
+          ],
+          "answer": "De",
+          "fr": "Les enfants ont dix et douze ans.",
+          "why": "Au pluriel, c'est toujours « de », même si le singulier est « het kind »."
+        },
+        {
+          "type": "choice",
+          "nl": "___ gezin van Jef is groot.",
+          "options": [
+            "De",
+            "Het"
+          ],
+          "answer": "Het",
+          "fr": "La famille de Jef (parents et enfants) est grande.",
+          "why": "« gezin » est un mot « het » : il s'apprend par cœur."
+        },
+        {
+          "type": "choice",
+          "nl": "___ meisje heet Emma.",
+          "options": [
+            "De",
+            "Het"
+          ],
+          "answer": "Het",
+          "fr": "La petite fille s'appelle Emma.",
+          "why": "Les mots en « -je » sont toujours « het »."
+        },
+        {
+          "type": "order",
+          "nl": "De ouders van Lotte wonen in Gent.",
+          "fr": "Les parents de Lotte habitent à Gand."
+        }
+      ]
+    },
+    "g2": {
+      "title": "mijn, zijn, haar…",
+      "explain": [
+        "mijn = mon, ma, mes · je (jouw) = ton, ta, tes · uw = votre (poli) · zijn = son, sa, ses (à lui) · haar = son, sa, ses (à elle) · ons / onze = notre, nos · jullie = votre, vos (à plusieurs) · hun = leur, leurs.",
+        "Le possessif ne change pas avec le mot qui suit : mijn vader, mijn moeder, mijn kinderen.",
+        "Une seule exception, « notre » : « ons » devant un mot « het » au singulier (ons kind), « onze » devant un mot « de » et au pluriel (onze zoon, onze kinderen).",
+        "« je » est la forme normale de « ton / ta ». « jouw » sert à insister : « C'est TA sœur ? » = « Is dat jouw zus? »"
+      ],
+      "table": [
+        [
+          "mijn broer",
+          "mon frère"
+        ],
+        [
+          "je zus",
+          "ta sœur"
+        ],
+        [
+          "uw dochter",
+          "votre fille"
+        ],
+        [
+          "zijn moeder",
+          "sa mère (à lui)"
+        ],
+        [
+          "haar vader",
+          "son père (à elle)"
+        ],
+        [
+          "ons kind — onze kinderen",
+          "notre enfant — nos enfants"
+        ],
+        [
+          "hun oma",
+          "leur grand-mère"
+        ]
+      ],
+      "contrast": "En français, « sa mère » ne dit pas si c'est la mère d'un homme ou d'une femme. En néerlandais, on regarde à qui elle est : la mère de Jef = zijn moeder, la mère de Lotte = haar moeder.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Jef en ___ vrouw hebben twee kinderen.",
+          "options": [
+            "zijn",
+            "haar"
+          ],
+          "answer": "zijn",
+          "fr": "Jef et sa femme ont deux enfants.",
+          "why": "La femme de Jef : Jef est un homme → zijn."
+        },
+        {
+          "type": "choice",
+          "nl": "Lotte en ___ broer luisteren naar muziek uit de jaren tachtig.",
+          "options": [
+            "zijn",
+            "haar"
+          ],
+          "answer": "haar",
+          "fr": "Lotte et son frère écoutent de la musique des années quatre-vingt.",
+          "why": "Le frère de Lotte : Lotte est une femme → haar."
+        },
+        {
+          "type": "choice",
+          "nl": "Waar woont ___ zoon, meneer?",
+          "options": [
+            "uw",
+            "hun"
+          ],
+          "answer": "uw",
+          "fr": "Où habite votre fils, monsieur ?"
+        },
+        {
+          "type": "choice",
+          "nl": "___ kind is vijf jaar.",
+          "options": [
+            "Ons",
+            "Onze"
+          ],
+          "answer": "Ons",
+          "fr": "Notre enfant a cinq ans.",
+          "why": "« kind » est un mot « het », au singulier → ons."
+        },
+        {
+          "type": "choice",
+          "nl": "___ kinderen wonen in Brussel.",
+          "options": [
+            "Ons",
+            "Onze"
+          ],
+          "answer": "Onze",
+          "fr": "Nos enfants habitent à Bruxelles.",
+          "why": "Au pluriel → onze."
+        },
+        {
+          "type": "order",
+          "nl": "Jan en An wonen bij hun dochter.",
+          "fr": "Jan et An habitent chez leur fille."
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "De foto's van Jef — Les photos de Jef",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Jef",
+        "nl": "Dag Monia! Hier heb ik foto's van mijn familie.",
+        "fr": "Bonjour Monia ! Voici des photos de ma famille."
+      },
+      {
+        "id": "d02",
+        "who": "Monia",
+        "nl": "Oh, mooi! Wie is dat?",
+        "fr": "Oh, c'est joli ! Qui est-ce ?"
+      },
+      {
+        "id": "d03",
+        "who": "Jef",
+        "nl": "Dat is mijn vrouw, Rita. En dat zijn onze kinderen, Tom en An.",
+        "fr": "C'est ma femme, Rita. Et ce sont nos enfants, Tom et An."
+      },
+      {
+        "id": "d04",
+        "who": "Monia",
+        "nl": "Hoe oud zijn ze?",
+        "fr": "Quel âge ont-ils ?"
+      },
+      {
+        "id": "d05",
+        "who": "Jef",
+        "nl": "Tom is veertig en An is zesendertig. En hier is Lotte, de dochter van mijn zus.",
+        "fr": "Tom a quarante ans et An trente-six. Et voici Lotte, la fille de ma sœur."
+      },
+      {
+        "id": "d06",
+        "who": "Monia",
+        "nl": "Lotte? Ze is mijn collega!",
+        "fr": "Lotte ? C'est ma collègue !"
+      },
+      {
+        "id": "d07",
+        "who": "Jef",
+        "nl": "Ja, ik ben haar nonkel. Amai, Lotte en haar muziek uit de jaren tachtig…",
+        "fr": "Oui, je suis son oncle. Ouh là, Lotte et sa musique des années quatre-vingt…"
+      },
+      {
+        "id": "d08",
+        "who": "Monia",
+        "nl": "En uit de jaren negentig! Ik luister ook naar Céline Dion.",
+        "fr": "Et des années quatre-vingt-dix ! Moi aussi, j'écoute Céline Dion."
+      },
+      {
+        "id": "d09",
+        "who": "Jef",
+        "nl": "Haha! En jij, Monia? Heb jij kinderen?",
+        "fr": "Haha ! Et toi, Monia ? Tu as des enfants ?"
+      },
+      {
+        "id": "d10",
+        "who": "Monia",
+        "nl": "Ja, ik heb een zoon en een dochter. Mijn zoon woont in Brussel.",
+        "fr": "Oui, j'ai un fils et une fille. Mon fils habite à Bruxelles."
+      }
+    ],
+    "questions": [
+      {
+        "q": "Comment s'appelle la femme de Jef ?",
+        "options": [
+          "Rita",
+          "Lotte",
+          "An"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qui est Lotte pour Jef ?",
+        "options": [
+          "Sa fille",
+          "Sa nièce, la fille de sa sœur",
+          "Sa sœur"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Quel âge a Tom ?",
+        "options": [
+          "30 ans",
+          "36 ans",
+          "40 ans"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Quelle musique écoute Lotte ?",
+        "options": [
+          "La musique des années 80",
+          "La musique classique",
+          "Le jazz"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "de ou het ?",
+      "text": "Apprenez toujours le mot avec son article : pas « vader », mais « de vader ». L'astuce de Kees, le kabouter : en cas de doute, « de » a deux chances sur trois d'être juste."
+    },
+    {
+      "title": "zijn ou haar ?",
+      "text": "Regardez à qui appartient la chose, pas la chose elle-même : la mère de Jef = zijn moeder ; la mère de Lotte = haar moeder."
+    },
+    {
+      "title": "nonkel, bomma, bompa",
+      "text": "Dans les familles flamandes, vous entendrez « nonkel » (tonton), « bomma » (mamie) et « bompa » (papy). À reconnaître ; à l'écrit, utilisez oom, oma et opa."
+    }
+  ],
+  "culture": {
+    "title": "Le dimanche en famille, et « meter en peter »",
+    "text": "En Flandre, beaucoup de familles se retrouvent le dimanche midi chez les parents ou chez « bomma ». Le parrain et la marraine s'appellent « peter » et « meter » : un rôle important, souvent pour la vie. Le 1er janvier, de nombreux enfants lisent une lettre de Nouvel An (« de nieuwjaarsbrief ») à leurs parents, à leur meter et à leur peter — et reçoivent souvent un petit cadeau ou un peu d'argent."
+  },
+  "further": [
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Cherchez les vidéos sur la famille : explications en français, exercices gratuits."
+    },
+    {
+      "kind": "exercice",
+      "title": "NedBox — de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Choisissez le niveau le plus bas et un thème sur les gens."
+    },
+    {
+      "kind": "lecture",
+      "title": "Wablieft — le journal en néerlandais facile",
+      "url": "https://www.wablieft.be",
+      "level": "A2+",
+      "note": "Pour plus tard : regardez déjà les titres et cherchez les mots de la famille."
+    }
+  ],
+  "task": {
+    "scenario": "Apportez deux ou trois photos de votre famille ou de vos amis — sur votre GSM, c'est parfait. Montrez-les à {teacher} et présentez chaque personne, en néerlandais. Pourquoi pas une amie avec qui vous regardez Plus belle la vie ?",
+    "goals": [
+      "Dire qui est sur la photo : « Dat is mijn… »",
+      "Donner son nom, son âge et où il ou elle habite",
+      "Utiliser zijn et haar correctement",
+      "Décrire une personne avec un mot (jong, groot, vriendelijk…)",
+      "Demander à {teacher} s'il a des enfants, des frères et sœurs"
+    ],
+    "phrases": [
+      "de-moeder",
+      "de-vader",
+      "de-broer",
+      "de-zus",
+      "de-vriendin",
+      "getrouwd",
+      "hoe-oud-ben-je",
+      "ik-ben-jaar",
+      "heb-je-kinderen",
+      "vriendelijk"
+    ],
+    "prepare": "Pour chaque photo, écrivez 2 ou 3 phrases en néerlandais (qui, quel âge, où il ou elle habite). Vérifiez l'article et le possessif : zijn ou haar ? Lisez-les à voix haute deux ou trois fois.",
+    "perform": "Maintenant, montrez vos photos à {teacher}, sans lire vos notes. Il vous posera des questions sur chaque personne — répondez simplement, c'est le but !",
+    "record": "Vous pouvez aussi vous enregistrer en présentant une photo et lui envoyer l'enregistrement : il vous répondra ici."
+  }
+}
