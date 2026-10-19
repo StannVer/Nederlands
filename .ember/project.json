@@ -1,0 +1,20 @@
+{
+  "name": "Nederlands — Flemish for French speakers",
+  "owner": "Stan Verschaeve",
+  "created": "2026-10-19",
+  "status": "active",
+  "visibility": "private: one known learner, not public",
+  "learner": "French speaker, starting from zero (A0)",
+  "tech_stack": ["vanilla JS", "PWA (home-screen install on iPhone)", "Supabase (optional sync, later)", "Netlify"],
+  "codebase_root": "/mnt/c/Users/sverschaeve/OneDrive - ITG/Documents/9. Education/Nederlands/",
+  "git_remote": "github-personal:StannVer/Nederlands (private, not yet created)",
+  "phases": [
+    "Phase 0: Tracking infrastructure and plan",
+    "Phase 1: App shell — PWA, installable on iPhone, offline",
+    "Phase 2: Review engine — spaced retrieval (FSRS), progress tracking",
+    "Phase 3: Theme 1 'Kennismaken' — content, recording list, Stan's recordings",
+    "Phase 4: Recording page + record-and-compare for the learner",
+    "Phase 5: Private hosting (Netlify) + learner access (Supabase, approved by Stan)",
+    "Phase 6: Further themes, added along the way"
+  ]
+}
