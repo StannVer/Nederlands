@@ -30,3 +30,7 @@
 - Database: `teachers`, `task_submissions` (learner sees own, teacher sees all; a trigger limits learner updates to `seen_at`), private storage bucket `tasks` with one folder per learner
 - `{teacher}` placeholder in content, filled from `CONFIG.teacherName`
 - validate.py checks task steps; tested in WebKit (in-person path). Recording and the online feedback loop are untested until the Supabase project exists.
+
+### Phase 5 (started): hosting
+- First deploy to the personal Netlify account: https://nederlands-3d0eb427.netlify.app (site id in deploy/site.json). Netlify visitor protection is on: only logged-in Netlify team members can open it, which suits the preview; switch off once the course's own login works.
+- Supabase: the desktop token manages the EPSO project but may not create projects in the org (403). Decision: Stan creates the `nederlands` project in the dashboard (Frankfurt); everything else via the Management API.
