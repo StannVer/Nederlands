@@ -4,7 +4,7 @@
   "created": "2026-10-19",
   "status": "active",
   "visibility": "private: one known learner, not public",
-  "learner": "French speaker, starting from zero (A0)",
+  "learner": "Monia — French speaker, starting from zero (A0)",
   "tech_stack": ["vanilla JS", "PWA (home-screen install on iPhone)", "Supabase (optional sync, later)", "Netlify"],
   "codebase_root": "/mnt/c/Users/sverschaeve/OneDrive - ITG/Documents/9. Education/Nederlands/",
   "git_remote": "github-personal:StannVer/Nederlands (private)",

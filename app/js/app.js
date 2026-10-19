@@ -88,7 +88,7 @@ async function home() {
   view.innerHTML = `
     <header class="hello">
       <p class="eyebrow">${st > 0 ? `${st} jour${st > 1 ? 's' : ''} d'affilée` : 'Bienvenue'}${today ? ` · ${today} exercice${today > 1 ? 's' : ''} aujourd'hui` : ''}</p>
-      <h1>Goeiedag${store.db().settings.name ? `, ${esc(store.db().settings.name)}` : ''}!</h1>
+      <h1>Goeiedag${(store.db().settings.name || CONFIG.learnerName) ? `, ${esc(store.db().settings.name || CONFIG.learnerName)}` : ''}!</h1>
     </header>
     ${weekWidget()}
 

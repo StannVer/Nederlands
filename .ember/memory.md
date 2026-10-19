@@ -2,7 +2,7 @@
 
 ## Decisions Made
 - 2026-10-19: Personal project. NOT recorded in Metis (no project, task or memory there); tracked here in `.ember/` only.
-- 2026-10-19: Learner is a French speaker starting from zero; target variety is Flemish (Belgian Dutch), not Netherlands Dutch.
+- 2026-10-19: Learner is Monia, a French speaker starting from zero; target variety is Flemish (Belgian Dutch), not Netherlands Dutch. Default name in `CONFIG.learnerName`.
 - 2026-10-19: Private, for one learner — installed like the EPSO and statistics courses, never public.
 - 2026-10-19: Web app installed on the iPhone home screen (PWA) first. A native app (Capacitor + Apple Developer Program, ~€99/yr, needs a Mac) only if the PWA proves itself. A free Apple ID install expires after 7 days.
 - 2026-10-19: Audio is Stan's own recorded Flemish voice, from per-theme recording lists. No synthetic voices as the default.

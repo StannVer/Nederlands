@@ -85,11 +85,11 @@ export async function onboarding(themeIndex, loadTheme) {
   const TOTAL = 5;
 
   await screen(1, TOTAL, `
-    <article class="flash"><p class="eyebrow">Bienvenue</p><h1>Goeiedag!</h1>
+    <article class="flash"><p class="eyebrow">Bienvenue</p><h1>Goeiedag${CONFIG.learnerName ? `, ${esc(CONFIG.learnerName)}` : ''}!</h1>
       <p class="lead">Ce cours vous apprend le néerlandais tel qu'on le parle en Flandre, pas à pas, avec ${esc(CONFIG.teacherName)} à vos côtés. Quelques questions pour l'adapter à vous.</p>
       <label class="notes-label" for="name">Comment vous appelez-vous ?</label>
-      <input id="name" class="field" autocomplete="given-name" placeholder="Votre prénom" value="${esc(s.name || '')}"></article>`);
-  s.name = document.getElementById('name')?.value.trim() || s.name || '';
+      <input id="name" class="field" autocomplete="given-name" placeholder="Votre prénom" value="${esc(s.name || CONFIG.learnerName || '')}"></article>`);
+  s.name = document.getElementById('name')?.value.trim() || s.name || CONFIG.learnerName || '';
   store.save();
 
   let motivation = s.motivation || null;
@@ -169,7 +169,7 @@ export function levelStatus(themeIndex) {
 
 export function certificatePage(level, themeIndex) {
   const L = levelStatus(themeIndex)[level];
-  const name = settings().name || '';
+  const name = settings().name || CONFIG.learnerName || '';
   if (!L || L.passed < L.total) {
     view().innerHTML = `<a class="back" href="#/progress">‹ Progrès</a>
       <div class="session end"><p class="eyebrow">Attestation ${esc(level)}</p><h1>${L ? `${L.passed}/${L.total} thèmes validés` : 'Niveau inconnu'}</h1>

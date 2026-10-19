@@ -68,7 +68,7 @@ async function learnersPane(pane, ctx) {
     const lastDay = Object.keys(st.days || {}).sort().pop();
     return `
       <section class="group learner" data-uid="${r.user_id}">
-        <strong>${esc(r.learner_email || 'apprenant')}</strong>
+        <strong>${esc(st.settings?.name || 'apprenant')}</strong><small>${esc(r.learner_email || '')}</small>
         <small>dernière activité : ${lastDay ? esc(lastDay) : '—'} · série ${streakOf(st.days)} j · ${st.reviews || 0} exercices</small>
         <div class="stats">
           <div class="stat"><span>${cards.filter(([k]) => !k.includes('#')).length}</span><small>mots en mémoire</small></div>

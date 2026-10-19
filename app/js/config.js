@@ -5,4 +5,5 @@ export const CONFIG = {
   supabaseUrl: 'https://rjkckukuepufkoxucjra.supabase.co',
   supabaseKey: 'sb_publishable__iy46T0tg-3EEuVgF1fClg_i8JXbs8J',
   teacherName: 'Stan',   // the person the learner presents each theme's task to
+  learnerName: 'Monia',  // the learner this course is made for (default name; editable in Réglages)
 };
