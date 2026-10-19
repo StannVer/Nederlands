@@ -10,6 +10,7 @@ see it.
     python3 tools/questions.py claim <id>           mark a question as being worked on
     python3 tools/questions.py draft <id> <file>    validate a lesson JSON and store it as a draft
     python3 tools/questions.py skip <id>            leave a question to the teacher (e.g. voice-only)
+    python3 tools/questions.py release              put claimed questions without a draft back to 'new'
 
 Credentials: the Supabase access token in ~/.supabase/access-token (Management API). The service key
 is fetched with it at run time and never written anywhere.
@@ -98,6 +99,10 @@ if __name__ == "__main__":
     elif cmd == "skip":
         set_status(args[0], "new")
         sql(f"update public.questions set context = coalesce(context, '') || ' [left for the teacher]' where id = {int(args[0])}")
+    elif cmd == "release":
+        rows = sql("""update public.questions q set status = 'new' where q.status = 'drafting'
+                      and not exists (select 1 from public.custom_lessons l where l.question_id = q.id) returning q.id""")
+        print(f"released: {[r['id'] for r in rows] or 'none'}")
     elif cmd == "draft":
         draft(*args)
     else:

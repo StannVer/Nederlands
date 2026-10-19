@@ -58,3 +58,9 @@
 - Audio sources checked: Lingua Libre (CC BY-SA 4.0, words, speaker location known — usable), Common Voice (CC0, accent rarely tagged), Tatoeba (text CC BY 2.0 FR; audio per contributor), Forvo (NOT reusable since 2019), CGN (audio not in the free licence). Podcasts/VRT/Ketnet: links only.
 - Sources on the method page are from memory and NOT yet verified against the papers — verify before the learner sees them.
 - Access: Metis records only WHERE credentials live (accounts.json), never the keys. Personal Netlify token and Supabase CLI login exist only on the laptop; desktop needs its own (Netlify personal access token → C:\Users\sverschaeve\.personal\netlify-token.txt; Supabase access token → ~/.supabase/access-token).
+
+## 2026-10-19 — v0.4 decisions
+- Custom lessons are DRAFTS until Stan publishes them (generated content gets a native-speaker check). The scheduled task never publishes.
+- Voice-only questions are left to Stan (no audio transcription server-side); typed or dictated questions (on-device speech recognition, fr-BE) are answered.
+- The scheduled run uses headless Claude Code (`tools/run-answer-questions.sh`), not Claude Desktop: it needs the shell, the WSL Supabase token and the course files. Not yet registered in Windows Task Scheduler (Stan to decide).
+- Syllabus open points (docs/syllabus.md §uncertain): theme size (20–25 words → 3–4 word steps), vocabulary target (~700 as cards + optional recognition-only extra words), minimal pairs to check by a native speaker.

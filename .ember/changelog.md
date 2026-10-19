@@ -43,3 +43,13 @@
 - Daily keep-awake Netlify function (free plan pauses after 7 idle days), deployed with publish.sh.
 - Checkpoint step icon changed to a flag: a check mark looked like "done".
 - Not yet: learner account (Stan reviews the course first); Netlify visitor protection still on.
+
+### v0.4 — practice, teacher dashboard, questions → lessons (2026-10-19)
+- Practice tab: pronunciation trainer (7 contrasts, minimal pairs: listen → discriminate 8 rounds → record and compare), graded stories (2, tap a word → translation → add to own words, comprehension questions), dictation (from learned example sentences; also a 4th review mode), own words, words from Stan, custom lessons, ask a question (typed / dictated with on-device speech recognition / voice message), grammar reference, Flemish corner (14 entries)
+- Teacher space with tabs: learners (memory, steps, due reviews, checkpoint scores, hardest words by lapses, add words after a conversation), questions + draft lessons (publish / discard), opdrachten
+- Database part 2 (supabase/schema-v2.sql): teacher reads all progress, teacher_items, questions, custom_lessons (draft → published); learner e-mail now sent explicitly (supabase-js upserts send null for missing columns, so column defaults never applied)
+- Question → lesson pipeline: tools/questions.py (pending/claim/draft/skip/release), tools/answer-questions.md (the task's instructions and lesson format), tools/run-answer-questions.sh (headless Claude, restricted tools, skips when there is nothing to do, releases stuck claims). Tested for real: example question 2 answered with a correct A1 lesson, stored as draft. Permission lesson: absolute paths in Claude Code rules need '//' (Edit(//tmp/...)), and Write rules don't apply, only Edit.
+- Method page sources verified (13 references, 11 DOIs resolve); 5 corrections, incl. Mayer 2009 replaced by Montero Perez et al. 2013 (Mayer's redundancy principle contradicts the claim).
+- docs/syllabus.md: 28 themes A1 → B1, 56 grammar points in order, 17 pronunciation contrasts with minimal pairs, vocabulary estimates. index.json follows it; op-café → op-cafe (NFC/NFD risk on Apple devices).
+- Tested in WebKit against the real database: all practice pages, teacher dashboard, add word → learner learns it, publish draft → learner does the lesson; no errors.
+- Example data on Stan's own account (marked EXEMPLE): question 1 + published lesson "de of het?", question 2 + draft lesson, teacher word "de trein", own word "het station". Remove before the learner starts? They are on Stan's account only.
