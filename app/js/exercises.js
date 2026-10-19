@@ -3,7 +3,7 @@
 import { esc, shuffle, judge, tiles, sameOrder, norm } from './util.js';
 import { speak, speakButton, canRecord, record, canRecognize, listen } from './audio.js';
 import * as store from './store.js';
-import { keesSays, praise, comfort } from './ui.js';
+import { keesSays, praise, comfort, sfx } from './ui.js';
 import { intervalLabel } from './fsrs.js';
 
 const view = () => document.getElementById('view');
@@ -21,6 +21,7 @@ function render(head, body) {
 function feedback(outcome, html, theme, audio) {
   const fb = document.getElementById('feedback');
   const [nl, fr] = outcome === 'wrong' ? comfort() : praise();
+  sfx(outcome === 'wrong' ? 'wrong' : 'right');
   const extra = outcome === 'near' ? '<small>Presque parfait — attention à l\'orthographe :</small>' : '';
   fb.className = `feedback ${outcome === 'wrong' ? 'ko' : 'ok'}`;
   fb.innerHTML = `${keesSays(nl, fr, outcome === 'wrong' ? 'think' : 'happy')}${extra}${html}<button class="btn primary wide" id="cont">Continuer</button>`;

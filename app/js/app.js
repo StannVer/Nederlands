@@ -13,7 +13,7 @@ import { onboarding, weekWidget, weekProgress, reminderFile, levelStatus, certif
 import { speakingOn } from './exercises.js';
 import { kees, keesSays, icon, stars, starsFor, hueOf } from './ui.js';
 
-const VERSION = '1.0';
+const VERSION = '1.1';
 const view = document.getElementById('view');
 const sidebar = document.getElementById('sidebar');
 const tabbar = document.getElementById('nav');
@@ -258,6 +258,8 @@ async function themePage(id) {
 
     ${t.culture ? `<h2 class="section">Vlaanderen</h2><div class="group culture"><strong>${esc(t.culture.title)}</strong><p class="small">${esc(t.culture.text)}</p></div>` : ''}
 
+    <div id="unit-stories"></div>
+
     <h2 class="section">Vocabulaire de l'unité</h2>
     <ul class="words">
       ${t.items.map((it) => { const s = wordStatus(id, it.id); return `
@@ -276,6 +278,19 @@ async function themePage(id) {
           <span class="kind">${esc(f.kind)} · ${esc(f.level)}</span><strong>${esc(f.title)}</strong><small>${esc(f.note)}</small></a></li>`).join('')}
       </ul>` : ''}`;
   if (sync.currentUser() && t.task) showFeedback(id).catch(() => {});
+  if (!custom) unitStories(id).catch(() => {});
+}
+
+// The unit's own stories, under its vocabulary.
+let storiesCache = null;
+async function unitStories(id) {
+  storiesCache ||= await fetch('content/stories.json').then((r) => r.json());
+  const list = storiesCache.stories.filter((s) => s.after === id);
+  const slot = document.getElementById('unit-stories');
+  if (!slot || !list.length) return;
+  slot.innerHTML = `<h2 class="section">Histoires de l'unité</h2>
+    <ul class="themes">${list.map((s) => `<li><a class="theme" href="#/practice/story/${s.id}"><span class="lvl">${store.db().stories?.[s.id] ? '✓' : icon('vocab')}</span>
+      <span><strong lang="nl">${esc(s.title)}</strong><small>${esc(s.fr)}</small></span></a></li>`).join('')}</ul>`;
 }
 
 // The teacher's answers to this theme's task, newest first; opening them marks them as seen.
@@ -414,6 +429,8 @@ function settings() {
         <select id="sgoal">${[3, 4, 5, 7].map((n) => `<option value="${n}" ${n === (st.weeklyGoal || 5) ? 'selected' : ''}>${n} jours / semaine</option>`).join('')}</select></label>
       <label class="row-setting">Rappel quotidien <input id="stime" class="field small-field" type="time" value="${esc(st.reminder || '19:00')}"></label>
       <button class="btn" id="scal">Ajouter le rappel à mon agenda</button>
+      <label class="row-setting">Sons (bonne et mauvaise réponse)
+        <select id="ssound"><option value="on" ${st.sounds !== false ? 'selected' : ''}>activés</option><option value="off" ${st.sounds === false ? 'selected' : ''}>désactivés</option></select></label>
       <label class="row-setting">Exercices oraux (reconnaissance vocale)
         <select id="sspeak"><option value="on" ${st.speaking !== false ? 'selected' : ''}>activés</option><option value="off" ${st.speaking === false ? 'selected' : ''}>désactivés</option></select></label>
       <p class="small">${speakingOn() ? 'La reconnaissance vocale fonctionne sur cet appareil.' : st.speaking === false ? 'Les exercices oraux sont désactivés.' : 'La reconnaissance vocale n\'est pas disponible sur cet appareil (ou en pause pour une heure).'}</p>
@@ -438,6 +455,7 @@ function settings() {
   document.getElementById('sgoal').onchange = (e) => { st.weeklyGoal = Number(e.target.value); store.save(); renderChrome(); };
   document.getElementById('stime').onchange = (e) => { st.reminder = e.target.value; store.save(); };
   document.getElementById('scal').onclick = () => reminderFile(document.getElementById('stime').value);
+  document.getElementById('ssound').onchange = (e) => { st.sounds = e.target.value === 'on'; store.save(); };
   document.getElementById('sspeak').onchange = (e) => { st.speaking = e.target.value === 'on'; delete st.speakingPausedUntil; store.save(); settings(); };
   document.getElementById('export').onclick = () => {
     const a = document.createElement('a');

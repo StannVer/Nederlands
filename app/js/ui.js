@@ -112,3 +112,55 @@ export function stars(n, max = 3) {
 // Theme colour, cycling through the palette so each unit on the map has its own band.
 const HUES = ['garden', 'coral', 'sun', 'teal', 'plum'];
 export const hueOf = (index) => HUES[index % HUES.length];
+
+// ---------- sound effects: synthesised with Web Audio, so there are no files to download ----------
+
+let audioCtx = null;
+const soundOn = () => { try { return JSON.parse(localStorage.getItem('nederlands_v1') || '{}').settings?.sounds !== false; } catch (e) { return true; } };
+
+function tone(freq, start, dur, type = 'sine', gain = 0.12) {
+  const o = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  o.type = type;
+  o.frequency.value = freq;
+  g.gain.setValueAtTime(0, audioCtx.currentTime + start);
+  g.gain.linearRampToValueAtTime(gain, audioCtx.currentTime + start + 0.015);
+  g.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + start + dur);
+  o.connect(g).connect(audioCtx.destination);
+  o.start(audioCtx.currentTime + start);
+  o.stop(audioCtx.currentTime + start + dur + 0.05);
+}
+
+export function sfx(kind) {
+  if (!soundOn()) return;
+  try {
+    audioCtx ||= new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    if (kind === 'right') { tone(784, 0, 0.12, 'triangle'); tone(1047, 0.09, 0.2, 'triangle'); }
+    else if (kind === 'wrong') { tone(220, 0, 0.18, 'sine', 0.1); tone(196, 0.12, 0.22, 'sine', 0.08); }
+    else if (kind === 'done') { [523, 659, 784, 1047].forEach((f, k) => tone(f, k * 0.09, 0.25, 'triangle', 0.1)); }
+    else if (kind === 'level') { [523, 659, 784, 1047, 784, 1047, 1319].forEach((f, k) => tone(f, k * 0.1, 0.3, 'triangle', 0.1)); }
+  } catch (e) { /* no audio: silently skip */ }
+}
+
+// ---------- confetti: a short burst in the course colours ----------
+
+export function confetti(n = 90) {
+  if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
+  const colors = ['#2e6b4f', '#c93d6f', '#f2b72c', '#1d7480', '#6e4fa3'];
+  const box = document.createElement('div');
+  box.className = 'confetti';
+  for (let i = 0; i < n; i++) {
+    const p = document.createElement('i');
+    p.style.left = `${Math.random() * 100}%`;
+    p.style.background = colors[i % colors.length];
+    p.style.animationDelay = `${Math.random() * 0.4}s`;
+    p.style.animationDuration = `${1.6 + Math.random() * 1.4}s`;
+    p.style.setProperty('--dx', `${(Math.random() - 0.5) * 160}px`);
+    p.style.setProperty('--r', `${Math.random() * 720 - 360}deg`);
+    if (i % 3 === 0) p.style.borderRadius = '50%';
+    box.appendChild(p);
+  }
+  document.body.appendChild(box);
+  setTimeout(() => box.remove(), 3600);
+}

@@ -6,7 +6,7 @@ import { speak, speakButton, stop, canRecord, record } from './audio.js';
 import * as sync from './sync.js';
 import { CONFIG } from './config.js';
 import { esc, shuffle, tiles } from './util.js';
-import { avatar, keesSays, stars, starsFor } from './ui.js';
+import { avatar, keesSays, stars, starsFor, sfx, confetti } from './ui.js';
 
 const view = () => document.getElementById('view');
 const firstGrade = (errors) => (errors === 0 ? Rating.Good : errors === 1 ? Rating.Hard : Rating.Again);
@@ -26,6 +26,25 @@ function endScreen(theme, step, title, lead) {
   stop();
   const next = nextStep(theme);
   const n = starsFor(store.stepDone(theme.id, step.id)?.score ?? 1);
+  const unitDone = !theme.virtual && theme.steps.every((s) => store.stepDone(theme.id, s.id));
+  if (unitDone && !store.db().settings[`celebrated:${theme.id}`]) {
+    store.db().settings[`celebrated:${theme.id}`] = Date.now();
+    store.save();
+    sfx('level');
+    confetti(160);
+    view().innerHTML = `
+      <div class="session end unit-done">
+        ${keesSays('Proficiat, je hebt het gehaald!', 'Félicitations, vous avez réussi l\'unité !')}
+        <p class="eyebrow">Unité terminée</p>
+        <h1 lang="nl">${esc(theme.nl)}</h1>
+        <p class="lead">Toutes les étapes de « ${esc(theme.fr)} » sont faites. Les mots continuent de revenir dans vos révisions pour rester bien ancrés.</p>
+        <a class="btn primary wide" href="#/path">Voir le parcours</a>
+        <a class="btn wide" href="#/practice/stories">Lire une histoire de l'unité</a>
+      </div>`;
+    return;
+  }
+  sfx('done');
+  if (n === 3) confetti();
   view().innerHTML = `
     <div class="session end">
       ${keesSays(n === 3 ? 'Schitterend!' : n === 2 ? 'Goed gedaan!' : 'Proficiat!', n === 3 ? 'Magnifique !' : n === 2 ? 'Bien joué !' : 'Félicitations !')}

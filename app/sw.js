@@ -1,6 +1,6 @@
 // Offline support: the app shell is cached on install; content and audio are cached as they are used
 // and refreshed in the background, so new lessons appear on the next launch.
-const VERSION = 'nl-v1.0.0';
+const VERSION = 'nl-v1.1.0';
 const SHELL = [
   './', 'index.html', 'manifest.webmanifest', 'css/app.css',
   'js/app.js', 'js/fsrs.js', 'js/store.js', 'js/util.js', 'js/audio.js', 'js/exercises.js',

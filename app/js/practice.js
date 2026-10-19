@@ -166,14 +166,18 @@ async function pron(id) {
 
 // ---------- graded stories ----------
 
-async function stories() {
+async function stories(_, ctx) {
   const c = await content('stories');
+  const units = ctx.themeIndex.filter((t) => c.stories.some((s) => s.after === t.id));
+  const started = (id) => Object.keys(store.db().steps || {}).some((k) => k.startsWith(`${id}/`));
   view().innerHTML = `${back()}
     <header class="theme-head"><p class="eyebrow">Lire et écouter</p><h1>Histoires</h1><p class="lead">${esc(c.intro)}</p></header>
-    <ul class="themes">${c.stories.map((s) => { const r = store.db().stories?.[s.id]; return `
-      <li><a class="theme" href="#/practice/story/${s.id}"><span class="lvl">${esc(s.level)}</span>
-        <span><strong lang="nl">${esc(s.title)}</strong><small>${esc(s.fr)}${r ? ` · lue · ${r.score}/${s.questions.length}` : ''}</small></span></a></li>`; }).join('')}
-    </ul>`;
+    ${units.map((u) => `
+      <h2 class="section">Après l'unité « ${esc(u.nl)} »${started(u.id) ? '' : ' · à lire plus tard'}</h2>
+      <ul class="themes">${c.stories.filter((s) => s.after === u.id).map((s) => { const r = store.db().stories?.[s.id]; return `
+        <li><a class="theme ${started(u.id) ? '' : 'soon'}" href="#/practice/story/${s.id}"><span class="lvl">${r ? '✓' : esc(s.level)}</span>
+          <span><strong lang="nl">${esc(s.title)}</strong><small>${esc(s.fr)}${r ? ` · lue · ${r.score}/${s.questions.length}` : ''}</small></span></a></li>`; }).join('')}
+      </ul>`).join('')}`;
 }
 
 async function story(id, ctx) {
@@ -181,9 +185,11 @@ async function story(id, ctx) {
   const s = c.stories.find((x) => x.id === id);
   if (!s) { location.hash = '#/practice/stories'; return; }
   // Words the learner has met in the course: every word of every learned item counts.
-  const theme = s.after ? await ctx.loadTheme(s.after) : null;
+  // Words met anywhere in the course so far (every learned item of every unit) count as known.
+  const all = await Promise.all(ctx.themeIndex.filter((t) => t.status === 'ready').map((t) => ctx.loadTheme(t.id)));
+  const theme = { items: all.flatMap((t) => t.items) };
   const learned = new Set();
-  for (const it of theme?.items || []) if (store.getCard(`${theme.id}/${it.id}`)) [it.nl, it.ex_nl].forEach((t) => norm(t).split(' ').forEach((w) => w && learned.add(w)));
+  for (const t of all) for (const it of t.items) if (store.getCard(`${t.id}/${it.id}`)) [it.nl, it.ex_nl].forEach((x) => norm(x || '').split(' ').forEach((w) => w && learned.add(w)));
   (store.db().mywords || []).forEach((w) => norm(w.nl).split(' ').forEach((x) => learned.add(x)));
   const tokens = s.lines.flatMap((l) => norm(l.nl).split(' ').filter(Boolean));
   const coverage = tokens.length ? Math.round((tokens.filter((w) => learned.has(w)).length / tokens.length) * 100) : 0;

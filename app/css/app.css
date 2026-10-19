@@ -522,3 +522,9 @@ textarea { padding: 12px 16px; line-height: 1.5; resize: vertical; font-size: 17
   content: attr(data-n); position: absolute; left: -9px; top: -9px; width: 26px; height: 26px; border-radius: 50%;
   background: var(--ink); color: var(--paper); font-weight: 800; font-size: 13px; display: grid; place-items: center;
 }
+
+/* confetti and the unit-complete screen */
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 50; overflow: hidden; }
+.confetti i { position: absolute; top: -12px; width: 9px; height: 14px; border-radius: 2px; animation: fall linear forwards; }
+@keyframes fall { to { transform: translate(var(--dx), 105vh) rotate(var(--r)); opacity: .9; } }
+.unit-done h1 { font-size: clamp(36px, 7vw, 54px); }
