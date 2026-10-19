@@ -7,14 +7,14 @@
   "learner": "French speaker, starting from zero (A0)",
   "tech_stack": ["vanilla JS", "PWA (home-screen install on iPhone)", "Supabase (optional sync, later)", "Netlify"],
   "codebase_root": "/mnt/c/Users/sverschaeve/OneDrive - ITG/Documents/9. Education/Nederlands/",
-  "git_remote": "github-personal:StannVer/Nederlands (private, not yet created)",
+  "git_remote": "github-personal:StannVer/Nederlands (private)",
   "phases": [
     "Phase 0: Tracking infrastructure and plan",
     "Phase 1: App shell — PWA, installable on iPhone, offline",
     "Phase 2: Review engine — spaced retrieval (FSRS), progress tracking",
     "Phase 3: Theme 1 'Kennismaken' — content, recording list, Stan's recordings",
-    "Phase 4: Recording page + record-and-compare for the learner",
-    "Phase 5: Private hosting (Netlify) + learner access (Supabase, approved by Stan)",
-    "Phase 6: Further themes, added along the way"
+    "Phase 4: Course frame v0.2 — theme path (words, grammar, dialogue, checkpoint), 7 exercise types, mixed review, method page",
+    "Phase 5: Private hosting (Netlify) + learner accounts (Supabase, created by Stan)",
+    "Phase 6: Audio pipeline (Flemish neural voices, generated once), then themes A1 → B1 (~28) with curated links"
   ]
 }

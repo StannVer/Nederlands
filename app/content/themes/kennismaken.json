@@ -4,6 +4,60 @@
   "fr": "Faire connaissance",
   "level": "A1",
   "intro": "Saluer, dire son nom, d'où l'on vient et où l'on habite. À la fin de ce thème, vous pouvez vous présenter à un collègue flamand — et comprendre sa réponse.",
+  "cando": [
+    "Je peux saluer quelqu'un et prendre congé, poliment ou entre collègues.",
+    "Je peux dire comment je m'appelle, d'où je viens et où j'habite.",
+    "Je peux demander à quelqu'un son nom, où il habite et comment il va.",
+    "Je peux comprendre une courte présentation dite lentement."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Bonjour et au revoir",
+      "items": [
+        "hallo",
+        "goeiedag",
+        "dag",
+        "hoe-gaat-het",
+        "goed-dank-u",
+        "tot-ziens"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "Qui êtes-vous ?",
+      "items": [
+        "ik-heet",
+        "hoe-heet-u",
+        "aangenaam",
+        "ik-kom-uit",
+        "ik-woon-in",
+        "een-beetje"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "ik woon — u woont"
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "Poser une question"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "Au travail"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    }
+  ],
   "items": [
     {
       "id": "hallo",
@@ -17,8 +71,8 @@
       "id": "goeiedag",
       "nl": "Goeiedag!",
       "fr": "Bonjour ! (poli)",
-      "ex_nl": "Goeiedag, meneer.",
-      "ex_fr": "Bonjour, monsieur.",
+      "ex_nl": "Goeiedag meneer, hoe gaat het?",
+      "ex_fr": "Bonjour monsieur, comment allez-vous ?",
       "note": "Très flamand : aux Pays-Bas on ne l'entend presque pas. « oe » se dit « ou ». Le « g » est un souffle au fond de la gorge, jamais le « g » de « gare » — en Flandre il est doux."
     },
     {
@@ -30,36 +84,13 @@
       "note": "Un seul mot pour arriver ET pour partir. Le « a » est court, comme dans « patte »."
     },
     {
-      "id": "ik-heet",
-      "nl": "Ik heet …",
-      "fr": "Je m'appelle …",
-      "accept": ["ik heet"],
-      "ex_nl": "Ik heet Karim.",
-      "ex_fr": "Je m'appelle Karim.",
-      "note": "« ee » est un « é » long : « hét ». Pas de verbe pronominal : on dit littéralement « je m'appelle » sans « me »."
-    },
-    {
-      "id": "hoe-heet-u",
-      "nl": "Hoe heet u?",
-      "fr": "Comment vous appelez-vous ?",
-      "accept": ["hoe heet je", "hoe heet jij"],
-      "ex_nl": "Goeiedag. Hoe heet u?",
-      "ex_fr": "Bonjour. Comment vous appelez-vous ?",
-      "note": "« u » = vous (poli) et se prononce comme le « u » français — un son que les francophones ont déjà ! « je » ou « jij » = tu."
-    },
-    {
-      "id": "aangenaam",
-      "nl": "Aangenaam.",
-      "fr": "Enchanté(e).",
-      "ex_nl": "Ik heet Sofie. — Aangenaam!",
-      "ex_fr": "Je m'appelle Sofie. — Enchanté !",
-      "note": "« aa » est un « a » long. Un seul mot, le même pour un homme ou une femme."
-    },
-    {
       "id": "hoe-gaat-het",
       "nl": "Hoe gaat het?",
       "fr": "Comment ça va ?",
-      "accept": ["hoe gaat het met u", "hoe gaat het met je"],
+      "accept": [
+        "hoe gaat het met u",
+        "hoe gaat het met je"
+      ],
       "ex_nl": "Dag Karim, hoe gaat het met u?",
       "ex_fr": "Bonjour Karim, comment allez-vous ?",
       "note": "Mot à mot : « comment va-t-il ? ». En Flandre on entend aussi « alles goed? » — « tout va bien ? »."
@@ -68,16 +99,64 @@
       "id": "goed-dank-u",
       "nl": "Goed, dank u.",
       "fr": "Bien, merci.",
-      "accept": ["goed dank je", "goed merci", "goed dank u wel"],
+      "accept": [
+        "goed dank je",
+        "goed merci",
+        "goed dank u wel"
+      ],
       "ex_nl": "Goed, dank u. En met u?",
       "ex_fr": "Bien, merci. Et vous ?",
       "note": "Bonne nouvelle : en Flandre, « merci » s'utilise tous les jours ! « dank u » (poli) ou « dank je » (familier) sont aussi corrects."
     },
     {
+      "id": "tot-ziens",
+      "nl": "Tot ziens!",
+      "fr": "Au revoir !",
+      "accept": [
+        "tot straks"
+      ],
+      "ex_nl": "Tot ziens, en tot straks!",
+      "ex_fr": "Au revoir, et à tout à l'heure !",
+      "note": "« ie » = « i » français. « Tot straks » = à tout à l'heure, « tot morgen » = à demain."
+    },
+    {
+      "id": "ik-heet",
+      "nl": "Ik heet …",
+      "fr": "Je m'appelle …",
+      "accept": [
+        "ik heet"
+      ],
+      "ex_nl": "Ik heet Karim.",
+      "ex_fr": "Je m'appelle Karim.",
+      "note": "« ee » est un « é » long : « hét ». Pas de « me » : on dit simplement « je appelle »."
+    },
+    {
+      "id": "hoe-heet-u",
+      "nl": "Hoe heet u?",
+      "fr": "Comment vous appelez-vous ?",
+      "accept": [
+        "hoe heet je",
+        "hoe heet jij"
+      ],
+      "ex_nl": "Goeiedag. Hoe heet u?",
+      "ex_fr": "Bonjour. Comment vous appelez-vous ?",
+      "note": "« u » = vous (poli) et se prononce comme le « u » français — un son que les francophones ont déjà ! « je » ou « jij » = tu."
+    },
+    {
+      "id": "aangenaam",
+      "nl": "Aangenaam.",
+      "fr": "Enchanté(e).",
+      "ex_nl": "Aangenaam, ik ben Karim.",
+      "ex_fr": "Enchanté, je suis Karim.",
+      "note": "« aa » est un « a » long. Un seul mot, le même pour un homme ou une femme."
+    },
+    {
       "id": "ik-kom-uit",
       "nl": "Ik kom uit …",
       "fr": "Je viens de …",
-      "accept": ["ik kom uit"],
+      "accept": [
+        "ik kom uit"
+      ],
       "ex_nl": "Ik kom uit Luik.",
       "ex_fr": "Je viens de Liège.",
       "note": "« ui » n'existe pas en français : partez de « eu » (comme dans « peur ») et glissez vers « i ». Les villes ont un nom néerlandais : Liège = Luik, Mons = Bergen, Namur = Namen."
@@ -86,7 +165,9 @@
       "id": "ik-woon-in",
       "nl": "Ik woon in …",
       "fr": "J'habite à …",
-      "accept": ["ik woon in"],
+      "accept": [
+        "ik woon in"
+      ],
       "ex_nl": "Ik woon in Brussel.",
       "ex_fr": "J'habite à Bruxelles.",
       "note": "On dit « in » pour une ville, jamais « aan ». Bruxelles = Brussel, Anvers = Antwerpen, Gand = Gent."
@@ -95,37 +176,304 @@
       "id": "een-beetje",
       "nl": "Ik spreek een beetje Nederlands.",
       "fr": "Je parle un peu néerlandais.",
-      "accept": ["ik spreek een beetje nederlands", "een beetje"],
+      "accept": [
+        "een beetje"
+      ],
       "ex_nl": "Sorry, ik spreek een beetje Nederlands.",
       "ex_fr": "Désolé, je parle un peu néerlandais.",
       "note": "La phrase la plus utile du thème : les Flamands ralentissent tout de suite. « een » se dit « eun » (son court) et « beetje » : « béé-tieu »."
-    },
-    {
-      "id": "tot-ziens",
-      "nl": "Tot ziens!",
-      "fr": "Au revoir !",
-      "accept": ["tot straks"],
-      "ex_nl": "Tot ziens, en tot straks!",
-      "ex_fr": "Au revoir, et à tout à l'heure !",
-      "note": "« ie » = « i » français. « Tot straks » = à tout à l'heure, « tot morgen » = à demain."
     }
   ],
+  "grammar": {
+    "g1": {
+      "title": "ik woon — u woont",
+      "explain": [
+        "En néerlandais, le verbe change très peu. On part de la forme de « ik » : c'est la racine.",
+        "Pour « u », « je » (tu), « hij » (il) et « zij » (elle), on ajoute un « -t ». Et ce « -t » s'entend !",
+        "Si la racine finit déjà par « t », on n'en ajoute pas un deuxième : ik heet, u heet."
+      ],
+      "table": [
+        [
+          "ik woon",
+          "j'habite"
+        ],
+        [
+          "je woont",
+          "tu habites"
+        ],
+        [
+          "u woont",
+          "vous habitez"
+        ],
+        [
+          "hij / zij woont",
+          "il / elle habite"
+        ]
+      ],
+      "contrast": "En français, « j'habite » et « il habite » se prononcent pareil. En néerlandais, le « -t » se prononce : « ik woon » mais « hij woont ».",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Ik ___ in Gent.",
+          "options": [
+            "woon",
+            "woont"
+          ],
+          "answer": "woon",
+          "fr": "J'habite à Gand."
+        },
+        {
+          "type": "choice",
+          "nl": "U ___ in Brussel.",
+          "options": [
+            "woon",
+            "woont"
+          ],
+          "answer": "woont",
+          "fr": "Vous habitez à Bruxelles."
+        },
+        {
+          "type": "choice",
+          "nl": "Sofie ___ Nederlands.",
+          "options": [
+            "spreek",
+            "spreekt"
+          ],
+          "answer": "spreekt",
+          "fr": "Sofie parle néerlandais."
+        },
+        {
+          "type": "choice",
+          "nl": "Ik ___ uit Namen.",
+          "options": [
+            "kom",
+            "komt"
+          ],
+          "answer": "kom",
+          "fr": "Je viens de Namur."
+        },
+        {
+          "type": "choice",
+          "nl": "Hij ___ Karim.",
+          "options": [
+            "heet",
+            "heett"
+          ],
+          "answer": "heet",
+          "fr": "Il s'appelle Karim.",
+          "why": "La racine « heet » finit déjà par « t » : on n'en ajoute pas un deuxième."
+        },
+        {
+          "type": "order",
+          "nl": "Karim woont in Brussel.",
+          "fr": "Karim habite à Bruxelles."
+        }
+      ]
+    },
+    "g2": {
+      "title": "Poser une question",
+      "explain": [
+        "Question par oui ou non : le verbe passe en premier, puis le sujet — comme « Habitez-vous à Gand ? » en français soigné.",
+        "Question avec un mot interrogatif : d'abord le mot (hoe = comment, waar = où), puis le verbe, puis le sujet.",
+        "Attention avec « je » (tu) : quand le verbe passe devant, le « -t » disparaît. Je woont → Woon je in Gent?"
+      ],
+      "table": [
+        [
+          "U woont in Gent.",
+          "Vous habitez à Gand."
+        ],
+        [
+          "Woont u in Gent?",
+          "Habitez-vous à Gand ?"
+        ],
+        [
+          "Waar woont u?",
+          "Où habitez-vous ?"
+        ],
+        [
+          "Woon je in Gent?",
+          "Tu habites à Gand ?"
+        ]
+      ],
+      "contrast": "En français on peut dire « Vous habitez où ? ». En néerlandais, jamais : le mot interrogatif et le verbe viennent toujours en tête.",
+      "exercises": [
+        {
+          "type": "order",
+          "nl": "Woont u in Gent?",
+          "fr": "Habitez-vous à Gand ?"
+        },
+        {
+          "type": "choice",
+          "nl": "___ heet u?",
+          "options": [
+            "Hoe",
+            "Waar"
+          ],
+          "answer": "Hoe",
+          "fr": "Comment vous appelez-vous ?"
+        },
+        {
+          "type": "choice",
+          "nl": "___ woont u?",
+          "options": [
+            "Hoe",
+            "Waar"
+          ],
+          "answer": "Waar",
+          "fr": "Où habitez-vous ?"
+        },
+        {
+          "type": "order",
+          "nl": "Waar woont u?",
+          "fr": "Où habitez-vous ?"
+        },
+        {
+          "type": "choice",
+          "nl": "___ je in Brussel?",
+          "options": [
+            "Woon",
+            "Woont"
+          ],
+          "answer": "Woon",
+          "fr": "Tu habites à Bruxelles ?"
+        },
+        {
+          "type": "order",
+          "nl": "Spreekt u Nederlands?",
+          "fr": "Parlez-vous néerlandais ?"
+        }
+      ]
+    }
+  },
   "dialogue": {
     "title": "Op het werk — Au travail",
+    "roles": {
+      "learner": "Karim"
+    },
     "lines": [
-      { "id": "d01", "who": "Sofie", "nl": "Goeiedag! Ik heet Sofie. Hoe heet u?", "fr": "Bonjour ! Je m'appelle Sofie. Comment vous appelez-vous ?" },
-      { "id": "d02", "who": "Karim", "nl": "Dag Sofie, ik heet Karim. Aangenaam.", "fr": "Bonjour Sofie, je m'appelle Karim. Enchanté." },
-      { "id": "d03", "who": "Sofie", "nl": "Aangenaam. Waar woont u?", "fr": "Enchantée. Où habitez-vous ?" },
-      { "id": "d04", "who": "Karim", "nl": "Ik woon in Brussel, maar ik kom uit Luik.", "fr": "J'habite à Bruxelles, mais je viens de Liège." },
-      { "id": "d05", "who": "Sofie", "nl": "Ah, u spreekt Nederlands!", "fr": "Ah, vous parlez néerlandais !" },
-      { "id": "d06", "who": "Karim", "nl": "Een beetje…", "fr": "Un peu…" },
-      { "id": "d07", "who": "Sofie", "nl": "Heel goed! Tot straks, Karim.", "fr": "Très bien ! À tout à l'heure, Karim." },
-      { "id": "d08", "who": "Karim", "nl": "Dag, tot straks!", "fr": "Salut, à tout à l'heure !" }
+      {
+        "id": "d01",
+        "who": "Sofie",
+        "nl": "Goeiedag! Ik heet Sofie. Hoe heet u?",
+        "fr": "Bonjour ! Je m'appelle Sofie. Comment vous appelez-vous ?"
+      },
+      {
+        "id": "d02",
+        "who": "Karim",
+        "nl": "Dag Sofie, ik heet Karim. Aangenaam.",
+        "fr": "Bonjour Sofie, je m'appelle Karim. Enchanté."
+      },
+      {
+        "id": "d03",
+        "who": "Sofie",
+        "nl": "Aangenaam. Waar woont u?",
+        "fr": "Enchantée. Où habitez-vous ?"
+      },
+      {
+        "id": "d04",
+        "who": "Karim",
+        "nl": "Ik woon in Brussel, maar ik kom uit Luik.",
+        "fr": "J'habite à Bruxelles, mais je viens de Liège."
+      },
+      {
+        "id": "d05",
+        "who": "Sofie",
+        "nl": "Ah, u spreekt Nederlands!",
+        "fr": "Ah, vous parlez néerlandais !"
+      },
+      {
+        "id": "d06",
+        "who": "Karim",
+        "nl": "Een beetje…",
+        "fr": "Un peu…"
+      },
+      {
+        "id": "d07",
+        "who": "Sofie",
+        "nl": "Heel goed! Tot straks, Karim.",
+        "fr": "Très bien ! À tout à l'heure, Karim."
+      },
+      {
+        "id": "d08",
+        "who": "Karim",
+        "nl": "Dag, tot straks!",
+        "fr": "Salut, à tout à l'heure !"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Comment s'appelle la femme ?",
+        "options": [
+          "Sofie",
+          "Marie",
+          "Karim"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Où habite Karim ?",
+        "options": [
+          "À Liège",
+          "À Bruxelles",
+          "À Gand"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "D'où vient Karim ?",
+        "options": [
+          "De Bruxelles",
+          "D'Anvers",
+          "De Liège"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Karim parle néerlandais…",
+        "options": [
+          "un peu",
+          "très bien",
+          "pas du tout"
+        ],
+        "answer": 0
+      }
     ]
   },
   "tips": [
-    { "title": "u ou je ?", "text": "Comme vous et tu. « u » avec un inconnu, un client, un aîné ; « je » entre collègues et amis. Les Flamands passent vite au « je »." },
-    { "title": "Le « g » flamand", "text": "Il se prononce au fond de la gorge, comme un souffle — plus doux qu'aux Pays-Bas. Pensez à la « jota » espagnole, en plus léger." },
-    { "title": "Les noms des villes", "text": "Liège = Luik · Mons = Bergen · Namur = Namen · Bruxelles = Brussel · Anvers = Antwerpen · Gand = Gent · Louvain = Leuven." }
+    {
+      "title": "u ou je ?",
+      "text": "Comme vous et tu. « u » avec un inconnu, un client, un aîné ; « je » entre collègues et amis. Les Flamands passent vite au « je »."
+    },
+    {
+      "title": "Le « g » flamand",
+      "text": "Il se prononce au fond de la gorge, comme un souffle — plus doux qu'aux Pays-Bas. Pensez à la « jota » espagnole, en plus léger."
+    },
+    {
+      "title": "Les noms des villes",
+      "text": "Liège = Luik · Mons = Bergen · Namur = Namen · Bruxelles = Brussel · Anvers = Antwerpen · Gand = Gent · Louvain = Leuven."
+    }
+  ],
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — s'entraîner avec de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Choisissez le niveau le plus bas."
+    },
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Vidéos et exercices gratuits, avec explications en français."
+    },
+    {
+      "kind": "lecture",
+      "title": "Wablieft — le journal en néerlandais facile",
+      "url": "https://www.wablieft.be",
+      "level": "A2+",
+      "note": "À garder pour plus tard : l'actualité flamande en phrases courtes."
+    }
   ]
 }

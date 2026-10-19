@@ -14,3 +14,12 @@
 - Audio: plays Stan's recordings when present, synthetic voice otherwise; microphone test in Réglages
 - `tools/recording-list.py` + `recording-lists/kennismaken.md` (32 lines to record)
 - Tested in WebKit at iPhone size: full lesson, deliberate mistake re-queued, review with Again re-shown, progress, settings, dark mode; no errors
+
+### Phase 4: Course frame v0.2
+- Theme path with 6 steps; 7 exercise types (present + record/compare, listen & choose, read & choose, typed recall with typo tolerance, word order, grammar gap, say-aloud self-grade) plus dialogue comprehension and role play
+- Grammar blocks with French contrast; checkpoint with CEFR can-do self-assessment
+- Mixed review across modalities and themes; grammar exercises become review cards
+- Method page ("Pourquoi ça marche") with sources; "Pour aller plus loin" links per theme (NedBox, Franel, Wablieft — checked, all resolve)
+- Accounts and cloud sync ready (Supabase, vendored supabase-js 2.45.4), off until configured; `supabase/schema.sql`
+- `tools/validate.py`, `publish.sh` (personal-token check, validation gate)
+- Tested in WebKit at iPhone size: all 6 steps of Kennismaken + 24-item mixed review, no errors; fixed tiles giving away sentence boundaries

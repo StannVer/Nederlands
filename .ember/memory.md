@@ -30,3 +30,25 @@
 ## Open questions
 - Test microphone recording in an installed PWA on the real iPhone before building Phase 4 on it.
 - Second voice for dialogues (someone other than Stan)?
+
+## 2026-10-19 (later) — course frame v0.2
+- A theme is a path of steps: words (×2, 6 items each) → grammar (×2) → dialogue → checkpoint. Steps are never locked; the next one is suggested.
+- Words step: present (hear, see, example, French-speaker note, optional record-and-compare) → listen & choose → type from memory → put the example in order. A miss re-queues the same task 2–3 places later.
+- Typos: within 1 letter (2 for 10+ letters) count as right ("presque"), graded Hard in review.
+- Grammar step: explanation + table with audio + explicit contrast with French, then gap/order exercises; every exercise also becomes a review card (`theme/g1#0`).
+- Dialogue step: listen with blurred text → comprehension questions → read with translation → role play as the learner's character.
+- Checkpoint: 10 mixed items + CEFR "je peux…" self-assessment; pass mark 8/10.
+- Review: all themes mixed; word cards rotate say-aloud / typed / listening by repetition count; Again is re-shown once per session.
+- Method page in French explains each principle with its source (Roediger & Karpicke 2006; Cepeda et al. 2006; Latimier, Peyre & Ramus 2021; Ye et al. 2022; Mayer 2009; Krashen 1982; Norris & Ortega 2000; CEFR).
+- `tools/validate.py` must pass before publishing (`publish.sh` enforces it).
+
+## Content strategy (decided 2026-10-19)
+- Stan does NOT record everything. Audio = Flemish neural voices (Azure nl-BE Dena/Arnaud, to confirm) generated once per theme into files; Stan's recordings optional. Until then the device's Dutch voice stands in.
+- Copy only what the licence allows: Tatoeba text (CC BY 2.0 FR, with credit; audio per contributor), Common Voice (CC0). Everything else (NedBox, Franel, Wablieft, VRT/Ketnet, VDAB) is linked, never copied — per theme under "Pour aller plus loin".
+- Scale: ~28 themes A1 → B1, ~2,000 words, same structure per theme; Stan spot-checks rather than reading every line.
+
+## Hosting (decided 2026-10-19)
+- No App Store, nothing installed: a web page with login. Netlify (personal account) + Supabase (org Sver, project to create).
+- Accounts created by Stan in the Supabase dashboard; sign-up off. `supabase/schema.sql`: one `progress` row per learner, row-level security.
+- Supabase URL + publishable key go into `app/js/config.js` (public by design). Empty config = no login, device-only progress.
+- Desktop (239GX64) has no personal Netlify token or Supabase login yet (2026-10-19).
