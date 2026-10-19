@@ -32,7 +32,7 @@
 - validate.py checks task steps; tested in WebKit (in-person path). Recording and the online feedback loop are untested until the Supabase project exists.
 
 ### Phase 5 (started): hosting
-- First deploy to the personal Netlify account: https://nederlands-3d0eb427.netlify.app (site id in deploy/site.json). Netlify visitor protection is on: only logged-in Netlify team members can open it, which suits the preview; switch off once the course's own login works.
+- First deploy to the personal Netlify account: https://monianederlands.netlify.app (site id in deploy/site.json). Netlify visitor protection is on: only logged-in Netlify team members can open it, which suits the preview; switch off once the course's own login works.
 - Supabase: the desktop token manages the EPSO project but may not create projects in the org (403). Decision: Stan creates the `nederlands` project in the dashboard (Frankfurt); everything else via the Management API.
 
 ### Phase 5: accounts live
