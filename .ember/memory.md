@@ -52,3 +52,9 @@
 - Accounts created by Stan in the Supabase dashboard; sign-up off. `supabase/schema.sql`: one `progress` row per learner, row-level security.
 - Supabase URL + publishable key go into `app/js/config.js` (public by design). Empty config = no login, device-only progress.
 - Desktop (239GX64) has no personal Netlify token or Supabase login yet (2026-10-19).
+
+## 2026-10-19 — task step and audio sources
+- Each theme ends with an opdracht done WITH Stan (in person by default; a recording is optional). Stan answers in the app (text and/or voice). Rationale: task-based teaching (Flemish TBLT tradition, Van den Branden 2006) + corrective feedback are what an app alone cannot give.
+- Audio sources checked: Lingua Libre (CC BY-SA 4.0, words, speaker location known — usable), Common Voice (CC0, accent rarely tagged), Tatoeba (text CC BY 2.0 FR; audio per contributor), Forvo (NOT reusable since 2019), CGN (audio not in the free licence). Podcasts/VRT/Ketnet: links only.
+- Sources on the method page are from memory and NOT yet verified against the papers — verify before the learner sees them.
+- Access: Metis records only WHERE credentials live (accounts.json), never the keys. Personal Netlify token and Supabase CLI login exist only on the laptop; desktop needs its own (Netlify personal access token → C:\Users\sverschaeve\.personal\netlify-token.txt; Supabase access token → ~/.supabase/access-token).

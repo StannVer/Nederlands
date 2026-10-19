@@ -2,7 +2,9 @@
 import * as ex from './exercises.js';
 import * as store from './store.js';
 import { schedule, Rating } from './fsrs.js';
-import { speak, speakButton, stop } from './audio.js';
+import { speak, speakButton, stop, canRecord, record } from './audio.js';
+import * as sync from './sync.js';
+import { CONFIG } from './config.js';
 import { esc, shuffle, tiles } from './util.js';
 
 const view = () => document.getElementById('view');
@@ -15,7 +17,7 @@ export function nextStep(theme) {
 export async function runStep(theme, stepId) {
   const step = theme.steps.find((s) => s.id === stepId);
   if (!step) { location.hash = `#/theme/${theme.id}`; return; }
-  const run = { words, grammar, dialogue, checkpoint }[step.type];
+  const run = { words, grammar, dialogue, checkpoint, task }[step.type];
   await run(theme, step);
 }
 
@@ -278,4 +280,103 @@ async function checkpoint(theme, step) {
   endScreen(theme, step, passed ? 'Thème validé !' : 'Presque !',
     passed ? `${right}/${quiz.length} au quiz. Les mots du thème continuent de revenir en révision pour ne pas s'oublier.`
       : `${right}/${quiz.length} au quiz. Faites vos révisions quelques jours, puis refaites le bilan — l'objectif est 8/10.`);
+}
+
+// ---------- task (opdracht): prepare, then do it for real with the teacher ----------
+// The point of a theme is to use the language with a person. The app prepares the learner; the
+// conversation happens with the teacher, in person or as a recording the teacher answers.
+
+async function task(theme, step) {
+  const t = theme.task;
+  const teacher = CONFIG.teacherName;
+  const phrases = t.phrases.map((id) => theme.items.find((i) => i.id === id)).filter(Boolean);
+  const online = sync.enabled() && sync.currentUser();
+
+  // 1. brief and prepare
+  await new Promise((resolve) => {
+    view().innerHTML = `
+      <div class="session">
+        ${ex.header(0, 2, 'Préparer')}
+        <article class="flash task">
+          <p class="eyebrow">Opdracht</p>
+          <h1 class="fr-prompt">${esc(t.scenario)}</h1>
+          <h2 class="section">Ce que vous devez faire</h2>
+          <ul class="goals">${t.goals.map((g) => `<li>${esc(g)}</li>`).join('')}</ul>
+          <h2 class="section">Expressions utiles</h2>
+          <ul class="mini">${phrases.map((it) => `<li>${speakButton(theme.id, it.id, it.nl)}<span lang="nl"><strong>${esc(it.nl)}</strong></span><small>${esc(it.fr)}</small></li>`).join('')}</ul>
+          <p class="note">${esc(t.prepare)}</p>
+          <label class="notes-label" for="notes">Mes phrases (en néerlandais)</label>
+          <textarea id="notes" lang="nl" rows="6" autocapitalize="sentences" spellcheck="false" placeholder="Goeiedag! Ik heet …">${esc(store.getTask(theme.id).notes)}</textarea>
+        </article>
+        <button class="btn primary wide" id="go">Je suis prêt(e)</button>
+      </div>`;
+    const notes = document.getElementById('notes');
+    notes.oninput = () => store.setTask(theme.id, { notes: notes.value });
+    document.getElementById('go').onclick = resolve;
+  });
+
+  // 2. do it: in person, or record and send
+  const notes = store.getTask(theme.id).notes;
+  const result = await new Promise((resolve) => {
+    view().innerHTML = `
+      <div class="session">
+        ${ex.header(1, 2, 'À vous')}
+        <article class="flash">
+          <p class="eyebrow">Opdracht</p>
+          <h1 class="fr-prompt">${esc(t.perform)}</h1>
+          ${notes ? `<details class="mynotes"><summary>Mes notes (pour revoir avant, pas pendant)</summary><p lang="nl">${esc(notes).replace(/\n/g, '<br>')}</p></details>` : ''}
+        </article>
+        <button class="btn primary wide" id="person">C'est fait : je l'ai fait avec ${esc(teacher)}</button>
+        ${canRecord() ? `<div class="group">
+          <p class="small">${esc(t.record)}</p>
+          <div class="recorder"><button class="btn" id="rec">● Enregistrer</button><span id="recstate" class="small"></span></div>
+          <div id="take"></div>
+        </div>` : ''}
+      </div>`;
+    document.getElementById('person').onclick = async () => {
+      if (online) { try { await sync.submitTask({ theme: theme.id, mode: 'in_person', notes }); } catch (e) { /* the step still counts */ } }
+      resolve('in_person');
+    };
+    const rec = document.getElementById('rec');
+    if (!rec) return;
+    let current = null, blob = null;
+    rec.onclick = async () => {
+      if (current) { blob = await current.stop(); current = null; return; }
+      try {
+        current = await record(180000);
+        rec.textContent = '■ Arrêter';
+        const started = Date.now();
+        const tick = setInterval(() => {
+          if (!current) { clearInterval(tick); return; }
+          const s = Math.round((Date.now() - started) / 1000);
+          document.getElementById('recstate').textContent = `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`;
+        }, 500);
+        blob = await current.done;
+        current = null;
+        clearInterval(tick);
+        rec.textContent = '● Recommencer';
+        document.getElementById('recstate').textContent = '';
+        document.getElementById('take').innerHTML = `<audio controls src="${URL.createObjectURL(blob)}"></audio>
+          ${online ? `<button class="btn primary wide" id="send">Envoyer à ${esc(teacher)}</button><p id="senderr" class="small ko" hidden></p>`
+            : `<p class="small">L'envoi à ${esc(teacher)} sera possible une fois l'application en ligne. Faites-lui écouter sur ce téléphone.</p>
+               <button class="btn wide" id="keep">C'est fait</button>`}`;
+        document.getElementById('keep')?.addEventListener('click', () => resolve('recorded_local'));
+        const send = document.getElementById('send');
+        if (send) send.onclick = async () => {
+          send.disabled = true; send.textContent = 'Envoi…';
+          try { await sync.submitTask({ theme: theme.id, mode: 'recording', notes, blob }); resolve('sent'); }
+          catch (e) { send.disabled = false; send.textContent = `Envoyer à ${teacher}`; const er = document.getElementById('senderr'); er.hidden = false; er.textContent = 'Envoi impossible — vérifiez la connexion et réessayez.'; }
+        };
+      } catch (e) {
+        document.getElementById('recstate').textContent = 'Micro indisponible.';
+      }
+    };
+  });
+
+  store.setTask(theme.id, { done: Date.now(), mode: result });
+  store.completeStep(theme.id, step.id, 1);
+  store.logActivity(1);
+  endScreen(theme, step, result === 'sent' ? 'Envoyé !' : 'Bravo !',
+    result === 'sent' ? `${esc(teacher)} va écouter et vous répondre. Sa réponse apparaîtra sur la page du thème.`
+      : `Parler pour de vrai, c'est le but de chaque thème. ${online ? `Si ${esc(teacher)} vous laisse un retour, il apparaîtra sur la page du thème.` : ''}`);
 }

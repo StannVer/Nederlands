@@ -301,3 +301,26 @@ body:has(.session:not(.end)) .nav { display: none; }
 
 .login .typed input { font-size: 17px; }
 body.locked .nav { display: none; }
+
+/* ---------- v0.3: task step, teacher feedback ---------- */
+.flash.task .section { margin: 14px 0 4px; }
+.mini { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; width: 100%; }
+.mini li { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; }
+.mini .speak { grid-row: span 2; width: 36px; height: 36px; }
+.mini .speak svg { width: 18px; height: 18px; }
+.notes-label { font-size: 14px; font-weight: 600; color: var(--ink-2); }
+textarea {
+  width: 100%; padding: 12px 14px; border-radius: 14px; border: 1.5px solid var(--line); background: var(--surface);
+  font: inherit; font-size: 17px; line-height: 1.5; resize: vertical; color: var(--ink);
+}
+textarea:focus { outline: none; border-color: var(--ink); }
+.mynotes { width: 100%; font-size: 15px; color: var(--ink-2); }
+.mynotes summary { cursor: pointer; color: var(--ink-3); }
+.recorder { display: flex; align-items: center; gap: 12px; }
+#take audio, .tip audio, .submissions audio, .fbaudio audio { width: 100%; }
+.card.feedback-card { border: 2px solid var(--accent); }
+.card.feedback-card > span:last-child { display: flex; flex-direction: column; }
+.tip.teacher { display: grid; gap: 6px; }
+.tip.teacher.unseen { outline: 2px solid var(--accent); }
+.submissions { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.submissions small { color: var(--ink-3); }

@@ -5,25 +5,30 @@ import { runStep, nextStep } from './lesson.js';
 import { review } from './review.js';
 import { speakButton, stop, canRecord, record } from './audio.js';
 import { esc } from './util.js';
+import { CONFIG } from './config.js';
 
-const VERSION = '0.2';
+const VERSION = '0.3';
 const view = document.getElementById('view');
 const nav = document.getElementById('nav');
 const themes = {};
 let themeIndex = [];
 
 async function loadTheme(id) {
-  if (!themes[id]) themes[id] = await fetch(`content/themes/${id}.json`).then((r) => r.json());
+  if (!themes[id]) {
+    const text = await fetch(`content/themes/${id}.json`).then((r) => r.text());
+    themes[id] = JSON.parse(text.replaceAll('{teacher}', CONFIG.teacherName));
+  }
   return themes[id];
 }
 
 const readyThemes = () => themeIndex.filter((t) => t.status === 'ready');
-const STEP_KIND = { words: 'Mots', grammar: 'Grammaire', dialogue: 'Dialogue', checkpoint: 'Bilan' };
+const STEP_KIND = { words: 'Mots', grammar: 'Grammaire', dialogue: 'Dialogue', checkpoint: 'Bilan', task: 'Opdracht' };
 const STEP_ICON = {
   words: '<path d="M5 5h14v10H9l-4 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
   grammar: '<path d="M4 7h16M4 12h10M4 17h13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
   dialogue: '<path d="M3 6h11v7H7l-4 3zM10 16h6l4 3v-9h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
   checkpoint: '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
+  task: '<circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 6.5h5M15 10h3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
 };
 
 function setNav(active) {
@@ -70,6 +75,7 @@ async function home() {
     </header>
 
     <section class="today">
+      <div id="feedback-slot"></div>
       ${due > 0 ? `
         <a class="card primary" href="#/review">
           <span class="big">${due}</span>
@@ -99,6 +105,15 @@ async function home() {
       }).join('')}
     </ul>
     <a class="method-link" href="#/method">Comment fonctionne cette méthode ? ›</a>`;
+  if (sync.currentUser()) {
+    sync.unseenFeedback().then((rows) => {
+      const slot = document.getElementById('feedback-slot');
+      if (!slot || !rows.length) return;
+      slot.innerHTML = `<a class="card feedback-card" href="#/theme/${rows[0].theme}">
+        <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON.task}</svg></span>
+        <span><span class="label">Nouveau</span><strong>${esc(CONFIG.teacherName)} vous a répondu</strong></span></a>`;
+    }).catch(() => {});
+  }
 }
 
 // ---------- theme: the path ----------
@@ -132,6 +147,8 @@ async function themePage(id) {
       }).join('')}
     </ol>
 
+    <div id="theme-feedback"></div>
+
     <h2 class="section">Vocabulaire du thème</h2>
     <ul class="words">
       ${t.items.map((it) => { const s = wordStatus(id, it.id); return `
@@ -149,6 +166,64 @@ async function themePage(id) {
         <li><a href="${esc(f.url)}" target="_blank" rel="noopener">
           <span class="kind">${esc(f.kind)} · ${esc(f.level)}</span><strong>${esc(f.title)}</strong><small>${esc(f.note)}</small></a></li>`).join('')}
       </ul>` : ''}`;
+  if (sync.currentUser() && t.task) showFeedback(id).catch(() => {});
+}
+
+// The teacher's answers to this theme's task, newest first; opening them marks them as seen.
+async function showFeedback(themeId) {
+  const rows = (await sync.mySubmissions(themeId)).filter((r) => r.feedback_at);
+  const slot = document.getElementById('theme-feedback');
+  if (!slot || !rows.length) return;
+  const items = await Promise.all(rows.map(async (r) => ({ r, url: r.feedback_audio_path ? await sync.audioUrl(r.feedback_audio_path) : null })));
+  slot.innerHTML = `<h2 class="section">Retour de ${esc(CONFIG.teacherName)}</h2>
+    ${items.map(({ r, url }) => `<div class="tip teacher ${r.seen_at ? '' : 'unseen'}">
+      <small>${new Date(r.feedback_at).toLocaleDateString('fr-BE', { day: 'numeric', month: 'long' })} · ${r.mode === 'recording' ? 'votre enregistrement' : 'en personne'}</small>
+      ${r.feedback_text ? `<p>${esc(r.feedback_text).replace(/\n/g, '<br>')}</p>` : ''}
+      ${url ? `<audio controls src="${esc(url)}"></audio>` : ''}</div>`).join('')}`;
+  sync.markSeen(rows.filter((r) => !r.seen_at).map((r) => r.id)).catch(() => {});
+}
+
+// ---------- teacher: every submission, with a place to answer ----------
+
+async function teacherPage() {
+  setNav('settings');
+  if (!(await sync.isTeacher())) { location.hash = '#/settings'; return; }
+  const rows = await sync.allSubmissions();
+  const urls = Object.fromEntries(await Promise.all(rows.filter((r) => r.audio_path).map(async (r) => [r.id, await sync.audioUrl(r.audio_path)])));
+  view.innerHTML = `
+    <a class="back" href="#/settings">‹ Réglages</a>
+    <header class="hello"><p class="eyebrow">Espace enseignant</p><h1>Opdrachten</h1></header>
+    ${rows.length ? '' : '<p class="lead">Aucune opdracht pour l\'instant.</p>'}
+    <ul class="submissions">${rows.map((r) => `
+      <li class="group" data-id="${r.id}">
+        <small>${esc(r.learner_email)} · ${esc(r.theme)} · ${new Date(r.created_at).toLocaleString('fr-BE', { dateStyle: 'medium', timeStyle: 'short' })}</small>
+        <strong>${r.mode === 'recording' ? 'Enregistrement' : 'Fait en personne'}${r.feedback_at ? ' · répondu ✓' : ''}</strong>
+        ${r.notes ? `<details><summary>Ses notes</summary><p lang="nl">${esc(r.notes).replace(/\n/g, '<br>')}</p></details>` : ''}
+        ${urls[r.id] ? `<audio controls src="${esc(urls[r.id])}"></audio>` : ''}
+        <textarea rows="3" placeholder="Votre retour (ce qui était bien, une ou deux corrections)…">${esc(r.feedback_text || '')}</textarea>
+        <div class="row"><button class="btn rec">● Retour vocal</button><button class="btn primary save">Envoyer</button></div>
+        <div class="fbaudio"></div>
+      </li>`).join('')}
+    </ul>`;
+  view.querySelectorAll('.submissions > li').forEach((li) => {
+    const row = rows.find((r) => String(r.id) === li.dataset.id);
+    let blob = null, current = null;
+    const recBtn = li.querySelector('.rec');
+    recBtn.onclick = async () => {
+      if (current) { await current.stop(); return; }
+      current = await record(120000);
+      recBtn.textContent = '■ Arrêter';
+      blob = await current.done;
+      current = null;
+      recBtn.textContent = '● Refaire';
+      li.querySelector('.fbaudio').innerHTML = `<audio controls src="${URL.createObjectURL(blob)}"></audio>`;
+    };
+    li.querySelector('.save').onclick = async (e) => {
+      e.target.disabled = true; e.target.textContent = 'Envoi…';
+      try { await sync.saveFeedback(row, li.querySelector('textarea').value.trim(), blob); e.target.textContent = 'Envoyé ✓'; }
+      catch (x) { e.target.disabled = false; e.target.textContent = 'Réessayer'; }
+    };
+  });
 }
 
 // ---------- progress ----------
@@ -220,7 +295,7 @@ function settings() {
       <h2 class="section">Compte</h2>
       <div class="group">
         <p class="small">${u ? `Connecté : <strong>${esc(u.email)}</strong><br>Progression sauvegardée en ligne ${{ ok: '✓', pending: '(en cours…)', error: '— hors ligne, réessai automatique', off: '' }[sync.syncStatus()]}` : 'Non connecté.'}</p>
-        ${u ? '<button class="btn" id="logout">Se déconnecter</button>' : ''}
+        ${u ? '<a class="btn" id="teacher" href="#/teacher" hidden>Espace enseignant</a><button class="btn" id="logout">Se déconnecter</button>' : ''}
       </div>` : ''}
     <h2 class="section">Micro</h2>
     <div class="group">
@@ -236,6 +311,7 @@ function settings() {
     </div>
     <p class="fineprint">Version ${VERSION}</p>`;
 
+  if (u) sync.isTeacher().then((yes) => { const a = document.getElementById('teacher'); if (a && yes) a.hidden = false; }).catch(() => {});
   document.getElementById('logout')?.addEventListener('click', async () => { await sync.signOut(); location.hash = '#/'; boot(); });
   document.getElementById('mic').onclick = micTest;
   document.getElementById('export').onclick = () => {
@@ -283,6 +359,7 @@ async function route() {
     else if (page === 'progress') await progress();
     else if (page === 'settings') settings();
     else if (page === 'method') method();
+    else if (page === 'teacher') await teacherPage();
     else await home();
   } catch (e) {
     view.innerHTML = `<div class="session end"><h1>Oups.</h1><p class="lead">Le contenu n'a pas pu être chargé. Vérifiez la connexion et réessayez.</p><a class="btn primary" href="#/">Accueil</a></div>`;

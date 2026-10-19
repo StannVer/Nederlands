@@ -4,4 +4,5 @@
 export const CONFIG = {
   supabaseUrl: '',
   supabaseKey: '',
+  teacherName: 'Stan',   // the person the learner presents each theme's task to
 };

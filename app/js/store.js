@@ -6,7 +6,7 @@ const KEY = 'nederlands_v1';
 const listeners = new Set();
 
 function fresh() {
-  return { v: 2, cards: {}, days: {}, reviews: 0, steps: {}, checks: {}, settings: {} };
+  return { v: 2, cards: {}, days: {}, reviews: 0, steps: {}, checks: {}, tasks: {}, settings: {} };
 }
 
 function load() {
@@ -76,6 +76,11 @@ export function completeStep(theme, step, score) {
 export const getCheck = (theme) => data.checks[theme] || null;
 export function setCheck(theme, result) { data.checks[theme] = { ...result, date: Date.now() }; save(); }
 
+// ----- tasks: the learner's notes and whether it was done with the teacher -----
+
+export const getTask = (theme) => data.tasks[theme] || { notes: '', updated: 0 };
+export function setTask(theme, patch) { data.tasks[theme] = { ...getTask(theme), ...patch, updated: Date.now() }; save(); }
+
 // ----- backup and cloud merge -----
 
 export function exportJSON() { return JSON.stringify(data, null, 2); }
@@ -96,6 +101,9 @@ export function merge(remote) {
   }
   for (const [k, c] of Object.entries(remote.checks || {})) {
     if (!data.checks[k] || c.date > data.checks[k].date) data.checks[k] = c;
+  }
+  for (const [k, t] of Object.entries(remote.tasks || {})) {
+    if (!data.tasks[k] || (t.updated || 0) > (data.tasks[k].updated || 0)) data.tasks[k] = t;
   }
   data.reviews = Math.max(data.reviews, remote.reviews || 0);
   const changed = JSON.stringify(data) !== before;

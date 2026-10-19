@@ -56,6 +56,11 @@
       "id": "bilan",
       "type": "checkpoint",
       "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : présentez-vous à {teacher}"
     }
   ],
   "items": [
@@ -475,5 +480,29 @@
       "level": "A2+",
       "note": "À garder pour plus tard : l'actualité flamande en phrases courtes."
     }
-  ]
+  ],
+  "task": {
+    "scenario": "Premier jour dans une équipe flamande. Vous rencontrez {teacher} à la machine à café. Présentez-vous et faites connaissance — en néerlandais.",
+    "goals": [
+      "Saluer (poliment, puis de façon plus détendue)",
+      "Dire votre nom, d'où vous venez et où vous habitez",
+      "Demander son nom, où il habite et comment il va",
+      "Dire que vous parlez un peu néerlandais",
+      "Prendre congé"
+    ],
+    "phrases": [
+      "goeiedag",
+      "ik-heet",
+      "hoe-heet-u",
+      "aangenaam",
+      "ik-kom-uit",
+      "ik-woon-in",
+      "hoe-gaat-het",
+      "een-beetje",
+      "tot-ziens"
+    ],
+    "prepare": "Écrivez 4 à 6 phrases en néerlandais. Utilisez les expressions ci-dessus — vous pouvez changer les noms et les villes. Lisez-les à voix haute deux ou trois fois.",
+    "perform": "Maintenant, faites-le en vrai avec {teacher}, sans lire vos notes. Il vous répondra et vous posera peut-être une question de plus : c'est le but !",
+    "record": "Vous pouvez aussi vous enregistrer et lui envoyer l'enregistrement : il vous répondra ici."
+  }
 }

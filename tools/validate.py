@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APP = ROOT / "app"
-STEP_TYPES = {"words", "grammar", "dialogue", "checkpoint"}
+STEP_TYPES = {"words", "grammar", "dialogue", "checkpoint", "task"}
 
 
 def words(s):
@@ -53,12 +53,23 @@ def check(theme_id):
             taught += s["items"]
         if s["type"] == "grammar" and s["id"] not in t.get("grammar", {}):
             errors.append(f"step {s['id']}: no grammar block with that id")
+        if s["type"] == "task":
+            tk = t.get("task") or {}
+            for key in ("scenario", "goals", "phrases", "prepare", "perform", "record"):
+                if not tk.get(key):
+                    errors.append(f"task: missing '{key}'")
+            for i in tk.get("phrases", []):
+                if i not in items:
+                    errors.append(f"task: phrase '{i}' is not an item of this theme")
     for i in items:
         n = taught.count(i)
         if n != 1:
             errors.append(f"item '{i}' is taught in {n} word steps (should be 1)")
-    if t["steps"] and t["steps"][-1]["type"] != "checkpoint":
-        warnings.append("the last step is not a checkpoint")
+    kinds = [s["type"] for s in t["steps"]]
+    if "checkpoint" not in kinds:
+        warnings.append("no checkpoint step")
+    if "task" not in kinds:
+        warnings.append("no task step: nothing is done with a real person in this theme")
 
     for i, it in items.items():
         for key in ("nl", "fr", "ex_nl", "ex_fr"):

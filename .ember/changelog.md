@@ -23,3 +23,10 @@
 - Accounts and cloud sync ready (Supabase, vendored supabase-js 2.45.4), off until configured; `supabase/schema.sql`
 - `tools/validate.py`, `publish.sh` (personal-token check, validation gate)
 - Tested in WebKit at iPhone size: all 6 steps of Kennismaken + 24-item mixed review, no errors; fixed tiles giving away sentence boundaries
+
+### Phase 4b: Task step with the teacher (v0.3)
+- New step type `task` (opdracht), last in each theme: scenario, goals, useful phrases with audio, written preparation (saved, synced), then done for real with the teacher in person — or recorded and sent
+- Teacher feedback: written and/or spoken, shown on the theme page; a "Stan vous a répondu" card on the home screen; teacher page `#/teacher` lists every submission with its notes and recording
+- Database: `teachers`, `task_submissions` (learner sees own, teacher sees all; a trigger limits learner updates to `seen_at`), private storage bucket `tasks` with one folder per learner
+- `{teacher}` placeholder in content, filled from `CONFIG.teacherName`
+- validate.py checks task steps; tested in WebKit (in-person path). Recording and the online feedback loop are untested until the Supabase project exists.
