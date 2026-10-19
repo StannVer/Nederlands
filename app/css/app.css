@@ -199,7 +199,7 @@ p.ko { color: var(--ko); font-weight: 600; }
 /* bottom navigation */
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(5, 1fr);
   padding: 6px 8px calc(env(safe-area-inset-bottom) + 6px);
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   -webkit-backdrop-filter: saturate(1.6) blur(18px); backdrop-filter: saturate(1.6) blur(18px);
@@ -324,3 +324,51 @@ textarea:focus { outline: none; border-color: var(--ink); }
 .tip.teacher.unseen { outline: 2px solid var(--accent); }
 .submissions { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
 .submissions small { color: var(--ink-3); }
+
+/* ---------- v0.4: practice, teacher dashboard, questions ---------- */
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tile-card { display: flex; flex-direction: column; gap: 4px; padding: 16px; border-radius: 16px; background: var(--surface); border: 1px solid var(--line); min-height: 132px; }
+.tile-card .stepicon { margin-bottom: 6px; background: var(--accent-soft); }
+.tile-card small { font-size: 13px; }
+.pairs { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; width: 100%; }
+.pairs li { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 0; border-top: 1px solid var(--line); }
+.pairs li > span { flex: 1; min-width: 120px; display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; }
+.pairs .speak { grid-row: span 2; width: 38px; height: 38px; }
+.choice small { display: block; font-size: 13px; color: var(--ink-3); }
+.compare { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.compare .speak { width: 36px; height: 36px; }
+.story { list-style: none; padding: 0; margin: 0 0 16px; display: grid; gap: 10px; }
+.story li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.story li.playing { outline: 2px solid var(--accent); }
+.story .speak { width: 36px; height: 36px; flex: none; }
+.story details { font-size: 14px; color: var(--ink-2); }
+.story summary { color: var(--ink-3); cursor: pointer; }
+.w { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; border-radius: 4px; }
+.w.new { text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+.w:active { background: var(--accent-soft); }
+.gloss { position: sticky; bottom: calc(env(safe-area-inset-bottom) + 76px); z-index: 5; display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 12px 14px; margin-bottom: 12px; border-radius: 16px; background: var(--surface); border: 2px solid var(--accent); box-shadow: var(--shadow); }
+.gloss > span { flex: 1; display: flex; flex-direction: column; }
+#addf input, .additem input { width: 100%; min-height: 48px; padding: 0 14px; border-radius: 12px; border: 1.5px solid var(--line); background: var(--surface); font-size: 17px; }
+.additem { display: grid; gap: 8px; }
+.words .del { margin-left: 4px; color: var(--ink-3); text-decoration: none; }
+.questions { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.questions li { padding: 12px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+.questions p { margin: 0 0 4px; }
+.ref { display: grid; gap: 10px; }
+.ref summary { display: flex; justify-content: space-between; gap: 10px; cursor: pointer; }
+.ref p { margin: 0; color: var(--ink-2); }
+.vlaams { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.vlaams p { margin: 6px 0 0; }
+.vlaams p .speak { width: 30px; height: 30px; vertical-align: middle; }
+.vlaams .hear > span { display: flex; flex-direction: column; }
+.segmented { display: flex; gap: 4px; padding: 4px; border-radius: 12px; background: var(--surface-2); margin-bottom: 16px; }
+.segmented a { flex: 1; text-align: center; padding: 8px 4px; border-radius: 9px; font-size: 15px; font-weight: 600; color: var(--ink-2); }
+.segmented a.on { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.learner { margin-bottom: 14px; }
+.learner .stats .stat span { font-size: 24px; }
+.hard { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; }
+.hard li { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.tip.asked { margin-bottom: 4px; }
+.tip.asked p { color: var(--ink); }
+.answer-text p { margin: 0 0 10px; }

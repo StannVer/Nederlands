@@ -36,8 +36,8 @@ export function present(head, theme, item, label) {
       <p class="eyebrow">${esc(label)}</p>
       <div class="hear">${speakButton(theme, item.id, item.nl, 'Écouter', true)}<h1 lang="nl">${esc(item.nl)}</h1></div>
       <p class="fr">${esc(item.fr)}</p>
-      <div class="example">${speakButton(theme, `${item.id}-ex`, item.ex_nl, 'Écouter l\'exemple')}
-        <div><p lang="nl">${esc(item.ex_nl)}</p><p class="fr">${esc(item.ex_fr)}</p></div></div>
+      ${item.ex_nl ? `<div class="example">${speakButton(theme, `${item.id}-ex`, item.ex_nl, 'Écouter l\'exemple')}
+        <div><p lang="nl">${esc(item.ex_nl)}</p><p class="fr">${esc(item.ex_fr)}</p></div></div>` : ''}
       ${item.note ? `<p class="note">${esc(item.note)}</p>` : ''}
       ${canRecord() ? `<div class="shadow"><button class="btn small" id="rec">● Répéter et m'enregistrer</button><div id="recout"></div></div>` : ''}
     </article>
@@ -206,8 +206,8 @@ export function sayReveal(head, theme, item, card) {
       <h1 class="fr-prompt">${esc(item.fr)}</h1>
       <div id="answer" hidden>
         <div class="hear">${speakButton(theme, item.id, item.nl)}<p class="answer" lang="nl">${esc(item.nl)}</p></div>
-        <div class="example">${speakButton(theme, `${item.id}-ex`, item.ex_nl, 'Écouter l\'exemple')}
-          <div><p lang="nl">${esc(item.ex_nl)}</p><p class="fr">${esc(item.ex_fr)}</p></div></div>
+        ${item.ex_nl ? `<div class="example">${speakButton(theme, `${item.id}-ex`, item.ex_nl, 'Écouter l\'exemple')}
+          <div><p lang="nl">${esc(item.ex_nl)}</p><p class="fr">${esc(item.ex_fr)}</p></div></div>` : ''}
       </div>
     </article>
     <button class="btn primary wide" id="reveal">Afficher la réponse</button>
@@ -226,7 +226,35 @@ export function sayReveal(head, theme, item, card) {
   });
 }
 
-// ---------- 8. a multiple-choice question about a text (dialogue comprehension) ----------
+// ---------- 8. dictation: hear a sentence, type it ----------
+
+export function dictation(head, theme, { id, nl, fr }) {
+  render(head, `
+    <article class="flash center">
+      <p class="eyebrow">Dictée — écoutez et écrivez</p>
+      ${speakButton(theme, id, nl, 'Réécouter', true)}
+      <button class="link" id="slow">écouter plus lentement</button>
+    </article>
+    <form id="f" class="typed">
+      <input id="a" lang="nl" autocomplete="off" autocapitalize="sentences" autocorrect="off" spellcheck="false" placeholder="Ce que vous entendez…" enterkeyhint="done">
+      <div class="row"><button type="button" class="btn ghost" id="idk">Je ne sais pas</button><button class="btn primary">Vérifier</button></div>
+    </form>`);
+  speak(theme, id, nl);
+  document.getElementById('slow').onclick = () => speak('_slow', id, nl);
+  const input = document.getElementById('a');
+  input.focus({ preventScroll: true });
+  return new Promise((resolve) => {
+    const submit = (given) => {
+      document.getElementById('f').remove();
+      const outcome = judge(given, [nl]);
+      feedback(outcome, `<p class="answer" lang="nl">${esc(nl)}</p><small>${esc(fr)}</small>${outcome !== 'exact' && given ? `<small>Vous avez écrit : ${esc(given)}</small>` : ''}`).then(resolve);
+    };
+    document.getElementById('f').onsubmit = (e) => { e.preventDefault(); submit(input.value); };
+    document.getElementById('idk').onclick = () => submit('');
+  });
+}
+
+// ---------- 9. a multiple-choice question about a text (dialogue comprehension) ----------
 
 export function question(head, q, idx) {
   render(head, `

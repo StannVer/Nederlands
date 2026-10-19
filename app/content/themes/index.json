@@ -2,9 +2,31 @@
   "themes": [
     { "id": "kennismaken", "nl": "Kennismaken", "fr": "Faire connaissance", "level": "A1", "status": "ready" },
     { "id": "getallen-en-tijd", "nl": "Getallen en tijd", "fr": "Les nombres et l'heure", "level": "A1", "status": "soon" },
+    { "id": "familie", "nl": "Familie en vrienden", "fr": "La famille et les amis", "level": "A1", "status": "soon" },
     { "id": "boodschappen", "nl": "Boodschappen", "fr": "Faire les courses", "level": "A1", "status": "soon" },
-    { "id": "op-café", "nl": "Op café", "fr": "Au café", "level": "A1", "status": "soon" },
+    { "id": "op-cafe", "nl": "Op café", "fr": "Au café", "level": "A1", "status": "soon" },
+    { "id": "thuis", "nl": "Thuis", "fr": "À la maison", "level": "A1", "status": "soon" },
+    { "id": "mijn-dag", "nl": "Mijn dag", "fr": "Ma journée", "level": "A1", "status": "soon" },
     { "id": "onderweg", "nl": "Onderweg", "fr": "En route", "level": "A1", "status": "soon" },
-    { "id": "bij-de-dokter", "nl": "Bij de dokter", "fr": "Chez le médecin", "level": "A2", "status": "soon" }
+    { "id": "vrije-tijd", "nl": "Vrije tijd", "fr": "Les loisirs", "level": "A2", "status": "soon" },
+    { "id": "bij-de-dokter", "nl": "Bij de dokter", "fr": "Chez le médecin", "level": "A2", "status": "soon" },
+    { "id": "kleren", "nl": "Kleren kopen", "fr": "Acheter des vêtements", "level": "A2", "status": "soon" },
+    { "id": "op-het-werk", "nl": "Op het werk", "fr": "Au travail", "level": "A2", "status": "soon" },
+    { "id": "afspraken", "nl": "Afspreken", "fr": "Prendre rendez-vous", "level": "A2", "status": "soon" },
+    { "id": "eten-en-koken", "nl": "Eten en koken", "fr": "Manger et cuisiner", "level": "A2", "status": "soon" },
+    { "id": "het-weer", "nl": "Het weer", "fr": "Le temps qu'il fait", "level": "A2", "status": "soon" },
+    { "id": "vroeger", "nl": "Vroeger", "fr": "Autrefois", "level": "A2", "status": "soon" },
+    { "id": "huren", "nl": "Een woning huren", "fr": "Louer un logement", "level": "A2", "status": "soon" },
+    { "id": "de-gemeente", "nl": "Op de gemeente", "fr": "À la commune", "level": "A2", "status": "soon" },
+    { "id": "gezond-leven", "nl": "Gezond leven", "fr": "Vivre sainement", "level": "B1", "status": "soon" },
+    { "id": "werk-zoeken", "nl": "Werk zoeken", "fr": "Chercher du travail", "level": "B1", "status": "soon" },
+    { "id": "school", "nl": "School en opleiding", "fr": "L'école et la formation", "level": "B1", "status": "soon" },
+    { "id": "nieuws", "nl": "Het nieuws", "fr": "L'actualité", "level": "B1", "status": "soon" },
+    { "id": "op-reis", "nl": "Op reis", "fr": "En voyage", "level": "B1", "status": "soon" },
+    { "id": "meningen", "nl": "Mijn mening", "fr": "Donner son avis", "level": "B1", "status": "soon" },
+    { "id": "feesten", "nl": "Feesten en tradities", "fr": "Fêtes et traditions", "level": "B1", "status": "soon" },
+    { "id": "klachten", "nl": "Een klacht", "fr": "Se plaindre, régler un problème", "level": "B1", "status": "soon" },
+    { "id": "milieu", "nl": "Natuur en milieu", "fr": "Nature et environnement", "level": "B1", "status": "soon" },
+    { "id": "een-verhaal", "nl": "Een verhaal vertellen", "fr": "Raconter une histoire", "level": "B1", "status": "soon" }
   ]
 }

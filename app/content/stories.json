@@ -1,0 +1,72 @@
+{
+  "intro": "De courtes histoires écrites avec les mots que vous connaissez, plus quelques nouveaux. Touchez un mot pour voir sa traduction et l'ajouter à vos mots.",
+  "stories": [
+    {
+      "id": "nieuwe-collega",
+      "title": "Een nieuwe collega",
+      "fr": "Une nouvelle collègue",
+      "level": "A1",
+      "after": "kennismaken",
+      "lines": [
+        { "nl": "Het is maandag.", "fr": "C'est lundi." },
+        { "nl": "Karim is op het werk in Brussel.", "fr": "Karim est au travail à Bruxelles." },
+        { "nl": "Een vrouw komt binnen.", "fr": "Une femme entre." },
+        { "nl": "\"Goeiedag! Ik heet Lotte. Ik ben nieuw.\"", "fr": "« Bonjour ! Je m'appelle Lotte. Je suis nouvelle. »" },
+        { "nl": "\"Dag Lotte, ik heet Karim. Aangenaam!\"", "fr": "« Bonjour Lotte, je m'appelle Karim. Enchanté ! »" },
+        { "nl": "\"Waar woont u?\" vraagt Karim.", "fr": "« Où habitez-vous ? » demande Karim." },
+        { "nl": "\"Ik woon in Gent. En u?\"", "fr": "« J'habite à Gand. Et vous ? »" },
+        { "nl": "\"Ik woon in Brussel, maar ik kom uit Luik.\"", "fr": "« J'habite à Bruxelles, mais je viens de Liège. »" },
+        { "nl": "\"Ah, u spreekt Frans!\"", "fr": "« Ah, vous parlez français ! »" },
+        { "nl": "\"Ja, en een beetje Nederlands.\"", "fr": "« Oui, et un peu néerlandais. »" },
+        { "nl": "Lotte lacht. \"Heel goed! Tot straks, Karim.\"", "fr": "Lotte rit. « Très bien ! À tout à l'heure, Karim. »" }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) / il", "is": "est", "maandag": "lundi", "op": "sur, à", "werk": "travail",
+        "een": "un, une", "vrouw": "femme", "komt": "vient", "binnen": "dedans (binnenkomen = entrer)",
+        "ben": "suis", "nieuw": "nouveau, nouvelle", "vraagt": "demande", "en": "et", "maar": "mais",
+        "spreekt": "parle", "frans": "français", "ja": "oui", "lacht": "rit", "heel": "très", "goed": "bien",
+        "waar": "où", "woont": "habite", "woon": "habite", "u": "vous", "ik": "je", "heet": "m'appelle",
+        "kom": "viens", "uit": "de (origine)", "in": "à, dans", "tot": "jusqu'à", "straks": "tout à l'heure",
+        "dag": "bonjour, salut", "goeiedag": "bonjour", "aangenaam": "enchanté", "beetje": "un peu", "nederlands": "néerlandais",
+        "ah": "ah"
+      },
+      "questions": [
+        { "q": "Quel jour sommes-nous ?", "options": ["Lundi", "Mardi", "Dimanche"], "answer": 0 },
+        { "q": "Où habite Lotte ?", "options": ["À Bruxelles", "À Gand", "À Liège"], "answer": 1 },
+        { "q": "Quelles langues parle Karim ?", "options": ["Le français et un peu néerlandais", "Seulement le néerlandais", "L'anglais"], "answer": 0 }
+      ]
+    },
+    {
+      "id": "koffie",
+      "title": "Aan de koffiemachine",
+      "fr": "À la machine à café",
+      "level": "A1",
+      "after": "kennismaken",
+      "lines": [
+        { "nl": "Sofie staat aan de koffiemachine.", "fr": "Sofie est debout à la machine à café." },
+        { "nl": "Karim komt ook.", "fr": "Karim vient aussi." },
+        { "nl": "\"Dag Sofie, hoe gaat het?\"", "fr": "« Salut Sofie, comment ça va ? »" },
+        { "nl": "\"Goed, dank u. En met u?\"", "fr": "« Bien, merci. Et vous ? »" },
+        { "nl": "\"Goed, merci! Koffie?\"", "fr": "« Bien, merci ! Un café ? »" },
+        { "nl": "\"Ja, graag.\"", "fr": "« Oui, volontiers. »" },
+        { "nl": "Ze drinken koffie en ze praten.", "fr": "Ils boivent un café et ils parlent." },
+        { "nl": "Karim spreekt Nederlands. Een beetje.", "fr": "Karim parle néerlandais. Un peu." },
+        { "nl": "Sofie spreekt langzaam. Karim is content.", "fr": "Sofie parle lentement. Karim est content." },
+        { "nl": "\"Tot ziens, Karim!\" \"Dag Sofie!\"", "fr": "« Au revoir, Karim ! » « Salut Sofie ! »" }
+      ],
+      "glossary": {
+        "staat": "est debout", "aan": "à, près de", "de": "le, la", "koffiemachine": "machine à café", "komt": "vient",
+        "ook": "aussi", "dag": "salut", "hoe": "comment", "gaat": "va", "het": "il, ça", "goed": "bien", "dank": "merci",
+        "u": "vous", "en": "et", "met": "avec", "merci": "merci", "koffie": "café", "ja": "oui", "graag": "volontiers",
+        "ze": "ils, elles", "drinken": "boivent", "praten": "parlent", "spreekt": "parle", "nederlands": "néerlandais",
+        "een": "un", "beetje": "un peu", "langzaam": "lentement", "is": "est", "content": "content (flamand)",
+        "tot": "jusqu'à", "ziens": "(tot ziens = au revoir)"
+      },
+      "questions": [
+        { "q": "Où est Sofie ?", "options": ["À la machine à café", "Dans le train", "À la maison"], "answer": 0 },
+        { "q": "Karim boit…", "options": ["un café", "un thé", "de l'eau"], "answer": 0 },
+        { "q": "Pourquoi Karim est-il content ?", "options": ["Sofie parle lentement", "Il rentre chez lui", "C'est vendredi"], "answer": 0 }
+      ]
+    }
+  ]
+}

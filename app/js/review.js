@@ -47,9 +47,11 @@ export async function review(themes, loadTheme) {
         : await ex.choiceGap(head, r.theme.id, r.e);
       grade = autoGrade[outcome];
     } else {
-      const mode = ['say', 'type', 'listen'][(card.reps || 0) % 3];
+      const modes = r.item.ex_nl ? ['say', 'type', 'listen', 'dictate'] : ['say', 'type', 'listen'];
+      const mode = modes[(card.reps || 0) % modes.length];
       if (mode === 'say') grade = await ex.sayReveal(head, r.theme.id, r.item, card);
       else if (mode === 'type') grade = autoGrade[await ex.typeRecall(head, r.theme.id, r.item)];
+      else if (mode === 'dictate') grade = autoGrade[await ex.dictation(head, r.theme.id, { id: `${r.item.id}-ex`, nl: r.item.ex_nl, fr: r.item.ex_fr })];
       else grade = autoGrade[await ex.listenChoose(head, r.theme.id, r.item, r.theme.items)];
     }
     // A card forgotten twice in one session is not shown a third time today: it is due again soon anyway.

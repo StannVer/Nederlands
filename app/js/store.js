@@ -6,7 +6,7 @@ const KEY = 'nederlands_v1';
 const listeners = new Set();
 
 function fresh() {
-  return { v: 2, cards: {}, days: {}, reviews: 0, steps: {}, checks: {}, tasks: {}, settings: {} };
+  return { v: 2, cards: {}, days: {}, reviews: 0, steps: {}, checks: {}, tasks: {}, mywords: [], teacherItems: [], customLessons: [], pron: {}, stories: {}, settings: {} };
 }
 
 function load() {
@@ -81,6 +81,36 @@ export function setCheck(theme, result) { data.checks[theme] = { ...result, date
 export const getTask = (theme) => data.tasks[theme] || { notes: '', updated: 0 };
 export function setTask(theme, patch) { data.tasks[theme] = { ...getTask(theme), ...patch, updated: Date.now() }; save(); }
 
+// ----- extra vocabulary: the learner's own words, and the words the teacher adds -----
+
+export function addMyWord({ nl, fr, note }) {
+  const w = { id: `m${Date.now().toString(36)}`, nl: nl.trim(), fr: fr.trim(), note: (note || '').trim(), added: Date.now() };
+  data.mywords = [...(data.mywords || []), w];
+  save();
+  return w;
+}
+export function removeMyWord(id) {
+  data.mywords = (data.mywords || []).filter((w) => w.id !== id);
+  delete data.cards[`perso/${id}`];
+  save();
+}
+// The teacher's words live in the database; this cached copy keeps them available offline.
+export function setTeacherItems(rows) {
+  const items = rows.map((r) => ({ id: `t${r.id}`, nl: r.nl, fr: r.fr, note: r.note || '', added: Date.parse(r.created_at) }));
+  if (JSON.stringify(items) !== JSON.stringify(data.teacherItems || [])) { data.teacherItems = items; save(); }
+}
+
+// Lessons made for this learner in answer to their questions (cached from the database).
+export function setCustomLessons(rows) {
+  const lessons = rows.map((r) => ({ ...r.theme, id: `q-${r.id}`, published: Date.parse(r.published_at) }));
+  if (JSON.stringify(lessons) !== JSON.stringify(data.customLessons || [])) { data.customLessons = lessons; save(); }
+}
+
+// ----- practice scores -----
+
+export function setPron(id, score) { data.pron = { ...(data.pron || {}), [id]: { best: Math.max(score, data.pron?.[id]?.best || 0), last: Date.now() } }; save(); }
+export function setStoryRead(id, score) { data.stories = { ...(data.stories || {}), [id]: { score, date: Date.now() } }; save(); }
+
 // ----- backup and cloud merge -----
 
 export function exportJSON() { return JSON.stringify(data, null, 2); }
@@ -104,6 +134,15 @@ export function merge(remote) {
   }
   for (const [k, t] of Object.entries(remote.tasks || {})) {
     if (!data.tasks[k] || (t.updated || 0) > (data.tasks[k].updated || 0)) data.tasks[k] = t;
+  }
+  const mine = new Map((data.mywords || []).map((w) => [w.id, w]));
+  for (const w of remote.mywords || []) if (!mine.has(w.id)) mine.set(w.id, w);
+  data.mywords = [...mine.values()].sort((a, b) => a.added - b.added);
+  for (const key of ['pron', 'stories']) {
+    for (const [k, v] of Object.entries(remote[key] || {})) {
+      const l = (data[key] || {})[k];
+      if (!l || (v.last || v.date || 0) > (l.last || l.date || 0)) data[key] = { ...(data[key] || {}), [k]: v };
+    }
   }
   data.reviews = Math.max(data.reviews, remote.reviews || 0);
   const changed = JSON.stringify(data) !== before;

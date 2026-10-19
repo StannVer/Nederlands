@@ -8,7 +8,7 @@ export function stop() {
   if ('speechSynthesis' in window) speechSynthesis.cancel();
 }
 
-function tts(text, variant = 0) {
+function tts(text, variant = 0, rate = 0.85) {
   return new Promise((resolve) => {
     if (!('speechSynthesis' in window)) return resolve();
     const u = new SpeechSynthesisUtterance(String(text).replace(/…/g, ''));
@@ -21,7 +21,7 @@ function tts(text, variant = 0) {
     if (v) u.voice = v;
     if (variant && pool.length <= variant) u.pitch = 0.8;
     u.lang = v?.lang || 'nl-BE';
-    u.rate = 0.85;
+    u.rate = rate;
     u.onend = u.onerror = () => resolve();
     speechSynthesis.speak(u);
     setTimeout(resolve, 2500 + 160 * String(text).length); // some browsers never fire onend
@@ -31,6 +31,7 @@ function tts(text, variant = 0) {
 // Resolves when playback has finished, so dialogue lines can be chained.
 export function speak(theme, id, text, variant = 0) {
   stop();
+  if (theme === '_slow') return tts(text, variant, 0.6);
   return new Promise((resolve) => {
     const a = new Audio(`audio/${theme}/${id}.m4a`);
     current = a;

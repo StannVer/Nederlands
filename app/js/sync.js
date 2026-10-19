@@ -74,7 +74,7 @@ async function push() {
   if (!user) return;
   try {
     const c = await client();
-    const { error } = await c.from('progress').upsert({ user_id: user.id, state: store.db(), updated_at: new Date().toISOString() });
+    const { error } = await c.from('progress').upsert({ user_id: user.id, learner_email: user.email, state: store.db(), updated_at: new Date().toISOString() });
     if (error) throw error;
     status = 'ok';
   } catch (e) {
@@ -94,7 +94,7 @@ export async function submitTask({ theme, mode, notes, blob }) {
     const up = await c.storage.from('tasks').upload(audio_path, blob, { contentType: blob.type || 'audio/webm' });
     if (up.error) throw up.error;
   }
-  const { error } = await c.from('task_submissions').insert({ theme, mode, notes, audio_path });
+  const { error } = await c.from('task_submissions').insert({ user_id: user.id, learner_email: user.email, theme, mode, notes, audio_path });
   if (error) throw error;
 }
 
@@ -151,6 +151,97 @@ export async function saveFeedback(row, text, blob) {
   const { error } = await c.from('task_submissions')
     .update({ feedback_text: text || null, feedback_audio_path, feedback_at: new Date().toISOString(), seen_at: null })
     .eq('id', row.id);
+  if (error) throw error;
+}
+
+// ----- words from the teacher, questions, custom lessons (learner side) -----
+
+// Refresh the cached copies the app works from offline. Called after sign-in and on every launch.
+export async function refreshLearnerData() {
+  if (!user) return false;
+  const c = await client();
+  const [items, lessons] = await Promise.all([
+    c.from('teacher_items').select('*').eq('learner_id', user.id).order('created_at'),
+    c.from('custom_lessons').select('id, theme, published_at, question_id').eq('learner_id', user.id).eq('status', 'published').order('published_at'),
+  ]);
+  const before = JSON.stringify([store.db().teacherItems, store.db().customLessons]);
+  if (!items.error) store.setTeacherItems(items.data);
+  if (!lessons.error) store.setCustomLessons(lessons.data);
+  return JSON.stringify([store.db().teacherItems, store.db().customLessons]) !== before;
+}
+
+export async function askQuestion({ text, blob, context }) {
+  const c = await client();
+  let audio_path = null;
+  if (blob) {
+    audio_path = `${user.id}/questions/${Date.now()}.${ext(blob)}`;
+    const up = await c.storage.from('tasks').upload(audio_path, blob, { contentType: blob.type || 'audio/webm' });
+    if (up.error) throw up.error;
+  }
+  const { error } = await c.from('questions').insert({ user_id: user.id, learner_email: user.email, text, audio_path, context });
+  if (error) throw error;
+}
+
+export async function myQuestions() {
+  if (!user) return [];
+  const c = await client();
+  const { data, error } = await c.from('questions').select('id, text, status, created_at').eq('user_id', user.id).order('created_at', { ascending: false }).limit(50);
+  if (error) throw error;
+  return data;
+}
+
+// ----- teacher side -----
+
+export async function learners() {
+  const c = await client();
+  const { data, error } = await c.from('progress').select('user_id, learner_email, state, updated_at').order('updated_at', { ascending: false });
+  if (error) throw error;
+  return data;
+}
+
+export async function teacherItemsFor(learnerId) {
+  const c = await client();
+  const { data, error } = await c.from('teacher_items').select('*').eq('learner_id', learnerId).order('created_at', { ascending: false });
+  if (error) throw error;
+  return data;
+}
+
+export async function addTeacherItem(learnerId, { nl, fr, note }) {
+  const c = await client();
+  const { error } = await c.from('teacher_items').insert({ learner_id: learnerId, nl, fr, note: note || null });
+  if (error) throw error;
+}
+
+export async function deleteTeacherItem(id) {
+  const c = await client();
+  const { error } = await c.from('teacher_items').delete().eq('id', id);
+  if (error) throw error;
+}
+
+export async function allQuestions() {
+  const c = await client();
+  const { data, error } = await c.from('questions').select('*').order('created_at', { ascending: false }).limit(100);
+  if (error) throw error;
+  return data;
+}
+
+export async function draftLessons() {
+  const c = await client();
+  const { data, error } = await c.from('custom_lessons').select('id, learner_id, question_id, theme, status, created_at').eq('status', 'draft').order('created_at');
+  if (error) throw error;
+  return data;
+}
+
+export async function setLessonStatus(id, status) {
+  const c = await client();
+  const patch = { status, ...(status === 'published' ? { published_at: new Date().toISOString() } : {}) };
+  const { error } = await c.from('custom_lessons').update(patch).eq('id', id);
+  if (error) throw error;
+}
+
+export async function setQuestionStatus(id, status) {
+  const c = await client();
+  const { error } = await c.from('questions').update({ status }).eq('id', id);
   if (error) throw error;
 }
 

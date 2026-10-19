@@ -41,9 +41,32 @@ const requeue = (queue, id) => queue.splice(Math.min(queue.length, 2 + Math.floo
 
 async function words(theme, step) {
   const items = step.items.map((id) => theme.items.find((i) => i.id === id)).filter(Boolean);
+  const { perfect, exercises } = await drill(theme, items);
+  store.completeStep(theme.id, step.id, perfect / items.length);
+  store.logActivity(exercises);
+  endScreen(theme, step, 'Goed gedaan!',
+    `${items.length} nouveaux mots — ${perfect} sans aucune erreur.<br>Ils reviendront en révision au bon moment, juste avant que vous ne les oubliiez.`);
+}
+
+// Learn a list of items outside the course path: own words, words from the teacher.
+export async function learnItems(theme, items, backHref, backLabel) {
+  const { perfect, exercises } = await drill(theme, items);
+  store.logActivity(exercises);
+  stop();
+  view().innerHTML = `
+    <div class="session end">
+      <p class="eyebrow">${esc(theme.nl)}</p>
+      <h1>Goed gedaan!</h1>
+      <p class="lead">${items.length} mot${items.length > 1 ? 's' : ''} appris — ${perfect} sans erreur. Ils entrent dans vos révisions.</p>
+      <a class="btn primary wide" href="${backHref}">${esc(backLabel)}</a>
+    </div>`;
+}
+
+// Present every item, then drill: listen → recall → build the example sentence (when there is one).
+async function drill(theme, items) {
   const state = Object.fromEntries(items.map((it) => {
     const need = ['listen', 'type'];
-    if (tiles(it.ex_nl).words.length >= 3) need.push('order');
+    if (it.ex_nl && tiles(it.ex_nl).words.length >= 3) need.push('order');
     return [it.id, { need, errors: 0 }];
   }));
   const total = items.length + Object.values(state).reduce((a, s) => a + s.need.length, 0);
@@ -74,11 +97,7 @@ async function words(theme, step) {
     const key = `${theme.id}/${it.id}`;
     if (!store.getCard(key)) store.setCard(key, schedule(null, firstGrade(state[it.id].errors), now));
   }
-  const perfect = items.filter((it) => state[it.id].errors === 0).length;
-  store.completeStep(theme.id, step.id, perfect / items.length);
-  store.logActivity(exercises);
-  endScreen(theme, step, 'Goed gedaan!',
-    `${items.length} nouveaux mots — ${perfect} sans aucune erreur.<br>Ils reviendront en révision au bon moment, juste avant que vous ne les oubliiez.`);
+  return { perfect: items.filter((it) => state[it.id].errors === 0).length, exercises };
 }
 
 // ---------- grammar: explain (with the French contrast), then practise ----------

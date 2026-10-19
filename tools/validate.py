@@ -32,15 +32,31 @@ def audio_ids(t):
 
 
 def check(theme_id):
-    errors, warnings = [], []
     t = json.loads((APP / "content/themes" / f"{theme_id}.json").read_text(encoding="utf-8"))
-    items = {it["id"]: it for it in t["items"]}
-
-    for key in ("id", "nl", "fr", "level", "intro", "cando", "steps", "items", "dialogue", "tips"):
-        if key not in t:
-            errors.append(f"missing field '{key}'")
+    errors, warnings = check_theme(t)
     if t.get("id") != theme_id:
         errors.append(f"id '{t.get('id')}' does not match file name")
+    have = {p.stem for p in (APP / "audio" / theme_id).glob("*.m4a")}
+    missing = [a for a in audio_ids(t) if a not in have]
+    if missing:
+        warnings.append(f"{len(missing)}/{len(audio_ids(t))} audio files missing (synthetic voice used instead)")
+    return errors, warnings
+
+
+def check_theme(t, custom=False):
+    """Structure checks on a theme dict. custom=True: a lesson made in answer to a question, which
+    needs an answer and at least one step, but no dialogue, checkpoint or task."""
+    errors, warnings = [], []
+    items = {it["id"]: it for it in t.get("items", [])}
+
+    required = ("nl", "fr", "intro", "steps", "items", "answer") if custom else ("id", "nl", "fr", "level", "intro", "cando", "steps", "items", "dialogue", "tips")
+    for key in required:
+        if key not in t:
+            errors.append(f"missing field '{key}'")
+    if errors:
+        return errors, warnings
+    if custom and (not isinstance(t["answer"], list) or not all(isinstance(p, str) for p in t["answer"])):
+        errors.append("answer must be a list of paragraphs (strings)")
 
     taught = []
     for s in t["steps"]:
@@ -66,9 +82,14 @@ def check(theme_id):
         if n != 1:
             errors.append(f"item '{i}' is taught in {n} word steps (should be 1)")
     kinds = [s["type"] for s in t["steps"]]
-    if "checkpoint" not in kinds:
+    if custom:
+        if not kinds:
+            errors.append("no steps")
+        if set(kinds) - {"words", "grammar"}:
+            errors.append("a custom lesson may only have words and grammar steps")
+    elif "checkpoint" not in kinds:
         warnings.append("no checkpoint step")
-    if "task" not in kinds:
+    if not custom and "task" not in kinds:
         warnings.append("no task step: nothing is done with a real person in this theme")
 
     for i, it in items.items():
@@ -91,22 +112,19 @@ def check(theme_id):
             else:
                 errors.append(f"grammar {sid}#{k}: unknown type {e['type']}")
 
-    d = t["dialogue"]
-    whos = {l["who"] for l in d["lines"]}
-    if d.get("roles", {}).get("learner") not in whos:
-        errors.append("dialogue: learner role is not one of the speakers")
-    for k, q in enumerate(d.get("questions", [])):
-        if not 0 <= q["answer"] < len(q["options"]):
-            errors.append(f"dialogue question {k + 1}: answer index out of range")
+    d = t.get("dialogue")
+    if d:
+        whos = {l["who"] for l in d["lines"]}
+        if d.get("roles", {}).get("learner") not in whos:
+            errors.append("dialogue: learner role is not one of the speakers")
+        for k, q in enumerate(d.get("questions", [])):
+            if not 0 <= q["answer"] < len(q["options"]):
+                errors.append(f"dialogue question {k + 1}: answer index out of range")
 
     for f in t.get("further", []):
         if not f.get("url", "").startswith("https://"):
             errors.append(f"further: '{f.get('title')}' has no https link")
 
-    have = {p.stem for p in (APP / "audio" / theme_id).glob("*.m4a")}
-    missing = [a for a in audio_ids(t) if a not in have]
-    if missing:
-        warnings.append(f"{len(missing)}/{len(audio_ids(t))} audio files missing (synthetic voice used instead)")
     return errors, warnings
 
 

@@ -6,14 +6,25 @@ import { review } from './review.js';
 import { speakButton, stop, canRecord, record } from './audio.js';
 import { esc } from './util.js';
 import { CONFIG } from './config.js';
+import { VIRTUAL, virtualTheme, pending } from './extra.js';
+import { practice } from './practice.js';
+import { teacherPage } from './teacher.js';
 
-const VERSION = '0.3';
+const VERSION = '0.4';
 const view = document.getElementById('view');
 const nav = document.getElementById('nav');
 const themes = {};
 let themeIndex = [];
 
+// Course themes come from content files; "perso" and "stan" are built from the learner's data, and
+// "q-…" lessons were made for this learner in answer to a question. Those are rebuilt every time.
 async function loadTheme(id) {
+  if (VIRTUAL.includes(id)) return (themes[id] = virtualTheme(id));
+  if (id.startsWith('q-')) {
+    const l = (store.db().customLessons || []).find((x) => x.id === id);
+    if (!l) throw new Error(`no custom lesson ${id}`);
+    return (themes[id] = l);
+  }
   if (!themes[id]) {
     const text = await fetch(`content/themes/${id}.json`).then((r) => r.text());
     themes[id] = JSON.parse(text.replaceAll('{teacher}', CONFIG.teacherName));
@@ -58,6 +69,9 @@ function themeProgress(t) {
   };
 }
 
+// Custom lessons not yet opened (no step done).
+const newLessons = () => (store.db().customLessons || []).filter((l) => !(l.steps || []).some((s) => store.stepDone(l.id, s.id)));
+
 // ---------- home ----------
 
 async function home() {
@@ -77,6 +91,12 @@ async function home() {
 
     <section class="today">
       <div id="feedback-slot"></div>
+      ${pending('stan').length ? `<a class="card feedback-card" href="#/practice/stan/learn">
+        <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON.task}</svg></span>
+        <span><span class="label">De ${esc(CONFIG.teacherName)}</span><strong>${pending('stan').length} nouveau${pending('stan').length > 1 ? 'x' : ''} mot${pending('stan').length > 1 ? 's' : ''} à apprendre</strong></span></a>` : ''}
+      ${newLessons().length ? `<a class="card feedback-card" href="#/theme/${newLessons()[0].id}">
+        <span class="stepicon"><svg viewBox="0 0 24 24">${STEP_ICON.grammar}</svg></span>
+        <span><span class="label">Votre question</span><strong>Une leçon vous attend : ${esc(newLessons()[0].nl)}</strong></span></a>` : ''}
       ${due > 0 ? `
         <a class="card primary" href="#/review">
           <span class="big">${due}</span>
@@ -93,7 +113,7 @@ async function home() {
 
     <h2 class="section">Parcours</h2>
     <ul class="themes">
-      ${themeIndex.map((t) => {
+      ${themeIndex.filter((t, k) => t.status === 'ready' || themeIndex.slice(0, k).filter((x) => x.status !== 'ready').length < 3).map((t) => {
         if (t.status !== 'ready') return `
           <li class="theme soon"><span class="lvl">${esc(t.level)}</span>
             <span><strong>${esc(t.nl)}</strong><small>${esc(t.fr)}</small></span><em>bientôt</em></li>`;
@@ -104,6 +124,7 @@ async function home() {
             <span class="bar"><i style="width:${p.pct}%"></i></span></span>
             <em>${p.steps}/${p.totalSteps}</em></a></li>`;
       }).join('')}
+      ${(() => { const more = themeIndex.filter((t) => t.status !== 'ready').length - 3; return more > 0 ? `<li class="theme soon"><span class="lvl">+${more}</span><span><strong>Et ${more} autres thèmes</strong><small>jusqu'au niveau B1</small></span></li>` : ''; })()}
     </ul>
     <a class="method-link" href="#/method">Comment fonctionne cette méthode ? ›</a>`;
   if (sync.currentUser()) {
@@ -124,16 +145,20 @@ async function themePage(id) {
   const t = await loadTheme(id);
   const next = nextStep(t);
   const check = store.getCheck(id);
+  const custom = id.startsWith('q-');
   view.innerHTML = `
-    <a class="back" href="#/">‹ Accueil</a>
+    <a class="back" href="${custom ? '#/practice/lessons' : '#/'}">‹ ${custom ? 'Mes leçons' : 'Accueil'}</a>
     <header class="theme-head">
-      <p class="eyebrow">${esc(t.level)} · ${esc(t.fr)}</p>
+      <p class="eyebrow">${esc(t.level || '')}${t.level ? ' · ' : ''}${esc(t.fr)}</p>
       <h1>${esc(t.nl)}</h1>
       <p class="lead">${esc(t.intro)}</p>
     </header>
 
-    <h2 class="section">Objectifs</h2>
-    <ul class="goals">${t.cando.map((c, k) => `<li class="${check?.cando?.[k] ? 'met' : ''}">${esc(c)}</li>`).join('')}</ul>
+    ${t.question ? `<div class="tip asked"><small>Votre question</small><p>${esc(t.question)}</p></div>` : ''}
+    ${t.answer?.length ? `<h2 class="section">La réponse</h2><div class="answer-text">${t.answer.map((p) => `<p>${esc(p)}</p>`).join('')}</div>` : ''}
+
+    ${t.cando?.length ? `<h2 class="section">Objectifs</h2>
+    <ul class="goals">${t.cando.map((c, k) => `<li class="${check?.cando?.[k] ? 'met' : ''}">${esc(c)}</li>`).join('')}</ul>` : ''}
 
     <h2 class="section">Étapes</h2>
     <ol class="path">
@@ -158,8 +183,8 @@ async function themePage(id) {
           <span class="dot ${s}">${{ new: 'nouveau', learning: 'en cours', known: 'acquis' }[s]}</span></li>`; }).join('')}
     </ul>
 
-    <h2 class="section">Bon à savoir</h2>
-    <div class="tips">${t.tips.map((tp) => `<div class="tip"><strong>${esc(tp.title)}</strong><p>${esc(tp.text)}</p></div>`).join('')}</div>
+    ${t.tips?.length ? `<h2 class="section">Bon à savoir</h2>
+    <div class="tips">${t.tips.map((tp) => `<div class="tip"><strong>${esc(tp.title)}</strong><p>${esc(tp.text)}</p></div>`).join('')}</div>` : ''}
 
     ${t.further?.length ? `
       <h2 class="section">Pour aller plus loin</h2>
@@ -182,49 +207,6 @@ async function showFeedback(themeId) {
       ${r.feedback_text ? `<p>${esc(r.feedback_text).replace(/\n/g, '<br>')}</p>` : ''}
       ${url ? `<audio controls src="${esc(url)}"></audio>` : ''}</div>`).join('')}`;
   sync.markSeen(rows.filter((r) => !r.seen_at).map((r) => r.id)).catch(() => {});
-}
-
-// ---------- teacher: every submission, with a place to answer ----------
-
-async function teacherPage() {
-  setNav('settings');
-  if (!(await sync.isTeacher())) { location.hash = '#/settings'; return; }
-  const rows = await sync.allSubmissions();
-  const urls = Object.fromEntries(await Promise.all(rows.filter((r) => r.audio_path).map(async (r) => [r.id, await sync.audioUrl(r.audio_path)])));
-  view.innerHTML = `
-    <a class="back" href="#/settings">‹ Réglages</a>
-    <header class="hello"><p class="eyebrow">Espace enseignant</p><h1>Opdrachten</h1></header>
-    ${rows.length ? '' : '<p class="lead">Aucune opdracht pour l\'instant.</p>'}
-    <ul class="submissions">${rows.map((r) => `
-      <li class="group" data-id="${r.id}">
-        <small>${esc(r.learner_email)} · ${esc(r.theme)} · ${new Date(r.created_at).toLocaleString('fr-BE', { dateStyle: 'medium', timeStyle: 'short' })}</small>
-        <strong>${r.mode === 'recording' ? 'Enregistrement' : 'Fait en personne'}${r.feedback_at ? ' · répondu ✓' : ''}</strong>
-        ${r.notes ? `<details><summary>Ses notes</summary><p lang="nl">${esc(r.notes).replace(/\n/g, '<br>')}</p></details>` : ''}
-        ${urls[r.id] ? `<audio controls src="${esc(urls[r.id])}"></audio>` : ''}
-        <textarea rows="3" placeholder="Votre retour (ce qui était bien, une ou deux corrections)…">${esc(r.feedback_text || '')}</textarea>
-        <div class="row"><button class="btn rec">● Retour vocal</button><button class="btn primary save">Envoyer</button></div>
-        <div class="fbaudio"></div>
-      </li>`).join('')}
-    </ul>`;
-  view.querySelectorAll('.submissions > li').forEach((li) => {
-    const row = rows.find((r) => String(r.id) === li.dataset.id);
-    let blob = null, current = null;
-    const recBtn = li.querySelector('.rec');
-    recBtn.onclick = async () => {
-      if (current) { await current.stop(); return; }
-      current = await record(120000);
-      recBtn.textContent = '■ Arrêter';
-      blob = await current.done;
-      current = null;
-      recBtn.textContent = '● Refaire';
-      li.querySelector('.fbaudio').innerHTML = `<audio controls src="${URL.createObjectURL(blob)}"></audio>`;
-    };
-    li.querySelector('.save').onclick = async (e) => {
-      e.target.disabled = true; e.target.textContent = 'Envoi…';
-      try { await sync.saveFeedback(row, li.querySelector('textarea').value.trim(), blob); e.target.textContent = 'Envoyé ✓'; }
-      catch (x) { e.target.disabled = false; e.target.textContent = 'Réessayer'; }
-    };
-  });
 }
 
 // ---------- progress ----------
@@ -268,15 +250,15 @@ async function progress() {
 function method() {
   setNav('settings');
   const P = [
-    ['Se tester plutôt que relire', 'Chercher une réponse dans sa mémoire la renforce bien plus que la relire. Presque chaque écran vous demande donc de retrouver quelque chose.', 'Roediger & Karpicke, 2006'],
-    ['Espacer les révisions', 'Revoir un mot juste avant de l\'oublier, à des intervalles de plus en plus longs, est l\'un des effets les plus solides de la psychologie de l\'apprentissage. L\'application calcule ce moment pour chaque mot (algorithme FSRS).', 'Cepeda et al., 2006 · Latimier, Peyre & Ramus, 2021 · Ye et al., 2022'],
+    ['Se tester plutôt que relire', 'Chercher une réponse dans sa mémoire la fait mieux tenir dans le temps que la relire. Presque chaque écran vous demande donc de retrouver quelque chose.', 'Roediger & Karpicke, 2006, Psychological Science'],
+    ['Espacer les révisions', 'Répartir les révisions dans le temps plutôt que tout revoir d\'un coup est l\'un des effets les plus solides de la psychologie de l\'apprentissage. L\'application estime pour chaque mot le moment où vous risquez de l\'oublier et le fait revenir à ce moment-là (algorithme FSRS) ; à mesure que le mot s\'ancre, les intervalles s\'allongent.', 'Cepeda et al., 2006, Psychological Bulletin · Latimier, Peyre & Ramus, 2021, Educational Psychology Review · Ye, Su & Cao, 2022, KDD'],
     ['Bien apprendre avant d\'espacer', 'Un mot nouveau est répété plusieurs fois dans la leçon jusqu\'à être retrouvé sans aide ; ce n\'est qu\'ensuite qu\'il entre dans les révisions espacées.', ''],
-    ['L\'oreille avant l\'œil', 'On écoute d\'abord, on lit ensuite. Le son et l\'écrit ensemble s\'ancrent mieux qu\'un seul des deux.', 'Mayer, 2009'],
-    ['Beaucoup d\'écoute compréhensible', 'Les dialogues sont à votre niveau, juste un peu au-dessus : on comprend l\'essentiel grâce au contexte.', 'Krashen, 1982'],
-    ['Expliquer la grammaire, en partant du français', 'Pour les adultes, une règle expliquée clairement aide. Chaque point est comparé au français : ce qui est pareil, ce qui piège.', 'Norris & Ortega, 2000'],
+    ['L\'oreille avant l\'œil', 'On écoute d\'abord, on lit ensuite. Lire en écoutant aide à comprendre la langue parlée et à retenir les mots nouveaux.', 'Montero Perez, Van den Noortgate & Desmet, 2013, System'],
+    ['Beaucoup d\'écoute compréhensible', 'Les dialogues sont à votre niveau, juste un peu au-dessus : on comprend l\'essentiel grâce au contexte.', 'Krashen, 1982, Principles and Practice in Second Language Acquisition'],
+    ['Expliquer la grammaire, en partant du français', 'Pour les adultes, une règle expliquée clairement aide. Chaque point est comparé au français : ce qui est pareil, ce qui piège.', 'Norris & Ortega, 2000, Language Learning · Spada & Tomita, 2010, Language Learning'],
     ['Mélanger', 'Les révisions mélangent les thèmes et les façons d\'interroger (dire, écrire, écouter) : c\'est plus difficile sur le moment, et plus durable.', ''],
     ['Parler tout de suite', 'Répéter à voix haute, s\'enregistrer et comparer, jouer un rôle : la production orale commence dès la première leçon.', ''],
-    ['Des objectifs clairs', 'Chaque thème annonce ce que vous saurez faire (« je peux… », comme le Cadre européen de référence) et se termine par un bilan.', 'Conseil de l\'Europe, CECR'],
+    ['Des objectifs clairs', 'Chaque thème annonce ce que vous saurez faire (« je peux… », comme le Cadre européen de référence) et se termine par un bilan.', 'Conseil de l\'Europe, CECR, 2001 · Volume complémentaire, 2020'],
   ];
   view.innerHTML = `
     <a class="back" href="#/settings">‹ Réglages</a>
@@ -360,7 +342,8 @@ async function route() {
     else if (page === 'progress') await progress();
     else if (page === 'settings') settings();
     else if (page === 'method') method();
-    else if (page === 'teacher') await teacherPage();
+    else if (page === 'teacher') { setNav('settings'); await teacherPage(a, { themeIndex, loadTheme }); }
+    else if (page === 'practice') { setNav('practice'); await practice(a, b, { themeIndex, loadTheme }); }
     else await home();
   } catch (e) {
     view.innerHTML = `<div class="session end"><h1>Oups.</h1><p class="lead">Le contenu n'a pas pu être chargé. Vérifiez la connexion et réessayez.</p><a class="btn primary" href="#/">Accueil</a></div>`;
@@ -378,7 +361,10 @@ async function boot() {
       sync.loginScreen(view, () => { document.body.classList.remove('locked'); boot(); });
       return;
     }
-    if (user) sync.pull().then((changed) => changed && route());
+    if (user) {
+      Promise.all([sync.pull(), sync.refreshLearnerData().catch(() => false)])
+        .then(([a, b]) => (a || b) && !location.hash.startsWith('#/step') && !location.hash.startsWith('#/review') && route());
+    }
   }
   if (!routing) { window.addEventListener('hashchange', route); routing = true; }
   route();

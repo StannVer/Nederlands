@@ -1,0 +1,19 @@
+{
+  "intro": "En Flandre, on n'entend pas seulement le néerlandais des manuels. Voici des mots de tous les jours — souvent proches du français ! — avec leur équivalent standard. Comprenez-les d'abord ; vous les utiliserez quand ils vous viendront naturellement.",
+  "entries": [
+    { "vl": "goesting", "std": "zin", "fr": "envie", "ex": "Ik heb goesting in frietjes.", "ex_fr": "J'ai envie de frites." },
+    { "vl": "plezant", "std": "leuk", "fr": "sympa, agréable", "ex": "Dat was plezant!", "ex_fr": "C'était sympa !" },
+    { "vl": "amai!", "std": "wauw!", "fr": "waouh ! / ouh là !", "ex": "Amai, wat mooi!", "ex_fr": "Waouh, que c'est beau !" },
+    { "vl": "allez", "std": "kom / nou", "fr": "allez / bon", "ex": "Allez, tot morgen!", "ex_fr": "Bon, à demain !" },
+    { "vl": "efkes", "std": "even", "fr": "un instant", "ex": "Wacht efkes.", "ex_fr": "Attends un instant." },
+    { "vl": "seffens", "std": "zo meteen", "fr": "tout de suite, tantôt", "ex": "Ik kom seffens.", "ex_fr": "J'arrive tout de suite." },
+    { "vl": "content", "std": "blij, tevreden", "fr": "content", "ex": "Ik ben content!", "ex_fr": "Je suis content !" },
+    { "vl": "ambetant", "std": "vervelend", "fr": "embêtant", "ex": "Dat is ambetant.", "ex_fr": "C'est embêtant." },
+    { "vl": "merci", "std": "dank je", "fr": "merci", "ex": "Merci, Sofie!", "ex_fr": "Merci, Sofie !" },
+    { "vl": "schoon", "std": "mooi", "fr": "beau", "ex": "Wat een schoon weer!", "ex_fr": "Quel beau temps !", "note": "Aux Pays-Bas, « schoon » veut dire « propre »." },
+    { "vl": "kuisen", "std": "schoonmaken", "fr": "nettoyer", "ex": "Ik moet nog kuisen.", "ex_fr": "Je dois encore nettoyer." },
+    { "vl": "babbelen", "std": "kletsen", "fr": "bavarder", "ex": "We babbelen wat.", "ex_fr": "On bavarde un peu." },
+    { "vl": "ge / gij", "std": "je / jij", "fr": "tu", "ex": "Hebt ge dat gezien?", "ex_fr": "Tu as vu ça ?", "note": "Très courant à l'oral en Flandre. Avec « ge », le verbe prend souvent un « -t » : ge hebt, ge komt." },
+    { "vl": "nen dikke merci", "std": "heel erg bedankt", "fr": "un grand merci", "ex": "Nen dikke merci!", "ex_fr": "Un grand merci !" }
+  ]
+}

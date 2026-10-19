@@ -33,7 +33,7 @@ export function judge(given, accepted) {
     const d = levenshtein(g, t);
     if (d < best) { best = d; target = t; }
   }
-  const allowed = target.length >= 10 ? 2 : target.length >= 4 ? 1 : 0;
+  const allowed = target.length >= 30 ? Math.floor(target.length / 12) : target.length >= 10 ? 2 : target.length >= 4 ? 1 : 0;
   return best <= allowed ? 'near' : 'wrong';
 }
 
