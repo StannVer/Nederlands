@@ -1,0 +1,290 @@
+{
+  "stories": [
+    {
+      "id": "thuis-1",
+      "title": "Waar is Kees?",
+      "fr": "Où est Kees ?",
+      "level": "A1",
+      "after": "thuis",
+      "lines": [
+        {
+          "nl": "Het is zaterdag. Monia is in de tuin.",
+          "fr": "C'est samedi. Monia est au jardin."
+        },
+        {
+          "nl": "Ze heeft een kleine tuinkabouter. Hij heet Kees.",
+          "fr": "Elle a un petit nain de jardin. Il s'appelle Kees."
+        },
+        {
+          "nl": "Kees is altijd tussen de tomaten.",
+          "fr": "Kees est toujours entre les tomates."
+        },
+        {
+          "nl": "Maar vandaag is Kees niet tussen de tomaten!",
+          "fr": "Mais aujourd'hui, Kees n'est pas entre les tomates !"
+        },
+        {
+          "nl": "Is hij in de serre? Nee.",
+          "fr": "Est-il dans la serre ? Non."
+        },
+        {
+          "nl": "Is hij in het tuinhuis? Nee, daar zijn alleen potten en zaden.",
+          "fr": "Est-il dans l'abri de jardin ? Non, là, il n'y a que des pots et des graines."
+        },
+        {
+          "nl": "Is hij onder de grote boom? Ook niet.",
+          "fr": "Est-il sous le grand arbre ? Non plus."
+        },
+        {
+          "nl": "Dan kijkt Monia over de haag.",
+          "fr": "Alors Monia regarde par-dessus la haie."
+        },
+        {
+          "nl": "De tuin van Jef is perfect. En daar, naast de moestuin, is Kees!",
+          "fr": "Le jardin de Jef est parfait. Et là, à côté du potager, voilà Kees !"
+        },
+        {
+          "nl": "Jef lacht. \"Kees is op vakantie bij mij!\"",
+          "fr": "Jef rit. « Kees est en vacances chez moi ! »"
+        },
+        {
+          "nl": "\"In mijn tuin is alles netjes. Kees houdt van orde!\"",
+          "fr": "« Dans mon jardin, tout est bien rangé. Kees aime l'ordre ! »"
+        },
+        {
+          "nl": "Monia lacht ook. \"Allez, Kees. Naar huis!\"",
+          "fr": "Monia rit aussi. « Allez, Kees. À la maison ! »"
+        }
+      ],
+      "glossary": {
+        "het": "il, ce ; le, la (neutre)",
+        "is": "est",
+        "zaterdag": "samedi",
+        "monia": "Monia (prénom)",
+        "in": "dans, à",
+        "de": "le, la, les",
+        "tuin": "jardin",
+        "ze": "elle",
+        "heeft": "a",
+        "een": "un, une",
+        "kleine": "petit(e) (klein + -e)",
+        "tuinkabouter": "nain de jardin",
+        "hij": "il",
+        "heet": "s'appelle",
+        "kees": "Kees (prénom)",
+        "altijd": "toujours",
+        "tussen": "entre",
+        "tomaten": "tomates",
+        "maar": "mais",
+        "vandaag": "aujourd'hui",
+        "niet": "pas",
+        "serre": "serre",
+        "nee": "non",
+        "tuinhuis": "abri de jardin",
+        "daar": "là",
+        "zijn": "sont (daar zijn = là, il y a)",
+        "alleen": "seulement (alleen … = ne … que)",
+        "potten": "pots",
+        "en": "et",
+        "zaden": "graines",
+        "onder": "sous",
+        "grote": "grand(e) (groot + -e)",
+        "boom": "arbre",
+        "ook": "aussi (ook niet = non plus)",
+        "dan": "alors, ensuite",
+        "kijkt": "regarde",
+        "over": "par-dessus",
+        "haag": "haie",
+        "van": "de",
+        "jef": "Jef (prénom)",
+        "perfect": "parfait",
+        "naast": "à côté de",
+        "moestuin": "potager",
+        "lacht": "rit",
+        "op": "en, sur (op vakantie = en vacances)",
+        "vakantie": "vacances",
+        "bij": "chez (bij mij = chez moi)",
+        "mij": "moi",
+        "mijn": "mon, ma, mes",
+        "alles": "tout",
+        "netjes": "bien rangé, propre",
+        "houdt": "aime (houden van = aimer)",
+        "orde": "ordre",
+        "allez": "allez (flamand)",
+        "naar": "vers, à (naar huis = à la maison)",
+        "huis": "maison"
+      },
+      "questions": [
+        {
+          "q": "Où est Kees, d'habitude ?",
+          "options": [
+            "Entre les tomates",
+            "Dans la serre",
+            "Sous le grand arbre"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qu'est-ce qu'il y a dans l'abri de jardin ?",
+          "options": [
+            "Un frigo",
+            "Seulement des pots et des graines",
+            "Le nain de Jef"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Où Monia trouve-t-elle Kees ?",
+          "options": [
+            "Dans la cuisine",
+            "Au café",
+            "Dans le jardin de Jef, à côté du potager"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "thuis-2",
+      "title": "Een klein appartement in Gent",
+      "fr": "Un petit appartement à Gand",
+      "level": "A1",
+      "after": "thuis",
+      "lines": [
+        {
+          "nl": "Lotte woont in Gent, in een klein appartement.",
+          "fr": "Lotte habite à Gand, dans un petit appartement."
+        },
+        {
+          "nl": "Het appartement is boven de bakker.",
+          "fr": "L'appartement est au-dessus de la boulangerie."
+        },
+        {
+          "nl": "Het heeft een kleine keuken, een slaapkamer en een badkamer.",
+          "fr": "Il a une petite cuisine, une chambre et une salle de bain."
+        },
+        {
+          "nl": "Er is geen tuin. Maar er is een klein terras.",
+          "fr": "Il n'y a pas de jardin. Mais il y a une petite terrasse."
+        },
+        {
+          "nl": "Op het terras is er een plant met één tomaat.",
+          "fr": "Sur la terrasse, il y a une plante avec une seule tomate."
+        },
+        {
+          "nl": "In de living zijn er driehonderd platen uit de jaren tachtig.",
+          "fr": "Dans le salon, il y a trois cents disques des années quatre-vingt."
+        },
+        {
+          "nl": "Vandaag is Monia op bezoek. Ze heeft een cadeau: een plant uit haar serre.",
+          "fr": "Aujourd'hui, Monia est en visite. Elle a un cadeau : une plante de sa serre."
+        },
+        {
+          "nl": "\"Voor jouw terras!\" zegt Monia.",
+          "fr": "« Pour ta terrasse ! » dit Monia."
+        },
+        {
+          "nl": "Lotte lacht. \"Merci! Nu heb ik twee planten en driehonderd platen.\"",
+          "fr": "Lotte rit. « Merci ! Maintenant, j'ai deux plantes et trois cents disques. »"
+        },
+        {
+          "nl": "\"En geen moestuin\", zegt Monia.",
+          "fr": "« Et pas de potager », dit Monia."
+        },
+        {
+          "nl": "\"Nee\", zegt Lotte. \"Maar nonkel Jef heeft een grote moestuin. Dat is genoeg!\"",
+          "fr": "« Non », dit Lotte. « Mais tonton Jef a un grand potager. Ça suffit ! »"
+        }
+      ],
+      "glossary": {
+        "lotte": "Lotte (prénom)",
+        "woont": "habite",
+        "in": "à, dans",
+        "gent": "Gand",
+        "een": "un, une",
+        "klein": "petit",
+        "appartement": "appartement",
+        "het": "le, la (neutre) ; il",
+        "is": "est",
+        "boven": "au-dessus de ; en haut",
+        "de": "le, la, les",
+        "bakker": "boulanger, boulangerie",
+        "heeft": "a",
+        "kleine": "petite (klein + -e)",
+        "keuken": "cuisine",
+        "slaapkamer": "chambre",
+        "en": "et",
+        "badkamer": "salle de bain",
+        "er": "(er is = il y a)",
+        "geen": "pas de",
+        "tuin": "jardin",
+        "maar": "mais",
+        "terras": "terrasse",
+        "op": "sur ; en (op bezoek = en visite)",
+        "plant": "plante",
+        "met": "avec",
+        "tomaat": "tomate",
+        "living": "salon",
+        "zijn": "sont (er zijn = il y a)",
+        "driehonderd": "trois cents",
+        "platen": "disques (vinyles)",
+        "uit": "de (origine)",
+        "jaren": "années",
+        "tachtig": "quatre-vingts",
+        "vandaag": "aujourd'hui",
+        "monia": "Monia (prénom)",
+        "bezoek": "visite",
+        "ze": "elle",
+        "cadeau": "cadeau",
+        "haar": "son, sa, ses (à elle)",
+        "serre": "serre",
+        "voor": "pour",
+        "jouw": "ta, ton (insistant)",
+        "zegt": "dit",
+        "lacht": "rit",
+        "merci": "merci",
+        "nu": "maintenant",
+        "heb": "ai",
+        "ik": "je",
+        "twee": "deux",
+        "planten": "plantes",
+        "moestuin": "potager",
+        "nee": "non",
+        "nonkel": "tonton, oncle (flamand)",
+        "jef": "Jef (prénom)",
+        "grote": "grand(e) (groot + -e)",
+        "dat": "cela, ça",
+        "genoeg": "assez (dat is genoeg = ça suffit)"
+      },
+      "questions": [
+        {
+          "q": "Où est l'appartement de Lotte ?",
+          "options": [
+            "Derrière la maison de Jef",
+            "Au-dessus de la boulangerie",
+            "À côté du café"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Qu'est-ce qu'il y a sur la terrasse ?",
+          "options": [
+            "Un petit potager",
+            "Trois cents disques",
+            "Une plante avec une seule tomate"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Quel cadeau Monia apporte-t-elle ?",
+          "options": [
+            "Une plante de sa serre",
+            "Un CD de Céline Dion",
+            "Des tomates"
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ]
+}

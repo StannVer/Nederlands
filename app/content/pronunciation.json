@@ -2,69 +2,65 @@
   "intro": "Certains sons néerlandais n'existent pas en français, ou se distinguent par une différence que l'oreille francophone n'a pas appris à entendre. On commence par entendre la différence, ensuite on la produit.",
   "contrasts": [
     {
-      "id": "ui-ij",
-      "title": "ui · ij",
-      "explain": "« ij » (et « ei ») ressemble à « ail » dans « travail ». « ui » commence plus en avant, lèvres arrondies : partez de « eu » (peur) et glissez vers « i ».",
+      "id": "g-h",
+      "title": "g · h",
+      "explain": "Le « g » néerlandais est un souffle frotté au fond de la gorge (comme un « r » français chuchoté). Le « h » est un simple souffle, sans frottement, comme quand on embue une vitre. Ne remplacez jamais le « g » par un « h » : goed et hoed ne veulent pas dire la même chose.",
       "pairs": [
-        { "a": "ruim", "a_fr": "spacieux", "b": "rijm", "b_fr": "rime" },
-        { "a": "buit", "a_fr": "butin", "b": "bijt", "b_fr": "(il) mord" },
-        { "a": "duik", "a_fr": "plongeon", "b": "dijk", "b_fr": "digue" },
-        { "a": "luid", "a_fr": "fort (son)", "b": "lijd", "b_fr": "(je) souffre" }
+        {
+          "a": "goed",
+          "a_fr": "bon, bien",
+          "b": "hoed",
+          "b_fr": "chapeau"
+        },
+        {
+          "a": "geel",
+          "a_fr": "jaune",
+          "b": "heel",
+          "b_fr": "très ; entier"
+        },
+        {
+          "a": "gaan",
+          "a_fr": "aller",
+          "b": "haan",
+          "b_fr": "coq"
+        },
+        {
+          "a": "geld",
+          "a_fr": "argent",
+          "b": "held",
+          "b_fr": "héros"
+        }
       ]
     },
     {
-      "id": "ui-eu",
-      "title": "ui · eu",
-      "explain": "« eu » est presque le « eu » français (peu), mais long et stable. « ui » part de ce son et glisse vers « i » : la bouche bouge.",
+      "id": "h-zero",
+      "title": "h · (rien)",
+      "explain": "En français, le « h » est muet. En néerlandais, il se prononce toujours : un petit souffle avant la voyelle. Sans lui, on dit un autre mot. Entraînez-vous en mettant la main devant la bouche : vous devez sentir l'air.",
       "pairs": [
-        { "a": "buik", "a_fr": "ventre", "b": "beuk", "b_fr": "hêtre" },
-        { "a": "luis", "a_fr": "pou", "b": "leus", "b_fr": "slogan" },
-        { "a": "kuis", "a_fr": "(je) nettoie (flamand)", "b": "keus", "b_fr": "choix" },
-        { "a": "ruik", "a_fr": "(je) sens", "b": "reuk", "b_fr": "odorat" }
-      ]
-    },
-    {
-      "id": "a-aa",
-      "title": "a · aa",
-      "explain": "« a » est court et bref (patte). « aa » est long (pâte). La longueur change le sens : en français, elle ne change presque jamais rien.",
-      "pairs": [
-        { "a": "man", "a_fr": "homme", "b": "maan", "b_fr": "lune" },
-        { "a": "tak", "a_fr": "branche", "b": "taak", "b_fr": "tâche" },
-        { "a": "mag", "a_fr": "(il) peut", "b": "maag", "b_fr": "estomac" },
-        { "a": "stal", "a_fr": "étable", "b": "staal", "b_fr": "acier" }
-      ]
-    },
-    {
-      "id": "e-ee",
-      "title": "e · ee",
-      "explain": "« e » est court et ouvert (bec). « ee » est un « é » long et tendu. Attention : un « d » en fin de mot se prononce « t » (bed = « bèt »).",
-      "pairs": [
-        { "a": "pen", "a_fr": "stylo", "b": "peen", "b_fr": "carotte" },
-        { "a": "vel", "a_fr": "feuille", "b": "veel", "b_fr": "beaucoup" },
-        { "a": "weg", "a_fr": "chemin", "b": "weeg", "b_fr": "(je) pèse" },
-        { "a": "lek", "a_fr": "fuite", "b": "leek", "b_fr": "(il) semblait" }
-      ]
-    },
-    {
-      "id": "o-oo",
-      "title": "o · oo",
-      "explain": "« o » est court et ouvert (porte). « oo » est long et fermé (« ô » de côte).",
-      "pairs": [
-        { "a": "bom", "a_fr": "bombe", "b": "boom", "b_fr": "arbre" },
-        { "a": "pot", "a_fr": "pot", "b": "poot", "b_fr": "patte" },
-        { "a": "zon", "a_fr": "soleil", "b": "zoon", "b_fr": "fils" },
-        { "a": "rot", "a_fr": "pourri", "b": "rood", "b_fr": "rouge" }
-      ]
-    },
-    {
-      "id": "oe-uu",
-      "title": "oe · uu",
-      "explain": "« oe » = « ou » français. « uu » = « u » français, en plus long. Les francophones ont les deux sons : il suffit de bien lire.",
-      "pairs": [
-        { "a": "boer", "a_fr": "fermier", "b": "buur", "b_fr": "voisin" },
-        { "a": "doel", "a_fr": "but", "b": "duel", "b_fr": "duel" },
-        { "a": "toer", "a_fr": "tour, balade", "b": "tuur", "b_fr": "(je) scrute" },
-        { "a": "voer", "a_fr": "nourriture (animaux)", "b": "vuur", "b_fr": "feu" }
+        {
+          "a": "hij",
+          "a_fr": "il",
+          "b": "ei",
+          "b_fr": "œuf"
+        },
+        {
+          "a": "heet",
+          "a_fr": "(il) s'appelle ; chaud",
+          "b": "eet",
+          "b_fr": "(il) mange"
+        },
+        {
+          "a": "hoor",
+          "a_fr": "(j')entends",
+          "b": "oor",
+          "b_fr": "oreille"
+        },
+        {
+          "a": "hout",
+          "a_fr": "bois (matière)",
+          "b": "oud",
+          "b_fr": "vieux"
+        }
       ]
     },
     {
@@ -72,10 +68,464 @@
       "title": "g · k",
       "explain": "Le « g » néerlandais est un souffle dans la gorge, jamais le « g » de « gare ». Le « k » est sec, sans souffle. En Flandre, le « g » est plus doux qu'aux Pays-Bas.",
       "pairs": [
-        { "a": "goud", "a_fr": "or", "b": "koud", "b_fr": "froid" },
-        { "a": "gat", "a_fr": "trou", "b": "kat", "b_fr": "chat" },
-        { "a": "graag", "a_fr": "volontiers", "b": "kraag", "b_fr": "col" },
-        { "a": "gas", "a_fr": "gaz", "b": "kas", "b_fr": "serre" }
+        {
+          "a": "goud",
+          "a_fr": "or",
+          "b": "koud",
+          "b_fr": "froid"
+        },
+        {
+          "a": "gat",
+          "a_fr": "trou",
+          "b": "kat",
+          "b_fr": "chat"
+        },
+        {
+          "a": "graag",
+          "a_fr": "volontiers",
+          "b": "kraag",
+          "b_fr": "col"
+        },
+        {
+          "a": "gas",
+          "a_fr": "gaz",
+          "b": "kas",
+          "b_fr": "serre"
+        }
+      ]
+    },
+    {
+      "id": "a-aa",
+      "title": "a · aa",
+      "explain": "« a » est court et bref (patte). « aa » est long (pâte). La longueur change le sens : en français, elle ne change presque jamais rien.",
+      "pairs": [
+        {
+          "a": "man",
+          "a_fr": "homme",
+          "b": "maan",
+          "b_fr": "lune"
+        },
+        {
+          "a": "tak",
+          "a_fr": "branche",
+          "b": "taak",
+          "b_fr": "tâche"
+        },
+        {
+          "a": "mag",
+          "a_fr": "(il) peut",
+          "b": "maag",
+          "b_fr": "estomac"
+        },
+        {
+          "a": "stal",
+          "a_fr": "étable",
+          "b": "staal",
+          "b_fr": "acier"
+        }
+      ]
+    },
+    {
+      "id": "e-ee",
+      "title": "e · ee",
+      "explain": "« e » est court et ouvert (bec). « ee » est un « é » long et tendu. Attention : un « d » en fin de mot se prononce « t » (bed = « bèt »).",
+      "pairs": [
+        {
+          "a": "pen",
+          "a_fr": "stylo",
+          "b": "peen",
+          "b_fr": "carotte"
+        },
+        {
+          "a": "vel",
+          "a_fr": "feuille",
+          "b": "veel",
+          "b_fr": "beaucoup"
+        },
+        {
+          "a": "weg",
+          "a_fr": "chemin",
+          "b": "weeg",
+          "b_fr": "(je) pèse"
+        },
+        {
+          "a": "lek",
+          "a_fr": "fuite",
+          "b": "leek",
+          "b_fr": "(il) semblait"
+        }
+      ]
+    },
+    {
+      "id": "schwa-ee",
+      "title": "e (muet) · ee",
+      "explain": "Le « e » de « de, ze, we, je » est un « e » faible, comme dans « le, je » en français. « ee » est un « é » long et tendu. Le mot court se prononce vite et sans force ; le mot avec « ee » est plus long. Le dernier exemple, « jee », s'entend surtout dans « o jee ! » (oh là là !).",
+      "pairs": [
+        {
+          "a": "ze",
+          "a_fr": "elle, ils",
+          "b": "zee",
+          "b_fr": "mer"
+        },
+        {
+          "a": "te",
+          "a_fr": "trop",
+          "b": "thee",
+          "b_fr": "thé"
+        },
+        {
+          "a": "me",
+          "a_fr": "me",
+          "b": "mee",
+          "b_fr": "avec (aussi)"
+        },
+        {
+          "a": "je",
+          "a_fr": "tu",
+          "b": "jee",
+          "b_fr": "oh là là ! (o jee)"
+        }
+      ]
+    },
+    {
+      "id": "ij-ee",
+      "title": "ij · ee",
+      "explain": "Le piège francophone : lire « ij » comme « è ». Or « ij » (et « ei ») glisse, comme « ail » dans « travail ». « ee » ne bouge pas : c'est un « é » long et stable. Écoutez si la bouche bouge pendant la voyelle.",
+      "pairs": [
+        {
+          "a": "kijk",
+          "a_fr": "regarde !",
+          "b": "keek",
+          "b_fr": "(il) regardait"
+        },
+        {
+          "a": "wijk",
+          "a_fr": "quartier",
+          "b": "week",
+          "b_fr": "semaine"
+        },
+        {
+          "a": "blijf",
+          "a_fr": "reste !",
+          "b": "bleef",
+          "b_fr": "(il) restait"
+        },
+        {
+          "a": "lijst",
+          "a_fr": "liste",
+          "b": "leest",
+          "b_fr": "(il) lit"
+        }
+      ]
+    },
+    {
+      "id": "o-oo",
+      "title": "o · oo",
+      "explain": "« o » est court et ouvert (porte). « oo » est long et fermé (« ô » de côte).",
+      "pairs": [
+        {
+          "a": "bom",
+          "a_fr": "bombe",
+          "b": "boom",
+          "b_fr": "arbre"
+        },
+        {
+          "a": "pot",
+          "a_fr": "pot",
+          "b": "poot",
+          "b_fr": "patte"
+        },
+        {
+          "a": "zon",
+          "a_fr": "soleil",
+          "b": "zoon",
+          "b_fr": "fils"
+        },
+        {
+          "a": "rot",
+          "a_fr": "pourri",
+          "b": "rood",
+          "b_fr": "rouge"
+        }
+      ]
+    },
+    {
+      "id": "oe-oo",
+      "title": "oe · oo",
+      "explain": "« oe » se prononce exactement comme le « ou » français (fou). « oo » est un « ô » long et fermé (côte). Ne lisez pas « oe » comme « o-é » : ce sont deux lettres pour un seul son.",
+      "pairs": [
+        {
+          "a": "koek",
+          "a_fr": "biscuit",
+          "b": "kook",
+          "b_fr": "(je) cuisine"
+        },
+        {
+          "a": "voer",
+          "a_fr": "nourriture (animaux)",
+          "b": "voor",
+          "b_fr": "pour ; devant"
+        },
+        {
+          "a": "toen",
+          "a_fr": "alors (à ce moment-là)",
+          "b": "toon",
+          "b_fr": "ton ; (je) montre"
+        },
+        {
+          "a": "boer",
+          "a_fr": "fermier",
+          "b": "boor",
+          "b_fr": "foret, perceuse"
+        }
+      ]
+    },
+    {
+      "id": "oe-uu",
+      "title": "oe · uu",
+      "explain": "« oe » = « ou » français. « uu » = « u » français, en plus long. Les francophones ont les deux sons : il suffit de bien lire.",
+      "pairs": [
+        {
+          "a": "boer",
+          "a_fr": "fermier",
+          "b": "buur",
+          "b_fr": "voisin"
+        },
+        {
+          "a": "doel",
+          "a_fr": "but",
+          "b": "duel",
+          "b_fr": "duel"
+        },
+        {
+          "a": "toer",
+          "a_fr": "tour, balade",
+          "b": "tuur",
+          "b_fr": "(je) scrute"
+        },
+        {
+          "a": "voer",
+          "a_fr": "nourriture (animaux)",
+          "b": "vuur",
+          "b_fr": "feu"
+        }
+      ]
+    },
+    {
+      "id": "ou-oe",
+      "title": "ou · oe",
+      "explain": "Piège de lecture : « ou » (et « au ») n'est PAS le « ou » français. Il se prononce à peu près « aou », la bouche s'ouvre puis se ferme. Le son « ou » français s'écrit « oe ». Rappel : le « d » final se prononce « t » : goud et hout finissent tous deux par le son « t ».",
+      "pairs": [
+        {
+          "a": "zout",
+          "a_fr": "sel",
+          "b": "zoet",
+          "b_fr": "sucré"
+        },
+        {
+          "a": "goud",
+          "a_fr": "or",
+          "b": "goed",
+          "b_fr": "bon, bien"
+        },
+        {
+          "a": "kou",
+          "a_fr": "froid (le froid)",
+          "b": "koe",
+          "b_fr": "vache"
+        },
+        {
+          "a": "hout",
+          "a_fr": "bois (matière)",
+          "b": "hoed",
+          "b_fr": "chapeau"
+        }
+      ]
+    },
+    {
+      "id": "ui-eu",
+      "title": "ui · eu",
+      "explain": "« eu » est presque le « eu » français (peu), mais long et stable. « ui » part de ce son et glisse vers « i » : la bouche bouge.",
+      "pairs": [
+        {
+          "a": "buik",
+          "a_fr": "ventre",
+          "b": "beuk",
+          "b_fr": "hêtre"
+        },
+        {
+          "a": "luis",
+          "a_fr": "pou",
+          "b": "leus",
+          "b_fr": "slogan"
+        },
+        {
+          "a": "kuis",
+          "a_fr": "(je) nettoie (flamand)",
+          "b": "keus",
+          "b_fr": "choix"
+        },
+        {
+          "a": "ruik",
+          "a_fr": "(je) sens",
+          "b": "reuk",
+          "b_fr": "odorat"
+        }
+      ]
+    },
+    {
+      "id": "ui-ij",
+      "title": "ui · ij",
+      "explain": "« ij » (et « ei ») ressemble à « ail » dans « travail ». « ui » commence plus en avant, lèvres arrondies : partez de « eu » (peur) et glissez vers « i ».",
+      "pairs": [
+        {
+          "a": "ruim",
+          "a_fr": "spacieux",
+          "b": "rijm",
+          "b_fr": "rime"
+        },
+        {
+          "a": "buit",
+          "a_fr": "butin",
+          "b": "bijt",
+          "b_fr": "(il) mord"
+        },
+        {
+          "a": "duik",
+          "a_fr": "plongeon",
+          "b": "dijk",
+          "b_fr": "digue"
+        },
+        {
+          "a": "luid",
+          "a_fr": "fort (son)",
+          "b": "lijd",
+          "b_fr": "(je) souffre"
+        }
+      ]
+    },
+    {
+      "id": "eu-uu",
+      "title": "eu · uu",
+      "explain": "Deux sons que vous avez déjà : « eu » = « eu » de « peu », « uu » = « u » de « dur ». Le seul danger est de les lire de travers. « guur » (temps rude, froid et humide) est moins courant, mais on l'entend dans « guur weer ».",
+      "pairs": [
+        {
+          "a": "deur",
+          "a_fr": "porte",
+          "b": "duur",
+          "b_fr": "cher"
+        },
+        {
+          "a": "beurt",
+          "a_fr": "tour (c'est mon tour)",
+          "b": "buurt",
+          "b_fr": "quartier"
+        },
+        {
+          "a": "zeur",
+          "a_fr": "(je) râle, (je) rouspète",
+          "b": "zuur",
+          "b_fr": "acide"
+        },
+        {
+          "a": "geur",
+          "a_fr": "odeur",
+          "b": "guur",
+          "b_fr": "rude (temps)"
+        }
+      ]
+    },
+    {
+      "id": "ie-i",
+      "title": "ie · i",
+      "explain": "« ie » = le « i » français (vie). Le « i » court néerlandais est différent : plus ouvert et relâché, entre « i » et « é ». Si vous dites « zit » avec un « i » français, un Flamand entend « ziet ».",
+      "pairs": [
+        {
+          "a": "ziet",
+          "a_fr": "(il) voit",
+          "b": "zit",
+          "b_fr": "(il) est assis"
+        },
+        {
+          "a": "vies",
+          "a_fr": "sale",
+          "b": "vis",
+          "b_fr": "poisson"
+        },
+        {
+          "a": "lied",
+          "a_fr": "chanson",
+          "b": "lid",
+          "b_fr": "membre"
+        },
+        {
+          "a": "liep",
+          "a_fr": "(il) marchait",
+          "b": "lip",
+          "b_fr": "lèvre"
+        }
+      ]
+    },
+    {
+      "id": "u-i",
+      "title": "u · i",
+      "explain": "Le « u » court néerlandais (lucht, zus) n'existe pas en français : il est proche du « eu » de « peur », en plus bref. Le « i » court est entre « i » et « é ». Lèvres un peu arrondies pour « u », pas arrondies pour « i ».",
+      "pairs": [
+        {
+          "a": "lucht",
+          "a_fr": "air ; ciel",
+          "b": "licht",
+          "b_fr": "lumière ; léger"
+        },
+        {
+          "a": "kust",
+          "a_fr": "côte (mer)",
+          "b": "kist",
+          "b_fr": "caisse, coffre"
+        },
+        {
+          "a": "put",
+          "a_fr": "puits",
+          "b": "pit",
+          "b_fr": "noyau, pépin"
+        },
+        {
+          "a": "hut",
+          "a_fr": "cabane",
+          "b": "hit",
+          "b_fr": "tube (chanson)"
+        }
+      ]
+    },
+    {
+      "id": "w-v",
+      "title": "w · v",
+      "explain": "Le « w » flamand se fait avec les deux lèvres qui se rapprochent, sans les arrondir : jamais le « w » anglais ni le « ou » de « oui ». Le « v » se fait avec la lèvre du bas contre les dents du haut, comme en français.",
+      "pairs": [
+        {
+          "a": "wind",
+          "a_fr": "vent",
+          "b": "vind",
+          "b_fr": "(je) trouve"
+        },
+        {
+          "a": "wat",
+          "a_fr": "quoi",
+          "b": "vat",
+          "b_fr": "tonneau"
+        },
+        {
+          "a": "wol",
+          "a_fr": "laine",
+          "b": "vol",
+          "b_fr": "plein"
+        },
+        {
+          "a": "wet",
+          "a_fr": "loi",
+          "b": "vet",
+          "b_fr": "gras"
+        }
       ]
     }
   ]

@@ -1,0 +1,303 @@
+{
+  "stories": [
+    {
+      "id": "mijn-dag-1",
+      "title": "De dag van Jef",
+      "fr": "La journée de Jef",
+      "level": "A1",
+      "after": "mijn-dag",
+      "lines": [
+        {
+          "nl": "Jef staat elke dag om vijf uur op.",
+          "fr": "Jef se lève tous les jours à cinq heures."
+        },
+        {
+          "nl": "Hij wast zich en hij kleedt zich aan.",
+          "fr": "Il se lave et il s'habille."
+        },
+        {
+          "nl": "Hij ontbijt met een boterham en een tas koffie.",
+          "fr": "Il prend son petit-déjeuner : une tartine et une tasse de café."
+        },
+        {
+          "nl": "Dan gaat hij naar zijn moestuin.",
+          "fr": "Ensuite, il va dans son potager."
+        },
+        {
+          "nl": "Hij geeft de tomaten en de bonen water.",
+          "fr": "Il arrose les tomates et les haricots."
+        },
+        {
+          "nl": "Om tien uur komt Rita in de tuin.",
+          "fr": "À dix heures, Rita vient au jardin."
+        },
+        {
+          "nl": "\"Jef, de koffie is klaar!\"",
+          "fr": "« Jef, le café est prêt ! »"
+        },
+        {
+          "nl": "Om twaalf uur eet hij boterhammen met kaas.",
+          "fr": "À midi, il mange des tartines au fromage."
+        },
+        {
+          "nl": "Daarna slaapt hij een uur.",
+          "fr": "Après, il dort une heure."
+        },
+        {
+          "nl": "Om vier uur is hij weer in de tuin.",
+          "fr": "À quatre heures, il est de nouveau au jardin."
+        },
+        {
+          "nl": "Om zes uur kookt hij soep met groenten uit de moestuin.",
+          "fr": "À six heures, il fait une soupe avec des légumes du potager."
+        },
+        {
+          "nl": "Om tien uur gaat hij naar bed. Hij is moe, maar blij.",
+          "fr": "À dix heures, il va se coucher. Il est fatigué, mais content."
+        }
+      ],
+      "glossary": {
+        "jef": "Jef (prénom)",
+        "staat": "se tient (opstaan = se lever)",
+        "elke": "chaque",
+        "dag": "jour",
+        "om": "à (+ heure)",
+        "vijf": "cinq",
+        "uur": "heure",
+        "op": "(opstaan = se lever)",
+        "hij": "il",
+        "wast": "lave (zich wassen = se laver)",
+        "zich": "se",
+        "en": "et",
+        "kleedt": "habille (zich aankleden = s'habiller)",
+        "aan": "(zich aankleden = s'habiller)",
+        "ontbijt": "prend le petit-déjeuner",
+        "met": "avec",
+        "een": "un, une",
+        "boterham": "tartine",
+        "tas": "tasse (flamand)",
+        "koffie": "café",
+        "dan": "ensuite, alors",
+        "gaat": "va",
+        "naar": "vers, à",
+        "zijn": "son, sa, ses (à lui)",
+        "moestuin": "potager",
+        "geeft": "donne (water geven = arroser)",
+        "de": "le, la, les",
+        "tomaten": "tomates",
+        "bonen": "haricots",
+        "water": "eau",
+        "tien": "dix",
+        "komt": "vient",
+        "rita": "Rita (prénom, la femme de Jef)",
+        "in": "dans",
+        "tuin": "jardin",
+        "is": "est",
+        "klaar": "prêt(e)",
+        "twaalf": "douze",
+        "eet": "mange",
+        "boterhammen": "tartines",
+        "kaas": "fromage",
+        "daarna": "après, ensuite",
+        "slaapt": "dort",
+        "vier": "quatre",
+        "weer": "de nouveau, encore",
+        "zes": "six",
+        "kookt": "cuisine, prépare",
+        "soep": "soupe",
+        "groenten": "légumes",
+        "uit": "de (provenance)",
+        "bed": "lit (naar bed gaan = aller se coucher)",
+        "moe": "fatigué(e)",
+        "maar": "mais",
+        "blij": "content(e)"
+      },
+      "questions": [
+        {
+          "q": "À quelle heure Jef se lève-t-il ?",
+          "options": [
+            "À cinq heures",
+            "À six heures",
+            "À dix heures"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que mange Jef à midi ?",
+          "options": [
+            "De la soupe",
+            "Des tartines au fromage",
+            "Un croque-monsieur"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Que fait Jef après le repas de midi ?",
+          "options": [
+            "Il dort une heure",
+            "Il fait la vaisselle",
+            "Il regarde la télé"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mijn-dag-2",
+      "title": "Een avond bij Monia",
+      "fr": "Une soirée chez Monia",
+      "level": "A1",
+      "after": "mijn-dag",
+      "lines": [
+        {
+          "nl": "Het is maandag. Monia komt om zes uur thuis.",
+          "fr": "C'est lundi. Monia rentre à la maison à six heures."
+        },
+        {
+          "nl": "Ze is moe, maar eerst geeft ze de bloemen water.",
+          "fr": "Elle est fatiguée, mais d'abord elle arrose les fleurs."
+        },
+        {
+          "nl": "Dan kookt ze soep met groenten uit haar tuin.",
+          "fr": "Ensuite, elle fait une soupe avec des légumes de son jardin."
+        },
+        {
+          "nl": "Ze wast niet af. Dat is voor morgen!",
+          "fr": "Elle ne fait pas la vaisselle. C'est pour demain !"
+        },
+        {
+          "nl": "Om acht uur zet ze de tv aan.",
+          "fr": "À huit heures, elle allume la télé."
+        },
+        {
+          "nl": "Ze kijkt naar Plus belle la vie.",
+          "fr": "Elle regarde Plus belle la vie."
+        },
+        {
+          "nl": "Het café in de serie heet de Mistral.",
+          "fr": "Le café de la série s'appelle le Mistral."
+        },
+        {
+          "nl": "Daarna zet ze muziek uit de jaren negentig op.",
+          "fr": "Après, elle met de la musique des années 90."
+        },
+        {
+          "nl": "Céline Dion! Monia zingt mee.",
+          "fr": "Céline Dion ! Monia chante avec elle."
+        },
+        {
+          "nl": "Jef kijkt over de haag. \"Amai, Monia, wat een concert!\"",
+          "fr": "Jef regarde par-dessus la haie. « Ouah, Monia, quel concert ! »"
+        },
+        {
+          "nl": "Monia lacht. Om elf uur gaat ze naar bed.",
+          "fr": "Monia rit. À onze heures, elle va se coucher."
+        },
+        {
+          "nl": "Morgen staat ze weer vroeg op.",
+          "fr": "Demain, elle se lève de nouveau tôt."
+        }
+      ],
+      "glossary": {
+        "het": "il, ce, le (neutre)",
+        "is": "est",
+        "maandag": "lundi",
+        "monia": "Monia (prénom)",
+        "komt": "vient (thuiskomen = rentrer à la maison)",
+        "om": "à (+ heure)",
+        "zes": "six",
+        "uur": "heure",
+        "thuis": "à la maison (thuiskomen = rentrer)",
+        "ze": "elle",
+        "moe": "fatiguée",
+        "maar": "mais",
+        "eerst": "d'abord",
+        "geeft": "donne (water geven = arroser)",
+        "de": "le, la, les",
+        "bloemen": "fleurs",
+        "water": "eau",
+        "dan": "ensuite, alors",
+        "kookt": "cuisine, prépare",
+        "soep": "soupe",
+        "met": "avec",
+        "groenten": "légumes",
+        "uit": "de (provenance)",
+        "haar": "son, sa, ses (à elle)",
+        "tuin": "jardin",
+        "wast": "lave (afwassen = faire la vaisselle)",
+        "niet": "pas",
+        "af": "(afwassen = faire la vaisselle)",
+        "dat": "cela, ça",
+        "voor": "pour",
+        "morgen": "demain",
+        "acht": "huit",
+        "zet": "met (de tv aanzetten = allumer la télé)",
+        "tv": "télé",
+        "aan": "(aanzetten = allumer)",
+        "kijkt": "regarde",
+        "naar": "vers, à (kijken naar = regarder)",
+        "plus": "(titre) Plus belle la vie",
+        "belle": "(titre) Plus belle la vie",
+        "la": "(titre) Plus belle la vie",
+        "vie": "(titre) Plus belle la vie",
+        "cafe": "café (le bar)",
+        "in": "dans",
+        "serie": "série",
+        "heet": "s'appelle",
+        "mistral": "le Mistral (le café de la série)",
+        "daarna": "après, ensuite",
+        "muziek": "musique",
+        "jaren": "années",
+        "negentig": "quatre-vingt-dix (de jaren negentig = les années 90)",
+        "op": "(muziek opzetten = mettre de la musique ; opstaan = se lever)",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "zingt": "chante (meezingen = chanter avec)",
+        "mee": "avec (meezingen = chanter avec)",
+        "jef": "Jef (prénom)",
+        "over": "par-dessus",
+        "haag": "haie",
+        "amai": "ouah ! (flamand)",
+        "wat": "quel, quelle (wat een… = quel…)",
+        "een": "un, une",
+        "concert": "concert",
+        "lacht": "rit",
+        "elf": "onze",
+        "gaat": "va",
+        "bed": "lit (naar bed gaan = aller se coucher)",
+        "staat": "se tient (opstaan = se lever)",
+        "weer": "de nouveau",
+        "vroeg": "tôt"
+      },
+      "questions": [
+        {
+          "q": "Que fait Monia d'abord, quand elle rentre ?",
+          "options": [
+            "Elle cuisine",
+            "Elle arrose les fleurs",
+            "Elle allume la télé"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Qu'est-ce que Monia ne fait pas ce soir ?",
+          "options": [
+            "La vaisselle",
+            "La cuisine",
+            "Regarder la télé"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qui entend Monia chanter ?",
+          "options": [
+            "Lotte",
+            "Rita",
+            "Jef"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

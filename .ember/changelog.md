@@ -76,3 +76,10 @@ Checked against Babbel's own description (how-babbel-works, babbel-review) and r
 - A noun typed without its article counts as a near miss.
 - Tested in WebKit: all 8 steps + review for each of the 5 units (35–36 cards each, no errors); desktop and phone screenshots reviewed; fixes: tip overlapping a label, unit button overlapping the title on phone, plan numbering.
 - docs/to-check-by-stan.md: every sentence and fact the writers flagged.
+
+### v1.1–1.2 — level A1 complete (2026-10-19)
+- Units 6 thuis, 7 mijn-dag, 8 onderweg written by helpers (24 items each, 2 grammar blocks, comic dialogue, culture, task), validated and tested end to end (8 steps + review each, no errors). Level A1 = 8 units, ~190 words and expressions, 16 grammar points.
+- 20 stories (2 per unit + 4 personal), merged from stories-extra/ with tools/merge-stories.py (checks ids, units, answers, and that every word is taught or glossed). Jef's wife unified as Rita.
+- Pronunciation programme: 17 contrasts in syllabus order (4 minimal pairs each).
+- Sounds (synthesised), confetti, unit-complete celebration; stories grouped by unit and listed on each unit page; story "words known" counts every unit.
+- docs/to-check-by-stan.md extended with every flagged sentence and fact of units 6–8 and the new stories.

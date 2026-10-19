@@ -2,110 +2,128 @@
   "intro": "De courtes histoires écrites avec les mots que vous connaissez, plus quelques nouveaux. Touchez un mot pour voir sa traduction et l'ajouter à vos mots.",
   "stories": [
     {
-      "id": "nieuwe-collega",
-      "title": "Een nieuwe collega",
-      "fr": "Une nouvelle collègue",
-      "level": "A1",
-      "after": "kennismaken",
-      "lines": [
-        { "nl": "Het is maandag.", "fr": "C'est lundi." },
-        { "nl": "Monia is op het werk.", "fr": "Monia est au travail." },
-        { "nl": "Een vrouw komt binnen.", "fr": "Une femme entre." },
-        { "nl": "\"Goeiedag! Ik heet Lotte. Ik ben nieuw.\"", "fr": "« Bonjour ! Je m'appelle Lotte. Je suis nouvelle. »" },
-        { "nl": "\"Dag Lotte, ik heet Monia. Aangenaam!\"", "fr": "« Bonjour Lotte, je m'appelle Monia. Enchantée ! »" },
-        { "nl": "\"Waar woon je?\" vraagt Monia.", "fr": "« Où habites-tu ? » demande Monia." },
-        { "nl": "\"Ik woon in Gent. En jij?\"", "fr": "« J'habite à Gand. Et toi ? »" },
-        { "nl": "\"Ik woon in een dorp, met een tuin.\"", "fr": "« J'habite dans un village, avec un jardin. »" },
-        { "nl": "\"Ah, je spreekt Nederlands!\"", "fr": "« Ah, tu parles néerlandais ! »" },
-        { "nl": "\"Een beetje. Ik leer elke dag.\"", "fr": "« Un peu. J'apprends tous les jours. »" },
-        { "nl": "Lotte lacht. \"Heel goed! Tot straks, Monia.\"", "fr": "Lotte rit. « Très bien ! À tout à l'heure, Monia. »" }
-      ],
-      "glossary": {
-        "het": "le, la (neutre) / il, ce", "is": "est", "maandag": "lundi", "op": "sur, à", "werk": "travail",
-        "een": "un, une", "vrouw": "femme", "komt": "vient", "binnen": "dedans (binnenkomen = entrer)",
-        "goeiedag": "bonjour", "ik": "je", "heet": "m'appelle", "ben": "suis", "nieuw": "nouveau, nouvelle",
-        "dag": "bonjour, salut ; jour", "aangenaam": "enchanté(e)", "waar": "où", "woon": "habite (ik woon = j'habite)",
-        "je": "tu", "vraagt": "demande", "in": "à, dans", "gent": "Gand", "en": "et", "jij": "toi, tu", "dorp": "village",
-        "met": "avec", "tuin": "jardin", "ah": "ah", "spreekt": "parle", "nederlands": "néerlandais",
-        "beetje": "un peu (een beetje)", "leer": "apprends", "elke": "chaque", "lacht": "rit",
-        "heel": "très", "goed": "bien", "tot": "jusqu'à (tot straks = à tout à l'heure)", "straks": "tout à l'heure"
-      },
-      "questions": [
-        { "q": "Quel jour sommes-nous ?", "options": ["Dimanche", "Lundi", "Mardi"], "answer": 1 },
-        { "q": "Où habite Lotte ?", "options": ["À Gand", "À Bruxelles", "Dans un village"], "answer": 0 },
-        { "q": "Que fait Monia tous les jours ?", "options": ["Elle chante", "Elle va à Gand", "Elle apprend le néerlandais"], "answer": 2 }
-      ]
-    },
-    {
-      "id": "koffie",
-      "title": "Aan de koffiemachine",
-      "fr": "À la machine à café",
-      "level": "A1",
-      "after": "kennismaken",
-      "lines": [
-        { "nl": "Lotte staat aan de koffiemachine.", "fr": "Lotte est debout à la machine à café." },
-        { "nl": "Monia komt ook.", "fr": "Monia vient aussi." },
-        { "nl": "\"Dag Lotte, hoe gaat het?\"", "fr": "« Salut Lotte, comment ça va ? »" },
-        { "nl": "\"Goed, merci! En met jou?\"", "fr": "« Bien, merci ! Et toi ? »" },
-        { "nl": "\"Ook goed! Koffie?\" \"Ja, graag.\"", "fr": "« Bien aussi ! Un café ? » « Oui, volontiers. »" },
-        { "nl": "Lotte zingt een liedje.", "fr": "Lotte chante une petite chanson." },
-        { "nl": "\"Wat zing je?\" vraagt Monia.", "fr": "« Qu'est-ce que tu chantes ? » demande Monia." },
-        { "nl": "\"Muziek uit de jaren negentig! Ik hou van die muziek.\"", "fr": "« De la musique des années quatre-vingt-dix ! J'adore cette musique. »" },
-        { "nl": "\"Ik ook!\" zegt Monia.", "fr": "« Moi aussi ! » dit Monia." },
-        { "nl": "Ze drinken koffie en ze praten over muziek.", "fr": "Elles boivent un café et elles parlent de musique." },
-        { "nl": "\"Tot straks, Monia!\" \"Dag Lotte!\"", "fr": "« À tout à l'heure, Monia ! » « Salut Lotte ! »" }
-      ],
-      "glossary": {
-        "staat": "est debout", "aan": "à, près de", "de": "le, la, les", "koffiemachine": "machine à café",
-        "komt": "vient", "ook": "aussi", "dag": "salut", "hoe": "comment", "gaat": "va", "het": "il, ça",
-        "goed": "bien", "merci": "merci", "en": "et", "met": "avec", "jou": "toi (en met jou? = et toi ?)",
-        "koffie": "café", "ja": "oui", "graag": "volontiers", "zingt": "chante", "een": "un, une",
-        "liedje": "petite chanson", "wat": "quoi, qu'est-ce que", "zing": "chantes (zing je = tu chantes)",
-        "je": "tu", "vraagt": "demande", "muziek": "musique", "uit": "de (origine)", "jaren": "années",
-        "negentig": "quatre-vingt-dix", "ik": "je, moi", "hou": "aime (ik hou van = j'aime)", "van": "de",
-        "die": "ce, cette", "zegt": "dit", "ze": "ils, elles", "drinken": "boivent", "praten": "parlent",
-        "over": "de, au sujet de", "tot": "jusqu'à (tot straks = à tout à l'heure)", "straks": "tout à l'heure"
-      },
-      "questions": [
-        { "q": "Où est Lotte ?", "options": ["Dans le jardin", "À la machine à café", "À la maison"], "answer": 1 },
-        { "q": "Que fait Lotte ?", "options": ["Elle chante", "Elle danse", "Elle téléphone"], "answer": 0 },
-        { "q": "Lotte aime la musique…", "options": ["des années soixante", "des années quatre-vingt-dix", "d'aujourd'hui"], "answer": 1 }
-      ]
-    },
-    {
       "id": "de-tuin",
       "title": "De tuin in de lente",
       "fr": "Le jardin au printemps",
       "level": "A1",
       "after": "kennismaken",
       "lines": [
-        { "nl": "Het is lente.", "fr": "C'est le printemps." },
-        { "nl": "Monia is in de tuin.", "fr": "Monia est dans le jardin." },
-        { "nl": "Ze plant bloemen en tomaten.", "fr": "Elle plante des fleurs et des tomates." },
-        { "nl": "Jef kijkt over de haag.", "fr": "Jef regarde par-dessus la haie." },
-        { "nl": "\"Goeiedag, buurvrouw! Amai, wat een mooie tuin!\"", "fr": "« Bonjour, voisine ! Ouah, quel beau jardin ! »" },
-        { "nl": "\"Dag Jef! Merci!\"", "fr": "« Bonjour Jef ! Merci ! »" },
-        { "nl": "\"Plant je nu al tomaten?\"", "fr": "« Tu plantes déjà des tomates ? »" },
-        { "nl": "\"Ja! Het is warm vandaag.\"", "fr": "« Oui ! Il fait chaud aujourd'hui. »" },
-        { "nl": "\"Ja, maar de nachten zijn nog koud, Monia.\"", "fr": "« Oui, mais les nuits sont encore froides, Monia. »" },
-        { "nl": "\"Dank je, Jef. Jij bent de expert!\"", "fr": "« Merci, Jef. C'est toi l'expert ! »" },
-        { "nl": "Jef lacht. \"Mijn moestuin is mijn leven!\"", "fr": "Jef rit. « Mon potager, c'est ma vie ! »" }
+        {
+          "nl": "Het is lente.",
+          "fr": "C'est le printemps."
+        },
+        {
+          "nl": "Monia is in de tuin.",
+          "fr": "Monia est dans le jardin."
+        },
+        {
+          "nl": "Ze plant bloemen en tomaten.",
+          "fr": "Elle plante des fleurs et des tomates."
+        },
+        {
+          "nl": "Jef kijkt over de haag.",
+          "fr": "Jef regarde par-dessus la haie."
+        },
+        {
+          "nl": "\"Goeiedag, buurvrouw! Amai, wat een mooie tuin!\"",
+          "fr": "« Bonjour, voisine ! Ouah, quel beau jardin ! »"
+        },
+        {
+          "nl": "\"Dag Jef! Merci!\"",
+          "fr": "« Bonjour Jef ! Merci ! »"
+        },
+        {
+          "nl": "\"Plant je nu al tomaten?\"",
+          "fr": "« Tu plantes déjà des tomates ? »"
+        },
+        {
+          "nl": "\"Ja! Het is warm vandaag.\"",
+          "fr": "« Oui ! Il fait chaud aujourd'hui. »"
+        },
+        {
+          "nl": "\"Ja, maar de nachten zijn nog koud, Monia.\"",
+          "fr": "« Oui, mais les nuits sont encore froides, Monia. »"
+        },
+        {
+          "nl": "\"Dank je, Jef. Jij bent de expert!\"",
+          "fr": "« Merci, Jef. C'est toi l'expert ! »"
+        },
+        {
+          "nl": "Jef lacht. \"Mijn moestuin is mijn leven!\"",
+          "fr": "Jef rit. « Mon potager, c'est ma vie ! »"
+        }
       ],
       "glossary": {
-        "het": "il, ce (het is = c'est)", "is": "est", "lente": "printemps", "in": "dans", "de": "le, la, les",
-        "tuin": "jardin", "ze": "elle", "plant": "plante", "bloemen": "fleurs", "en": "et", "tomaten": "tomates",
-        "kijkt": "regarde", "over": "par-dessus", "haag": "haie", "goeiedag": "bonjour",
-        "buurvrouw": "voisine", "amai": "ouah ! (flamand)", "wat": "quel, quelle (wat een… = quel…)",
-        "een": "un, une", "mooie": "beau, belle", "dag": "bonjour", "merci": "merci", "je": "tu",
-        "nu": "maintenant", "al": "déjà (nu al = déjà maintenant)", "ja": "oui", "warm": "chaud",
-        "vandaag": "aujourd'hui", "maar": "mais", "nachten": "nuits", "zijn": "sont", "nog": "encore",
-        "koud": "froid(e)", "dank": "merci (dank je = merci)", "jij": "toi, tu", "bent": "es",
-        "expert": "expert", "lacht": "rit", "mijn": "mon, ma", "moestuin": "potager", "leven": "vie"
+        "het": "il, ce (het is = c'est)",
+        "is": "est",
+        "lente": "printemps",
+        "in": "dans",
+        "de": "le, la, les",
+        "tuin": "jardin",
+        "ze": "elle",
+        "plant": "plante",
+        "bloemen": "fleurs",
+        "en": "et",
+        "tomaten": "tomates",
+        "kijkt": "regarde",
+        "over": "par-dessus",
+        "haag": "haie",
+        "goeiedag": "bonjour",
+        "buurvrouw": "voisine",
+        "amai": "ouah ! (flamand)",
+        "wat": "quel, quelle (wat een… = quel…)",
+        "een": "un, une",
+        "mooie": "beau, belle",
+        "dag": "bonjour",
+        "merci": "merci",
+        "je": "tu",
+        "nu": "maintenant",
+        "al": "déjà (nu al = déjà maintenant)",
+        "ja": "oui",
+        "warm": "chaud",
+        "vandaag": "aujourd'hui",
+        "maar": "mais",
+        "nachten": "nuits",
+        "zijn": "sont",
+        "nog": "encore",
+        "koud": "froid(e)",
+        "dank": "merci (dank je = merci)",
+        "jij": "toi, tu",
+        "bent": "es",
+        "expert": "expert",
+        "lacht": "rit",
+        "mijn": "mon, ma",
+        "moestuin": "potager",
+        "leven": "vie"
       },
       "questions": [
-        { "q": "Quelle est la saison ?", "options": ["Le printemps", "L'automne", "L'hiver"], "answer": 0 },
-        { "q": "Qu'est-ce que Monia plante ?", "options": ["Des fleurs et des tomates", "Des pommes de terre", "Un arbre"], "answer": 0 },
-        { "q": "Que dit Jef sur les nuits ?", "options": ["Elles sont chaudes", "Elles sont longues", "Elles sont encore froides"], "answer": 2 }
+        {
+          "q": "Quelle est la saison ?",
+          "options": [
+            "Le printemps",
+            "L'automne",
+            "L'hiver"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qu'est-ce que Monia plante ?",
+          "options": [
+            "Des fleurs et des tomates",
+            "Des pommes de terre",
+            "Un arbre"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que dit Jef sur les nuits ?",
+          "options": [
+            "Elles sont chaudes",
+            "Elles sont longues",
+            "Elles sont encore froides"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -115,35 +133,256 @@
       "level": "A1",
       "after": "kennismaken",
       "lines": [
-        { "nl": "Het is zaterdag.", "fr": "C'est samedi." },
-        { "nl": "Lotte geeft een feestje.", "fr": "Lotte organise une petite fête." },
-        { "nl": "Het thema: muziek uit de jaren tachtig en negentig.", "fr": "Le thème : la musique des années quatre-vingt et quatre-vingt-dix." },
-        { "nl": "Monia en Jef komen ook.", "fr": "Monia et Jef viennent aussi." },
-        { "nl": "Lotte heeft veel platen.", "fr": "Lotte a beaucoup de disques." },
-        { "nl": "Ze speelt een plaat van Céline Dion.", "fr": "Elle passe un disque de Céline Dion." },
-        { "nl": "\"Ik hou van Céline Dion!\" zegt Monia.", "fr": "« J'adore Céline Dion ! » dit Monia." },
-        { "nl": "\"Ze komt uit Canada, toch?\" vraagt Jef.", "fr": "« Elle vient du Canada, non ? » demande Jef." },
-        { "nl": "\"Ja, uit Quebec,\" zegt Lotte. \"Ze zingt in het Frans en in het Engels.\"", "fr": "« Oui, du Québec », dit Lotte. « Elle chante en français et en anglais. »" },
-        { "nl": "Jef danst met Monia.", "fr": "Jef danse avec Monia." },
-        { "nl": "\"Amai, Jef, je danst goed!\"", "fr": "« Ouah, Jef, tu danses bien ! »" },
-        { "nl": "\"Natuurlijk! Ik ben nog jong!\"", "fr": "« Évidemment ! Je suis encore jeune ! »" }
+        {
+          "nl": "Het is zaterdag.",
+          "fr": "C'est samedi."
+        },
+        {
+          "nl": "Lotte geeft een feestje.",
+          "fr": "Lotte organise une petite fête."
+        },
+        {
+          "nl": "Het thema: muziek uit de jaren tachtig en negentig.",
+          "fr": "Le thème : la musique des années quatre-vingt et quatre-vingt-dix."
+        },
+        {
+          "nl": "Monia en Jef komen ook.",
+          "fr": "Monia et Jef viennent aussi."
+        },
+        {
+          "nl": "Lotte heeft veel platen.",
+          "fr": "Lotte a beaucoup de disques."
+        },
+        {
+          "nl": "Ze speelt een plaat van Céline Dion.",
+          "fr": "Elle passe un disque de Céline Dion."
+        },
+        {
+          "nl": "\"Ik hou van Céline Dion!\" zegt Monia.",
+          "fr": "« J'adore Céline Dion ! » dit Monia."
+        },
+        {
+          "nl": "\"Ze komt uit Canada, toch?\" vraagt Jef.",
+          "fr": "« Elle vient du Canada, non ? » demande Jef."
+        },
+        {
+          "nl": "\"Ja, uit Quebec,\" zegt Lotte. \"Ze zingt in het Frans en in het Engels.\"",
+          "fr": "« Oui, du Québec », dit Lotte. « Elle chante en français et en anglais. »"
+        },
+        {
+          "nl": "Jef danst met Monia.",
+          "fr": "Jef danse avec Monia."
+        },
+        {
+          "nl": "\"Amai, Jef, je danst goed!\"",
+          "fr": "« Ouah, Jef, tu danses bien ! »"
+        },
+        {
+          "nl": "\"Natuurlijk! Ik ben nog jong!\"",
+          "fr": "« Évidemment ! Je suis encore jeune ! »"
+        }
       ],
       "glossary": {
-        "het": "il, ce, le (neutre)", "is": "est", "zaterdag": "samedi", "geeft": "donne (een feestje geven = faire une fête)",
-        "een": "un, une", "feestje": "petite fête", "thema": "thème", "muziek": "musique", "uit": "de (origine)",
-        "de": "le, la, les", "jaren": "années", "tachtig": "quatre-vingts", "en": "et", "negentig": "quatre-vingt-dix",
-        "komen": "viennent", "ook": "aussi", "heeft": "a", "veel": "beaucoup (de)", "platen": "disques",
-        "ze": "elle", "speelt": "joue, passe (un disque)", "plaat": "disque", "van": "de",
-        "celine": "Céline (prénom)", "dion": "Dion (nom)", "ik": "je", "hou": "aime (ik hou van = j'aime)",
-        "zegt": "dit", "komt": "vient", "canada": "le Canada", "toch": "n'est-ce pas ?", "vraagt": "demande",
-        "ja": "oui", "quebec": "le Québec", "zingt": "chante", "in": "en, dans", "frans": "français",
-        "engels": "anglais", "danst": "danse", "met": "avec", "amai": "ouah ! (flamand)", "je": "tu",
-        "goed": "bien", "natuurlijk": "bien sûr, évidemment", "ben": "suis", "nog": "encore", "jong": "jeune"
+        "het": "il, ce, le (neutre)",
+        "is": "est",
+        "zaterdag": "samedi",
+        "geeft": "donne (een feestje geven = faire une fête)",
+        "een": "un, une",
+        "feestje": "petite fête",
+        "thema": "thème",
+        "muziek": "musique",
+        "uit": "de (origine)",
+        "de": "le, la, les",
+        "jaren": "années",
+        "tachtig": "quatre-vingts",
+        "en": "et",
+        "negentig": "quatre-vingt-dix",
+        "komen": "viennent",
+        "ook": "aussi",
+        "heeft": "a",
+        "veel": "beaucoup (de)",
+        "platen": "disques",
+        "ze": "elle",
+        "speelt": "joue, passe (un disque)",
+        "plaat": "disque",
+        "van": "de",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "ik": "je",
+        "hou": "aime (ik hou van = j'aime)",
+        "zegt": "dit",
+        "komt": "vient",
+        "canada": "le Canada",
+        "toch": "n'est-ce pas ?",
+        "vraagt": "demande",
+        "ja": "oui",
+        "quebec": "le Québec",
+        "zingt": "chante",
+        "in": "en, dans",
+        "frans": "français",
+        "engels": "anglais",
+        "danst": "danse",
+        "met": "avec",
+        "amai": "ouah ! (flamand)",
+        "je": "tu",
+        "goed": "bien",
+        "natuurlijk": "bien sûr, évidemment",
+        "ben": "suis",
+        "nog": "encore",
+        "jong": "jeune"
       },
       "questions": [
-        { "q": "Quel jour est la fête ?", "options": ["Vendredi", "Dimanche", "Samedi"], "answer": 2 },
-        { "q": "D'où vient Céline Dion ?", "options": ["Du Québec, au Canada", "De France", "De Belgique"], "answer": 0 },
-        { "q": "Que fait Jef ?", "options": ["Il chante", "Il danse avec Monia", "Il rentre chez lui"], "answer": 1 }
+        {
+          "q": "Quel jour est la fête ?",
+          "options": [
+            "Vendredi",
+            "Dimanche",
+            "Samedi"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "D'où vient Céline Dion ?",
+          "options": [
+            "Du Québec, au Canada",
+            "De France",
+            "De Belgique"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que fait Jef ?",
+          "options": [
+            "Il chante",
+            "Il danse avec Monia",
+            "Il rentre chez lui"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "koffie",
+      "title": "Aan de koffiemachine",
+      "fr": "À la machine à café",
+      "level": "A1",
+      "after": "kennismaken",
+      "lines": [
+        {
+          "nl": "Lotte staat aan de koffiemachine.",
+          "fr": "Lotte est debout à la machine à café."
+        },
+        {
+          "nl": "Monia komt ook.",
+          "fr": "Monia vient aussi."
+        },
+        {
+          "nl": "\"Dag Lotte, hoe gaat het?\"",
+          "fr": "« Salut Lotte, comment ça va ? »"
+        },
+        {
+          "nl": "\"Goed, merci! En met jou?\"",
+          "fr": "« Bien, merci ! Et toi ? »"
+        },
+        {
+          "nl": "\"Ook goed! Koffie?\" \"Ja, graag.\"",
+          "fr": "« Bien aussi ! Un café ? » « Oui, volontiers. »"
+        },
+        {
+          "nl": "Lotte zingt een liedje.",
+          "fr": "Lotte chante une petite chanson."
+        },
+        {
+          "nl": "\"Wat zing je?\" vraagt Monia.",
+          "fr": "« Qu'est-ce que tu chantes ? » demande Monia."
+        },
+        {
+          "nl": "\"Muziek uit de jaren negentig! Ik hou van die muziek.\"",
+          "fr": "« De la musique des années quatre-vingt-dix ! J'adore cette musique. »"
+        },
+        {
+          "nl": "\"Ik ook!\" zegt Monia.",
+          "fr": "« Moi aussi ! » dit Monia."
+        },
+        {
+          "nl": "Ze drinken koffie en ze praten over muziek.",
+          "fr": "Elles boivent un café et elles parlent de musique."
+        },
+        {
+          "nl": "\"Tot straks, Monia!\" \"Dag Lotte!\"",
+          "fr": "« À tout à l'heure, Monia ! » « Salut Lotte ! »"
+        }
+      ],
+      "glossary": {
+        "staat": "est debout",
+        "aan": "à, près de",
+        "de": "le, la, les",
+        "koffiemachine": "machine à café",
+        "komt": "vient",
+        "ook": "aussi",
+        "dag": "salut",
+        "hoe": "comment",
+        "gaat": "va",
+        "het": "il, ça",
+        "goed": "bien",
+        "merci": "merci",
+        "en": "et",
+        "met": "avec",
+        "jou": "toi (en met jou? = et toi ?)",
+        "koffie": "café",
+        "ja": "oui",
+        "graag": "volontiers",
+        "zingt": "chante",
+        "een": "un, une",
+        "liedje": "petite chanson",
+        "wat": "quoi, qu'est-ce que",
+        "zing": "chantes (zing je = tu chantes)",
+        "je": "tu",
+        "vraagt": "demande",
+        "muziek": "musique",
+        "uit": "de (origine)",
+        "jaren": "années",
+        "negentig": "quatre-vingt-dix",
+        "ik": "je, moi",
+        "hou": "aime (ik hou van = j'aime)",
+        "van": "de",
+        "die": "ce, cette",
+        "zegt": "dit",
+        "ze": "ils, elles",
+        "drinken": "boivent",
+        "praten": "parlent",
+        "over": "de, au sujet de",
+        "tot": "jusqu'à (tot straks = à tout à l'heure)",
+        "straks": "tout à l'heure"
+      },
+      "questions": [
+        {
+          "q": "Où est Lotte ?",
+          "options": [
+            "Dans le jardin",
+            "À la machine à café",
+            "À la maison"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Que fait Lotte ?",
+          "options": [
+            "Elle chante",
+            "Elle danse",
+            "Elle téléphone"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Lotte aime la musique…",
+          "options": [
+            "des années soixante",
+            "des années quatre-vingt-dix",
+            "d'aujourd'hui"
+          ],
+          "answer": 1
+        }
       ]
     },
     {
@@ -153,36 +392,253 @@
       "level": "A1",
       "after": "kennismaken",
       "lines": [
-        { "nl": "Het is avond.", "fr": "C'est le soir." },
-        { "nl": "Monia kijkt tv.", "fr": "Monia regarde la télé." },
-        { "nl": "Jef staat aan de deur.", "fr": "Jef est à la porte." },
-        { "nl": "\"Dag Monia! Wat kijk je?\"", "fr": "« Bonsoir Monia ! Qu'est-ce que tu regardes ? »" },
-        { "nl": "\"Plus belle la vie. Dat is mijn serie!\"", "fr": "« Plus belle la vie. C'est ma série ! »" },
-        { "nl": "\"Plus belle la vie? Wat is dat?\" vraagt Jef.", "fr": "« Plus belle la vie ? Qu'est-ce que c'est ? » demande Jef." },
-        { "nl": "\"Een serie uit Frankrijk. De serie speelt in Marseille.\"", "fr": "« Une série française. La série se passe à Marseille. »" },
-        { "nl": "\"Er is een plein en een café: de Mistral.\"", "fr": "« Il y a une place et un café : le Mistral. »" },
-        { "nl": "\"Een café? Zoals ons café in het dorp!\" lacht Jef.", "fr": "« Un café ? Comme notre café au village ! » rit Jef." },
-        { "nl": "\"Ja, maar met veel zon!\"", "fr": "« Oui, mais avec beaucoup de soleil ! »" },
-        { "nl": "Jef blijft en kijkt ook.", "fr": "Jef reste et regarde aussi." },
-        { "nl": "\"Amai! Ik kijk morgen ook!\"", "fr": "« Ouah ! Demain, je regarde aussi ! »" }
+        {
+          "nl": "Het is avond.",
+          "fr": "C'est le soir."
+        },
+        {
+          "nl": "Monia kijkt tv.",
+          "fr": "Monia regarde la télé."
+        },
+        {
+          "nl": "Jef staat aan de deur.",
+          "fr": "Jef est à la porte."
+        },
+        {
+          "nl": "\"Dag Monia! Wat kijk je?\"",
+          "fr": "« Bonsoir Monia ! Qu'est-ce que tu regardes ? »"
+        },
+        {
+          "nl": "\"Plus belle la vie. Dat is mijn serie!\"",
+          "fr": "« Plus belle la vie. C'est ma série ! »"
+        },
+        {
+          "nl": "\"Plus belle la vie? Wat is dat?\" vraagt Jef.",
+          "fr": "« Plus belle la vie ? Qu'est-ce que c'est ? » demande Jef."
+        },
+        {
+          "nl": "\"Een serie uit Frankrijk. De serie speelt in Marseille.\"",
+          "fr": "« Une série française. La série se passe à Marseille. »"
+        },
+        {
+          "nl": "\"Er is een plein en een café: de Mistral.\"",
+          "fr": "« Il y a une place et un café : le Mistral. »"
+        },
+        {
+          "nl": "\"Een café? Zoals ons café in het dorp!\" lacht Jef.",
+          "fr": "« Un café ? Comme notre café au village ! » rit Jef."
+        },
+        {
+          "nl": "\"Ja, maar met veel zon!\"",
+          "fr": "« Oui, mais avec beaucoup de soleil ! »"
+        },
+        {
+          "nl": "Jef blijft en kijkt ook.",
+          "fr": "Jef reste et regarde aussi."
+        },
+        {
+          "nl": "\"Amai! Ik kijk morgen ook!\"",
+          "fr": "« Ouah ! Demain, je regarde aussi ! »"
+        }
       ],
       "glossary": {
-        "het": "il, ce, le (neutre)", "is": "est", "avond": "soir", "kijkt": "regarde", "tv": "télé",
-        "staat": "est debout, se trouve", "aan": "à", "de": "le, la, les", "deur": "porte", "dag": "bonjour, bonsoir",
-        "wat": "quoi, qu'est-ce que", "kijk": "regardes (kijk je = tu regardes) ; regarde (ik kijk)", "je": "tu",
-        "plus": "(titre) Plus belle la vie", "belle": "(titre) Plus belle la vie", "la": "(titre) Plus belle la vie",
-        "vie": "(titre) Plus belle la vie", "dat": "cela, ça", "mijn": "ma, mon", "serie": "série",
-        "vraagt": "demande", "een": "un, une", "uit": "de (origine)", "frankrijk": "la France",
-        "speelt": "se passe (spelen = jouer ; se passer)", "in": "à, dans", "marseille": "Marseille",
-        "er": "y (er is = il y a)", "plein": "place", "en": "et", "cafe": "café", "mistral": "le Mistral (le café de la série)",
-        "zoals": "comme", "ons": "notre", "dorp": "village", "lacht": "rit", "ja": "oui", "maar": "mais",
-        "met": "avec", "veel": "beaucoup (de)", "zon": "soleil", "blijft": "reste", "ook": "aussi",
-        "amai": "ouah ! (flamand)", "ik": "je", "morgen": "demain"
+        "het": "il, ce, le (neutre)",
+        "is": "est",
+        "avond": "soir",
+        "kijkt": "regarde",
+        "tv": "télé",
+        "staat": "est debout, se trouve",
+        "aan": "à",
+        "de": "le, la, les",
+        "deur": "porte",
+        "dag": "bonjour, bonsoir",
+        "wat": "quoi, qu'est-ce que",
+        "kijk": "regardes (kijk je = tu regardes) ; regarde (ik kijk)",
+        "je": "tu",
+        "plus": "(titre) Plus belle la vie",
+        "belle": "(titre) Plus belle la vie",
+        "la": "(titre) Plus belle la vie",
+        "vie": "(titre) Plus belle la vie",
+        "dat": "cela, ça",
+        "mijn": "ma, mon",
+        "serie": "série",
+        "vraagt": "demande",
+        "een": "un, une",
+        "uit": "de (origine)",
+        "frankrijk": "la France",
+        "speelt": "se passe (spelen = jouer ; se passer)",
+        "in": "à, dans",
+        "marseille": "Marseille",
+        "er": "y (er is = il y a)",
+        "plein": "place",
+        "en": "et",
+        "cafe": "café",
+        "mistral": "le Mistral (le café de la série)",
+        "zoals": "comme",
+        "ons": "notre",
+        "dorp": "village",
+        "lacht": "rit",
+        "ja": "oui",
+        "maar": "mais",
+        "met": "avec",
+        "veel": "beaucoup (de)",
+        "zon": "soleil",
+        "blijft": "reste",
+        "ook": "aussi",
+        "amai": "ouah ! (flamand)",
+        "ik": "je",
+        "morgen": "demain"
       },
       "questions": [
-        { "q": "Où se passe la série ?", "options": ["À Paris", "À Marseille", "À Gand"], "answer": 1 },
-        { "q": "Comment s'appelle le café de la série ?", "options": ["Le Mistral", "Le Soleil", "Le Village"], "answer": 0 },
-        { "q": "Que fait Jef demain ?", "options": ["Il travaille", "Il va au café", "Il regarde aussi la série"], "answer": 2 }
+        {
+          "q": "Où se passe la série ?",
+          "options": [
+            "À Paris",
+            "À Marseille",
+            "À Gand"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Comment s'appelle le café de la série ?",
+          "options": [
+            "Le Mistral",
+            "Le Soleil",
+            "Le Village"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que fait Jef demain ?",
+          "options": [
+            "Il travaille",
+            "Il va au café",
+            "Il regarde aussi la série"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "nieuwe-collega",
+      "title": "Een nieuwe collega",
+      "fr": "Une nouvelle collègue",
+      "level": "A1",
+      "after": "kennismaken",
+      "lines": [
+        {
+          "nl": "Het is maandag.",
+          "fr": "C'est lundi."
+        },
+        {
+          "nl": "Monia is op het werk.",
+          "fr": "Monia est au travail."
+        },
+        {
+          "nl": "Een vrouw komt binnen.",
+          "fr": "Une femme entre."
+        },
+        {
+          "nl": "\"Goeiedag! Ik heet Lotte. Ik ben nieuw.\"",
+          "fr": "« Bonjour ! Je m'appelle Lotte. Je suis nouvelle. »"
+        },
+        {
+          "nl": "\"Dag Lotte, ik heet Monia. Aangenaam!\"",
+          "fr": "« Bonjour Lotte, je m'appelle Monia. Enchantée ! »"
+        },
+        {
+          "nl": "\"Waar woon je?\" vraagt Monia.",
+          "fr": "« Où habites-tu ? » demande Monia."
+        },
+        {
+          "nl": "\"Ik woon in Gent. En jij?\"",
+          "fr": "« J'habite à Gand. Et toi ? »"
+        },
+        {
+          "nl": "\"Ik woon in een dorp, met een tuin.\"",
+          "fr": "« J'habite dans un village, avec un jardin. »"
+        },
+        {
+          "nl": "\"Ah, je spreekt Nederlands!\"",
+          "fr": "« Ah, tu parles néerlandais ! »"
+        },
+        {
+          "nl": "\"Een beetje. Ik leer elke dag.\"",
+          "fr": "« Un peu. J'apprends tous les jours. »"
+        },
+        {
+          "nl": "Lotte lacht. \"Heel goed! Tot straks, Monia.\"",
+          "fr": "Lotte rit. « Très bien ! À tout à l'heure, Monia. »"
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) / il, ce",
+        "is": "est",
+        "maandag": "lundi",
+        "op": "sur, à",
+        "werk": "travail",
+        "een": "un, une",
+        "vrouw": "femme",
+        "komt": "vient",
+        "binnen": "dedans (binnenkomen = entrer)",
+        "goeiedag": "bonjour",
+        "ik": "je",
+        "heet": "m'appelle",
+        "ben": "suis",
+        "nieuw": "nouveau, nouvelle",
+        "dag": "bonjour, salut ; jour",
+        "aangenaam": "enchanté(e)",
+        "waar": "où",
+        "woon": "habite (ik woon = j'habite)",
+        "je": "tu",
+        "vraagt": "demande",
+        "in": "à, dans",
+        "gent": "Gand",
+        "en": "et",
+        "jij": "toi, tu",
+        "dorp": "village",
+        "met": "avec",
+        "tuin": "jardin",
+        "ah": "ah",
+        "spreekt": "parle",
+        "nederlands": "néerlandais",
+        "beetje": "un peu (een beetje)",
+        "leer": "apprends",
+        "elke": "chaque",
+        "lacht": "rit",
+        "heel": "très",
+        "goed": "bien",
+        "tot": "jusqu'à (tot straks = à tout à l'heure)",
+        "straks": "tout à l'heure"
+      },
+      "questions": [
+        {
+          "q": "Quel jour sommes-nous ?",
+          "options": [
+            "Dimanche",
+            "Lundi",
+            "Mardi"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Où habite Lotte ?",
+          "options": [
+            "À Gand",
+            "À Bruxelles",
+            "Dans un village"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que fait Monia tous les jours ?",
+          "options": [
+            "Elle chante",
+            "Elle va à Gand",
+            "Elle apprend le néerlandais"
+          ],
+          "answer": 2
+        }
       ]
     },
     {
@@ -192,36 +648,2131 @@
       "level": "A1",
       "after": "kennismaken",
       "lines": [
-        { "nl": "Het is zondag.", "fr": "C'est dimanche." },
-        { "nl": "Monia kijkt naar een tuinprogramma: Silence, ça pousse!", "fr": "Monia regarde une émission de jardinage : Silence, ça pousse !" },
-        { "nl": "Het programma komt uit Frankrijk.", "fr": "L'émission vient de France." },
-        { "nl": "Stéphane Marie is de presentator.", "fr": "Stéphane Marie est le présentateur." },
-        { "nl": "Vandaag gaat het over tomaten.", "fr": "Aujourd'hui, ça parle de tomates." },
-        { "nl": "Een tip: water aan de voet, niet op de bladeren.", "fr": "Une astuce : l'eau au pied, pas sur les feuilles." },
-        { "nl": "Monia gaat naar de tuin.", "fr": "Monia va au jardin." },
-        { "nl": "Ze geeft de tomaten water, aan de voet.", "fr": "Elle arrose les tomates, au pied." },
-        { "nl": "Jef kijkt over de haag. \"Wat doe je, Monia?\"", "fr": "Jef regarde par-dessus la haie. « Qu'est-ce que tu fais, Monia ? »" },
-        { "nl": "\"Water aan de voet. Niet op de bladeren!\"", "fr": "« De l'eau au pied. Pas sur les feuilles ! »" },
-        { "nl": "\"Amai! Wie zegt dat?\" \"Silence, ça pousse!\"", "fr": "« Ouah ! Qui dit ça ? » « Silence, ça pousse ! »" },
-        { "nl": "Jef lacht. \"Goed idee. Ik doe het ook!\"", "fr": "Jef rit. « Bonne idée. Je fais pareil ! »" }
+        {
+          "nl": "Het is zondag.",
+          "fr": "C'est dimanche."
+        },
+        {
+          "nl": "Monia kijkt naar een tuinprogramma: Silence, ça pousse!",
+          "fr": "Monia regarde une émission de jardinage : Silence, ça pousse !"
+        },
+        {
+          "nl": "Het programma komt uit Frankrijk.",
+          "fr": "L'émission vient de France."
+        },
+        {
+          "nl": "Stéphane Marie is de presentator.",
+          "fr": "Stéphane Marie est le présentateur."
+        },
+        {
+          "nl": "Vandaag gaat het over tomaten.",
+          "fr": "Aujourd'hui, ça parle de tomates."
+        },
+        {
+          "nl": "Een tip: water aan de voet, niet op de bladeren.",
+          "fr": "Une astuce : l'eau au pied, pas sur les feuilles."
+        },
+        {
+          "nl": "Monia gaat naar de tuin.",
+          "fr": "Monia va au jardin."
+        },
+        {
+          "nl": "Ze geeft de tomaten water, aan de voet.",
+          "fr": "Elle arrose les tomates, au pied."
+        },
+        {
+          "nl": "Jef kijkt over de haag. \"Wat doe je, Monia?\"",
+          "fr": "Jef regarde par-dessus la haie. « Qu'est-ce que tu fais, Monia ? »"
+        },
+        {
+          "nl": "\"Water aan de voet. Niet op de bladeren!\"",
+          "fr": "« De l'eau au pied. Pas sur les feuilles ! »"
+        },
+        {
+          "nl": "\"Amai! Wie zegt dat?\" \"Silence, ça pousse!\"",
+          "fr": "« Ouah ! Qui dit ça ? » « Silence, ça pousse ! »"
+        },
+        {
+          "nl": "Jef lacht. \"Goed idee. Ik doe het ook!\"",
+          "fr": "Jef rit. « Bonne idée. Je fais pareil ! »"
+        }
       ],
       "glossary": {
-        "het": "il, ce, le (neutre)", "is": "est", "zondag": "dimanche", "kijkt": "regarde",
-        "naar": "vers, à (kijken naar = regarder)", "een": "un, une", "tuinprogramma": "émission de jardinage",
-        "silence": "(titre) Silence, ça pousse !", "ca": "(titre) Silence, ça pousse !", "pousse": "(titre) Silence, ça pousse !",
-        "programma": "émission", "komt": "vient", "uit": "de (origine)", "frankrijk": "la France",
-        "stephane": "Stéphane (prénom)", "marie": "Marie (nom)", "de": "le, la, les", "presentator": "présentateur",
-        "vandaag": "aujourd'hui", "gaat": "va (het gaat over = ça parle de)", "over": "sur, au sujet de ; par-dessus",
-        "tomaten": "tomates", "tip": "astuce, conseil", "water": "eau", "aan": "à", "voet": "pied",
-        "niet": "pas", "op": "sur", "bladeren": "feuilles", "tuin": "jardin", "ze": "elle",
-        "geeft": "donne (water geven = arroser)", "haag": "haie", "wat": "quoi, qu'est-ce que", "doe": "fais",
-        "je": "tu", "amai": "ouah ! (flamand)", "wie": "qui", "zegt": "dit", "dat": "cela, ça", "lacht": "rit",
-        "goed": "bon, bien", "idee": "idée", "ik": "je", "ook": "aussi"
+        "het": "il, ce, le (neutre)",
+        "is": "est",
+        "zondag": "dimanche",
+        "kijkt": "regarde",
+        "naar": "vers, à (kijken naar = regarder)",
+        "een": "un, une",
+        "tuinprogramma": "émission de jardinage",
+        "silence": "(titre) Silence, ça pousse !",
+        "ca": "(titre) Silence, ça pousse !",
+        "pousse": "(titre) Silence, ça pousse !",
+        "programma": "émission",
+        "komt": "vient",
+        "uit": "de (origine)",
+        "frankrijk": "la France",
+        "stephane": "Stéphane (prénom)",
+        "marie": "Marie (nom)",
+        "de": "le, la, les",
+        "presentator": "présentateur",
+        "vandaag": "aujourd'hui",
+        "gaat": "va (het gaat over = ça parle de)",
+        "over": "sur, au sujet de ; par-dessus",
+        "tomaten": "tomates",
+        "tip": "astuce, conseil",
+        "water": "eau",
+        "aan": "à",
+        "voet": "pied",
+        "niet": "pas",
+        "op": "sur",
+        "bladeren": "feuilles",
+        "tuin": "jardin",
+        "ze": "elle",
+        "geeft": "donne (water geven = arroser)",
+        "haag": "haie",
+        "wat": "quoi, qu'est-ce que",
+        "doe": "fais",
+        "je": "tu",
+        "amai": "ouah ! (flamand)",
+        "wie": "qui",
+        "zegt": "dit",
+        "dat": "cela, ça",
+        "lacht": "rit",
+        "goed": "bon, bien",
+        "idee": "idée",
+        "ik": "je",
+        "ook": "aussi"
       },
       "questions": [
-        { "q": "De quoi parle l'émission aujourd'hui ?", "options": ["Des roses", "Des tomates", "Des arbres"], "answer": 1 },
-        { "q": "Où faut-il mettre l'eau ?", "options": ["Sur les feuilles", "Le soir seulement", "Au pied de la plante"], "answer": 2 },
-        { "q": "Que fait Jef à la fin ?", "options": ["Il fait pareil", "Il regarde la télé", "Il va au café"], "answer": 0 }
+        {
+          "q": "De quoi parle l'émission aujourd'hui ?",
+          "options": [
+            "Des roses",
+            "Des tomates",
+            "Des arbres"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Où faut-il mettre l'eau ?",
+          "options": [
+            "Sur les feuilles",
+            "Le soir seulement",
+            "Au pied de la plante"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Que fait Jef à la fin ?",
+          "options": [
+            "Il fait pareil",
+            "Il regarde la télé",
+            "Il va au café"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "getallen-en-tijd-1",
+      "title": "Woensdag om tien uur",
+      "fr": "Mercredi à dix heures",
+      "level": "A1",
+      "after": "getallen-en-tijd",
+      "lines": [
+        {
+          "nl": "Het is maandag.",
+          "fr": "C'est lundi."
+        },
+        {
+          "nl": "Monia werkt in de tuin.",
+          "fr": "Monia travaille au jardin."
+        },
+        {
+          "nl": "Jef kijkt over de haag. \"Goeiedag, Monia!\"",
+          "fr": "Jef regarde par-dessus la haie. « Bonjour, Monia ! »"
+        },
+        {
+          "nl": "\"Ik heb tomatenplanten voor jou. Wanneer heb je tijd?\"",
+          "fr": "« J'ai des plants de tomates pour toi. Quand as-tu le temps ? »"
+        },
+        {
+          "nl": "\"Morgen werk ik. Woensdag ben ik vrij.\"",
+          "fr": "« Demain, je travaille. Mercredi, je suis libre. »"
+        },
+        {
+          "nl": "\"Woensdag om tien uur?\" \"Goed, om tien uur!\"",
+          "fr": "« Mercredi à dix heures ? » « D'accord, à dix heures ! »"
+        },
+        {
+          "nl": "Woensdag om tien uur staat Jef aan de deur.",
+          "fr": "Mercredi à dix heures, Jef est à la porte."
+        },
+        {
+          "nl": "Hij heeft twintig tomatenplanten!",
+          "fr": "Il a vingt plants de tomates !"
+        },
+        {
+          "nl": "\"Twintig? Maar Jef, mijn tuin is klein!\"",
+          "fr": "« Vingt ? Mais Jef, mon jardin est petit ! »"
+        },
+        {
+          "nl": "Jef lacht. \"Tien voor jou en tien voor mij.\"",
+          "fr": "Jef rit. « Dix pour toi et dix pour moi. »"
+        },
+        {
+          "nl": "Om twaalf uur drinken ze koffie in de tuin.",
+          "fr": "À midi, ils boivent un café au jardin."
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est",
+        "maandag": "lundi",
+        "monia": "Monia",
+        "werkt": "travaille",
+        "in": "dans, à",
+        "de": "le, la, les",
+        "tuin": "jardin",
+        "jef": "Jef",
+        "kijkt": "regarde",
+        "over": "par-dessus",
+        "haag": "haie",
+        "goeiedag": "bonjour",
+        "ik": "je, moi",
+        "heb": "ai ; as (heb je = as-tu)",
+        "tomatenplanten": "plants de tomates",
+        "voor": "pour",
+        "jou": "toi",
+        "wanneer": "quand",
+        "je": "tu",
+        "tijd": "temps",
+        "morgen": "demain",
+        "werk": "travaille (morgen werk ik = demain, je travaille)",
+        "woensdag": "mercredi",
+        "ben": "suis",
+        "vrij": "libre",
+        "om": "à (om tien uur = à dix heures)",
+        "tien": "dix",
+        "uur": "heure(s)",
+        "goed": "bien, d'accord",
+        "staat": "est debout, se trouve",
+        "aan": "à, près de",
+        "deur": "porte",
+        "hij": "il",
+        "heeft": "a",
+        "twintig": "vingt",
+        "maar": "mais",
+        "mijn": "mon, ma, mes",
+        "klein": "petit(e)",
+        "lacht": "rit",
+        "en": "et",
+        "mij": "moi",
+        "twaalf": "douze",
+        "drinken": "boivent",
+        "ze": "elle ; ils, elles",
+        "koffie": "café"
+      },
+      "questions": [
+        {
+          "q": "Quand Monia est-elle libre ?",
+          "options": [
+            "Mardi",
+            "Mercredi",
+            "Samedi"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Combien de plants de tomates Jef apporte-t-il ?",
+          "options": [
+            "Dix",
+            "Douze",
+            "Vingt"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Que font-ils à midi ?",
+          "options": [
+            "Ils boivent un café au jardin",
+            "Ils vont au marché",
+            "Ils regardent la télé"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "getallen-en-tijd-2",
+      "title": "Een quiz op de radio",
+      "fr": "Un quiz à la radio",
+      "level": "A1",
+      "after": "getallen-en-tijd",
+      "lines": [
+        {
+          "nl": "Het is vrijdagavond, acht uur.",
+          "fr": "C'est vendredi soir, huit heures."
+        },
+        {
+          "nl": "Monia en Lotte zijn bij Jef.",
+          "fr": "Monia et Lotte sont chez Jef."
+        },
+        {
+          "nl": "Op de radio is er een quiz over muziek uit de jaren tachtig.",
+          "fr": "À la radio, il y a un quiz sur la musique des années quatre-vingt."
+        },
+        {
+          "nl": "\"Vraag één: Céline Dion en het Eurovisiesongfestival. Welk jaar?\"",
+          "fr": "« Question un : Céline Dion et le concours Eurovision de la chanson. Quelle année ? »"
+        },
+        {
+          "nl": "\"Negentienachtentachtig!\" roept Monia.",
+          "fr": "« Mille neuf cent quatre-vingt-huit ! » crie Monia."
+        },
+        {
+          "nl": "\"Ja! Voor Zwitserland,\" zegt Lotte.",
+          "fr": "« Oui ! Pour la Suisse », dit Lotte."
+        },
+        {
+          "nl": "\"Zwitserland? Ze komt toch uit Canada?\" vraagt Jef.",
+          "fr": "« La Suisse ? Elle vient du Canada, non ? » demande Jef."
+        },
+        {
+          "nl": "\"Ja, maar het lied is voor Zwitserland,\" lacht Monia.",
+          "fr": "« Oui, mais la chanson est pour la Suisse », rit Monia."
+        },
+        {
+          "nl": "\"Vraag twee: bel nu naar de radio!\"",
+          "fr": "« Question deux : appelez la radio maintenant ! »"
+        },
+        {
+          "nl": "Monia belt. Het nummer is bezet.",
+          "fr": "Monia téléphone. Le numéro est occupé."
+        },
+        {
+          "nl": "Jef lacht. \"Om negen uur is er nog een quiz!\"",
+          "fr": "Jef rit. « À neuf heures, il y a encore un quiz ! »"
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est",
+        "vrijdagavond": "vendredi soir",
+        "acht": "huit",
+        "uur": "heure(s)",
+        "monia": "Monia",
+        "en": "et",
+        "lotte": "Lotte",
+        "zijn": "sont",
+        "bij": "chez",
+        "jef": "Jef",
+        "op": "à (op de radio = à la radio)",
+        "de": "le, la, les",
+        "radio": "radio",
+        "er": "y (er is = il y a)",
+        "een": "un, une ; (één) un (le nombre)",
+        "quiz": "quiz",
+        "over": "sur, au sujet de",
+        "muziek": "musique",
+        "uit": "de (origine)",
+        "jaren": "années",
+        "tachtig": "quatre-vingts",
+        "vraag": "question",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "eurovisiesongfestival": "concours Eurovision de la chanson",
+        "welk": "quel, quelle",
+        "jaar": "an(s), année",
+        "negentienachtentachtig": "mille neuf cent quatre-vingt-huit (1988)",
+        "roept": "crie, s'écrie",
+        "ja": "oui",
+        "voor": "pour",
+        "zwitserland": "la Suisse",
+        "zegt": "dit",
+        "ze": "elle ; ils, elles",
+        "komt": "vient",
+        "toch": "n'est-ce pas ? (… toch? = …, non ?)",
+        "canada": "le Canada",
+        "vraagt": "demande",
+        "maar": "mais",
+        "lied": "chanson",
+        "lacht": "rit",
+        "twee": "deux",
+        "bel": "appelez, téléphonez",
+        "nu": "maintenant",
+        "naar": "vers, à",
+        "belt": "téléphone",
+        "nummer": "numéro",
+        "bezet": "occupé (téléphone)",
+        "om": "à (om tien uur = à dix heures)",
+        "negen": "neuf",
+        "nog": "encore"
+      },
+      "questions": [
+        {
+          "q": "De quoi parle le quiz ?",
+          "options": [
+            "De jardinage",
+            "De musique des années 80",
+            "De sport"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Pour quel pays Céline Dion chante-t-elle à l'Eurovision de 1988 ?",
+          "options": [
+            "Le Canada",
+            "La France",
+            "La Suisse"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Que se passe-t-il quand Monia téléphone ?",
+          "options": [
+            "Elle gagne",
+            "La ligne est occupée",
+            "Jef répond"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "familie-1",
+      "title": "Het fotoalbum van Jef",
+      "fr": "L'album photo de Jef",
+      "level": "A1",
+      "after": "familie",
+      "lines": [
+        {
+          "nl": "Het is zondag. Jef is bij Monia.",
+          "fr": "C'est dimanche. Jef est chez Monia."
+        },
+        {
+          "nl": "Hij toont zijn fotoalbum.",
+          "fr": "Il montre son album photo."
+        },
+        {
+          "nl": "\"Dit is mijn vrouw, Rita. Ze is heel vriendelijk.\"",
+          "fr": "« Voici ma femme, Rita. Elle est très gentille. »"
+        },
+        {
+          "nl": "\"En die jongen? Is dat jouw zoon?\"",
+          "fr": "« Et ce garçon ? C'est ton fils ? »"
+        },
+        {
+          "nl": "\"Ja, dat is Tom, mijn zoon. Hij woont in Antwerpen.\"",
+          "fr": "« Oui, c'est Tom, mon fils. Il habite à Anvers. »"
+        },
+        {
+          "nl": "\"En dat meisje met de gitaar?\"",
+          "fr": "« Et cette fille avec la guitare ? »"
+        },
+        {
+          "nl": "\"Dat is Lotte! Hier is ze tien jaar.\"",
+          "fr": "« C'est Lotte ! Ici, elle a dix ans. »"
+        },
+        {
+          "nl": "\"Lotte is de dochter van mijn zus.\"",
+          "fr": "« Lotte est la fille de ma sœur. »"
+        },
+        {
+          "nl": "\"Amai, ze is nog klein!\"",
+          "fr": "« Ouah, elle est encore petite ! »"
+        },
+        {
+          "nl": "\"Ja, en nu is ze groot. Maar ze zingt nog altijd!\"",
+          "fr": "« Oui, et maintenant elle est grande. Mais elle chante toujours ! »"
+        },
+        {
+          "nl": "Monia lacht. \"Muziek zit in de familie!\"",
+          "fr": "Monia rit. « La musique, c'est de famille ! »"
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est (hier is ze tien jaar = ici, elle a dix ans)",
+        "zondag": "dimanche",
+        "jef": "Jef",
+        "bij": "chez",
+        "monia": "Monia",
+        "hij": "il",
+        "toont": "montre",
+        "zijn": "son, sa, ses (à lui)",
+        "fotoalbum": "album photo",
+        "dit": "ceci ; ce, cette (dit café = ce café)",
+        "mijn": "mon, ma, mes",
+        "vrouw": "femme, épouse",
+        "rita": "Rita (prénom)",
+        "ze": "elle ; ils, elles",
+        "heel": "très",
+        "vriendelijk": "gentil(le), aimable",
+        "en": "et",
+        "die": "ce, cette, ces (là)",
+        "jongen": "garçon",
+        "dat": "ça, ce ; cette (dat meisje = cette fille)",
+        "jouw": "ton, ta, tes",
+        "zoon": "fils",
+        "ja": "oui",
+        "tom": "Tom (prénom)",
+        "woont": "habite",
+        "in": "dans, à",
+        "antwerpen": "Anvers",
+        "meisje": "fille, jeune fille",
+        "met": "avec",
+        "de": "le, la, les",
+        "gitaar": "guitare",
+        "lotte": "Lotte",
+        "hier": "ici",
+        "tien": "dix",
+        "jaar": "an(s), année",
+        "dochter": "fille (de quelqu'un)",
+        "van": "de",
+        "zus": "sœur",
+        "amai": "ouah ! (flamand)",
+        "nog": "encore",
+        "klein": "petit(e)",
+        "nu": "maintenant",
+        "groot": "grand(e)",
+        "maar": "mais",
+        "zingt": "chante",
+        "altijd": "toujours (nog altijd = encore, toujours)",
+        "lacht": "rit",
+        "muziek": "musique",
+        "zit": "est (assis) (het zit in de familie = c'est de famille)",
+        "familie": "famille"
+      },
+      "questions": [
+        {
+          "q": "Qui est Rita ?",
+          "options": [
+            "La femme de Jef",
+            "La sœur de Jef",
+            "La mère de Lotte"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Où habite Tom, le fils de Jef ?",
+          "options": [
+            "À Gand",
+            "À Anvers",
+            "À Bruxelles"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Qui est Lotte pour Jef ?",
+          "options": [
+            "Sa fille",
+            "Sa nièce, la fille de sa sœur",
+            "Sa voisine"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "familie-2",
+      "title": "Een grote familie",
+      "fr": "Une grande famille",
+      "level": "A1",
+      "after": "familie",
+      "lines": [
+        {
+          "nl": "Monia en Lotte drinken koffie op het werk.",
+          "fr": "Monia et Lotte boivent un café au travail."
+        },
+        {
+          "nl": "\"Monia, een vraag over Céline Dion. Heeft ze broers en zussen?\"",
+          "fr": "« Monia, une question sur Céline Dion. Elle a des frères et sœurs ? »"
+        },
+        {
+          "nl": "\"Ja! Ze heeft dertien broers en zussen.\"",
+          "fr": "« Oui ! Elle a treize frères et sœurs. »"
+        },
+        {
+          "nl": "\"Dertien? Amai, dat is een grote familie!\"",
+          "fr": "« Treize ? Ouah, c'est une grande famille ! »"
+        },
+        {
+          "nl": "\"Ja, veertien kinderen. Céline is het jongste kind.\"",
+          "fr": "« Oui, quatorze enfants. Céline est la plus jeune. »"
+        },
+        {
+          "nl": "\"En haar ouders? Hoe heten ze?\"",
+          "fr": "« Et ses parents ? Comment s'appellent-ils ? »"
+        },
+        {
+          "nl": "\"Haar vader heet Adhémar en haar moeder heet Thérèse.\"",
+          "fr": "« Son père s'appelle Adhémar et sa mère s'appelle Thérèse. »"
+        },
+        {
+          "nl": "\"Jij weet alles over Céline!\" lacht Lotte.",
+          "fr": "« Tu sais tout sur Céline ! » rit Lotte."
+        },
+        {
+          "nl": "\"En jij, Lotte? Heb jij broers of zussen?\"",
+          "fr": "« Et toi, Lotte ? Tu as des frères ou des sœurs ? »"
+        },
+        {
+          "nl": "\"Ik heb één broer. Hij is achtentwintig.\"",
+          "fr": "« J'ai un frère. Il a vingt-huit ans. »"
+        },
+        {
+          "nl": "\"Mijn moeder zegt: twee kinderen is genoeg!\"",
+          "fr": "« Ma mère dit : deux enfants, ça suffit ! »"
+        }
+      ],
+      "glossary": {
+        "monia": "Monia",
+        "en": "et",
+        "lotte": "Lotte",
+        "drinken": "boivent",
+        "koffie": "café",
+        "op": "à (op het werk = au travail)",
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "werk": "travail ; (ik werk) je travaille",
+        "een": "un, une ; (één) un (le nombre)",
+        "vraag": "question",
+        "over": "sur, au sujet de",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "heeft": "a",
+        "ze": "elle ; ils, elles",
+        "broers": "frères",
+        "zussen": "sœurs",
+        "ja": "oui",
+        "dertien": "treize",
+        "amai": "ouah ! (flamand)",
+        "dat": "cela, ça ; ce, cette (dat meisje = cette fille)",
+        "is": "est (hij is achtentwintig = il a vingt-huit ans)",
+        "grote": "grande",
+        "familie": "famille",
+        "veertien": "quatorze",
+        "kinderen": "enfants",
+        "jongste": "le/la plus jeune",
+        "kind": "enfant",
+        "haar": "son, sa, ses (à elle)",
+        "ouders": "parents",
+        "hoe": "comment",
+        "heten": "s'appellent",
+        "vader": "père",
+        "heet": "s'appelle",
+        "adhemar": "Adhémar (prénom)",
+        "moeder": "mère",
+        "therese": "Thérèse (prénom)",
+        "jij": "tu, toi",
+        "weet": "sais (jij weet = tu sais)",
+        "alles": "tout",
+        "lacht": "rit",
+        "heb": "ai ; as (heb je = as-tu)",
+        "of": "ou",
+        "ik": "je, moi",
+        "broer": "frère",
+        "hij": "il",
+        "achtentwintig": "vingt-huit",
+        "mijn": "mon, ma, mes",
+        "zegt": "dit",
+        "twee": "deux",
+        "genoeg": "assez, suffisant"
+      },
+      "questions": [
+        {
+          "q": "Combien de frères et sœurs a Céline Dion ?",
+          "options": [
+            "Quatre",
+            "Treize",
+            "Quatorze"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Comment s'appelle la mère de Céline Dion ?",
+          "options": [
+            "Thérèse",
+            "Rita",
+            "Lotte"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Combien de frères a Lotte ?",
+          "options": [
+            "Un",
+            "Deux",
+            "Aucun"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "boodschappen-1",
+      "title": "Zaterdag op de markt",
+      "fr": "Samedi au marché",
+      "level": "A1",
+      "after": "boodschappen",
+      "lines": [
+        {
+          "nl": "Het is zaterdag. Monia gaat naar de markt.",
+          "fr": "C'est samedi. Monia va au marché."
+        },
+        {
+          "nl": "Op haar lijstje: tomaten, kaas en eieren.",
+          "fr": "Sur sa liste : des tomates, du fromage et des œufs."
+        },
+        {
+          "nl": "\"Goeiedag, mevrouw! Wat mag het zijn?\"",
+          "fr": "« Bonjour, madame ! Qu'est-ce que ce sera ? »"
+        },
+        {
+          "nl": "\"Ik had graag een kilo tomaten, alstublieft.\"",
+          "fr": "« Je voudrais un kilo de tomates, s'il vous plaît. »"
+        },
+        {
+          "nl": "\"Deze tomaten of die tomaten?\"",
+          "fr": "« Ces tomates-ci ou ces tomates-là ? »"
+        },
+        {
+          "nl": "\"Die rode daar. Hoeveel kosten ze?\"",
+          "fr": "« Les rouges, là. Combien coûtent-elles ? »"
+        },
+        {
+          "nl": "\"Vier euro. Anders nog iets?\"",
+          "fr": "« Quatre euros. Et avec ceci ? »"
+        },
+        {
+          "nl": "\"Ja, zes eieren en een stuk kaas.\"",
+          "fr": "« Oui, six œufs et un morceau de fromage. »"
+        },
+        {
+          "nl": "\"Dat is elf euro vijftig.\" Monia betaalt.",
+          "fr": "« Ça fait onze euros cinquante. » Monia paie."
+        },
+        {
+          "nl": "Dan ziet ze Jef, met een kilo tomaten!",
+          "fr": "Ensuite, elle voit Jef, avec un kilo de tomates !"
+        },
+        {
+          "nl": "\"Jef! Jij koopt tomaten?\"",
+          "fr": "« Jef ! Toi, tu achètes des tomates ? »"
+        },
+        {
+          "nl": "\"Sst! Mijn tomaten zijn nog groen,\" fluistert Jef.",
+          "fr": "« Chut ! Mes tomates sont encore vertes », chuchote Jef."
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est",
+        "zaterdag": "samedi",
+        "monia": "Monia",
+        "gaat": "va",
+        "naar": "vers, à",
+        "de": "le, la, les",
+        "markt": "marché",
+        "op": "sur, à",
+        "haar": "son, sa, ses (à elle)",
+        "lijstje": "petite liste",
+        "tomaten": "tomates",
+        "kaas": "fromage",
+        "en": "et",
+        "eieren": "œufs",
+        "goeiedag": "bonjour",
+        "mevrouw": "madame",
+        "wat": "que, quoi, qu'est-ce que",
+        "mag": "(wat mag het zijn? = qu'est-ce que ce sera ?)",
+        "zijn": "être (wat mag het zijn? = qu'est-ce que ce sera ?) ; sont",
+        "ik": "je, moi",
+        "had": "(ik had graag = je voudrais)",
+        "graag": "volontiers (ik had graag = je voudrais)",
+        "een": "un, une ; (één) un (le nombre)",
+        "kilo": "kilo",
+        "alstublieft": "s'il vous plaît ; voici",
+        "deze": "ces (ci), ce, cette",
+        "of": "ou",
+        "die": "ce, cette, ces (là)",
+        "rode": "rouges",
+        "daar": "là",
+        "hoeveel": "combien",
+        "kosten": "coûtent",
+        "ze": "elle ; ils, elles",
+        "vier": "quatre",
+        "euro": "euro(s)",
+        "anders": "autrement (anders nog iets? = et avec ceci ?)",
+        "nog": "encore",
+        "iets": "quelque chose",
+        "ja": "oui",
+        "zes": "six",
+        "stuk": "morceau",
+        "dat": "ça (dat is = ça fait)",
+        "elf": "onze",
+        "vijftig": "cinquante",
+        "betaalt": "paie",
+        "dan": "ensuite, alors",
+        "ziet": "voit",
+        "jef": "Jef",
+        "met": "avec",
+        "jij": "tu, toi",
+        "koopt": "achètes, achète",
+        "sst": "chut !",
+        "mijn": "mon, ma, mes",
+        "groen": "vert(es)",
+        "fluistert": "chuchote"
+      },
+      "questions": [
+        {
+          "q": "Combien de tomates Monia achète-t-elle ?",
+          "options": [
+            "Un kilo",
+            "Deux kilos",
+            "Six"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Combien paie-t-elle en tout ?",
+          "options": [
+            "Quatre euros",
+            "Onze euros cinquante",
+            "Vingt euros"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Pourquoi Jef achète-t-il des tomates ?",
+          "options": [
+            "Il n'aime pas son jardin",
+            "Ses tomates sont encore vertes",
+            "C'est pour Monia"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "boodschappen-2",
+      "title": "In het tuincentrum",
+      "fr": "À la jardinerie",
+      "level": "A1",
+      "after": "boodschappen",
+      "lines": [
+        {
+          "nl": "Het is april. Monia en Jef zijn in het tuincentrum.",
+          "fr": "C'est avril. Monia et Jef sont à la jardinerie."
+        },
+        {
+          "nl": "Er zijn veel planten en bloemen.",
+          "fr": "Il y a beaucoup de plantes et de fleurs."
+        },
+        {
+          "nl": "\"Kijk, Jef! Deze rozen zijn mooi.\"",
+          "fr": "« Regarde, Jef ! Ces roses-ci sont belles. »"
+        },
+        {
+          "nl": "\"Ja, maar die rozen zijn duur: twaalf euro!\"",
+          "fr": "« Oui, mais ces roses-là sont chères : douze euros ! »"
+        },
+        {
+          "nl": "\"En dit pakje zaden? Twee euro. Dat is goedkoop!\"",
+          "fr": "« Et ce sachet de graines ? Deux euros. Ça, c'est bon marché ! »"
+        },
+        {
+          "nl": "Jef heeft een kar vol planten.",
+          "fr": "Jef a un chariot plein de plantes."
+        },
+        {
+          "nl": "Tien tomatenplanten, zes bloemen en drie kleine bomen.",
+          "fr": "Dix plants de tomates, six fleurs et trois petits arbres."
+        },
+        {
+          "nl": "\"Jef, waar plant je die bomen?\"",
+          "fr": "« Jef, où est-ce que tu plantes ces arbres ? »"
+        },
+        {
+          "nl": "\"Euh… in jouw tuin?\" lacht Jef.",
+          "fr": "« Euh… dans ton jardin ? » rit Jef."
+        },
+        {
+          "nl": "\"In mijn tuin? Mijn tuin is klein!\"",
+          "fr": "« Dans mon jardin ? Mon jardin est petit ! »"
+        },
+        {
+          "nl": "Aan de kassa betaalt Jef: zevenennegentig euro.",
+          "fr": "À la caisse, Jef paie : quatre-vingt-dix-sept euros."
+        },
+        {
+          "nl": "\"Amai,\" zegt Jef. \"Tuinieren is duur!\"",
+          "fr": "« Ouah », dit Jef. « Le jardinage, ça coûte cher ! »"
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est",
+        "april": "avril",
+        "monia": "Monia",
+        "en": "et",
+        "jef": "Jef",
+        "zijn": "sont",
+        "in": "dans, à",
+        "tuincentrum": "jardinerie",
+        "er": "y (er zijn = il y a)",
+        "veel": "beaucoup (de)",
+        "planten": "plantes",
+        "bloemen": "fleurs",
+        "kijk": "regarde !",
+        "deze": "ces (ci), ce, cette",
+        "rozen": "roses (de roos – de rozen)",
+        "mooi": "beau, belle(s)",
+        "ja": "oui",
+        "maar": "mais",
+        "die": "ce, cette, ces (là)",
+        "duur": "cher",
+        "twaalf": "douze",
+        "euro": "euro(s)",
+        "dit": "ceci ; ce, cette (dit café = ce café)",
+        "pakje": "petit paquet, sachet",
+        "zaden": "graines",
+        "twee": "deux",
+        "dat": "ça, cela",
+        "goedkoop": "bon marché",
+        "heeft": "a",
+        "een": "un, une ; (één) un (le nombre)",
+        "kar": "chariot",
+        "vol": "plein (de)",
+        "tien": "dix",
+        "tomatenplanten": "plants de tomates",
+        "zes": "six",
+        "drie": "trois",
+        "kleine": "petits, petites",
+        "bomen": "arbres (de boom – de bomen)",
+        "waar": "où",
+        "plant": "plantes (plant je = tu plantes)",
+        "je": "tu",
+        "euh": "euh",
+        "jouw": "ton, ta, tes",
+        "tuin": "jardin",
+        "lacht": "rit",
+        "mijn": "mon, ma, mes",
+        "klein": "petit(e)",
+        "aan": "à, près de",
+        "de": "le, la, les",
+        "kassa": "caisse",
+        "betaalt": "paie",
+        "zevenennegentig": "quatre-vingt-dix-sept",
+        "amai": "ouah ! (flamand)",
+        "zegt": "dit",
+        "tuinieren": "jardiner, le jardinage"
+      },
+      "questions": [
+        {
+          "q": "Combien coûtent les roses ?",
+          "options": [
+            "Deux euros",
+            "Douze euros",
+            "Vingt euros"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Où Jef veut-il planter les arbres ?",
+          "options": [
+            "Dans son jardin",
+            "Dans le jardin de Monia",
+            "Au parc"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Combien Jef paie-t-il ?",
+          "options": [
+            "97 €",
+            "79 €",
+            "17 €"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "op-cafe-1",
+      "title": "Een terras in de zon",
+      "fr": "Une terrasse au soleil",
+      "level": "A1",
+      "after": "op-cafe",
+      "lines": [
+        {
+          "nl": "Het is vrijdag, vijf uur. Monia en Lotte zitten op een terras.",
+          "fr": "C'est vendredi, cinq heures. Monia et Lotte sont assises en terrasse."
+        },
+        {
+          "nl": "De ober komt. \"Goeiedag! Wat nemen jullie?\"",
+          "fr": "Le serveur arrive. « Bonjour ! Que prenez-vous ? »"
+        },
+        {
+          "nl": "\"Voor mij een pintje, alstublieft,\" zegt Lotte.",
+          "fr": "« Pour moi, un demi, s'il vous plaît », dit Lotte."
+        },
+        {
+          "nl": "\"En voor mij een thee met melk, zonder suiker.\"",
+          "fr": "« Et pour moi, un thé au lait, sans sucre. »"
+        },
+        {
+          "nl": "\"Een thee? Op een terras, in de zon?\" lacht Lotte.",
+          "fr": "« Un thé ? En terrasse, au soleil ? » rit Lotte."
+        },
+        {
+          "nl": "\"Ja, ik drink geen bier. Ik wil morgen vroeg in de tuin werken.\"",
+          "fr": "« Oui, je ne bois pas de bière. Je veux travailler au jardin tôt demain. »"
+        },
+        {
+          "nl": "De ober brengt de drankjes. \"Schol!\"",
+          "fr": "Le serveur apporte les boissons. « Santé ! »"
+        },
+        {
+          "nl": "In het café speelt de radio een liedje uit de jaren negentig.",
+          "fr": "Dans le café, la radio passe une chanson des années quatre-vingt-dix."
+        },
+        {
+          "nl": "Lotte zingt luid.",
+          "fr": "Lotte chante fort."
+        },
+        {
+          "nl": "\"Lotte, niet zo luid!\" Maar Monia zingt ook.",
+          "fr": "« Lotte, pas si fort ! » Mais Monia chante aussi."
+        },
+        {
+          "nl": "\"Mag ik betalen, alstublieft?\" \"Samen of apart?\"",
+          "fr": "« Je peux payer, s'il vous plaît ? » « Ensemble ou séparément ? »"
+        },
+        {
+          "nl": "\"Samen. Vandaag betaal ik!\" zegt Monia.",
+          "fr": "« Ensemble. Aujourd'hui, c'est moi qui paie ! » dit Monia."
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est",
+        "vrijdag": "vendredi",
+        "vijf": "cinq",
+        "uur": "heure(s)",
+        "monia": "Monia",
+        "en": "et",
+        "lotte": "Lotte",
+        "zitten": "sont assises",
+        "op": "sur, à (op een terras = en terrasse)",
+        "een": "un, une ; (één) un (le nombre)",
+        "terras": "terrasse",
+        "de": "le, la, les",
+        "ober": "serveur",
+        "komt": "vient, arrive",
+        "goeiedag": "bonjour",
+        "wat": "que, quoi, qu'est-ce que",
+        "nemen": "prenez (wat nemen jullie? = que prenez-vous ?)",
+        "jullie": "vous (pluriel)",
+        "voor": "pour",
+        "mij": "moi",
+        "pintje": "demi (bière pression, flamand)",
+        "alstublieft": "s'il vous plaît ; voici",
+        "zegt": "dit",
+        "thee": "thé",
+        "met": "avec",
+        "melk": "lait",
+        "zonder": "sans",
+        "suiker": "sucre",
+        "in": "dans, à",
+        "zon": "soleil",
+        "lacht": "rit",
+        "ja": "oui",
+        "ik": "je, moi",
+        "drink": "bois (ik drink = je bois)",
+        "geen": "pas de (ik drink geen bier = je ne bois pas de bière)",
+        "bier": "bière",
+        "wil": "veux (ik wil = je veux)",
+        "morgen": "demain",
+        "vroeg": "tôt",
+        "tuin": "jardin",
+        "werken": "travailler",
+        "brengt": "apporte",
+        "drankjes": "boissons",
+        "schol": "santé ! (en trinquant)",
+        "cafe": "café (le lieu)",
+        "speelt": "joue, passe (une chanson)",
+        "radio": "radio",
+        "liedje": "petite chanson",
+        "uit": "de (origine)",
+        "jaren": "années",
+        "negentig": "quatre-vingt-dix",
+        "zingt": "chante",
+        "luid": "fort (son)",
+        "niet": "pas, ne… pas",
+        "zo": "si, tellement",
+        "maar": "mais",
+        "ook": "aussi",
+        "mag": "puis (mag ik…? = puis-je… ?)",
+        "betalen": "payer",
+        "samen": "ensemble",
+        "of": "ou",
+        "apart": "séparément",
+        "vandaag": "aujourd'hui",
+        "betaal": "paie (ik betaal = je paie)"
+      },
+      "questions": [
+        {
+          "q": "Que boit Lotte ?",
+          "options": [
+            "Un thé",
+            "Un demi (une bière)",
+            "De l'eau"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Pourquoi Monia ne boit-elle pas de bière ?",
+          "options": [
+            "Elle n'aime pas ça",
+            "Elle veut travailler au jardin tôt demain",
+            "Elle conduit"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Qui paie ?",
+          "options": [
+            "Lotte",
+            "Monia",
+            "Chacune paie sa part"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "op-cafe-2",
+      "title": "Het café in het dorp",
+      "fr": "Le café du village",
+      "level": "A1",
+      "after": "op-cafe",
+      "lines": [
+        {
+          "nl": "Het is zondag. Jef en Monia gaan naar het café in het dorp.",
+          "fr": "C'est dimanche. Jef et Monia vont au café du village."
+        },
+        {
+          "nl": "\"Dit café is mijn Mistral!\" zegt Monia.",
+          "fr": "« Ce café, c'est mon Mistral ! » dit Monia."
+        },
+        {
+          "nl": "\"Jouw wat?\" vraagt Jef.",
+          "fr": "« Ton quoi ? » demande Jef."
+        },
+        {
+          "nl": "\"De Mistral is het café in Plus belle la vie, in Marseille.\"",
+          "fr": "« Le Mistral, c'est le café de Plus belle la vie, à Marseille. »"
+        },
+        {
+          "nl": "\"Ah! Maar hier is er geen zon en geen zee,\" lacht Jef.",
+          "fr": "« Ah ! Mais ici, il n'y a pas de soleil et pas de mer », rit Jef."
+        },
+        {
+          "nl": "De ober komt. \"Wat nemen jullie?\"",
+          "fr": "Le serveur arrive. « Que prenez-vous ? »"
+        },
+        {
+          "nl": "\"Ik neem een broodje kaas en een spuitwater,\" zegt Monia.",
+          "fr": "« Je prends un sandwich au fromage et une eau pétillante », dit Monia."
+        },
+        {
+          "nl": "\"En voor mij de soep. Is de soep lekker vandaag?\"",
+          "fr": "« Et pour moi, la soupe. La soupe est bonne aujourd'hui ? »"
+        },
+        {
+          "nl": "\"Tomatensoep, meneer. Heel lekker!\"",
+          "fr": "« Soupe à la tomate, monsieur. Très bonne ! »"
+        },
+        {
+          "nl": "\"Tomaten? Nee, merci! Ik eet elke dag tomaten uit mijn tuin.\"",
+          "fr": "« Des tomates ? Non, merci ! Je mange des tomates de mon jardin tous les jours. »"
+        },
+        {
+          "nl": "\"Dan neem ik ook een broodje kaas. En een pintje!\"",
+          "fr": "« Alors je prends aussi un sandwich au fromage. Et un demi ! »"
+        },
+        {
+          "nl": "Monia lacht. \"Te veel tomaten, Jef?\" \"Veel te veel!\"",
+          "fr": "Monia rit. « Trop de tomates, Jef ? » « Beaucoup trop ! »"
+        }
+      ],
+      "glossary": {
+        "het": "le, la (neutre) ; il, ce (het is = c'est)",
+        "is": "est",
+        "zondag": "dimanche",
+        "jef": "Jef",
+        "en": "et",
+        "monia": "Monia",
+        "gaan": "vont",
+        "naar": "vers, à",
+        "cafe": "café (le lieu)",
+        "in": "dans, à",
+        "dorp": "village",
+        "dit": "ceci ; ce, cette (dit café = ce café)",
+        "mijn": "mon, ma, mes",
+        "mistral": "le Mistral (le café de la série)",
+        "zegt": "dit",
+        "jouw": "ton, ta, tes",
+        "wat": "quoi",
+        "vraagt": "demande",
+        "de": "le, la, les",
+        "plus": "(titre) Plus belle la vie",
+        "belle": "(titre) Plus belle la vie",
+        "la": "(titre) Plus belle la vie",
+        "vie": "(titre) Plus belle la vie",
+        "marseille": "Marseille",
+        "ah": "ah",
+        "maar": "mais",
+        "hier": "ici",
+        "er": "y (er is = il y a)",
+        "geen": "pas de",
+        "zon": "soleil",
+        "zee": "mer",
+        "lacht": "rit",
+        "ober": "serveur",
+        "komt": "vient, arrive",
+        "nemen": "prenez (wat nemen jullie? = que prenez-vous ?)",
+        "jullie": "vous (pluriel)",
+        "ik": "je, moi",
+        "neem": "prends (ik neem = je prends)",
+        "een": "un, une ; (één) un (le nombre)",
+        "broodje": "petit pain, sandwich",
+        "kaas": "fromage",
+        "spuitwater": "eau pétillante",
+        "voor": "pour",
+        "mij": "moi",
+        "soep": "soupe",
+        "lekker": "bon, délicieux",
+        "vandaag": "aujourd'hui",
+        "tomatensoep": "soupe à la tomate",
+        "meneer": "monsieur",
+        "heel": "très",
+        "tomaten": "tomates",
+        "nee": "non",
+        "merci": "merci",
+        "eet": "mange (ik eet = je mange)",
+        "elke": "chaque (elke dag = tous les jours)",
+        "dag": "jour",
+        "uit": "de (origine)",
+        "tuin": "jardin",
+        "dan": "alors, ensuite",
+        "ook": "aussi",
+        "pintje": "demi (bière pression, flamand)",
+        "te": "trop",
+        "veel": "beaucoup (veel te veel = beaucoup trop)"
+      },
+      "questions": [
+        {
+          "q": "Qu'est-ce que le Mistral ?",
+          "options": [
+            "Le café de la série Plus belle la vie",
+            "Un restaurant à Gand",
+            "Le café du village"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Quelle est la soupe du jour ?",
+          "options": [
+            "Une soupe aux légumes",
+            "Une soupe à la tomate",
+            "Une soupe à l'oignon"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Que prend Jef finalement ?",
+          "options": [
+            "La soupe",
+            "Un sandwich au fromage et un demi",
+            "Un thé"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "thuis-1",
+      "title": "Waar is Kees?",
+      "fr": "Où est Kees ?",
+      "level": "A1",
+      "after": "thuis",
+      "lines": [
+        {
+          "nl": "Het is zaterdag. Monia is in de tuin.",
+          "fr": "C'est samedi. Monia est au jardin."
+        },
+        {
+          "nl": "Ze heeft een kleine tuinkabouter. Hij heet Kees.",
+          "fr": "Elle a un petit nain de jardin. Il s'appelle Kees."
+        },
+        {
+          "nl": "Kees is altijd tussen de tomaten.",
+          "fr": "Kees est toujours entre les tomates."
+        },
+        {
+          "nl": "Maar vandaag is Kees niet tussen de tomaten!",
+          "fr": "Mais aujourd'hui, Kees n'est pas entre les tomates !"
+        },
+        {
+          "nl": "Is hij in de serre? Nee.",
+          "fr": "Est-il dans la serre ? Non."
+        },
+        {
+          "nl": "Is hij in het tuinhuis? Nee, daar zijn alleen potten en zaden.",
+          "fr": "Est-il dans l'abri de jardin ? Non, là, il n'y a que des pots et des graines."
+        },
+        {
+          "nl": "Is hij onder de grote boom? Ook niet.",
+          "fr": "Est-il sous le grand arbre ? Non plus."
+        },
+        {
+          "nl": "Dan kijkt Monia over de haag.",
+          "fr": "Alors Monia regarde par-dessus la haie."
+        },
+        {
+          "nl": "De tuin van Jef is perfect. En daar, naast de moestuin, is Kees!",
+          "fr": "Le jardin de Jef est parfait. Et là, à côté du potager, voilà Kees !"
+        },
+        {
+          "nl": "Jef lacht. \"Kees is op vakantie bij mij!\"",
+          "fr": "Jef rit. « Kees est en vacances chez moi ! »"
+        },
+        {
+          "nl": "\"In mijn tuin is alles netjes. Kees houdt van orde!\"",
+          "fr": "« Dans mon jardin, tout est bien rangé. Kees aime l'ordre ! »"
+        },
+        {
+          "nl": "Monia lacht ook. \"Allez, Kees. Naar huis!\"",
+          "fr": "Monia rit aussi. « Allez, Kees. À la maison ! »"
+        }
+      ],
+      "glossary": {
+        "het": "il, ce ; le, la (neutre)",
+        "is": "est",
+        "zaterdag": "samedi",
+        "monia": "Monia (prénom)",
+        "in": "dans, à",
+        "de": "le, la, les",
+        "tuin": "jardin",
+        "ze": "elle",
+        "heeft": "a",
+        "een": "un, une",
+        "kleine": "petit(e) (klein + -e)",
+        "tuinkabouter": "nain de jardin",
+        "hij": "il",
+        "heet": "s'appelle",
+        "kees": "Kees (prénom)",
+        "altijd": "toujours",
+        "tussen": "entre",
+        "tomaten": "tomates",
+        "maar": "mais",
+        "vandaag": "aujourd'hui",
+        "niet": "pas",
+        "serre": "serre",
+        "nee": "non",
+        "tuinhuis": "abri de jardin",
+        "daar": "là",
+        "zijn": "sont (daar zijn = là, il y a)",
+        "alleen": "seulement (alleen … = ne … que)",
+        "potten": "pots",
+        "en": "et",
+        "zaden": "graines",
+        "onder": "sous",
+        "grote": "grand(e) (groot + -e)",
+        "boom": "arbre",
+        "ook": "aussi (ook niet = non plus)",
+        "dan": "alors, ensuite",
+        "kijkt": "regarde",
+        "over": "par-dessus",
+        "haag": "haie",
+        "van": "de",
+        "jef": "Jef (prénom)",
+        "perfect": "parfait",
+        "naast": "à côté de",
+        "moestuin": "potager",
+        "lacht": "rit",
+        "op": "en, sur (op vakantie = en vacances)",
+        "vakantie": "vacances",
+        "bij": "chez (bij mij = chez moi)",
+        "mij": "moi",
+        "mijn": "mon, ma, mes",
+        "alles": "tout",
+        "netjes": "bien rangé, propre",
+        "houdt": "aime (houden van = aimer)",
+        "orde": "ordre",
+        "allez": "allez (flamand)",
+        "naar": "vers, à (naar huis = à la maison)",
+        "huis": "maison"
+      },
+      "questions": [
+        {
+          "q": "Où est Kees, d'habitude ?",
+          "options": [
+            "Entre les tomates",
+            "Dans la serre",
+            "Sous le grand arbre"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qu'est-ce qu'il y a dans l'abri de jardin ?",
+          "options": [
+            "Un frigo",
+            "Seulement des pots et des graines",
+            "Le nain de Jef"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Où Monia trouve-t-elle Kees ?",
+          "options": [
+            "Dans la cuisine",
+            "Au café",
+            "Dans le jardin de Jef, à côté du potager"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "thuis-2",
+      "title": "Een klein appartement in Gent",
+      "fr": "Un petit appartement à Gand",
+      "level": "A1",
+      "after": "thuis",
+      "lines": [
+        {
+          "nl": "Lotte woont in Gent, in een klein appartement.",
+          "fr": "Lotte habite à Gand, dans un petit appartement."
+        },
+        {
+          "nl": "Het appartement is boven de bakker.",
+          "fr": "L'appartement est au-dessus de la boulangerie."
+        },
+        {
+          "nl": "Het heeft een kleine keuken, een slaapkamer en een badkamer.",
+          "fr": "Il a une petite cuisine, une chambre et une salle de bain."
+        },
+        {
+          "nl": "Er is geen tuin. Maar er is een klein terras.",
+          "fr": "Il n'y a pas de jardin. Mais il y a une petite terrasse."
+        },
+        {
+          "nl": "Op het terras is er een plant met één tomaat.",
+          "fr": "Sur la terrasse, il y a une plante avec une seule tomate."
+        },
+        {
+          "nl": "In de living zijn er driehonderd platen uit de jaren tachtig.",
+          "fr": "Dans le salon, il y a trois cents disques des années quatre-vingt."
+        },
+        {
+          "nl": "Vandaag is Monia op bezoek. Ze heeft een cadeau: een plant uit haar serre.",
+          "fr": "Aujourd'hui, Monia est en visite. Elle a un cadeau : une plante de sa serre."
+        },
+        {
+          "nl": "\"Voor jouw terras!\" zegt Monia.",
+          "fr": "« Pour ta terrasse ! » dit Monia."
+        },
+        {
+          "nl": "Lotte lacht. \"Merci! Nu heb ik twee planten en driehonderd platen.\"",
+          "fr": "Lotte rit. « Merci ! Maintenant, j'ai deux plantes et trois cents disques. »"
+        },
+        {
+          "nl": "\"En geen moestuin\", zegt Monia.",
+          "fr": "« Et pas de potager », dit Monia."
+        },
+        {
+          "nl": "\"Nee\", zegt Lotte. \"Maar nonkel Jef heeft een grote moestuin. Dat is genoeg!\"",
+          "fr": "« Non », dit Lotte. « Mais tonton Jef a un grand potager. Ça suffit ! »"
+        }
+      ],
+      "glossary": {
+        "lotte": "Lotte (prénom)",
+        "woont": "habite",
+        "in": "à, dans",
+        "gent": "Gand",
+        "een": "un, une",
+        "klein": "petit",
+        "appartement": "appartement",
+        "het": "le, la (neutre) ; il",
+        "is": "est",
+        "boven": "au-dessus de ; en haut",
+        "de": "le, la, les",
+        "bakker": "boulanger, boulangerie",
+        "heeft": "a",
+        "kleine": "petite (klein + -e)",
+        "keuken": "cuisine",
+        "slaapkamer": "chambre",
+        "en": "et",
+        "badkamer": "salle de bain",
+        "er": "(er is = il y a)",
+        "geen": "pas de",
+        "tuin": "jardin",
+        "maar": "mais",
+        "terras": "terrasse",
+        "op": "sur ; en (op bezoek = en visite)",
+        "plant": "plante",
+        "met": "avec",
+        "tomaat": "tomate",
+        "living": "salon",
+        "zijn": "sont (er zijn = il y a)",
+        "driehonderd": "trois cents",
+        "platen": "disques (vinyles)",
+        "uit": "de (origine)",
+        "jaren": "années",
+        "tachtig": "quatre-vingts",
+        "vandaag": "aujourd'hui",
+        "monia": "Monia (prénom)",
+        "bezoek": "visite",
+        "ze": "elle",
+        "cadeau": "cadeau",
+        "haar": "son, sa, ses (à elle)",
+        "serre": "serre",
+        "voor": "pour",
+        "jouw": "ta, ton (insistant)",
+        "zegt": "dit",
+        "lacht": "rit",
+        "merci": "merci",
+        "nu": "maintenant",
+        "heb": "ai",
+        "ik": "je",
+        "twee": "deux",
+        "planten": "plantes",
+        "moestuin": "potager",
+        "nee": "non",
+        "nonkel": "tonton, oncle (flamand)",
+        "jef": "Jef (prénom)",
+        "grote": "grand(e) (groot + -e)",
+        "dat": "cela, ça",
+        "genoeg": "assez (dat is genoeg = ça suffit)"
+      },
+      "questions": [
+        {
+          "q": "Où est l'appartement de Lotte ?",
+          "options": [
+            "Derrière la maison de Jef",
+            "Au-dessus de la boulangerie",
+            "À côté du café"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Qu'est-ce qu'il y a sur la terrasse ?",
+          "options": [
+            "Un petit potager",
+            "Trois cents disques",
+            "Une plante avec une seule tomate"
+          ],
+          "answer": 2
+        },
+        {
+          "q": "Quel cadeau Monia apporte-t-elle ?",
+          "options": [
+            "Une plante de sa serre",
+            "Un CD de Céline Dion",
+            "Des tomates"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mijn-dag-1",
+      "title": "De dag van Jef",
+      "fr": "La journée de Jef",
+      "level": "A1",
+      "after": "mijn-dag",
+      "lines": [
+        {
+          "nl": "Jef staat elke dag om vijf uur op.",
+          "fr": "Jef se lève tous les jours à cinq heures."
+        },
+        {
+          "nl": "Hij wast zich en hij kleedt zich aan.",
+          "fr": "Il se lave et il s'habille."
+        },
+        {
+          "nl": "Hij ontbijt met een boterham en een tas koffie.",
+          "fr": "Il prend son petit-déjeuner : une tartine et une tasse de café."
+        },
+        {
+          "nl": "Dan gaat hij naar zijn moestuin.",
+          "fr": "Ensuite, il va dans son potager."
+        },
+        {
+          "nl": "Hij geeft de tomaten en de bonen water.",
+          "fr": "Il arrose les tomates et les haricots."
+        },
+        {
+          "nl": "Om tien uur komt Rita in de tuin.",
+          "fr": "À dix heures, Rita vient au jardin."
+        },
+        {
+          "nl": "\"Jef, de koffie is klaar!\"",
+          "fr": "« Jef, le café est prêt ! »"
+        },
+        {
+          "nl": "Om twaalf uur eet hij boterhammen met kaas.",
+          "fr": "À midi, il mange des tartines au fromage."
+        },
+        {
+          "nl": "Daarna slaapt hij een uur.",
+          "fr": "Après, il dort une heure."
+        },
+        {
+          "nl": "Om vier uur is hij weer in de tuin.",
+          "fr": "À quatre heures, il est de nouveau au jardin."
+        },
+        {
+          "nl": "Om zes uur kookt hij soep met groenten uit de moestuin.",
+          "fr": "À six heures, il fait une soupe avec des légumes du potager."
+        },
+        {
+          "nl": "Om tien uur gaat hij naar bed. Hij is moe, maar blij.",
+          "fr": "À dix heures, il va se coucher. Il est fatigué, mais content."
+        }
+      ],
+      "glossary": {
+        "jef": "Jef (prénom)",
+        "staat": "se tient (opstaan = se lever)",
+        "elke": "chaque",
+        "dag": "jour",
+        "om": "à (+ heure)",
+        "vijf": "cinq",
+        "uur": "heure",
+        "op": "(opstaan = se lever)",
+        "hij": "il",
+        "wast": "lave (zich wassen = se laver)",
+        "zich": "se",
+        "en": "et",
+        "kleedt": "habille (zich aankleden = s'habiller)",
+        "aan": "(zich aankleden = s'habiller)",
+        "ontbijt": "prend le petit-déjeuner",
+        "met": "avec",
+        "een": "un, une",
+        "boterham": "tartine",
+        "tas": "tasse (flamand)",
+        "koffie": "café",
+        "dan": "ensuite, alors",
+        "gaat": "va",
+        "naar": "vers, à",
+        "zijn": "son, sa, ses (à lui)",
+        "moestuin": "potager",
+        "geeft": "donne (water geven = arroser)",
+        "de": "le, la, les",
+        "tomaten": "tomates",
+        "bonen": "haricots",
+        "water": "eau",
+        "tien": "dix",
+        "komt": "vient",
+        "rita": "Rita (prénom, la femme de Jef)",
+        "in": "dans",
+        "tuin": "jardin",
+        "is": "est",
+        "klaar": "prêt(e)",
+        "twaalf": "douze",
+        "eet": "mange",
+        "boterhammen": "tartines",
+        "kaas": "fromage",
+        "daarna": "après, ensuite",
+        "slaapt": "dort",
+        "vier": "quatre",
+        "weer": "de nouveau, encore",
+        "zes": "six",
+        "kookt": "cuisine, prépare",
+        "soep": "soupe",
+        "groenten": "légumes",
+        "uit": "de (provenance)",
+        "bed": "lit (naar bed gaan = aller se coucher)",
+        "moe": "fatigué(e)",
+        "maar": "mais",
+        "blij": "content(e)"
+      },
+      "questions": [
+        {
+          "q": "À quelle heure Jef se lève-t-il ?",
+          "options": [
+            "À cinq heures",
+            "À six heures",
+            "À dix heures"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que mange Jef à midi ?",
+          "options": [
+            "De la soupe",
+            "Des tartines au fromage",
+            "Un croque-monsieur"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Que fait Jef après le repas de midi ?",
+          "options": [
+            "Il dort une heure",
+            "Il fait la vaisselle",
+            "Il regarde la télé"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "mijn-dag-2",
+      "title": "Een avond bij Monia",
+      "fr": "Une soirée chez Monia",
+      "level": "A1",
+      "after": "mijn-dag",
+      "lines": [
+        {
+          "nl": "Het is maandag. Monia komt om zes uur thuis.",
+          "fr": "C'est lundi. Monia rentre à la maison à six heures."
+        },
+        {
+          "nl": "Ze is moe, maar eerst geeft ze de bloemen water.",
+          "fr": "Elle est fatiguée, mais d'abord elle arrose les fleurs."
+        },
+        {
+          "nl": "Dan kookt ze soep met groenten uit haar tuin.",
+          "fr": "Ensuite, elle fait une soupe avec des légumes de son jardin."
+        },
+        {
+          "nl": "Ze wast niet af. Dat is voor morgen!",
+          "fr": "Elle ne fait pas la vaisselle. C'est pour demain !"
+        },
+        {
+          "nl": "Om acht uur zet ze de tv aan.",
+          "fr": "À huit heures, elle allume la télé."
+        },
+        {
+          "nl": "Ze kijkt naar Plus belle la vie.",
+          "fr": "Elle regarde Plus belle la vie."
+        },
+        {
+          "nl": "Het café in de serie heet de Mistral.",
+          "fr": "Le café de la série s'appelle le Mistral."
+        },
+        {
+          "nl": "Daarna zet ze muziek uit de jaren negentig op.",
+          "fr": "Après, elle met de la musique des années 90."
+        },
+        {
+          "nl": "Céline Dion! Monia zingt mee.",
+          "fr": "Céline Dion ! Monia chante avec elle."
+        },
+        {
+          "nl": "Jef kijkt over de haag. \"Amai, Monia, wat een concert!\"",
+          "fr": "Jef regarde par-dessus la haie. « Ouah, Monia, quel concert ! »"
+        },
+        {
+          "nl": "Monia lacht. Om elf uur gaat ze naar bed.",
+          "fr": "Monia rit. À onze heures, elle va se coucher."
+        },
+        {
+          "nl": "Morgen staat ze weer vroeg op.",
+          "fr": "Demain, elle se lève de nouveau tôt."
+        }
+      ],
+      "glossary": {
+        "het": "il, ce, le (neutre)",
+        "is": "est",
+        "maandag": "lundi",
+        "monia": "Monia (prénom)",
+        "komt": "vient (thuiskomen = rentrer à la maison)",
+        "om": "à (+ heure)",
+        "zes": "six",
+        "uur": "heure",
+        "thuis": "à la maison (thuiskomen = rentrer)",
+        "ze": "elle",
+        "moe": "fatiguée",
+        "maar": "mais",
+        "eerst": "d'abord",
+        "geeft": "donne (water geven = arroser)",
+        "de": "le, la, les",
+        "bloemen": "fleurs",
+        "water": "eau",
+        "dan": "ensuite, alors",
+        "kookt": "cuisine, prépare",
+        "soep": "soupe",
+        "met": "avec",
+        "groenten": "légumes",
+        "uit": "de (provenance)",
+        "haar": "son, sa, ses (à elle)",
+        "tuin": "jardin",
+        "wast": "lave (afwassen = faire la vaisselle)",
+        "niet": "pas",
+        "af": "(afwassen = faire la vaisselle)",
+        "dat": "cela, ça",
+        "voor": "pour",
+        "morgen": "demain",
+        "acht": "huit",
+        "zet": "met (de tv aanzetten = allumer la télé)",
+        "tv": "télé",
+        "aan": "(aanzetten = allumer)",
+        "kijkt": "regarde",
+        "naar": "vers, à (kijken naar = regarder)",
+        "plus": "(titre) Plus belle la vie",
+        "belle": "(titre) Plus belle la vie",
+        "la": "(titre) Plus belle la vie",
+        "vie": "(titre) Plus belle la vie",
+        "cafe": "café (le bar)",
+        "in": "dans",
+        "serie": "série",
+        "heet": "s'appelle",
+        "mistral": "le Mistral (le café de la série)",
+        "daarna": "après, ensuite",
+        "muziek": "musique",
+        "jaren": "années",
+        "negentig": "quatre-vingt-dix (de jaren negentig = les années 90)",
+        "op": "(muziek opzetten = mettre de la musique ; opstaan = se lever)",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "zingt": "chante (meezingen = chanter avec)",
+        "mee": "avec (meezingen = chanter avec)",
+        "jef": "Jef (prénom)",
+        "over": "par-dessus",
+        "haag": "haie",
+        "amai": "ouah ! (flamand)",
+        "wat": "quel, quelle (wat een… = quel…)",
+        "een": "un, une",
+        "concert": "concert",
+        "lacht": "rit",
+        "elf": "onze",
+        "gaat": "va",
+        "bed": "lit (naar bed gaan = aller se coucher)",
+        "staat": "se tient (opstaan = se lever)",
+        "weer": "de nouveau",
+        "vroeg": "tôt"
+      },
+      "questions": [
+        {
+          "q": "Que fait Monia d'abord, quand elle rentre ?",
+          "options": [
+            "Elle cuisine",
+            "Elle arrose les fleurs",
+            "Elle allume la télé"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Qu'est-ce que Monia ne fait pas ce soir ?",
+          "options": [
+            "La vaisselle",
+            "La cuisine",
+            "Regarder la télé"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qui entend Monia chanter ?",
+          "options": [
+            "Lotte",
+            "Rita",
+            "Jef"
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "onderweg-1",
+      "title": "Een platte band",
+      "fr": "Un pneu crevé",
+      "level": "A1",
+      "after": "onderweg",
+      "lines": [
+        {
+          "nl": "Het is zaterdag. Jef en Monia gaan naar de markt.",
+          "fr": "C'est samedi. Jef et Monia vont au marché."
+        },
+        {
+          "nl": "\"Nemen we de auto?\" vraagt Monia.",
+          "fr": "« On prend la voiture ? » demande Monia."
+        },
+        {
+          "nl": "\"Nee, de fiets! De markt is niet ver,\" zegt Jef.",
+          "fr": "« Non, le vélo ! Le marché n'est pas loin », dit Jef."
+        },
+        {
+          "nl": "Ze fietsen door het dorp.",
+          "fr": "Ils traversent le village à vélo."
+        },
+        {
+          "nl": "Aan het kruispunt roept Jef: \"Rechtdoor, en dan links!\"",
+          "fr": "Au carrefour, Jef crie : « Tout droit, et puis à gauche ! »"
+        },
+        {
+          "nl": "Maar dan stopt Jef.",
+          "fr": "Mais tout à coup, Jef s'arrête."
+        },
+        {
+          "nl": "\"Oei! Ik heb een platte band.\"",
+          "fr": "« Oups ! J'ai un pneu crevé. »"
+        },
+        {
+          "nl": "\"Geen probleem,\" zegt Monia. \"We gaan te voet.\"",
+          "fr": "« Pas de problème », dit Monia. « On y va à pied. »"
+        },
+        {
+          "nl": "Op de markt koopt Monia bloemen voor haar tuin.",
+          "fr": "Au marché, Monia achète des fleurs pour son jardin."
+        },
+        {
+          "nl": "Jef koopt kaas en brood.",
+          "fr": "Jef achète du fromage et du pain."
+        },
+        {
+          "nl": "Naar huis gaan ze ook te voet, met de fiets aan de hand.",
+          "fr": "Pour rentrer, ils vont aussi à pied, en poussant le vélo."
+        },
+        {
+          "nl": "Jef lacht. \"Morgen ga ik mijn fiets maken!\"",
+          "fr": "Jef rit. « Demain, je vais réparer mon vélo ! »"
+        }
+      ],
+      "glossary": {
+        "het": "il, ce (neutre)",
+        "is": "est",
+        "zaterdag": "samedi",
+        "en": "et",
+        "gaan": "allons, vont",
+        "naar": "vers, à",
+        "de": "le, la, les",
+        "markt": "marché",
+        "nemen": "prenons, prenez (nemen = prendre)",
+        "we": "nous, on",
+        "auto": "voiture",
+        "vraagt": "demande",
+        "nee": "non",
+        "fiets": "vélo",
+        "niet": "pas",
+        "ver": "loin",
+        "zegt": "dit",
+        "ze": "ils, elles",
+        "fietsen": "roulent à vélo (fietsen = faire du vélo)",
+        "door": "à travers",
+        "dorp": "village",
+        "aan": "à (aan de hand = à la main)",
+        "kruispunt": "carrefour",
+        "roept": "crie, appelle",
+        "rechtdoor": "tout droit",
+        "dan": "puis, alors",
+        "links": "à gauche",
+        "maar": "mais",
+        "stopt": "s'arrête",
+        "oei": "oups ! aïe ! (flamand)",
+        "ik": "je",
+        "heb": "ai",
+        "een": "un, une",
+        "platte": "plat (een platte band = un pneu crevé)",
+        "band": "pneu",
+        "geen": "pas de",
+        "probleem": "problème",
+        "te": "à (te voet = à pied)",
+        "voet": "pied",
+        "op": "sur, à",
+        "koopt": "achète",
+        "bloemen": "fleurs",
+        "voor": "pour",
+        "haar": "son, sa (à elle)",
+        "tuin": "jardin",
+        "kaas": "fromage",
+        "brood": "pain",
+        "huis": "maison (naar huis = à la maison)",
+        "ook": "aussi",
+        "met": "avec",
+        "hand": "main",
+        "lacht": "rit",
+        "morgen": "demain",
+        "ga": "vais (ik ga … maken = je vais réparer)",
+        "mijn": "mon, ma",
+        "maken": "réparer (ici) ; faire"
+      },
+      "questions": [
+        {
+          "q": "Comment Jef veut-il aller au marché ?",
+          "options": [
+            "En voiture",
+            "À vélo",
+            "En bus"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Quel est le problème ?",
+          "options": [
+            "Jef a un pneu crevé",
+            "Le marché est fermé",
+            "Monia est en retard"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que va faire Jef demain ?",
+          "options": [
+            "Retourner au marché",
+            "Réparer son vélo",
+            "Acheter une voiture"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "onderweg-2",
+      "title": "Muziek op de trein",
+      "fr": "De la musique dans le train",
+      "level": "A1",
+      "after": "onderweg",
+      "lines": [
+        {
+          "nl": "Monia en Lotte nemen de trein naar Gent.",
+          "fr": "Monia et Lotte prennent le train pour Gand."
+        },
+        {
+          "nl": "Ze gaan naar een grote tuinbeurs.",
+          "fr": "Elles vont à un grand salon de jardin."
+        },
+        {
+          "nl": "Op de trein luisteren ze naar muziek uit de jaren negentig.",
+          "fr": "Dans le train, elles écoutent de la musique des années 90."
+        },
+        {
+          "nl": "Lotte zingt zacht. Monia zingt mee.",
+          "fr": "Lotte chante doucement. Monia chante avec elle."
+        },
+        {
+          "nl": "Dan zegt een stem: \"Deze trein heeft tien minuten vertraging.\"",
+          "fr": "Puis une voix dit : « Ce train a dix minutes de retard. »"
+        },
+        {
+          "nl": "\"Geen probleem,\" zegt Lotte. \"Nog een liedje!\"",
+          "fr": "« Pas de problème », dit Lotte. « Encore une chanson ! »"
+        },
+        {
+          "nl": "In Gent nemen ze de tram naar de tuinbeurs.",
+          "fr": "À Gand, elles prennent le tram pour le salon de jardin."
+        },
+        {
+          "nl": "Er zijn heel veel bloemen en planten.",
+          "fr": "Il y a énormément de fleurs et de plantes."
+        },
+        {
+          "nl": "Monia koopt een roos voor haar tuin.",
+          "fr": "Monia achète un rosier pour son jardin."
+        },
+        {
+          "nl": "En Lotte? Zij koopt een cactus.",
+          "fr": "Et Lotte ? Elle achète un cactus."
+        },
+        {
+          "nl": "\"Een cactus is makkelijk,\" lacht ze.",
+          "fr": "« Un cactus, c'est facile », dit-elle en riant."
+        },
+        {
+          "nl": "Op de trein naar huis zingen ze weer. Céline Dion, natuurlijk!",
+          "fr": "Dans le train du retour, elles chantent encore. Céline Dion, bien sûr !"
+        }
+      ],
+      "glossary": {
+        "en": "et",
+        "nemen": "prennent (nemen = prendre)",
+        "de": "le, la, les",
+        "trein": "train",
+        "naar": "vers, pour, à",
+        "gent": "Gand",
+        "ze": "elles, ils ; elle",
+        "gaan": "vont",
+        "een": "un, une",
+        "grote": "grand(e)",
+        "tuinbeurs": "salon de jardin (de tuin + de beurs = la foire)",
+        "op": "sur (op de trein = dans le train)",
+        "luisteren": "écoutent (luisteren naar = écouter)",
+        "muziek": "musique",
+        "uit": "de (origine)",
+        "jaren": "années (de jaren negentig = les années 90)",
+        "negentig": "quatre-vingt-dix",
+        "zingt": "chante",
+        "zacht": "doucement",
+        "mee": "avec (meezingen = chanter avec)",
+        "dan": "puis, alors",
+        "zegt": "dit",
+        "stem": "voix",
+        "deze": "ce, cette",
+        "heeft": "a",
+        "tien": "dix",
+        "minuten": "minutes",
+        "vertraging": "retard",
+        "geen": "pas de",
+        "probleem": "problème",
+        "nog": "encore",
+        "liedje": "petite chanson",
+        "in": "à, dans",
+        "tram": "tram",
+        "er": "(er zijn = il y a)",
+        "zijn": "sont (er zijn = il y a)",
+        "heel": "très",
+        "veel": "beaucoup (de)",
+        "bloemen": "fleurs",
+        "planten": "plantes",
+        "koopt": "achète",
+        "roos": "rose, rosier",
+        "voor": "pour",
+        "haar": "son, sa (à elle)",
+        "tuin": "jardin",
+        "zij": "elle",
+        "cactus": "cactus",
+        "is": "est",
+        "makkelijk": "facile",
+        "lacht": "rit",
+        "huis": "maison (naar huis = à la maison)",
+        "zingen": "chantent",
+        "weer": "de nouveau, encore",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "natuurlijk": "bien sûr, naturellement"
+      },
+      "questions": [
+        {
+          "q": "Où vont Monia et Lotte ?",
+          "options": [
+            "Au marché",
+            "À un salon de jardin à Gand",
+            "À un concert"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Que dit la voix dans le train ?",
+          "options": [
+            "Le train a dix minutes de retard",
+            "Il faut changer à Bruxelles",
+            "Le train ne va pas à Gand"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qu'achète Lotte ?",
+          "options": [
+            "Un rosier",
+            "Des tomates",
+            "Un cactus"
+          ],
+          "answer": 2
+        }
       ]
     }
   ]

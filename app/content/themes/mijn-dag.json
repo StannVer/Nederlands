@@ -1,0 +1,746 @@
+{
+  "id": "mijn-dag",
+  "nl": "Mijn dag",
+  "fr": "Ma journée",
+  "level": "A1",
+  "icon": "sun",
+  "intro": "Se lever tôt, arroser le jardin, travailler, rentrer, allumer la télé pour Plus belle la vie… Dans ce thème, vous racontez votre journée dans l'ordre, et vous apprenez deux nouveautés : les verbes qui se coupent en deux (« Ik sta op ») et les verbes avec « me, je, zich » (« Ik was me »).",
+  "cando": [
+    "Je peux raconter ma journée type dans l'ordre (d'abord, ensuite, après).",
+    "Je peux dire à quelle fréquence je fais quelque chose : toujours, souvent, parfois, jamais.",
+    "Je peux demander à quelqu'un comment se passe sa journée (« Hoe laat sta je op? »).",
+    "Je peux comprendre une description simple d'une journée."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Le matin",
+      "items": [
+        "opstaan",
+        "vroeg-laat",
+        "zich-wassen",
+        "douchen",
+        "zich-aankleden",
+        "ontbijten",
+        "het-ontbijt",
+        "water-geven"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "La journée",
+      "items": [
+        "vertrekken",
+        "beginnen",
+        "de-middagpauze",
+        "de-boterham",
+        "thuiskomen",
+        "boodschappen-doen",
+        "koken",
+        "afwassen"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "Ik sta op : le verbe coupé en deux"
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Le soir, et combien de fois ?",
+      "items": [
+        "de-tv-aanzetten",
+        "meezingen",
+        "moe",
+        "naar-bed-gaan",
+        "altijd-nooit",
+        "vaak-soms",
+        "eerst-dan-daarna",
+        "hoe-laat-sta-je-op"
+      ]
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "Ik was me : les verbes avec « me, je, zich »"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "Au travail, le matin"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : racontez votre journée à {teacher}"
+    }
+  ],
+  "items": [
+    {
+      "id": "opstaan",
+      "nl": "opstaan",
+      "fr": "se lever",
+      "accept": [
+        "ik sta op",
+        "op staan"
+      ],
+      "ex_nl": "Ik sta om zes uur op.",
+      "ex_fr": "Je me lève à six heures.",
+      "note": "Un verbe en deux morceaux : « op » part à la fin de la phrase (voir la grammaire). Et pas de « me » : se lever = opstaan, tout court."
+    },
+    {
+      "id": "vroeg-laat",
+      "nl": "vroeg — laat",
+      "fr": "tôt — tard",
+      "accept": [
+        "vroeg en laat",
+        "vroeg laat",
+        "vroeg",
+        "laat"
+      ],
+      "ex_nl": "Monia staat vroeg op.",
+      "ex_fr": "Monia se lève tôt.",
+      "note": "« oe » = « ou », et le « g » final se dit dans la gorge. Vous connaissez déjà « laat » : « Hoe laat is het? » (thème 2) = mot à mot « Il est tard comment ? »."
+    },
+    {
+      "id": "zich-wassen",
+      "nl": "zich wassen",
+      "fr": "se laver",
+      "accept": [
+        "ik was me",
+        "wassen"
+      ],
+      "ex_nl": "Om half zeven was ik me.",
+      "ex_fr": "À six heures et demie, je me lave.",
+      "note": "Comme en français, avec un pronom : ik was me, hij wast zich. Mais le pronom vient APRÈS le verbe (grammaire 2)."
+    },
+    {
+      "id": "douchen",
+      "nl": "douchen",
+      "fr": "se doucher, prendre une douche",
+      "accept": [
+        "ik douche"
+      ],
+      "ex_nl": "Ik douche om zeven uur.",
+      "ex_fr": "Je prends ma douche à sept heures.",
+      "note": "Prononcé à la française : « dou-chen ». Piège : pas de « me » ! On dit « ik douche », jamais « ik douche me »."
+    },
+    {
+      "id": "zich-aankleden",
+      "nl": "zich aankleden",
+      "fr": "s'habiller",
+      "accept": [
+        "ik kleed me aan",
+        "aankleden"
+      ],
+      "ex_nl": "Dan kleed ik me aan.",
+      "ex_fr": "Ensuite, je m'habille.",
+      "note": "Deux nouveautés en un seul verbe : un pronom (me) ET un petit mot qui part à la fin (aan). « de kleren » = les vêtements."
+    },
+    {
+      "id": "ontbijten",
+      "nl": "ontbijten",
+      "fr": "prendre le petit-déjeuner",
+      "accept": [
+        "ik ontbijt"
+      ],
+      "ex_nl": "Ik ontbijt om zeven uur.",
+      "ex_fr": "Je prends mon petit-déjeuner à sept heures.",
+      "note": "Un seul mot pour « prendre le petit-déjeuner ». Et lui ne se coupe jamais : « ik ontbijt », pas « ik bijt … ont » !"
+    },
+    {
+      "id": "het-ontbijt",
+      "nl": "het ontbijt",
+      "fr": "le petit-déjeuner",
+      "accept": [
+        "ontbijt"
+      ],
+      "ex_nl": "Ik drink koffie bij het ontbijt.",
+      "ex_fr": "Je bois du café au petit-déjeuner.",
+      "note": "Un mot « het ». « ont » + « bijt » (de « bijten », mordre) : la première bouchée de la journée."
+    },
+    {
+      "id": "water-geven",
+      "nl": "water geven",
+      "fr": "arroser",
+      "accept": [
+        "de planten water geven",
+        "ik geef water"
+      ],
+      "ex_nl": "Ik geef de tomaten water.",
+      "ex_fr": "J'arrose les tomates.",
+      "note": "Mot à mot : « donner de l'eau ». Ce que l'on arrose se met entre les deux : Ik geef de bloemen water. On entend aussi « de planten gieten »."
+    },
+    {
+      "id": "vertrekken",
+      "nl": "vertrekken",
+      "fr": "partir",
+      "accept": [
+        "ik vertrek"
+      ],
+      "ex_nl": "Ik vertrek om acht uur.",
+      "ex_fr": "Je pars à huit heures.",
+      "note": "Les verbes qui commencent par « ver- », « be- » ou « ont- » ne se coupent jamais : ik vertrek, ik begin, ik ontbijt."
+    },
+    {
+      "id": "beginnen",
+      "nl": "beginnen",
+      "fr": "commencer",
+      "accept": [
+        "ik begin"
+      ],
+      "ex_nl": "Mijn werk begint om negen uur.",
+      "ex_fr": "Mon travail commence à neuf heures.",
+      "note": "ik begin — hij begint (un seul « n » quand la syllabe se ferme, deux au pluriel : wij beginnen)."
+    },
+    {
+      "id": "de-middagpauze",
+      "nl": "de middagpauze",
+      "fr": "la pause de midi",
+      "accept": [
+        "middagpauze",
+        "de middag"
+      ],
+      "ex_nl": "In de middagpauze eet ik een boterham.",
+      "ex_fr": "À la pause de midi, je mange une tartine.",
+      "note": "« de middag » = le midi, « de pauze » = la pause. En Flandre, on entend aussi « 's middags » et, chez Jef, « 's noens » (à midi, très flamand)."
+    },
+    {
+      "id": "de-boterham",
+      "nl": "de boterham",
+      "fr": "la tartine (tranche de pain garnie)",
+      "accept": [
+        "boterham",
+        "de boterhammen",
+        "boterhammen"
+      ],
+      "ex_nl": "Lotte eet boterhammen met kaas.",
+      "ex_fr": "Lotte mange des tartines au fromage.",
+      "note": "Pluriel : de boterhammen (le « m » double, thème 4). « boter » = beurre. Le déjeuner flamand par excellence — voir la note culturelle."
+    },
+    {
+      "id": "thuiskomen",
+      "nl": "thuiskomen",
+      "fr": "rentrer à la maison",
+      "accept": [
+        "ik kom thuis",
+        "thuis komen"
+      ],
+      "ex_nl": "Ik kom om zes uur thuis.",
+      "ex_fr": "Je rentre à la maison à six heures.",
+      "note": "« thuis » = à la maison. Encore un verbe coupé : « thuis » part à la fin. Le titre du thème 6, « Thuis », c'est le même mot."
+    },
+    {
+      "id": "boodschappen-doen",
+      "nl": "boodschappen doen",
+      "fr": "faire les courses",
+      "accept": [
+        "ik doe boodschappen",
+        "de boodschappen doen"
+      ],
+      "ex_nl": "Zaterdag doe ik boodschappen.",
+      "ex_fr": "Samedi, je fais les courses.",
+      "note": "Vous connaissez le mot depuis le thème 4. « doen » = faire : ik doe, hij doet."
+    },
+    {
+      "id": "koken",
+      "nl": "koken",
+      "fr": "cuisiner, faire à manger",
+      "accept": [
+        "ik kook"
+      ],
+      "ex_nl": "Jef kookt groenten uit zijn moestuin.",
+      "ex_fr": "Jef cuisine des légumes de son potager.",
+      "note": "« oo » = « o » long. ik kook — hij kookt. « koken » veut aussi dire « bouillir » : het water kookt."
+    },
+    {
+      "id": "afwassen",
+      "nl": "afwassen",
+      "fr": "faire la vaisselle",
+      "accept": [
+        "ik was af",
+        "de afwas doen"
+      ],
+      "ex_nl": "Wie wast vandaag af?",
+      "ex_fr": "Qui fait la vaisselle aujourd'hui ?",
+      "note": "« wassen » = laver, « af » part à la fin : ik was af. En Flandre, on dit aussi très souvent « de afwas doen »."
+    },
+    {
+      "id": "de-tv-aanzetten",
+      "nl": "de tv aanzetten",
+      "fr": "allumer la télé",
+      "accept": [
+        "tv aanzetten",
+        "ik zet de tv aan",
+        "aanzetten"
+      ],
+      "ex_nl": "Om acht uur zet ik de tv aan.",
+      "ex_fr": "À huit heures, j'allume la télé.",
+      "note": "« tv » se dit « té-vé ». Le contraire : « de tv uitzetten » (éteindre). « zetten » = mettre : on « met en marche »."
+    },
+    {
+      "id": "meezingen",
+      "nl": "meezingen",
+      "fr": "chanter avec, chanter en même temps",
+      "accept": [
+        "ik zing mee",
+        "mee zingen"
+      ],
+      "ex_nl": "Ik zing mee met Céline Dion.",
+      "ex_fr": "Je chante avec Céline Dion.",
+      "note": "« mee » = avec, « zingen » = chanter. « mee » part à la fin ; « met Céline Dion » peut encore venir après : Ik zing mee met Céline Dion. Idéal pour les années 90 !"
+    },
+    {
+      "id": "moe",
+      "nl": "moe",
+      "fr": "fatigué(e)",
+      "ex_nl": "'s Avonds ben ik moe.",
+      "ex_fr": "Le soir, je suis fatiguée.",
+      "note": "« oe » = « ou » : « mou ». Même forme pour un homme et une femme. Très fatigué = « heel moe »."
+    },
+    {
+      "id": "naar-bed-gaan",
+      "nl": "naar bed gaan",
+      "fr": "aller se coucher",
+      "accept": [
+        "ik ga naar bed",
+        "slapen gaan"
+      ],
+      "ex_nl": "Ik ga om elf uur naar bed.",
+      "ex_fr": "Je vais me coucher à onze heures.",
+      "note": "Mot à mot : « aller au lit ». Pas de « me » : se coucher = naar bed gaan. On dit aussi « gaan slapen » (aller dormir)."
+    },
+    {
+      "id": "altijd-nooit",
+      "nl": "altijd — nooit",
+      "fr": "toujours — jamais",
+      "accept": [
+        "altijd en nooit",
+        "altijd nooit",
+        "altijd",
+        "nooit"
+      ],
+      "ex_nl": "Jef staat altijd vroeg op.",
+      "ex_fr": "Jef se lève toujours tôt.",
+      "note": "Ils se placent juste après le verbe : Ik kijk nooit tv. « nooit » : un « o » long qui glisse vers « i », à peu près « nôït »."
+    },
+    {
+      "id": "vaak-soms",
+      "nl": "vaak — soms",
+      "fr": "souvent — parfois",
+      "accept": [
+        "vaak en soms",
+        "vaak soms",
+        "vaak",
+        "soms",
+        "meestal"
+      ],
+      "ex_nl": "Soms kijk ik naar een tuinprogramma.",
+      "ex_fr": "Parfois, je regarde une émission de jardinage.",
+      "note": "Et entre les deux : « meestal » (la plupart du temps). En tête de phrase, le verbe suit tout de suite (thème 2) : Soms kijk ik…"
+    },
+    {
+      "id": "eerst-dan-daarna",
+      "nl": "eerst — dan — daarna",
+      "fr": "d'abord — ensuite — après",
+      "accept": [
+        "eerst dan daarna",
+        "eerst",
+        "dan",
+        "daarna"
+      ],
+      "ex_nl": "Eerst sta ik op, dan was ik me.",
+      "ex_fr": "D'abord je me lève, ensuite je me lave.",
+      "note": "Pour raconter dans l'ordre. Comme un mot de temps : après « eerst », « dan » ou « daarna », le verbe vient tout de suite, puis le sujet."
+    },
+    {
+      "id": "hoe-laat-sta-je-op",
+      "nl": "Hoe laat sta je op?",
+      "fr": "À quelle heure te lèves-tu ?",
+      "accept": [
+        "hoe laat staat u op",
+        "hoe laat sta jij op"
+      ],
+      "ex_nl": "Hoe laat sta jij op, Jef?",
+      "ex_fr": "À quelle heure te lèves-tu, Jef ?",
+      "note": "La question pour parler de la journée de quelqu'un. Poli : « Hoe laat staat u op? ». Et « op » reste à la fin, même dans la question."
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "Ik sta op : le verbe coupé en deux",
+      "explain": [
+        "Certains verbes sont faits de deux morceaux : un petit mot (op, aan, af, thuis, mee) + un verbe. opstaan = op + staan, thuiskomen = thuis + komen, afwassen = af + wassen.",
+        "Dans une phrase normale, le verbe conjugué reste à sa place (la 2e) et le petit mot part tout à la fin : Ik sta om zes uur op.",
+        "Après willen, kunnen ou mogen (thème 5), le verbe est à l'infinitif à la fin, et les deux morceaux restent collés : Ik wil morgen vroeg opstaan.",
+        "Les verbes qui commencent par be-, ver- ou ont- ne se coupent jamais : ik begin, ik vertrek, ik ontbijt. À l'oral, l'accent aide : OPstaan, THUISkomen (le petit mot est accentué), mais beGINnen, verTREKken."
+      ],
+      "table": [
+        [
+          "Ik sta om zes uur op.",
+          "Je me lève à six heures."
+        ],
+        [
+          "Monia komt om zes uur thuis.",
+          "Monia rentre à six heures."
+        ],
+        [
+          "Om acht uur zet ik de tv aan.",
+          "À huit heures, j'allume la télé."
+        ],
+        [
+          "Jef wast nooit af.",
+          "Jef ne fait jamais la vaisselle."
+        ],
+        [
+          "Ik wil morgen vroeg opstaan.",
+          "Je veux me lever tôt demain."
+        ],
+        [
+          "Ik ontbijt om zeven uur.",
+          "Je prends le petit-déjeuner à sept heures."
+        ]
+      ],
+      "contrast": "En français, « je me lève » reste en un bloc. En néerlandais, le verbe s'ouvre comme une pince : « Ik sta om zes uur op » — tout ce qu'on ajoute (l'heure, « vroeg », « nooit ») se glisse entre « sta » et « op ». C'est la même pince que « Ik wil nu betalen » au thème 5.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Ik ___ om zes uur op.",
+          "options": [
+            "sta",
+            "opsta"
+          ],
+          "answer": "sta",
+          "fr": "Je me lève à six heures.",
+          "why": "Le verbe conjugué « sta » reste en 2e place ; « op » part à la fin."
+        },
+        {
+          "type": "choice",
+          "nl": "Monia ___ om zes uur thuis.",
+          "options": [
+            "komt",
+            "thuiskomt"
+          ],
+          "answer": "komt",
+          "fr": "Monia rentre à la maison à six heures."
+        },
+        {
+          "type": "choice",
+          "nl": "Ik wil morgen vroeg ___.",
+          "options": [
+            "opstaan",
+            "sta op"
+          ],
+          "answer": "opstaan",
+          "fr": "Je veux me lever tôt demain.",
+          "why": "Après « willen », l'infinitif va à la fin, et les deux morceaux restent ensemble : opstaan."
+        },
+        {
+          "type": "choice",
+          "nl": "Wanneer ___ je thuis?",
+          "options": [
+            "kom",
+            "komt"
+          ],
+          "answer": "kom",
+          "fr": "Quand rentres-tu à la maison ?",
+          "why": "Le verbe passe devant « je » : le « -t » disparaît (thème 1). « thuis » reste à la fin."
+        },
+        {
+          "type": "order",
+          "nl": "Jef staat altijd vroeg op.",
+          "fr": "Jef se lève toujours tôt."
+        },
+        {
+          "type": "order",
+          "nl": "Om acht uur zet ik de tv aan.",
+          "fr": "À huit heures, j'allume la télé."
+        }
+      ]
+    },
+    "g2": {
+      "title": "Ik was me : les verbes avec « me, je, zich »",
+      "explain": [
+        "Comme en français, certains verbes ont un pronom : zich wassen = se laver, zich aankleden = s'habiller. Dans le dictionnaire, ils sont notés avec « zich ».",
+        "Le pronom vient APRÈS le verbe conjugué : Ik was me. Avec un mot de temps en tête, le sujet passe derrière le verbe, et le pronom suit : Om zeven uur was ik me.",
+        "Les pronoms : ik … me · je … je · u … zich (ou u) · hij / zij … zich · wij … ons · jullie … je · zij … zich.",
+        "Beaucoup de verbes pronominaux en français ne le sont PAS en néerlandais : se lever = opstaan, se doucher = douchen, se coucher = naar bed gaan, se promener = wandelen."
+      ],
+      "table": [
+        [
+          "ik was me",
+          "je me lave"
+        ],
+        [
+          "je wast je",
+          "tu te laves"
+        ],
+        [
+          "u wast zich",
+          "vous vous lavez"
+        ],
+        [
+          "hij / zij wast zich",
+          "il / elle se lave"
+        ],
+        [
+          "wij wassen ons",
+          "nous nous lavons"
+        ],
+        [
+          "jullie wassen je",
+          "vous vous lavez (plusieurs)"
+        ],
+        [
+          "zij wassen zich",
+          "ils / elles se lavent"
+        ]
+      ],
+      "contrast": "En français, le pronom vient avant le verbe : « je me lave ». En néerlandais, après : « ik was me ». Et souvent il n'y en a pas du tout : « je me lève » = « ik sta op », sans « me ».",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Om half zeven was ik ___.",
+          "options": [
+            "me",
+            "zich"
+          ],
+          "answer": "me",
+          "fr": "À six heures et demie, je me lave.",
+          "why": "Avec « ik », le pronom est « me »."
+        },
+        {
+          "type": "choice",
+          "nl": "Lotte kleedt ___ aan.",
+          "options": [
+            "zich",
+            "haar"
+          ],
+          "answer": "zich",
+          "fr": "Lotte s'habille.",
+          "why": "Avec « hij », « zij » ou un nom, c'est toujours « zich » — « haar » voudrait dire qu'elle habille une autre femme !"
+        },
+        {
+          "type": "choice",
+          "nl": "Wij wassen ___.",
+          "options": [
+            "ons",
+            "zich"
+          ],
+          "answer": "ons",
+          "fr": "Nous nous lavons."
+        },
+        {
+          "type": "choice",
+          "nl": "Ik ___ om zes uur op.",
+          "options": [
+            "sta",
+            "sta me"
+          ],
+          "answer": "sta",
+          "fr": "Je me lève à six heures.",
+          "why": "Se lever = opstaan, sans pronom. Le « me » français ne passe pas en néerlandais."
+        },
+        {
+          "type": "choice",
+          "nl": "Ik ___ om zeven uur.",
+          "options": [
+            "douche",
+            "douche me"
+          ],
+          "answer": "douche",
+          "fr": "Je prends ma douche à sept heures.",
+          "why": "Se doucher = douchen, sans pronom."
+        },
+        {
+          "type": "order",
+          "nl": "Eerst was ik me, dan kleed ik me aan.",
+          "fr": "D'abord je me lave, ensuite je m'habille."
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "Op het werk — Au travail, le matin",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Lotte",
+        "nl": "Dag Monia! Amai, ik ben moe.",
+        "fr": "Salut Monia ! Ouf, je suis fatiguée."
+      },
+      {
+        "id": "d02",
+        "who": "Monia",
+        "nl": "Dag Lotte! Hoe laat sta jij op?",
+        "fr": "Salut Lotte ! Tu te lèves à quelle heure, toi ?"
+      },
+      {
+        "id": "d03",
+        "who": "Lotte",
+        "nl": "Om half acht. Ik douche, ik kleed me aan en ik vertrek. Geen ontbijt!",
+        "fr": "À sept heures et demie. Je me douche, je m'habille et je pars. Pas de petit-déjeuner !"
+      },
+      {
+        "id": "d04",
+        "who": "Monia",
+        "nl": "Geen ontbijt? Ik sta altijd om zes uur op.",
+        "fr": "Pas de petit-déjeuner ? Moi, je me lève toujours à six heures."
+      },
+      {
+        "id": "d05",
+        "who": "Lotte",
+        "nl": "Om zes uur? Wat doe je dan?",
+        "fr": "À six heures ? Et qu'est-ce que tu fais, alors ?"
+      },
+      {
+        "id": "d06",
+        "who": "Monia",
+        "nl": "Eerst geef ik de tomaten water. Dan was ik me en ik ontbijt in de tuin.",
+        "fr": "D'abord j'arrose les tomates. Ensuite je me lave et je prends mon petit-déjeuner au jardin."
+      },
+      {
+        "id": "d07",
+        "who": "Lotte",
+        "nl": "Haha, net als nonkel Jef! Hij staat ook altijd vroeg op.",
+        "fr": "Haha, comme tonton Jef ! Lui aussi se lève toujours tôt."
+      },
+      {
+        "id": "d08",
+        "who": "Monia",
+        "nl": "En 's avonds? Wat doe jij 's avonds?",
+        "fr": "Et le soir ? Qu'est-ce que tu fais le soir, toi ?"
+      },
+      {
+        "id": "d09",
+        "who": "Lotte",
+        "nl": "Ik zet muziek uit de jaren negentig op en ik zing mee!",
+        "fr": "Je mets de la musique des années 90 et je chante avec !"
+      },
+      {
+        "id": "d10",
+        "who": "Monia",
+        "nl": "Ik ook! Maar om acht uur kijk ik naar Plus belle la vie.",
+        "fr": "Moi aussi ! Mais à huit heures, je regarde Plus belle la vie."
+      }
+    ],
+    "questions": [
+      {
+        "q": "À quelle heure Monia se lève-t-elle ?",
+        "options": [
+          "À six heures",
+          "À sept heures et demie",
+          "À huit heures"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Qu'est-ce que Lotte ne fait pas le matin ?",
+        "options": [
+          "Elle ne se douche pas",
+          "Elle ne prend pas de petit-déjeuner",
+          "Elle ne s'habille pas"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Que fait Monia d'abord, le matin ?",
+        "options": [
+          "Elle se lave",
+          "Elle prend son petit-déjeuner",
+          "Elle arrose les tomates"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Que fait Lotte le soir ?",
+        "options": [
+          "Elle regarde Plus belle la vie",
+          "Elle met de la musique des années 90 et chante",
+          "Elle travaille au jardin"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "Le truc de Kees : le petit mot à la fin",
+      "text": "Vous entendez « Jef staat altijd vroeg op » et vous ne trouvez pas « staat » dans le dictionnaire ? Kees, le nain de jardin, regarde toujours la fin de la phrase : s'il y a un petit mot (op, aan, af, thuis, mee), il le recolle devant le verbe : op + staan = opstaan. Et Kees, lui, ne se lève jamais : « Kees staat nooit op ! »"
+    },
+    {
+      "title": "me ou mij ?",
+      "text": "Dans le tableau, on écrit « ik was me ». En Flandre, vous entendrez aussi très souvent « ik was mij » et « ik kleed mij aan » : c'est correct aussi. Comprenez les deux, utilisez celui qui vous vient."
+    },
+    {
+      "title": "Raconter dans l'ordre",
+      "text": "Pour raconter votre journée, enchaînez : « Eerst sta ik op. Dan geef ik de planten water. Daarna ontbijt ik. » Après « eerst », « dan » et « daarna », le verbe vient tout de suite — comme après « maandag » ou « om acht uur » (thème 2)."
+    }
+  ],
+  "culture": {
+    "title": "La pause de midi et ses boterhammen",
+    "text": "En Flandre, beaucoup de gens ne mangent pas chaud à midi : ils apportent des tartines (« boterhammen ») de la maison, dans une boîte à tartines, « de brooddoos ». Garnitures classiques : du fromage, du jambon (« hesp », un mot bien flamand) ou de la pâte à tartiner au chocolat (« choco »). La pause de midi est souvent courte, une demi-heure ou une heure, et le repas chaud se prend le soir, en famille. Chez les plus âgés, comme Jef, on dit encore « 's noens » pour « à midi »."
+  },
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Cherchez un thème sur la journée, le travail ou le temps libre, au niveau le plus bas."
+    },
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Vidéos et exercices gratuits, avec explications en français : bien pour revoir les verbes séparables."
+    },
+    {
+      "kind": "lecture",
+      "title": "Wablieft — le journal en néerlandais facile",
+      "url": "https://www.wablieft.be",
+      "level": "A2+",
+      "note": "Pour plus tard. Petit défi dès maintenant : repérez un verbe dont le petit mot est parti à la fin de la phrase."
+    }
+  ],
+  "task": {
+    "scenario": "Racontez à {teacher} votre lundi type, du matin au soir, en huit phrases — le jardin, le travail, la télé, la musique. Ensuite, posez-lui des questions sur son lundi à lui. Ensemble, trouvez trois différences entre vos deux journées.",
+    "goals": [
+      "Raconter votre journée dans l'ordre avec « eerst », « dan » et « daarna »",
+      "Utiliser au moins trois verbes coupés en deux (opstaan, thuiskomen, de tv aanzetten…)",
+      "Utiliser un verbe avec « me » (ik was me, ik kleed me aan)",
+      "Dire à quelle fréquence : altijd, vaak, soms, nooit",
+      "Lui demander « Hoe laat sta je op? » et trouver trois différences"
+    ],
+    "phrases": [
+      "opstaan",
+      "zich-wassen",
+      "zich-aankleden",
+      "ontbijten",
+      "water-geven",
+      "vertrekken",
+      "thuiskomen",
+      "de-tv-aanzetten",
+      "naar-bed-gaan",
+      "altijd-nooit",
+      "vaak-soms",
+      "eerst-dan-daarna",
+      "hoe-laat-sta-je-op"
+    ],
+    "prepare": "Écrivez huit phrases sur votre lundi, avec une heure ou un mot d'ordre en tête (« Om zes uur… », « Dan… », « 's Avonds… »). Vérifiez chaque verbe coupé : le petit mot est-il bien à la fin ? Préparez aussi deux questions pour {teacher}. Lisez tout à voix haute deux ou trois fois.",
+    "perform": "Maintenant, racontez votre journée à {teacher}, sans lire vos notes. Puis écoutez la sienne et notez ce qui est différent — c'est lui qui se lève le plus tôt, ou vous ?",
+    "record": "Vous pouvez aussi vous enregistrer en racontant votre journée et lui envoyer l'enregistrement : il vous répondra ici, avec sa journée à lui."
+  }
+}

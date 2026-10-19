@@ -45,7 +45,7 @@
       "nl": "Thuis",
       "fr": "À la maison",
       "level": "A1",
-      "status": "soon",
+      "status": "ready",
       "icon": "house"
     },
     {
@@ -53,7 +53,7 @@
       "nl": "Mijn dag",
       "fr": "Ma journée",
       "level": "A1",
-      "status": "soon",
+      "status": "ready",
       "icon": "sun"
     },
     {
@@ -61,7 +61,7 @@
       "nl": "Onderweg",
       "fr": "En route",
       "level": "A1",
-      "status": "soon",
+      "status": "ready",
       "icon": "route"
     },
     {

@@ -1,0 +1,732 @@
+{
+  "id": "onderweg",
+  "nl": "Onderweg",
+  "fr": "En route",
+  "level": "A1",
+  "icon": "route",
+  "intro": "Acheter un billet à la gare, prendre le train, le tram ou le vélo, demander son chemin et le comprendre. À la fin de ce thème, vous partez avec Lotte en train pour un grand salon de jardin à Gand — avec sa musique des années 90 dans les oreilles — et vous trouvez le chemin vous-même.",
+  "cando": [
+    "Je peux demander et comprendre un chemin simple.",
+    "Je peux acheter un billet de train ou de bus.",
+    "Je peux comprendre une annonce simple en gare (quai, retard).",
+    "Je peux dire comment je me déplace."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "À la gare",
+      "items": [
+        "de-trein",
+        "het-station",
+        "het-loket",
+        "het-ticket",
+        "enkel-heen-en-terug",
+        "het-perron",
+        "vertrekken",
+        "de-vertraging"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "Bus, tram ou vélo ?",
+      "items": [
+        "de-bus",
+        "de-tram",
+        "de-halte",
+        "de-fiets",
+        "te-voet",
+        "de-auto",
+        "overstappen",
+        "aankomen"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "Ga rechtdoor !"
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Demander son chemin",
+      "items": [
+        "hoe-kom-ik-naar",
+        "de-straat",
+        "links-rechts",
+        "rechtdoor",
+        "de-hoek",
+        "het-kruispunt",
+        "de-eerste-de-tweede",
+        "ver-dichtbij"
+      ]
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "Ik ga … nemen, u moet … overstappen"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "En train pour Gand"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : guidez {teacher} sur un plan"
+    }
+  ],
+  "items": [
+    {
+      "id": "de-trein",
+      "nl": "de trein",
+      "fr": "le train",
+      "accept": [
+        "trein",
+        "een trein"
+      ],
+      "ex_nl": "Op de trein luistert Lotte naar muziek.",
+      "ex_fr": "Dans le train, Lotte écoute de la musique.",
+      "note": "« ei » se dit comme « ij » : à peu près « èï ». En Flandre on est « op de trein » (sur le train) ; aux Pays-Bas « in de trein ». Prendre le train = « de trein nemen »."
+    },
+    {
+      "id": "het-station",
+      "nl": "het station",
+      "fr": "la gare",
+      "accept": [
+        "station",
+        "een station"
+      ],
+      "ex_nl": "Het station Gent-Sint-Pieters is heel groot.",
+      "ex_fr": "La gare de Gand-Saint-Pierre est très grande.",
+      "note": "Faux ami : « station » = la gare (une station de métro aussi). On dit « sta-sjon ». Un mot en « het ». Dans la rue, on entend aussi « de statie » (flamand familier)."
+    },
+    {
+      "id": "het-loket",
+      "nl": "het loket",
+      "fr": "le guichet",
+      "accept": [
+        "loket",
+        "aan het loket"
+      ],
+      "ex_nl": "Ik koop een ticket aan het loket.",
+      "ex_fr": "J'achète un billet au guichet.",
+      "note": "« aan het loket » = au guichet. Pas de guichet ? Il y a souvent une machine : « de automaat »."
+    },
+    {
+      "id": "het-ticket",
+      "nl": "het ticket",
+      "fr": "le billet, le ticket",
+      "accept": [
+        "ticket",
+        "een ticket"
+      ],
+      "ex_nl": "Een ticket naar Gent, alstublieft.",
+      "ex_fr": "Un billet pour Gand, s'il vous plaît.",
+      "note": "En Flandre, « een ticket » sert pour le train, le bus et le concert. Aux Pays-Bas on dit plutôt « een kaartje ». « naar » = vers, pour (une destination)."
+    },
+    {
+      "id": "enkel-heen-en-terug",
+      "nl": "enkel — heen en terug",
+      "fr": "aller simple — aller-retour",
+      "accept": [
+        "enkel",
+        "heen en terug",
+        "een retour",
+        "enkel heen en terug"
+      ],
+      "ex_nl": "Enkel of heen en terug?",
+      "ex_fr": "Aller simple ou aller-retour ?",
+      "note": "La question du guichet. « heen » = aller, « terug » = retour. Au guichet, beaucoup de Flamands disent simplement « een retour »."
+    },
+    {
+      "id": "het-perron",
+      "nl": "het perron",
+      "fr": "le quai",
+      "accept": [
+        "perron",
+        "het spoor",
+        "spoor"
+      ],
+      "ex_nl": "Lotte en Monia zijn op het perron.",
+      "ex_fr": "Lotte et Monia sont sur le quai.",
+      "note": "Faux ami : « het perron » n'est pas un perron d'escalier, c'est le quai. Dans les annonces et sur les écrans, vous verrez souvent « spoor » (la voie) : « spoor drie » = voie 3."
+    },
+    {
+      "id": "vertrekken",
+      "nl": "vertrekken",
+      "fr": "partir",
+      "accept": [
+        "vertrekt",
+        "ik vertrek"
+      ],
+      "ex_nl": "De trein vertrekt om tien uur.",
+      "ex_fr": "Le train part à dix heures.",
+      "note": "ik vertrek — u vertrekt — hij vertrekt. Le « v » flamand reste doux, presque un « f » léger : ne le prononcez pas trop fort."
+    },
+    {
+      "id": "de-vertraging",
+      "nl": "de vertraging",
+      "fr": "le retard",
+      "accept": [
+        "vertraging"
+      ],
+      "ex_nl": "De trein heeft tien minuten vertraging.",
+      "ex_fr": "Le train a dix minutes de retard.",
+      "note": "Le mot de toutes les annonces ! « traag » = lent. « minuten » = minutes. Pas de « de » devant : « tien minuten vertraging »."
+    },
+    {
+      "id": "de-bus",
+      "nl": "de bus",
+      "fr": "le bus",
+      "accept": [
+        "bus",
+        "een bus"
+      ],
+      "ex_nl": "De bus komt om kwart over negen.",
+      "ex_fr": "Le bus arrive à neuf heures et quart.",
+      "note": "Attention au « u » court : ni « ou », ni « u » français — un son entre « eu » et « u », bref : « bus »."
+    },
+    {
+      "id": "de-tram",
+      "nl": "de tram",
+      "fr": "le tram",
+      "accept": [
+        "tram",
+        "een tram"
+      ],
+      "ex_nl": "In Gent neemt Lotte de tram.",
+      "ex_fr": "À Gand, Lotte prend le tram.",
+      "note": "Comme en français, avec un « r » roulé ou de gorge. Les bus et les trams de Flandre sont ceux de « De Lijn »."
+    },
+    {
+      "id": "de-halte",
+      "nl": "de halte",
+      "fr": "l'arrêt (de bus, de tram)",
+      "accept": [
+        "halte",
+        "de bushalte",
+        "de tramhalte"
+      ],
+      "ex_nl": "Pardon, waar is de tramhalte?",
+      "ex_fr": "Pardon, où est l'arrêt de tram ?",
+      "note": "On colle les mots : « de bushalte », « de tramhalte ». Le « h » se prononce, avec un souffle."
+    },
+    {
+      "id": "de-fiets",
+      "nl": "de fiets",
+      "fr": "le vélo",
+      "accept": [
+        "fiets",
+        "een fiets",
+        "met de fiets"
+      ],
+      "ex_nl": "Jef gaat met de fiets naar de markt.",
+      "ex_fr": "Jef va au marché à vélo.",
+      "note": "« ie » = « i » : « fits ». « met de fiets » = à vélo (litt. « avec le vélo »). Faire du vélo = « fietsen »."
+    },
+    {
+      "id": "te-voet",
+      "nl": "te voet",
+      "fr": "à pied",
+      "accept": [
+        "voet"
+      ],
+      "ex_nl": "Ik ga te voet naar de bakker.",
+      "ex_fr": "Je vais à pied à la boulangerie.",
+      "note": "« de voet » = le pied. Comparez : met de trein, met de bus, met de fiets… mais « te voet »."
+    },
+    {
+      "id": "de-auto",
+      "nl": "de auto",
+      "fr": "la voiture",
+      "accept": [
+        "auto",
+        "een auto",
+        "de wagen"
+      ],
+      "ex_nl": "Jef heeft een auto, maar hij neemt de fiets.",
+      "ex_fr": "Jef a une voiture, mais il prend le vélo.",
+      "note": "« au » se dit à peu près « ao ». En Flandre on dit aussi très souvent « de wagen » pour la voiture."
+    },
+    {
+      "id": "overstappen",
+      "nl": "overstappen",
+      "fr": "changer (de train, de bus)",
+      "accept": [
+        "stap over",
+        "ik stap over"
+      ],
+      "ex_nl": "Monia stapt in Brussel over.",
+      "ex_fr": "Monia change de train à Bruxelles.",
+      "note": "Un verbe séparable (thème 7) : « ik stap over » — « over » part à la fin. Mais avec « moeten » il reste entier : « U moet in Brussel overstappen »."
+    },
+    {
+      "id": "aankomen",
+      "nl": "aankomen",
+      "fr": "arriver",
+      "accept": [
+        "komt aan",
+        "ik kom aan"
+      ],
+      "ex_nl": "De trein komt om elf uur aan.",
+      "ex_fr": "Le train arrive à onze heures.",
+      "note": "Séparable aussi : « komt … aan ». Le contraire de « vertrekken » (qui, lui, ne se sépare jamais : « ver- » reste collé)."
+    },
+    {
+      "id": "hoe-kom-ik-naar",
+      "nl": "Hoe kom ik naar …?",
+      "fr": "Comment aller à … ?",
+      "accept": [
+        "hoe kom ik naar",
+        "waar is"
+      ],
+      "ex_nl": "Pardon, hoe kom ik naar het station?",
+      "ex_fr": "Pardon, comment aller à la gare ?",
+      "note": "Littéralement : « comment est-ce que je viens vers … ? ». La question la plus utile du thème. Plus court : « Waar is …? » (Où est … ?)."
+    },
+    {
+      "id": "de-straat",
+      "nl": "de straat",
+      "fr": "la rue",
+      "accept": [
+        "straat",
+        "een straat"
+      ],
+      "ex_nl": "De bakker is in de Kerkstraat.",
+      "ex_fr": "La boulangerie est dans la rue de l'Église.",
+      "note": "Les noms de rue s'écrivent en un seul mot : Kerkstraat (rue de l'Église), Stationsstraat (rue de la Gare). « aa » = « a » long."
+    },
+    {
+      "id": "links-rechts",
+      "nl": "links — rechts",
+      "fr": "à gauche — à droite",
+      "accept": [
+        "links",
+        "rechts",
+        "links rechts"
+      ],
+      "ex_nl": "Ga links, niet rechts!",
+      "ex_fr": "Allez à gauche, pas à droite !",
+      "note": "« ch » de « rechts » : le son de gorge, comme le « g ». Le truc de Kees : la main gauche fait un « L » avec le pouce — L comme links."
+    },
+    {
+      "id": "rechtdoor",
+      "nl": "rechtdoor",
+      "fr": "tout droit",
+      "accept": [
+        "rechtuit"
+      ],
+      "ex_nl": "Ga rechtdoor tot het kruispunt.",
+      "ex_fr": "Allez tout droit jusqu'au carrefour.",
+      "note": "« recht » = droit, « door » = à travers. Ne confondez pas avec « rechts » (à droite) : écoutez bien le « s » final. En Flandre on entend aussi « rechtuit »."
+    },
+    {
+      "id": "de-hoek",
+      "nl": "de hoek",
+      "fr": "le coin",
+      "accept": [
+        "hoek",
+        "op de hoek"
+      ],
+      "ex_nl": "De bakker is op de hoek.",
+      "ex_fr": "La boulangerie est au coin.",
+      "note": "« oe » = « ou » : « houk », avec un « h » soufflé. « op de hoek » = au coin."
+    },
+    {
+      "id": "het-kruispunt",
+      "nl": "het kruispunt",
+      "fr": "le carrefour",
+      "accept": [
+        "kruispunt",
+        "een kruispunt"
+      ],
+      "ex_nl": "Aan het kruispunt gaat u links.",
+      "ex_fr": "Au carrefour, vous allez à gauche.",
+      "note": "« het kruis » (la croix) + « het punt » (le point). « ui » : partez de « eu » et glissez vers « i »."
+    },
+    {
+      "id": "de-eerste-de-tweede",
+      "nl": "de eerste — de tweede",
+      "fr": "le/la premier·ère — le/la deuxième",
+      "accept": [
+        "de eerste",
+        "de tweede",
+        "eerste",
+        "tweede"
+      ],
+      "ex_nl": "Neem de tweede straat links.",
+      "ex_fr": "Prenez la deuxième rue à gauche.",
+      "note": "La troisième = « de derde ». Pour un chemin, le néerlandais ne met pas « à » : « de tweede straat links » = la deuxième rue à gauche."
+    },
+    {
+      "id": "ver-dichtbij",
+      "nl": "ver — dichtbij",
+      "fr": "loin — près",
+      "accept": [
+        "ver",
+        "dichtbij",
+        "is het ver"
+      ],
+      "ex_nl": "Is het ver? Nee, het is dichtbij.",
+      "ex_fr": "C'est loin ? Non, c'est tout près.",
+      "note": "« dichtbij » se dit « dicht-bèï ». Très utile : « Is het ver? » — et si la réponse est « ja », prenez le tram !"
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "Ga rechtdoor !",
+      "explain": [
+        "Pour donner un chemin ou un conseil, on utilise l'impératif. C'est très simple : c'est la forme de « ik », sans sujet. ik ga → Ga! · ik neem → Neem! · ik kijk → Kijk!",
+        "Une seule forme pour tout le monde : « Ga rechtdoor! » veut dire « Va tout droit ! » et « Allez tout droit ! ».",
+        "Pour être plus poli, ajoutez « alstublieft », ou dites « u » après le verbe, avec le « -t » : « Neemt u de tram, mevrouw. »",
+        "Avec un verbe séparable (thème 7), la petite partie va à la fin : overstappen → « Stap in Brussel over! »"
+      ],
+      "table": [
+        [
+          "Ga rechtdoor.",
+          "Allez tout droit."
+        ],
+        [
+          "Neem de tweede straat links.",
+          "Prenez la deuxième rue à gauche."
+        ],
+        [
+          "Kijk, daar is de tram!",
+          "Regardez, voilà le tram !"
+        ],
+        [
+          "Neemt u de bus, mevrouw.",
+          "Prenez le bus, madame."
+        ],
+        [
+          "Stap in Brussel over.",
+          "Changez à Bruxelles."
+        ]
+      ],
+      "contrast": "En français, l'impératif change selon la personne : « va », « allez », « allons ». En néerlandais, une seule forme courte suffit, sans « -ez » : « Ga! » — pour un ami comme pour un inconnu.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "___ rechtdoor tot het kruispunt.",
+          "options": [
+            "Ga",
+            "Gaan"
+          ],
+          "answer": "Ga",
+          "fr": "Allez tout droit jusqu'au carrefour.",
+          "why": "L'impératif = la forme de « ik », sans sujet : ga."
+        },
+        {
+          "type": "choice",
+          "nl": "___ de tweede straat links.",
+          "options": [
+            "Neem",
+            "Neemt"
+          ],
+          "answer": "Neem",
+          "fr": "Prenez la deuxième rue à gauche.",
+          "why": "Sans « u », pas de « -t » : neem."
+        },
+        {
+          "type": "choice",
+          "nl": "___ u de tram, meneer.",
+          "options": [
+            "Neem",
+            "Neemt"
+          ],
+          "answer": "Neemt",
+          "fr": "Prenez le tram, monsieur.",
+          "why": "Forme polie avec « u » : le verbe garde son « -t »."
+        },
+        {
+          "type": "order",
+          "nl": "Neem de eerste straat rechts.",
+          "fr": "Prenez la première rue à droite."
+        },
+        {
+          "type": "choice",
+          "nl": "___ in Brussel over.",
+          "options": [
+            "Stap",
+            "Stappen"
+          ],
+          "answer": "Stap",
+          "fr": "Changez à Bruxelles.",
+          "why": "« overstappen » est séparable : « stap » au début, « over » à la fin."
+        },
+        {
+          "type": "order",
+          "nl": "Kijk, daar is het station!",
+          "fr": "Regardez, voilà la gare !"
+        }
+      ]
+    },
+    "g2": {
+      "title": "Ik ga … nemen, u moet … overstappen",
+      "explain": [
+        "« gaan » + infinitif = ce qui va se passer bientôt, comme « je vais prendre » : « Ik ga de trein nemen. »",
+        "« moeten » = devoir, falloir : « U moet in Brussel overstappen » (Il faut changer à Bruxelles).",
+        "Les formes : ik ga, je gaat, u gaat, hij gaat, wij gaan · ik moet, je moet, u moet, hij moet, wij moeten.",
+        "Comme avec « willen », « mogen » et « kunnen » (thème 5), le deuxième verbe reste à l'infinitif et part tout à la fin. Un verbe séparable redevient un seul mot : overstappen, aankomen."
+      ],
+      "table": [
+        [
+          "Ik ga de trein nemen.",
+          "Je vais prendre le train."
+        ],
+        [
+          "Morgen gaan we bloemen kopen.",
+          "Demain, nous allons acheter des fleurs."
+        ],
+        [
+          "U moet in Brussel overstappen.",
+          "Vous devez changer à Bruxelles."
+        ],
+        [
+          "Monia moet een ticket kopen.",
+          "Monia doit acheter un billet."
+        ],
+        [
+          "Je moet de tweede straat links nemen.",
+          "Tu dois prendre la deuxième rue à gauche."
+        ]
+      ],
+      "contrast": "En français, « je vais prendre le train » garde les deux verbes ensemble. En néerlandais, la pince s'ouvre : « Ik ga de trein nemen » — l'infinitif ferme la phrase. Et à la place de « il faut », on dit qui doit le faire : « U moet overstappen ».",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Ik ___ een ticket kopen.",
+          "options": [
+            "moet",
+            "moeten"
+          ],
+          "answer": "moet",
+          "fr": "Je dois acheter un billet.",
+          "why": "ik moet, sans « -en » : « moeten » est pour wij, jullie, zij."
+        },
+        {
+          "type": "choice",
+          "nl": "Wij ___ de bus nemen.",
+          "options": [
+            "gaan",
+            "gaat"
+          ],
+          "answer": "gaan",
+          "fr": "Nous allons prendre le bus.",
+          "why": "Avec « wij » : gaan."
+        },
+        {
+          "type": "choice",
+          "nl": "U moet in Gent ___.",
+          "options": [
+            "overstappen",
+            "stapt over"
+          ],
+          "answer": "overstappen",
+          "fr": "Vous devez changer à Gand.",
+          "why": "Après « moeten », l'infinitif en un seul mot, à la fin."
+        },
+        {
+          "type": "choice",
+          "nl": "Lotte gaat de tram ___.",
+          "options": [
+            "neemt",
+            "nemen"
+          ],
+          "answer": "nemen",
+          "fr": "Lotte va prendre le tram.",
+          "why": "Après « gaan », le deuxième verbe est à l'infinitif."
+        },
+        {
+          "type": "order",
+          "nl": "Ik ga de trein nemen.",
+          "fr": "Je vais prendre le train."
+        },
+        {
+          "type": "order",
+          "nl": "Morgen gaan we bloemen kopen.",
+          "fr": "Demain, nous allons acheter des fleurs."
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "Naar Gent — En train pour Gand",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Monia",
+        "nl": "Goeiedag. Een ticket naar Gent, heen en terug, alstublieft.",
+        "fr": "Bonjour. Un aller-retour pour Gand, s'il vous plaît."
+      },
+      {
+        "id": "d02",
+        "who": "Bediende",
+        "nl": "Alstublieft, mevrouw. Uw trein vertrekt om tien uur. Perron twee.",
+        "fr": "Voici, madame. Votre train part à dix heures. Quai deux."
+      },
+      {
+        "id": "d03",
+        "who": "Lotte",
+        "nl": "Op de trein gaan we naar mijn muziek luisteren: de jaren negentig!",
+        "fr": "Dans le train, on va écouter ma musique : les années 90 !"
+      },
+      {
+        "id": "d04",
+        "who": "Monia",
+        "nl": "Super! Ook Céline Dion?",
+        "fr": "Super ! Céline Dion aussi ?"
+      },
+      {
+        "id": "d05",
+        "who": "Lotte",
+        "nl": "Natuurlijk! Oei… we hebben tien minuten vertraging.",
+        "fr": "Bien sûr ! Oups… on a dix minutes de retard."
+      },
+      {
+        "id": "d06",
+        "who": "Monia",
+        "nl": "Pardon, meneer. Hoe kom ik naar de tuinbeurs?",
+        "fr": "Pardon, monsieur. Comment aller au salon de jardin ?"
+      },
+      {
+        "id": "d07",
+        "who": "Meneer",
+        "nl": "Te voet is het niet ver. Ga hier rechtdoor tot het kruispunt.",
+        "fr": "À pied, ce n'est pas loin. Allez tout droit d'ici jusqu'au carrefour."
+      },
+      {
+        "id": "d08",
+        "who": "Monia",
+        "nl": "Tot het kruispunt. En dan?",
+        "fr": "Jusqu'au carrefour. Et ensuite ?"
+      },
+      {
+        "id": "d09",
+        "who": "Meneer",
+        "nl": "Dan neemt u de tweede straat links.",
+        "fr": "Ensuite, vous prenez la deuxième rue à gauche."
+      },
+      {
+        "id": "d10",
+        "who": "Lotte",
+        "nl": "Amai, Monia! Ge spreekt al goed Vlaams!",
+        "fr": "Ouah, Monia ! Tu parles déjà bien flamand !"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Quel billet Monia achète-t-elle ?",
+        "options": [
+          "Un aller simple pour Gand",
+          "Un aller-retour pour Gand",
+          "Un billet de bus"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Que vont-elles faire dans le train ?",
+        "options": [
+          "Lire le journal",
+          "Écouter la musique des années 90 de Lotte",
+          "Dormir"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Quel est le problème du train ?",
+        "options": [
+          "Il a dix minutes de retard",
+          "Il ne va pas à Gand",
+          "Il part du quai trois"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Comment aller au salon de jardin ?",
+        "options": [
+          "Prendre le tram, puis la première rue à droite",
+          "Tout droit jusqu'au carrefour, puis la deuxième rue à gauche",
+          "Tout droit, puis au coin à droite"
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "« Ge moet hier rechtdoor »",
+      "text": "Dans la rue, beaucoup de Flamands disent « ge » ou « gij » au lieu de « je » ou « jij » : « Ge moet hier rechtdoor » = « Je moet hier rechtdoor » (Tu dois aller tout droit ici). « Ge spreekt » = « je spreekt ». Il suffit de le reconnaître ; vous, continuez avec « je » ou « u »."
+    },
+    {
+      "title": "Le truc de Kees pour l'impératif",
+      "text": "Kees, le nain de jardin, ne fait jamais d'effort : pour donner un ordre, il prend la forme de « ik » et supprime « ik ». Ik ga → Ga! Ik kijk → Kijk! Ik neem → Neem! Et pour être poli, il ajoute « alstublieft »."
+    },
+    {
+      "title": "Comprendre un chemin",
+      "text": "Demandez à la personne de parler lentement : « Kunt u dat herhalen, alstublieft? » (thème 5). Puis répétez le chemin à voix haute : « Rechtdoor, en dan links? ». Si vous vous trompez, on vous corrigera — c'est le meilleur exercice."
+    }
+  ],
+  "culture": {
+    "title": "À vélo et en train",
+    "text": "La Flandre est un pays de vélos : on va au travail, à l'école ou au marché « met de fiets », sur des pistes cyclables (« het fietspad »), par tous les temps. Pour aller plus loin, il y a le train : la société des chemins de fer belges s'appelle NMBS en néerlandais et SNCB en français. On achète son billet au guichet, à la machine ou dans l'application. Les bus et les trams de Flandre sont ceux de De Lijn. Et Gand est une vraie ville de fleurs : les Floraliën, une grande exposition florale, y existent depuis le XIXe siècle."
+  },
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — s'entraîner avec de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Cherchez des textes sur le train, le bus ou le vélo."
+    },
+    {
+      "kind": "culture",
+      "title": "De Lijn — bus et trams en Flandre (en français)",
+      "url": "https://www.delijn.be/fr",
+      "level": "en français",
+      "note": "Les horaires et les arrêts : regardez le plan du tram de Gand, puis cherchez les mots « halte » et « overstappen »."
+    },
+    {
+      "kind": "culture",
+      "title": "VISITFLANDERS — les véloroutes de Flandre",
+      "url": "https://www.visitflanders.com/fr/flandersfinestveloroutes",
+      "level": "en français",
+      "note": "Des itinéraires à vélo à travers la Flandre — pour rêver d'une balade au printemps."
+    }
+  ],
+  "task": {
+    "scenario": "Prenez un vrai plan (votre village, ou le centre de Gand). {teacher} vous demande le chemin vers trois endroits — la gare, la boulangerie, une jardinerie — et vous le guidez, en néerlandais. Puis on change de rôle. Pour finir, {teacher} est au guichet : achetez-lui un aller-retour pour Gand.",
+    "goals": [
+      "Comprendre la question « Hoe kom ik naar …? » et y répondre",
+      "Donner un chemin avec l'impératif : « Ga rechtdoor », « Neem de tweede straat links »",
+      "Dire si c'est loin ou près, et comment y aller (te voet, met de fiets, met de bus)",
+      "Demander votre chemin et répéter ce que vous avez compris",
+      "Acheter un billet aller-retour et comprendre l'heure et le quai"
+    ],
+    "phrases": [
+      "hoe-kom-ik-naar",
+      "rechtdoor",
+      "links-rechts",
+      "de-eerste-de-tweede",
+      "het-kruispunt",
+      "de-hoek",
+      "ver-dichtbij",
+      "het-ticket",
+      "enkel-heen-en-terug"
+    ],
+    "prepare": "Sur le plan, tracez le chemin de chez vous jusqu'à la gare. Écrivez-le en 4 à 6 phrases à l'impératif (« Ga… », « Neem… »), avec une phrase avec « moeten » ou « gaan » (« Je moet de tweede straat links nemen »). Lisez-les à voix haute.",
+    "perform": "Maintenant, faites-le en vrai avec {teacher}, le doigt sur le plan et sans lire vos notes. Il va peut-être se tromper de rue exprès… Corrigez-le : « Nee, links! »",
+    "record": "Vous pouvez aussi enregistrer le chemin de chez vous jusqu'à la gare et l'envoyer à {teacher} : il essaiera de le suivre sur un plan et vous dira où il est arrivé."
+  }
+}

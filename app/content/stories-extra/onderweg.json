@@ -1,0 +1,292 @@
+{
+  "stories": [
+    {
+      "id": "onderweg-1",
+      "title": "Een platte band",
+      "fr": "Un pneu crevé",
+      "level": "A1",
+      "after": "onderweg",
+      "lines": [
+        {
+          "nl": "Het is zaterdag. Jef en Monia gaan naar de markt.",
+          "fr": "C'est samedi. Jef et Monia vont au marché."
+        },
+        {
+          "nl": "\"Nemen we de auto?\" vraagt Monia.",
+          "fr": "« On prend la voiture ? » demande Monia."
+        },
+        {
+          "nl": "\"Nee, de fiets! De markt is niet ver,\" zegt Jef.",
+          "fr": "« Non, le vélo ! Le marché n'est pas loin », dit Jef."
+        },
+        {
+          "nl": "Ze fietsen door het dorp.",
+          "fr": "Ils traversent le village à vélo."
+        },
+        {
+          "nl": "Aan het kruispunt roept Jef: \"Rechtdoor, en dan links!\"",
+          "fr": "Au carrefour, Jef crie : « Tout droit, et puis à gauche ! »"
+        },
+        {
+          "nl": "Maar dan stopt Jef.",
+          "fr": "Mais tout à coup, Jef s'arrête."
+        },
+        {
+          "nl": "\"Oei! Ik heb een platte band.\"",
+          "fr": "« Oups ! J'ai un pneu crevé. »"
+        },
+        {
+          "nl": "\"Geen probleem,\" zegt Monia. \"We gaan te voet.\"",
+          "fr": "« Pas de problème », dit Monia. « On y va à pied. »"
+        },
+        {
+          "nl": "Op de markt koopt Monia bloemen voor haar tuin.",
+          "fr": "Au marché, Monia achète des fleurs pour son jardin."
+        },
+        {
+          "nl": "Jef koopt kaas en brood.",
+          "fr": "Jef achète du fromage et du pain."
+        },
+        {
+          "nl": "Naar huis gaan ze ook te voet, met de fiets aan de hand.",
+          "fr": "Pour rentrer, ils vont aussi à pied, en poussant le vélo."
+        },
+        {
+          "nl": "Jef lacht. \"Morgen ga ik mijn fiets maken!\"",
+          "fr": "Jef rit. « Demain, je vais réparer mon vélo ! »"
+        }
+      ],
+      "glossary": {
+        "het": "il, ce (neutre)",
+        "is": "est",
+        "zaterdag": "samedi",
+        "en": "et",
+        "gaan": "allons, vont",
+        "naar": "vers, à",
+        "de": "le, la, les",
+        "markt": "marché",
+        "nemen": "prenons, prenez (nemen = prendre)",
+        "we": "nous, on",
+        "auto": "voiture",
+        "vraagt": "demande",
+        "nee": "non",
+        "fiets": "vélo",
+        "niet": "pas",
+        "ver": "loin",
+        "zegt": "dit",
+        "ze": "ils, elles",
+        "fietsen": "roulent à vélo (fietsen = faire du vélo)",
+        "door": "à travers",
+        "dorp": "village",
+        "aan": "à (aan de hand = à la main)",
+        "kruispunt": "carrefour",
+        "roept": "crie, appelle",
+        "rechtdoor": "tout droit",
+        "dan": "puis, alors",
+        "links": "à gauche",
+        "maar": "mais",
+        "stopt": "s'arrête",
+        "oei": "oups ! aïe ! (flamand)",
+        "ik": "je",
+        "heb": "ai",
+        "een": "un, une",
+        "platte": "plat (een platte band = un pneu crevé)",
+        "band": "pneu",
+        "geen": "pas de",
+        "probleem": "problème",
+        "te": "à (te voet = à pied)",
+        "voet": "pied",
+        "op": "sur, à",
+        "koopt": "achète",
+        "bloemen": "fleurs",
+        "voor": "pour",
+        "haar": "son, sa (à elle)",
+        "tuin": "jardin",
+        "kaas": "fromage",
+        "brood": "pain",
+        "huis": "maison (naar huis = à la maison)",
+        "ook": "aussi",
+        "met": "avec",
+        "hand": "main",
+        "lacht": "rit",
+        "morgen": "demain",
+        "ga": "vais (ik ga … maken = je vais réparer)",
+        "mijn": "mon, ma",
+        "maken": "réparer (ici) ; faire"
+      },
+      "questions": [
+        {
+          "q": "Comment Jef veut-il aller au marché ?",
+          "options": [
+            "En voiture",
+            "À vélo",
+            "En bus"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Quel est le problème ?",
+          "options": [
+            "Jef a un pneu crevé",
+            "Le marché est fermé",
+            "Monia est en retard"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Que va faire Jef demain ?",
+          "options": [
+            "Retourner au marché",
+            "Réparer son vélo",
+            "Acheter une voiture"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "onderweg-2",
+      "title": "Muziek op de trein",
+      "fr": "De la musique dans le train",
+      "level": "A1",
+      "after": "onderweg",
+      "lines": [
+        {
+          "nl": "Monia en Lotte nemen de trein naar Gent.",
+          "fr": "Monia et Lotte prennent le train pour Gand."
+        },
+        {
+          "nl": "Ze gaan naar een grote tuinbeurs.",
+          "fr": "Elles vont à un grand salon de jardin."
+        },
+        {
+          "nl": "Op de trein luisteren ze naar muziek uit de jaren negentig.",
+          "fr": "Dans le train, elles écoutent de la musique des années 90."
+        },
+        {
+          "nl": "Lotte zingt zacht. Monia zingt mee.",
+          "fr": "Lotte chante doucement. Monia chante avec elle."
+        },
+        {
+          "nl": "Dan zegt een stem: \"Deze trein heeft tien minuten vertraging.\"",
+          "fr": "Puis une voix dit : « Ce train a dix minutes de retard. »"
+        },
+        {
+          "nl": "\"Geen probleem,\" zegt Lotte. \"Nog een liedje!\"",
+          "fr": "« Pas de problème », dit Lotte. « Encore une chanson ! »"
+        },
+        {
+          "nl": "In Gent nemen ze de tram naar de tuinbeurs.",
+          "fr": "À Gand, elles prennent le tram pour le salon de jardin."
+        },
+        {
+          "nl": "Er zijn heel veel bloemen en planten.",
+          "fr": "Il y a énormément de fleurs et de plantes."
+        },
+        {
+          "nl": "Monia koopt een roos voor haar tuin.",
+          "fr": "Monia achète un rosier pour son jardin."
+        },
+        {
+          "nl": "En Lotte? Zij koopt een cactus.",
+          "fr": "Et Lotte ? Elle achète un cactus."
+        },
+        {
+          "nl": "\"Een cactus is makkelijk,\" lacht ze.",
+          "fr": "« Un cactus, c'est facile », dit-elle en riant."
+        },
+        {
+          "nl": "Op de trein naar huis zingen ze weer. Céline Dion, natuurlijk!",
+          "fr": "Dans le train du retour, elles chantent encore. Céline Dion, bien sûr !"
+        }
+      ],
+      "glossary": {
+        "en": "et",
+        "nemen": "prennent (nemen = prendre)",
+        "de": "le, la, les",
+        "trein": "train",
+        "naar": "vers, pour, à",
+        "gent": "Gand",
+        "ze": "elles, ils ; elle",
+        "gaan": "vont",
+        "een": "un, une",
+        "grote": "grand(e)",
+        "tuinbeurs": "salon de jardin (de tuin + de beurs = la foire)",
+        "op": "sur (op de trein = dans le train)",
+        "luisteren": "écoutent (luisteren naar = écouter)",
+        "muziek": "musique",
+        "uit": "de (origine)",
+        "jaren": "années (de jaren negentig = les années 90)",
+        "negentig": "quatre-vingt-dix",
+        "zingt": "chante",
+        "zacht": "doucement",
+        "mee": "avec (meezingen = chanter avec)",
+        "dan": "puis, alors",
+        "zegt": "dit",
+        "stem": "voix",
+        "deze": "ce, cette",
+        "heeft": "a",
+        "tien": "dix",
+        "minuten": "minutes",
+        "vertraging": "retard",
+        "geen": "pas de",
+        "probleem": "problème",
+        "nog": "encore",
+        "liedje": "petite chanson",
+        "in": "à, dans",
+        "tram": "tram",
+        "er": "(er zijn = il y a)",
+        "zijn": "sont (er zijn = il y a)",
+        "heel": "très",
+        "veel": "beaucoup (de)",
+        "bloemen": "fleurs",
+        "planten": "plantes",
+        "koopt": "achète",
+        "roos": "rose, rosier",
+        "voor": "pour",
+        "haar": "son, sa (à elle)",
+        "tuin": "jardin",
+        "zij": "elle",
+        "cactus": "cactus",
+        "is": "est",
+        "makkelijk": "facile",
+        "lacht": "rit",
+        "huis": "maison (naar huis = à la maison)",
+        "zingen": "chantent",
+        "weer": "de nouveau, encore",
+        "celine": "Céline (prénom)",
+        "dion": "Dion (nom)",
+        "natuurlijk": "bien sûr, naturellement"
+      },
+      "questions": [
+        {
+          "q": "Où vont Monia et Lotte ?",
+          "options": [
+            "Au marché",
+            "À un salon de jardin à Gand",
+            "À un concert"
+          ],
+          "answer": 1
+        },
+        {
+          "q": "Que dit la voix dans le train ?",
+          "options": [
+            "Le train a dix minutes de retard",
+            "Il faut changer à Bruxelles",
+            "Le train ne va pas à Gand"
+          ],
+          "answer": 0
+        },
+        {
+          "q": "Qu'achète Lotte ?",
+          "options": [
+            "Un rosier",
+            "Des tomates",
+            "Un cactus"
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

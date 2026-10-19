@@ -13,7 +13,7 @@ import { onboarding, weekWidget, weekProgress, reminderFile, levelStatus, certif
 import { speakingOn } from './exercises.js';
 import { kees, keesSays, icon, stars, starsFor, hueOf } from './ui.js';
 
-const VERSION = '1.1';
+const VERSION = '1.2';
 const view = document.getElementById('view');
 const sidebar = document.getElementById('sidebar');
 const tabbar = document.getElementById('nav');

@@ -1,0 +1,739 @@
+{
+  "id": "thuis",
+  "nl": "Thuis",
+  "fr": "À la maison",
+  "level": "A1",
+  "icon": "house",
+  "intro": "Les pièces, les meubles, et surtout le jardin : la serre, l'abri, le potager. Lotte vient visiter votre maison… et jette un œil par-dessus la haie, chez Jef. À la fin de ce thème, vous pouvez décrire votre maison et votre jardin, et dire où sont les choses.",
+  "cando": [
+    "Je peux décrire mon logement : les pièces, en haut, en bas.",
+    "Je peux dire ce qu'il y a et où se trouvent les choses (« er is », « naast », « achter »…).",
+    "Je peux décrire ma maison et mon jardin avec un adjectif : een grote serre, een mooi huis.",
+    "Je peux donner mon adresse et comprendre une courte description d'une maison."
+  ],
+  "steps": [
+    {
+      "id": "l1",
+      "type": "words",
+      "title": "Les pièces",
+      "items": [
+        "het-huis",
+        "het-appartement",
+        "de-kamer",
+        "de-living",
+        "de-keuken",
+        "de-slaapkamer",
+        "de-badkamer",
+        "het-toilet"
+      ]
+    },
+    {
+      "id": "l2",
+      "type": "words",
+      "title": "En haut, en bas, les meubles",
+      "items": [
+        "boven-beneden",
+        "de-trap",
+        "de-tafel",
+        "de-stoel",
+        "de-zetel",
+        "de-kast",
+        "het-bed",
+        "de-frigo"
+      ]
+    },
+    {
+      "id": "g1",
+      "type": "grammar",
+      "title": "Er is, er zijn — in, op, onder…"
+    },
+    {
+      "id": "l3",
+      "type": "words",
+      "title": "Le jardin, les voisins, l'adresse",
+      "items": [
+        "de-moestuin",
+        "de-serre",
+        "het-tuinhuis",
+        "de-buren",
+        "het-adres",
+        "mooi",
+        "licht-donker",
+        "nieuw"
+      ]
+    },
+    {
+      "id": "g2",
+      "type": "grammar",
+      "title": "een groot huis, het grote huis"
+    },
+    {
+      "id": "d1",
+      "type": "dialogue",
+      "title": "Lotte visite la maison"
+    },
+    {
+      "id": "bilan",
+      "type": "checkpoint",
+      "title": "Bilan du thème"
+    },
+    {
+      "id": "opdracht",
+      "type": "task",
+      "title": "Opdracht : faites visiter votre maison à {teacher}"
+    }
+  ],
+  "items": [
+    {
+      "id": "het-huis",
+      "nl": "het huis",
+      "fr": "la maison",
+      "accept": [
+        "huis",
+        "een huis"
+      ],
+      "ex_nl": "Het huis van Jef is groot.",
+      "ex_fr": "La maison de Jef est grande.",
+      "note": "Un mot « het ». Encore le son « ui » (partez de « eu », glissez vers « i »). Et « thuis » = à la maison, chez soi : « Ik ben thuis. » (Je suis à la maison.)"
+    },
+    {
+      "id": "het-appartement",
+      "nl": "het appartement",
+      "fr": "l'appartement",
+      "accept": [
+        "appartement",
+        "een appartement"
+      ],
+      "ex_nl": "Lotte woont in een appartement in Gent.",
+      "ex_fr": "Lotte habite dans un appartement à Gand.",
+      "note": "Presque comme en français, mais c'est un mot « het », et le « t » final se prononce. Une chambre d'étudiant, en Flandre, c'est « een kot » — très flamand !"
+    },
+    {
+      "id": "de-kamer",
+      "nl": "de kamer",
+      "fr": "la pièce, la chambre",
+      "accept": [
+        "kamer",
+        "een kamer"
+      ],
+      "ex_nl": "Het huis heeft zes kamers.",
+      "ex_fr": "La maison a six pièces.",
+      "note": "« kamer » = n'importe quelle pièce de la maison. La chambre à coucher, c'est « de slaapkamer ». Pluriel : de kamers (-s après « -er », thème 4)."
+    },
+    {
+      "id": "de-living",
+      "nl": "de living",
+      "fr": "le salon, le séjour",
+      "accept": [
+        "living",
+        "de woonkamer",
+        "woonkamer"
+      ],
+      "ex_nl": "De living is groot.",
+      "ex_fr": "Le salon est grand.",
+      "note": "Mot belge, venu de l'anglais. Aux Pays-Bas, on dit « de woonkamer ». Prononcez à l'anglaise : « li-ving »."
+    },
+    {
+      "id": "de-keuken",
+      "nl": "de keuken",
+      "fr": "la cuisine",
+      "accept": [
+        "keuken"
+      ],
+      "ex_nl": "Monia is in de keuken.",
+      "ex_fr": "Monia est dans la cuisine.",
+      "note": "« eu » se prononce comme en français : « keu-keu ». À ne pas confondre avec « koken » (cuisiner) ni avec « de koek » (le biscuit)."
+    },
+    {
+      "id": "de-slaapkamer",
+      "nl": "de slaapkamer",
+      "fr": "la chambre (à coucher)",
+      "accept": [
+        "slaapkamer"
+      ],
+      "ex_nl": "De slaapkamer is boven.",
+      "ex_fr": "La chambre est en haut.",
+      "note": "slapen (dormir) + kamer (pièce) : « la pièce pour dormir ». « aa » est un « a » long."
+    },
+    {
+      "id": "de-badkamer",
+      "nl": "de badkamer",
+      "fr": "la salle de bain",
+      "accept": [
+        "badkamer"
+      ],
+      "ex_nl": "De badkamer is naast de slaapkamer.",
+      "ex_fr": "La salle de bain est à côté de la chambre.",
+      "note": "« bad » = le bain + « kamer ». Le « d » de « bad » se prononce « t » : « bat-kamer »."
+    },
+    {
+      "id": "het-toilet",
+      "nl": "het toilet",
+      "fr": "les toilettes",
+      "accept": [
+        "toilet",
+        "de wc",
+        "wc"
+      ],
+      "ex_nl": "Waar is het toilet, alstublieft?",
+      "ex_fr": "Où sont les toilettes, s'il vous plaît ?",
+      "note": "Au singulier en néerlandais ! On dit aussi très souvent « de wc » (prononcé « wé-cé »). Un mot « het »."
+    },
+    {
+      "id": "boven-beneden",
+      "nl": "boven — beneden",
+      "fr": "en haut (à l'étage) — en bas",
+      "accept": [
+        "boven beneden",
+        "boven",
+        "beneden"
+      ],
+      "ex_nl": "De slaapkamers zijn boven.",
+      "ex_fr": "Les chambres sont en haut.",
+      "note": "Le rez-de-chaussée = « het gelijkvloers » (mot belge ; aux Pays-Bas : de begane grond). Le premier étage = « de eerste verdieping ». « oo » = « o » long, « ee » = « é » long."
+    },
+    {
+      "id": "de-trap",
+      "nl": "de trap",
+      "fr": "l'escalier",
+      "accept": [
+        "trap"
+      ],
+      "ex_nl": "De trap is naast de keuken.",
+      "ex_fr": "L'escalier est à côté de la cuisine.",
+      "note": "Faux ami : ce n'est pas une trappe ! Un seul mot, au singulier, pour tout l'escalier."
+    },
+    {
+      "id": "de-tafel",
+      "nl": "de tafel",
+      "fr": "la table",
+      "accept": [
+        "tafel",
+        "een tafel"
+      ],
+      "ex_nl": "De tafel is in de keuken.",
+      "ex_fr": "La table est dans la cuisine.",
+      "note": "Vous le connaissez du café : « een tafel voor twee » (thème 5). « a » long, puis un « e » très court : « ta-feul »."
+    },
+    {
+      "id": "de-stoel",
+      "nl": "de stoel",
+      "fr": "la chaise",
+      "accept": [
+        "stoel",
+        "een stoel"
+      ],
+      "ex_nl": "De stoel is naast de tafel.",
+      "ex_fr": "La chaise est à côté de la table.",
+      "note": "« oe » = « ou » : « stoul ». Pluriel : de stoelen."
+    },
+    {
+      "id": "de-zetel",
+      "nl": "de zetel",
+      "fr": "le canapé, le fauteuil",
+      "accept": [
+        "zetel",
+        "een zetel"
+      ],
+      "ex_nl": "De zetel in de living is nieuw.",
+      "ex_fr": "Le canapé du salon est neuf.",
+      "note": "Mot flamand. Aux Pays-Bas : « de bank » — mais en Flandre, « de bank », c'est surtout la banque (ou un banc) ! « ee » = « é » long : « zé-teul »."
+    },
+    {
+      "id": "de-kast",
+      "nl": "de kast",
+      "fr": "l'armoire, le placard",
+      "accept": [
+        "kast",
+        "een kast"
+      ],
+      "ex_nl": "Mijn cd's zijn in de kast.",
+      "ex_fr": "Mes CD sont dans l'armoire.",
+      "note": "Armoire, placard, buffet, bibliothèque (« de boekenkast ») : c'est toujours « kast ». Le « a » est court."
+    },
+    {
+      "id": "het-bed",
+      "nl": "het bed",
+      "fr": "le lit",
+      "accept": [
+        "bed",
+        "een bed"
+      ],
+      "ex_nl": "Het bed is in de slaapkamer.",
+      "ex_fr": "Le lit est dans la chambre.",
+      "note": "Un mot « het ». Pluriel : de bedden (« e » court → on double le « d », thème 4). Le « d » final se prononce « t » : « bèt »."
+    },
+    {
+      "id": "de-frigo",
+      "nl": "de frigo",
+      "fr": "le frigo",
+      "accept": [
+        "frigo",
+        "de koelkast",
+        "koelkast"
+      ],
+      "ex_nl": "Er is melk in de frigo.",
+      "ex_fr": "Il y a du lait dans le frigo.",
+      "note": "Le mot français, en Flandre ! Aux Pays-Bas, on dit « de koelkast » (mot à mot « l'armoire froide »). À l'écrit soigné, « koelkast » existe aussi en Belgique."
+    },
+    {
+      "id": "de-moestuin",
+      "nl": "de moestuin",
+      "fr": "le potager",
+      "accept": [
+        "moestuin",
+        "een moestuin"
+      ],
+      "ex_nl": "Mijn moestuin is achter het huis.",
+      "ex_fr": "Mon potager est derrière la maison.",
+      "note": "Le mot préféré de Jef ! « moes » est un vieux mot pour les légumes (« appelmoes » = compote de pommes) + « tuin » (jardin). « oe » = « ou », « ui » comme dans « tuin »."
+    },
+    {
+      "id": "de-serre",
+      "nl": "de serre",
+      "fr": "la serre",
+      "accept": [
+        "serre",
+        "een serre",
+        "de kas"
+      ],
+      "ex_nl": "Er zijn tomaten in de serre.",
+      "ex_fr": "Il y a des tomates dans la serre.",
+      "note": "Mot belge, venu du français — dites « sè-re », avec un petit « e » à la fin. Aux Pays-Bas, on dit « de kas ». En Flandre, « een serre » peut aussi être une véranda contre la maison."
+    },
+    {
+      "id": "het-tuinhuis",
+      "nl": "het tuinhuis",
+      "fr": "l'abri de jardin, la cabane",
+      "accept": [
+        "tuinhuis",
+        "het tuinhuisje",
+        "tuinhuisje"
+      ],
+      "ex_nl": "Het tuinhuis is naast de serre.",
+      "ex_fr": "L'abri de jardin est à côté de la serre.",
+      "note": "tuin + huis : « la maison du jardin ». Un mot composé prend l'article du dernier mot : het huis → het tuinhuis (comme het tuincentrum). On entend souvent « het tuinhuisje » (la petite cabane)."
+    },
+    {
+      "id": "de-buren",
+      "nl": "de buren",
+      "fr": "les voisins",
+      "accept": [
+        "buren"
+      ],
+      "ex_nl": "Mijn buren zijn heel vriendelijk.",
+      "ex_fr": "Mes voisins sont très gentils.",
+      "note": "Singulier : de buur. Pour une personne, on dit plutôt « de buurman » (le voisin) ou « de buurvrouw » (la voisine), thème 1. « uu » = le « u » long français."
+    },
+    {
+      "id": "het-adres",
+      "nl": "het adres",
+      "fr": "l'adresse",
+      "accept": [
+        "adres",
+        "wat is uw adres"
+      ],
+      "ex_nl": "Mijn adres is Kerkstraat twaalf.",
+      "ex_fr": "Mon adresse est 12, Kerkstraat.",
+      "note": "Un seul « d » et un seul « s » ! En Belgique, la rue vient d'abord, puis le numéro : « Kerkstraat 12, 9000 Gent ». « straat » = rue, « laan » = avenue. La question : « Wat is uw adres? »"
+    },
+    {
+      "id": "mooi",
+      "nl": "mooi",
+      "fr": "beau, joli",
+      "ex_nl": "Je tuin is heel mooi!",
+      "ex_fr": "Ton jardin est très beau !",
+      "note": "« ooi » se dit à peu près « oï », avec un « o » long. Devant un nom, il prend souvent un « -e » : een mooie tuin (voir la grammaire)."
+    },
+    {
+      "id": "licht-donker",
+      "nl": "licht — donker",
+      "fr": "clair — sombre",
+      "accept": [
+        "licht donker",
+        "licht",
+        "donker"
+      ],
+      "ex_nl": "De keuken is licht, de trap is donker.",
+      "ex_fr": "La cuisine est claire, l'escalier est sombre.",
+      "note": "« licht » veut aussi dire « la lumière ». « ch » = le souffle de la gorge, comme le « g ». « donker » : le « o » est court."
+    },
+    {
+      "id": "nieuw",
+      "nl": "nieuw",
+      "fr": "nouveau, neuf",
+      "ex_nl": "Lotte heeft een nieuw appartement.",
+      "ex_fr": "Lotte a un nouvel appartement.",
+      "note": "Un seul mot pour « nouveau » et « neuf ». « ieuw » : un « i » qui glisse vers « ou », à peu près « niou ». Le contraire : oud (vieux, thème 3)."
+    }
+  ],
+  "grammar": {
+    "g1": {
+      "title": "Er is, er zijn — in, op, onder…",
+      "explain": [
+        "« il y a » se dit « er is » devant un nom au singulier, et « er zijn » devant un pluriel : Er is een serre. Er zijn drie slaapkamers.",
+        "Pour la question, le verbe passe devant (thème 1) : Is er een toilet boven? Zijn er tomaten? Et la négation avec « geen » (thème 5) : Er is geen frigo in het tuinhuis.",
+        "Pour dire où : in (dans), op (sur), onder (sous), naast (à côté de), achter (derrière), voor (devant), tussen (entre). Puis simplement l'article et le nom : naast de zetel, achter het huis.",
+        "Si un lieu commence la phrase, le verbe reste en 2e place (thème 2) : In de tuin is er een serre. En Flandre on garde « er » ; aux Pays-Bas on l'omet souvent."
+      ],
+      "table": [
+        [
+          "Er is een tuin achter het huis.",
+          "Il y a un jardin derrière la maison."
+        ],
+        [
+          "Er zijn drie slaapkamers.",
+          "Il y a trois chambres."
+        ],
+        [
+          "Is er een toilet boven?",
+          "Y a-t-il des toilettes en haut ?"
+        ],
+        [
+          "Er is geen frigo in het tuinhuis.",
+          "Il n'y a pas de frigo dans l'abri de jardin."
+        ],
+        [
+          "De poster is naast de kast.",
+          "L'affiche est à côté de l'armoire."
+        ],
+        [
+          "Kees is tussen de tomaten.",
+          "Kees est entre les tomates."
+        ]
+      ],
+      "contrast": "En français, « il y a » ne change jamais : il y a une chambre, il y a trois chambres. En néerlandais, le verbe suit le nom : er is één kamer, er zijn drie kamers. Et la préposition ne se colle pas à l'article : « à côté du canapé » = naast de zetel, « dans le jardin » = in de tuin.",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Er ___ een serre in de tuin.",
+          "options": [
+            "is",
+            "zijn"
+          ],
+          "answer": "is",
+          "fr": "Il y a une serre dans le jardin."
+        },
+        {
+          "type": "choice",
+          "nl": "Er ___ twee slaapkamers boven.",
+          "options": [
+            "is",
+            "zijn"
+          ],
+          "answer": "zijn",
+          "fr": "Il y a deux chambres en haut.",
+          "why": "« slaapkamers » est au pluriel : er zijn."
+        },
+        {
+          "type": "choice",
+          "nl": "___ er een toilet beneden?",
+          "options": [
+            "Is",
+            "Zijn"
+          ],
+          "answer": "Is",
+          "fr": "Y a-t-il des toilettes en bas ?",
+          "why": "« het toilet » est au singulier en néerlandais, même si le français dit « les toilettes »."
+        },
+        {
+          "type": "choice",
+          "nl": "De frigo is ___ de keuken.",
+          "options": [
+            "in",
+            "op"
+          ],
+          "answer": "in",
+          "fr": "Le frigo est dans la cuisine."
+        },
+        {
+          "type": "choice",
+          "nl": "Kees is ___ de serre en het tuinhuis.",
+          "options": [
+            "onder",
+            "tussen"
+          ],
+          "answer": "tussen",
+          "fr": "Kees est entre la serre et l'abri de jardin.",
+          "why": "« tussen … en … » = entre … et …"
+        },
+        {
+          "type": "order",
+          "nl": "Er is een tuin achter het huis.",
+          "fr": "Il y a un jardin derrière la maison."
+        }
+      ]
+    },
+    "g2": {
+      "title": "een groot huis, het grote huis",
+      "explain": [
+        "Après le verbe (zijn), l'adjectif ne change jamais : Het huis is groot. De tuin is mooi.",
+        "Devant le nom, il prend presque toujours un « -e » : de grote tuin, het grote huis, mijn mooie serre, deze lichte keuken, grote kamers.",
+        "Une seule exception : « een » + un mot « het » au singulier. Là, pas de « -e » : een groot huis, een nieuw bed. Mais avec un mot « de » : een grote tuin.",
+        "Attention à l'orthographe (thème 4) : groot → grote, rood → rode (syllabe ouverte, une seule voyelle) ; wit → witte (voyelle courte, consonne doublée)."
+      ],
+      "table": [
+        [
+          "Het huis is groot.",
+          "La maison est grande."
+        ],
+        [
+          "een groot huis",
+          "une grande maison"
+        ],
+        [
+          "het grote huis",
+          "la grande maison"
+        ],
+        [
+          "een grote tuin",
+          "un grand jardin"
+        ],
+        [
+          "de grote tuin",
+          "le grand jardin"
+        ],
+        [
+          "mooie bloemen",
+          "de belles fleurs"
+        ]
+      ],
+      "contrast": "En français, l'adjectif suit le genre et le nombre du nom (grand, grande, grands). En néerlandais, c'est le petit mot devant qui décide : sans « -e » seulement après « een » + mot « het » (een groot huis), avec « -e » partout ailleurs devant le nom. Et l'adjectif vient toujours avant le nom : « een wilde tuin », jamais « een tuin wild ».",
+      "exercises": [
+        {
+          "type": "choice",
+          "nl": "Monia heeft een ___ tuin.",
+          "options": [
+            "mooi",
+            "mooie"
+          ],
+          "answer": "mooie",
+          "fr": "Monia a un beau jardin.",
+          "why": "« de tuin » est un mot « de » : avec « een », on ajoute « -e »."
+        },
+        {
+          "type": "choice",
+          "nl": "Jef heeft een ___ huis.",
+          "options": [
+            "groot",
+            "grote"
+          ],
+          "answer": "groot",
+          "fr": "Jef a une grande maison.",
+          "why": "« een » + un mot « het » (het huis) : pas de « -e »."
+        },
+        {
+          "type": "choice",
+          "nl": "Het ___ bed is boven.",
+          "options": [
+            "nieuw",
+            "nieuwe"
+          ],
+          "answer": "nieuwe",
+          "fr": "Le nouveau lit est en haut.",
+          "why": "Après « het » : toujours « -e »."
+        },
+        {
+          "type": "choice",
+          "nl": "De tuin van Jef is ___.",
+          "options": [
+            "perfect",
+            "perfecte"
+          ],
+          "answer": "perfect",
+          "fr": "Le jardin de Jef est parfait.",
+          "why": "Après le verbe « is » : l'adjectif ne change pas."
+        },
+        {
+          "type": "choice",
+          "nl": "Er zijn ___ tomaten in de serre.",
+          "options": [
+            "rode",
+            "roode"
+          ],
+          "answer": "rode",
+          "fr": "Il y a des tomates rouges dans la serre.",
+          "why": "Pluriel → « -e ». La syllabe « ro- » est ouverte : un seul « o » suffit."
+        },
+        {
+          "type": "order",
+          "nl": "Jef woont in een oud huis.",
+          "fr": "Jef habite dans une vieille maison."
+        }
+      ]
+    }
+  },
+  "dialogue": {
+    "title": "Het huis van Monia — Lotte visite la maison",
+    "roles": {
+      "learner": "Monia"
+    },
+    "lines": [
+      {
+        "id": "d01",
+        "who": "Lotte",
+        "nl": "Amai, Monia, je hebt een mooi huis!",
+        "fr": "Ouah, Monia, tu as une belle maison !"
+      },
+      {
+        "id": "d02",
+        "who": "Monia",
+        "nl": "Dank je, Lotte! Hier is de living.",
+        "fr": "Merci, Lotte ! Voici le salon."
+      },
+      {
+        "id": "d03",
+        "who": "Lotte",
+        "nl": "Oh! Er is een grote poster van Céline Dion!",
+        "fr": "Oh ! Il y a une grande affiche de Céline Dion !"
+      },
+      {
+        "id": "d04",
+        "who": "Monia",
+        "nl": "Ja! En in de kast zijn er veertig cd's uit de jaren negentig.",
+        "fr": "Oui ! Et dans l'armoire, il y a quarante CD des années quatre-vingt-dix."
+      },
+      {
+        "id": "d05",
+        "who": "Lotte",
+        "nl": "Super! En waar is de tuin?",
+        "fr": "Super ! Et où est le jardin ?"
+      },
+      {
+        "id": "d06",
+        "who": "Monia",
+        "nl": "Achter het huis. Er is een serre met tomaten, en daar is mijn moestuin.",
+        "fr": "Derrière la maison. Il y a une serre avec des tomates, et là, c'est mon potager."
+      },
+      {
+        "id": "d07",
+        "who": "Lotte",
+        "nl": "En wat is dat kleine huis naast de serre?",
+        "fr": "Et qu'est-ce que c'est, cette petite maison à côté de la serre ?"
+      },
+      {
+        "id": "d08",
+        "who": "Monia",
+        "nl": "Dat is het tuinhuis, voor mijn potten en zaden.",
+        "fr": "C'est l'abri de jardin, pour mes pots et mes graines."
+      },
+      {
+        "id": "d09",
+        "who": "Lotte",
+        "nl": "En daar is de tuin van nonkel Jef. Alles is perfect!",
+        "fr": "Et là, c'est le jardin de tonton Jef. Tout est parfait !"
+      },
+      {
+        "id": "d10",
+        "who": "Monia",
+        "nl": "Ja, Jef heeft een perfecte tuin… en ik heb een wilde tuin!",
+        "fr": "Oui, Jef a un jardin parfait… et moi, j'ai un jardin sauvage !"
+      }
+    ],
+    "questions": [
+      {
+        "q": "Qu'est-ce qu'il y a dans le salon de Monia ?",
+        "options": [
+          "Une grande affiche de Céline Dion",
+          "Un grand piano",
+          "Une photo de Jef"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Combien de CD des années 90 Monia a-t-elle ?",
+        "options": [
+          "Quatorze",
+          "Quarante",
+          "Quatre"
+        ],
+        "answer": 1
+      },
+      {
+        "q": "Où est le jardin ?",
+        "options": [
+          "Devant la maison",
+          "À côté du café",
+          "Derrière la maison"
+        ],
+        "answer": 2
+      },
+      {
+        "q": "Qu'est-ce qu'il y a dans l'abri de jardin ?",
+        "options": [
+          "Des pots et des graines",
+          "Des CD",
+          "Un frigo"
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  "tips": [
+    {
+      "title": "zetel, frigo, living, serre",
+      "text": "Ces mots sont belges : aux Pays-Bas, on dit bank, koelkast, woonkamer et kas. En Flandre, utilisez sans hésiter les mots belges — ce sont ceux que Jef et Lotte comprennent le mieux."
+    },
+    {
+      "title": "« er is » ou « er staat » ?",
+      "text": "Les Flamands disent souvent « er staat een tafel » (il y a une table, debout), « er hangt een poster » (une affiche, accrochée) ou « er ligt een boek » (un livre, posé). À reconnaître pour l'instant : « er is » est toujours compris."
+    },
+    {
+      "title": "Le truc de Kees pour le « -e »",
+      "text": "Kees, le kabouter, a une règle simple : devant un nom, mettez un « -e »… sauf après « een » avec un mot « het ». Kees habite dans « een klein huis » au fond du jardin — mais c'est « het kleine huis van Kees »."
+    }
+  ],
+  "culture": {
+    "title": "Le « rijhuis » et le jardin, une pièce en plus",
+    "text": "Beaucoup de Flamands habitent un « rijhuis » : une maison mitoyenne, dans une rangée de maisons, souvent étroite, avec les chambres « boven ». Derrière, il y a presque toujours un jardin, souvent long et étroit. Dès le premier rayon de soleil, il devient une pièce de plus : on mange sur le « terras », on boit un café dehors et on bavarde avec les voisins par-dessus la haie. On dit des Belges qu'ils naissent « met een baksteen in de maag » (avec une brique dans l'estomac) : avoir sa propre maison est un rêve très répandu."
+  },
+  "further": [
+    {
+      "kind": "exercice",
+      "title": "NedBox — de vrais textes et vidéos flamands",
+      "url": "https://www.nedbox.be",
+      "level": "A1+",
+      "note": "Plateforme gratuite de la KU Leuven. Cherchez un thème sur la maison ou le logement (« wonen »), au niveau le plus bas."
+    },
+    {
+      "kind": "cours",
+      "title": "Franel — néerlandais pour francophones (UCLouvain)",
+      "url": "https://www.franel.eu",
+      "level": "A1–B1",
+      "note": "Vidéos et exercices gratuits, avec explications en français : idéal pour revoir les adjectifs."
+    },
+    {
+      "kind": "lecture",
+      "title": "Wablieft — le journal en néerlandais facile",
+      "url": "https://www.wablieft.be",
+      "level": "A2+",
+      "note": "Pour plus tard. Petit défi dès maintenant : cherchez « tuin » ou « huis » dans un titre."
+    }
+  ],
+  "task": {
+    "scenario": "Montrez à {teacher} deux ou trois photos de votre maison et de votre jardin sur votre GSM — la serre, l'abri, le potager. Décrivez-les en néerlandais : qu'est-ce qu'il y a, et où ? {teacher} dessine votre jardin d'après vos mots, sans regarder la photo… puis vous comparez le dessin et la photo !",
+    "goals": [
+      "Nommer les pièces et dire où elles sont (boven, beneden)",
+      "Dire ce qu'il y a avec « er is » et « er zijn »",
+      "Placer les choses : in, op, onder, naast, achter, voor, tussen",
+      "Décrire avec un adjectif : een grote serre, een mooi huis, een wilde tuin",
+      "Donner votre adresse (ou une adresse inventée)"
+    ],
+    "phrases": [
+      "het-huis",
+      "de-living",
+      "de-keuken",
+      "de-slaapkamer",
+      "boven-beneden",
+      "de-moestuin",
+      "de-serre",
+      "het-tuinhuis",
+      "mooi",
+      "licht-donker",
+      "het-adres"
+    ],
+    "prepare": "Choisissez vos photos. Pour chacune, écrivez 3 ou 4 phrases : une avec « er is », une avec « er zijn », une avec une préposition (naast, achter…) et une avec un adjectif. Vérifiez le « -e » ! Lisez-les à voix haute deux ou trois fois.",
+    "perform": "Maintenant, décrivez vos photos à {teacher}, sans lire vos notes. Il dessine ce qu'il comprend et vous pose des questions (« Is er een boom? », « Waar is de serre? ») — répondez simplement, puis comparez son dessin avec la photo.",
+    "record": "Vous pouvez aussi vous enregistrer en décrivant une photo de votre jardin et lui envoyer l'enregistrement : il vous répondra ici."
+  }
+}
