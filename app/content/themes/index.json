@@ -1,0 +1,10 @@
+{
+  "themes": [
+    { "id": "kennismaken", "nl": "Kennismaken", "fr": "Faire connaissance", "level": "A1", "status": "ready" },
+    { "id": "getallen-en-tijd", "nl": "Getallen en tijd", "fr": "Les nombres et l'heure", "level": "A1", "status": "soon" },
+    { "id": "boodschappen", "nl": "Boodschappen", "fr": "Faire les courses", "level": "A1", "status": "soon" },
+    { "id": "op-café", "nl": "Op café", "fr": "Au café", "level": "A1", "status": "soon" },
+    { "id": "onderweg", "nl": "Onderweg", "fr": "En route", "level": "A1", "status": "soon" },
+    { "id": "bij-de-dokter", "nl": "Bij de dokter", "fr": "Chez le médecin", "level": "A2", "status": "soon" }
+  ]
+}

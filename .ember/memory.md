@@ -17,9 +17,15 @@
 - Themes on the CEFR scale (A1 first), added along the way.
 
 ## Architecture Notes
-- Content lives in data files under `content/themes/<theme>/`, separate from code: a new theme is writing, not programming.
-- Audio files under `audio/<theme>/`, named after the recording list.
-- Progress on the device first; Supabase sync later (same pattern as EPSO).
+- `app/` is the published site (no build step: vanilla JS modules, CSS, service worker).
+- Content is data, separate from code: `app/content/themes/index.json` lists themes, `app/content/themes/<id>.json` holds items (nl, fr, accept, ex_nl, ex_fr, note), a dialogue and tips. A new theme is writing, not programming.
+- Audio: `app/audio/<theme>/<id>.m4a` (word), `<id>-ex.m4a` (example), `d01.m4a`… (dialogue). Missing file -> synthetic nl-BE voice as a stand-in.
+- `python3 tools/recording-list.py <theme>` writes `recording-lists/<theme>.md`, ticking what is already recorded.
+- Scheduler: FSRS-4.5, default weights, 90 % retention, max interval 365 days (`app/js/fsrs.js`).
+- Lesson = introduce a batch (default 5) -> each item must pass recognition (MC) then typed recall; a miss sends it back to typed recall. Errors set the first FSRS grade (0 Good, 1 Hard, 2+ Again).
+- Review = French prompt, say it aloud, reveal, grade yourself (4 buttons with the next interval shown). Again comes back in the same session.
+- Progress on the device (localStorage `nederlands_v1`, persistence requested). Home-screen apps on iOS keep it; Safari tabs may lose it after 7 days. Supabase sync later (same pattern as EPSO).
+- UI in French; Dutch text tagged lang="nl". Design: system font + serif display, one Flemish-yellow accent (#ffd400), light and dark.
 
 ## Open questions
 - Test microphone recording in an installed PWA on the real iPhone before building Phase 4 on it.
