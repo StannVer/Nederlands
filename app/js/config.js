@@ -2,7 +2,7 @@
 // key only allows what the database's row-level security permits (each learner reads and writes
 // their own progress row). Left empty, the app runs without login and keeps progress on the device.
 export const CONFIG = {
-  supabaseUrl: '',
-  supabaseKey: '',
+  supabaseUrl: 'https://rjkckukuepufkoxucjra.supabase.co',
+  supabaseKey: 'sb_publishable__iy46T0tg-3EEuVgF1fClg_i8JXbs8J',
   teacherName: 'Stan',   // the person the learner presents each theme's task to
 };

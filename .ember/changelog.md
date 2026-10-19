@@ -34,3 +34,12 @@
 ### Phase 5 (started): hosting
 - First deploy to the personal Netlify account: https://nederlands-3d0eb427.netlify.app (site id in deploy/site.json). Netlify visitor protection is on: only logged-in Netlify team members can open it, which suits the preview; switch off once the course's own login works.
 - Supabase: the desktop token manages the EPSO project but may not create projects in the org (403). Decision: Stan creates the `nederlands` project in the dashboard (Frankfurt); everything else via the Management API.
+
+### Phase 5: accounts live
+- Supabase project `nederlands` (ref rjkckukuepufkoxucjra, eu-west-1). schema.sql applied: progress, teachers, task_submissions (RLS on all), private bucket `tasks`. Sign-up switched off.
+- Teacher account stanverschaeve@gmail.com created and registered as teacher; password in C:\Users\sverschaeve\.personal\nederlands-teacher-login.txt (not in git, not in OneDrive).
+- App connected (URL + publishable key in config.js). Checked: anonymous reads return nothing, anonymous sign-up refused.
+- End-to-end test against the real database: wrong password refused; progress synced and restored on a second device; in-person task → teacher page → written feedback → home card + theme page. Test data deleted afterwards.
+- Daily keep-awake Netlify function (free plan pauses after 7 idle days), deployed with publish.sh.
+- Checkpoint step icon changed to a flag: a check mark looked like "done".
+- Not yet: learner account (Stan reviews the course first); Netlify visitor protection still on.

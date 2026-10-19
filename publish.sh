@@ -35,5 +35,5 @@ if [ ! -s "$SITE_FILE" ]; then
 fi
 SITE_ID="$(node -e 'console.log(require(process.argv[1]).site_id)' "$SITE_FILE")"
 
-netlify deploy --prod --dir "$ROOT/app" --site "$SITE_ID" --message "$(git -C "$ROOT" log -1 --format=%s)"
+netlify deploy --prod --dir "$ROOT/app" --functions "$ROOT/functions" --site "$SITE_ID" --message "$(git -C "$ROOT" log -1 --format=%s)"
 echo "Live at: $(node -e 'console.log(require(process.argv[1]).url)' "$SITE_FILE")"

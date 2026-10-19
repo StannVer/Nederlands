@@ -27,7 +27,8 @@ const STEP_ICON = {
   words: '<path d="M5 5h14v10H9l-4 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
   grammar: '<path d="M4 7h16M4 12h10M4 17h13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
   dialogue: '<path d="M3 6h11v7H7l-4 3zM10 16h6l4 3v-9h-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
-  checkpoint: '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
+  checkpoint: '<path d="M6 21V4M6 4.5h11l-2.5 4 2.5 4H6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+  done: '<path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>',
   task: '<circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 19c.8-3.2 3-5 5.5-5s4.7 1.8 5.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M15 6.5h5M15 10h3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
 };
 
@@ -141,7 +142,7 @@ async function themePage(id) {
         const state = done ? 'done' : s === next ? 'next' : '';
         const count = s.type === 'words' ? ` · ${s.items.length}` : '';
         return `<li class="${state}"><a href="#/step/${id}/${s.id}">
-          <span class="stepicon"><svg viewBox="0 0 24 24">${done ? STEP_ICON.checkpoint : STEP_ICON[s.type]}</svg></span>
+          <span class="stepicon"><svg viewBox="0 0 24 24">${done ? STEP_ICON.done : STEP_ICON[s.type]}</svg></span>
           <span><small>${k + 1} · ${STEP_KIND[s.type]}${count}</small><strong>${esc(s.title)}</strong></span>
           <em>${done ? (s.type === 'checkpoint' && check ? `${Math.round(check.score * 10)}/10` : 'refaire') : s === next ? 'commencer' : ''}</em></a></li>`;
       }).join('')}
